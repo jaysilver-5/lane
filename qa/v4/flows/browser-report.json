@@ -1,0 +1,457 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Welcome offers free account",
+      "passed": true
+    },
+    {
+      "name": "Welcome offers 10-question guest preview",
+      "passed": true
+    },
+    {
+      "name": "No trial language on welcome",
+      "passed": true
+    },
+    {
+      "name": "Guest pool is fixed at 10",
+      "passed": true
+    },
+    {
+      "name": "Guest full rehearsal is gated",
+      "passed": true
+    },
+    {
+      "name": "Plans shows CA$14.99 once",
+      "passed": true
+    },
+    {
+      "name": "Plans says no subscription",
+      "passed": true
+    },
+    {
+      "name": "Plans says no expiry",
+      "passed": true
+    },
+    {
+      "name": "Plans contains no trial offer",
+      "passed": true
+    },
+    {
+      "name": "Complete plan is shown before Free",
+      "passed": true
+    },
+    {
+      "name": "Signup requires terms",
+      "passed": true
+    },
+    {
+      "name": "Unverified account remains guest",
+      "passed": true
+    },
+    {
+      "name": "Verified account becomes FirstLane Free",
+      "passed": true
+    },
+    {
+      "name": "Verified free pool is exactly 40",
+      "passed": true
+    },
+    {
+      "name": "Signup did not create receipt",
+      "passed": true
+    },
+    {
+      "name": "Checkout describes one purchase",
+      "passed": true
+    },
+    {
+      "name": "Checkout has no expiry",
+      "passed": true
+    },
+    {
+      "name": "Checkout says Apple or Google handles payment",
+      "passed": true
+    },
+    {
+      "name": "Checkout contains no Paddle",
+      "passed": true
+    },
+    {
+      "name": "cancelled never unlocks Complete",
+      "passed": true
+    },
+    {
+      "name": "Cancelled state is explained",
+      "passed": true
+    },
+    {
+      "name": "declined never unlocks Complete",
+      "passed": true
+    },
+    {
+      "name": "Declined state is explained",
+      "passed": true
+    },
+    {
+      "name": "pending never unlocks Complete",
+      "passed": true
+    },
+    {
+      "name": "Pending hides duplicate purchase CTA",
+      "passed": true
+    },
+    {
+      "name": "Success grants paid lifetime access",
+      "passed": true
+    },
+    {
+      "name": "Paid record has no expiry",
+      "passed": true
+    },
+    {
+      "name": "Success screen has no renewal countdown",
+      "passed": true
+    },
+    {
+      "name": "Billing screen labels one-time/no expiry",
+      "passed": true
+    },
+    {
+      "name": "Receipt shows CA$14.99",
+      "passed": true
+    },
+    {
+      "name": "Receipt is present",
+      "passed": true
+    },
+    {
+      "name": "Paid rehearsal contains 40 questions",
+      "passed": true
+    },
+    {
+      "name": "Paid rehearsal balances 20 signs",
+      "passed": true
+    },
+    {
+      "name": "Paid rehearsal balances 20 rules",
+      "passed": true
+    },
+    {
+      "name": "Offline screen is unlocked for Complete",
+      "passed": true
+    },
+    {
+      "name": "Signed out user is guest",
+      "passed": true
+    },
+    {
+      "name": "Sign in restores Complete",
+      "passed": true
+    },
+    {
+      "name": "Restored purchase still has no expiry",
+      "passed": true
+    },
+    {
+      "name": "Refund revokes premium entitlement",
+      "passed": true
+    },
+    {
+      "name": "Refunded receipt remains",
+      "passed": true
+    },
+    {
+      "name": "Refund does not create a trial",
+      "passed": true
+    },
+    {
+      "name": "100 free sessions never leak premium questions",
+      "passed": true
+    },
+    {
+      "name": "Second account does not inherit purchase",
+      "passed": true
+    },
+    {
+      "name": "360px light today no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light study no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light progress no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light profile no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light plans no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light membership no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light downloads no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light appearance no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light account no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light study-plan no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light jurisdiction no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light support no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light report no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light content no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light legal no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light review no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px light saved no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark today no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark study no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark progress no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark profile no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark plans no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark membership no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark downloads no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark appearance no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark account no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark study-plan no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark jurisdiction no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark support no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark report no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark content no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark legal no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark review no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360px dark saved no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light today no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light study no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light progress no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light profile no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light plans no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light membership no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light downloads no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light appearance no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light account no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light study-plan no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light jurisdiction no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light support no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light report no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light content no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light legal no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light review no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px light saved no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark today no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark study no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark progress no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark profile no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark plans no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark membership no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark downloads no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark appearance no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark account no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark study-plan no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark jurisdiction no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark support no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark report no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark content no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark legal no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark review no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "430px dark saved no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "passed": true
+    }
+  ],
+  "passed": 112,
+  "js_errors": [],
+  "scope": "HTML companion only; simulated accounts/store outcomes; no live Apple/Google/RevenueCat/Supabase/native runtime.",
+  "generated_at": "2026-10-06T20:04:05Z"
+}

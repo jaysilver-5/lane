@@ -1,0 +1,1 @@
+PASS: 132 browser route/viewport checks; no page JavaScript errors. Native validation is separate.

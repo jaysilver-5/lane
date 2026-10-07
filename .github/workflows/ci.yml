@@ -1,0 +1,23 @@
+name: FirstLane source checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      EXPO_PUBLIC_APP_MODE: connected
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run content:bundle
+      - run: npm run check
+      - run: npm run web:export
+      # No production secrets, signing, deployment or automatic approval mutation.

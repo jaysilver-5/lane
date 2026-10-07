@@ -1,0 +1,1214 @@
+{
+  "scope": "Static landing and internal browser companion only; not React Native or native keyboard/store QA.",
+  "viewports": [
+    [
+      320,
+      568
+    ],
+    [
+      375,
+      667
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      430,
+      932
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      1440,
+      900
+    ]
+  ],
+  "checks": [
+    {
+      "surface": "landing",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "welcome",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "today",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "plans",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "account",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-in",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-up",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "checkout",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "membership",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "downloads",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "support",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "legal",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "jurisdiction",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study-plan",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "appearance",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "progress",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "history",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "review",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "saved",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "content",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "report",
+      "viewport": [
+        320,
+        568
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "landing",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "welcome",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "today",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "plans",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "account",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-in",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-up",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "checkout",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "membership",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "downloads",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "support",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "legal",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "jurisdiction",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study-plan",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "appearance",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "progress",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "history",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "review",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "saved",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "content",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "report",
+      "viewport": [
+        375,
+        667
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "landing",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "welcome",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "today",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "plans",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "account",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-in",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-up",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "checkout",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "membership",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "downloads",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "support",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "legal",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "jurisdiction",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study-plan",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "appearance",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "progress",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "history",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "review",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "saved",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "content",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "report",
+      "viewport": [
+        390,
+        844
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "landing",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "welcome",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "today",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "plans",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "account",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-in",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-up",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "checkout",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "membership",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "downloads",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "support",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "legal",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "jurisdiction",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study-plan",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "appearance",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "progress",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "history",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "review",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "saved",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "content",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "report",
+      "viewport": [
+        430,
+        932
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "landing",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "welcome",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "today",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "plans",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "account",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-in",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-up",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "checkout",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "membership",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "downloads",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "support",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "legal",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "jurisdiction",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study-plan",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "appearance",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "progress",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "history",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "review",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "saved",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "content",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "report",
+      "viewport": [
+        768,
+        1024
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "landing",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "welcome",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "today",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "plans",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "account",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-in",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "sign-up",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "checkout",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "membership",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "downloads",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "support",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "legal",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "jurisdiction",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "study-plan",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "appearance",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "progress",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "history",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "review",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "saved",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "content",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    },
+    {
+      "surface": "internal-browser-companion",
+      "route": "report",
+      "viewport": [
+        1440,
+        900
+      ],
+      "no_horizontal_overflow": true
+    }
+  ],
+  "browser_errors": []
+}

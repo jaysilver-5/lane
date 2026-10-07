@@ -1,0 +1,9 @@
+{
+  "pack_key": "CA-ON-G1",
+  "version": "0.1.0",
+  "visibility": "internal-review-only",
+  "publishable": false,
+  "questions": 500,
+  "sha256": "3077e13fd32d442d9b0c1b19f902e0bde1c2d7582fce264d01684133696b9b3f",
+  "note": "Hash checks file integrity; it is not a signature, approval or entitlement."
+}

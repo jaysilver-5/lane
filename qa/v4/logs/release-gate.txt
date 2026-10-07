@@ -1,0 +1,26 @@
+RELEASE BLOCKED
+ - Set EXPO_PUBLIC_APP_MODE=production for the release build.
+ - Missing EXPO_PUBLIC_SUPABASE_URL.
+ - Missing EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY.
+ - Missing EXPO_PUBLIC_REVENUECAT_IOS_KEY.
+ - Missing EXPO_PUBLIC_REVENUECAT_ANDROID_KEY.
+ - Missing EXPO_PUBLIC_SUPPORT_EMAIL.
+ - Missing EXPO_PUBLIC_OPERATOR_NAME.
+ - Missing EXPO_PUBLIC_PRIVACY_URL.
+ - Missing EXPO_PUBLIC_TERMS_URL.
+ - Missing EXPO_PUBLIC_ACCOUNT_DELETION_URL.
+ - Missing FIRSTLANE_IOS_BUNDLE_ID.
+ - Missing FIRSTLANE_ANDROID_PACKAGE.
+ - Missing EAS_PROJECT_ID.
+ - Missing or unreadable content/release/ontario-g1.approved.json. Drafts are never promoted automatically.
+ - Generate the approved 40-question client bundle with npm run content:bundle.
+ - Release acceptance still needed: storePricingVerified.
+ - Release acceptance still needed: iosSandboxPassed.
+ - Release acceptance still needed: androidSandboxPassed.
+ - Release acceptance still needed: refundAndRestorePassed.
+ - Release acceptance still needed: accountDeletionPassed.
+ - Release acceptance still needed: backendSecurityPassed.
+ - Release acceptance still needed: nativeAccessibilityPassed.
+ - Release acceptance still needed: legalReviewed.
+ - Release acceptance still needed: contentDeliveryPassed.
+ - Release acceptance needs a named reviewer and date.

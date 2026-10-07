@@ -1,0 +1,8 @@
+{
+  "questions": 500,
+  "concepts": 250,
+  "roadSigns": 200,
+  "roadRules": 300,
+  "sourceRecords": 20,
+  "status": "STRUCTURE PASS — independent approval is still pending"
+}

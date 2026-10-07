@@ -1,0 +1,10 @@
+project_id = "firstlane"
+[functions.delete-account]
+# The function validates the bearer token with Supabase Auth itself.
+verify_jwt = false
+
+[functions.revenuecat-webhook]
+verify_jwt = false
+
+[functions.content-pack]
+verify_jwt = false

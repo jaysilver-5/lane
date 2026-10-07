@@ -1,0 +1,402 @@
+{
+  "scope": "Source-rendered DOM design adapter only; not Expo, React Native, store or backend QA.",
+  "renderCases": 64,
+  "cases": [
+    {
+      "screen": "home",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "study",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "progress",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "profile",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "plans",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "sign-up",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "results",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "appearance",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "topic",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "exam",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "checkout",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "onboarding",
+      "viewport": "320x568",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "home",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "study",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "progress",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "profile",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "plans",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "sign-up",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "results",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "appearance",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "topic",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "exam",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "checkout",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "onboarding",
+      "viewport": "375x667",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "home",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "study",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "progress",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "profile",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "plans",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "sign-up",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "results",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "appearance",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "topic",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "exam",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "checkout",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "onboarding",
+      "viewport": "390x844",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "home",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "study",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "progress",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "profile",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "plans",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "sign-up",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "results",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "appearance",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "topic",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "exam",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "checkout",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "onboarding",
+      "viewport": "430x932",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "home",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "study",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "progress",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "profile",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "plans",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "sign-up",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "results",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "appearance",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "topic",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "exam",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "checkout",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "onboarding",
+      "viewport": "1100x960",
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "screen": "home",
+      "viewport": "390x844",
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "screen": "study",
+      "viewport": "390x844",
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "screen": "progress",
+      "viewport": "390x844",
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "screen": "profile",
+      "viewport": "390x844",
+      "theme": "dark",
+      "passed": true
+    }
+  ],
+  "interactions": [
+    "consent: pointer, Space, Enter, label, checked state, focus outline",
+    "dock navigation and selected state",
+    "three access-tier plan labels"
+  ],
+  "pageErrors": [],
+  "limitations": [
+    "Fixture state and navigation adapter",
+    "No real React reconciliation or RN layout engine",
+    "No live auth or payment",
+    "No native accessibility certification"
+  ]
+}

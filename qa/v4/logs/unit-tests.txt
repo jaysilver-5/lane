@@ -1,0 +1,430 @@
+TAP version 13
+# Subtest: guest has exactly 10 fixed questions
+ok 1 - guest has exactly 10 fixed questions
+  ---
+  duration_ms: 0.988922
+  type: 'test'
+  ...
+# Subtest: free has exactly 40 fixed questions
+ok 2 - free has exactly 40 fixed questions
+  ---
+  duration_ms: 0.138599
+  type: 'test'
+  ...
+# Subtest: free manifest includes 20 signs and 20 rules
+ok 3 - free manifest includes 20 signs and 20 rules
+  ---
+  duration_ms: 0.193512
+  type: 'test'
+  ...
+# Subtest: manifest IDs exist, unique and guest is subset
+ok 4 - manifest IDs exist, unique and guest is subset
+  ---
+  duration_ms: 0.626726
+  type: 'test'
+  ...
+# Subtest: unverified identity remains guest access
+ok 5 - unverified identity remains guest access
+  ---
+  duration_ms: 0.141113
+  type: 'test'
+  ...
+# Subtest: lifetime purchase unlocks full bank
+ok 6 - lifetime purchase unlocks full bank
+  ---
+  duration_ms: 0.117688
+  type: 'test'
+  ...
+# Subtest: lifetime purchase has no expiry
+ok 7 - lifetime purchase has no expiry
+  ---
+  duration_ms: 0.149445
+  type: 'test'
+  ...
+# Subtest: refund revokes lifetime access
+ok 8 - refund revokes lifetime access
+  ---
+  duration_ms: 0.413994
+  type: 'test'
+  ...
+# Subtest: legacy dated purchase still works only while active
+ok 9 - legacy dated purchase still works only while active
+  ---
+  duration_ms: 0.355316
+  type: 'test'
+  ...
+# Subtest: 40-question rehearsals and offline packs require Complete
+ok 10 - 40-question rehearsals and offline packs require Complete
+  ---
+  duration_ms: 0.386413
+  type: 'test'
+  ...
+# Subtest: premium direct question links are not allowed on Free
+ok 11 - premium direct question links are not allowed on Free
+  ---
+  duration_ms: 0.162205
+  type: 'test'
+  ...
+# Subtest: 500 free sessions never rotate in premium questions
+ok 12 - 500 free sessions never rotate in premium questions
+  ---
+  duration_ms: 9.216508
+  type: 'test'
+  ...
+# Subtest: publication restriction stays in place
+ok 13 - publication restriction stays in place
+  ---
+  duration_ms: 0.320083
+  type: 'test'
+  ...
+# Subtest: webhook RPC is service-role only
+ok 14 - webhook RPC is service-role only
+  ---
+  duration_ms: 0.201474
+  type: 'test'
+  ...
+# Subtest: offline snapshot can have a bounded verification window without changing lifetime ownership
+ok 15 - offline snapshot can have a bounded verification window without changing lifetime ownership
+  ---
+  duration_ms: 0.093892
+  type: 'test'
+  ...
+# Subtest: commercial constants match the final offer
+ok 16 - commercial constants match the final offer
+  ---
+  duration_ms: 0.058518
+  type: 'test'
+  ...
+# Subtest: 500 structurally valid source-linked draft questions
+ok 17 - 500 structurally valid source-linked draft questions
+  ---
+  duration_ms: 2.747376
+  type: 'test'
+  ...
+# Subtest: draft status is preserved for every question
+ok 18 - draft status is preserved for every question
+  ---
+  duration_ms: 0.372963
+  type: 'test'
+  ...
+# Subtest: shuffle returns permutation without mutating input
+ok 19 - shuffle returns permutation without mutating input
+  ---
+  duration_ms: 0.269807
+  type: 'test'
+  ...
+# Subtest: correctness follows stable IDs after option shuffling
+ok 20 - correctness follows stable IDs after option shuffling
+  ---
+  duration_ms: 1.925466
+  type: 'test'
+  ...
+# Subtest: invalid option is rejected rather than accepted as wrong
+ok 21 - invalid option is rejected rather than accepted as wrong
+  ---
+  duration_ms: 0.233933
+  type: 'test'
+  ...
+# Subtest: daily practice goals are correctly balanced with no paired concepts
+ok 22 - daily practice goals are correctly balanced with no paired concepts
+  ---
+  duration_ms: 1.078217
+  type: 'test'
+  ...
+# Subtest: 100 rehearsal sessions contain 20 signs and 20 rules, without paired concepts
+ok 23 - 100 rehearsal sessions contain 20 signs and 20 rules, without paired concepts
+  ---
+  duration_ms: 10.848119
+  type: 'test'
+  ...
+# Subtest: never mixes other jurisdictions
+ok 24 - never mixes other jurisdictions
+  ---
+  duration_ms: 0.395908
+  type: 'test'
+  ...
+# Subtest: topic selection only uses that topic
+ok 25 - topic selection only uses that topic
+  ---
+  duration_ms: 0.456559
+  type: 'test'
+  ...
+# Subtest: saved and mistake modes cannot include unrequested items
+ok 26 - saved and mistake modes cannot include unrequested items
+  ---
+  duration_ms: 0.627537
+  type: 'test'
+  ...
+# Subtest: latest correct attempt clears a conceptual mistake across paired variants
+ok 27 - latest correct attempt clears a conceptual mistake across paired variants
+  ---
+  duration_ms: 0.636841
+  type: 'test'
+  ...
+# Subtest: summary reports actual denominators and handles zero
+ok 28 - summary reports actual denominators and handles zero
+  ---
+  duration_ms: 0.421766
+  type: 'test'
+  ...
+# Subtest: streak counts local calendar days and permits yesterday as latest
+ok 29 - streak counts local calendar days and permits yesterday as latest
+  ---
+  duration_ms: 15.247378
+  type: 'test'
+  ...
+# Subtest: validator catches duplicate revisions and bad answer IDs
+ok 30 - validator catches duplicate revisions and bad answer IDs
+  ---
+  duration_ms: 0.199461
+  type: 'test'
+  ...
+# Subtest: offer is exactly CA$14.99, immutable, one-time Ontario ownership
+ok 31 - offer is exactly CA$14.99, immutable, one-time Ontario ownership
+  ---
+  duration_ms: 2.317968
+  type: 'test'
+  ...
+# Subtest: production maps to connected; unset mode never simulates a purchase
+ok 32 - production maps to connected; unset mode never simulates a purchase
+  ---
+  duration_ms: 0.134022
+  type: 'test'
+  ...
+# Subtest: unknown environment mode fails rather than silently enabling demo
+ok 33 - unknown environment mode fails rather than silently enabling demo
+  ---
+  duration_ms: 0.520225
+  type: 'test'
+  ...
+# Subtest: rejects unsafe grant: empty object
+ok 34 - rejects unsafe grant: empty object
+  ---
+  duration_ms: 0.163447
+  type: 'test'
+  ...
+# Subtest: rejects unsafe grant: implicit lifetime
+ok 35 - rejects unsafe grant: implicit lifetime
+  ---
+  duration_ms: 0.085088
+  type: 'test'
+  ...
+# Subtest: rejects unsafe grant: empty start
+ok 36 - rejects unsafe grant: empty start
+  ---
+  duration_ms: 0.068293
+  type: 'test'
+  ...
+# Subtest: rejects unsafe grant: invalid start
+ok 37 - rejects unsafe grant: invalid start
+  ---
+  duration_ms: 0.055394
+  type: 'test'
+  ...
+# Subtest: rejects unsafe grant: future start
+ok 38 - rejects unsafe grant: future start
+  ---
+  duration_ms: 0.067582
+  type: 'test'
+  ...
+# Subtest: rejects unsafe grant: invalid end
+ok 39 - rejects unsafe grant: invalid end
+  ---
+  duration_ms: 0.200573
+  type: 'test'
+  ...
+# Subtest: draft shape can be tested internally without approval
+ok 40 - draft shape can be tested internally without approval
+  ---
+  duration_ms: 1.17286
+  type: 'test'
+  ...
+# Subtest: default content validation rejects unapproved material
+ok 41 - default content validation rejects unapproved material
+  ---
+  duration_ms: 0.211399
+  type: 'test'
+  ...
+# Subtest: malformed and missing download payloads reject safely
+ok 42 - malformed and missing download payloads reject safely
+  ---
+  duration_ms: 0.133972
+  type: 'test'
+  ...
+# Subtest: content enforces matching version, jurisdiction and count
+ok 43 - content enforces matching version, jurisdiction and count
+  ---
+  duration_ms: 0.142135
+  type: 'test'
+  ...
+# Subtest: duplicate questions and revisions reject
+ok 44 - duplicate questions and revisions reject
+  ---
+  duration_ms: 0.245511
+  type: 'test'
+  ...
+# Subtest: invalid answer keys and malformed answer options reject
+ok 45 - invalid answer keys and malformed answer options reject
+  ---
+  duration_ms: 0.23224
+  type: 'test'
+  ...
+# Subtest: downloaded evidence must use HTTPS
+ok 46 - downloaded evidence must use HTTPS
+  ---
+  duration_ms: 0.113431
+  type: 'test'
+  ...
+# Subtest: required visual learning material cannot be silently dropped
+ok 47 - required visual learning material cannot be silently dropped
+  ---
+  duration_ms: 0.116256
+  type: 'test'
+  ...
+# Subtest: approval must exist on each exact question revision
+ok 48 - approval must exist on each exact question revision
+  ---
+  duration_ms: 0.135124
+  type: 'test'
+  ...
+# Subtest: complete pack replaces sample revision by ID without duplicate questions
+ok 49 - complete pack replaces sample revision by ID without duplicate questions
+  ---
+  duration_ms: 0.180062
+  type: 'test'
+  ...
+# Subtest: connected source bundle includes only the fixed 40 samples
+ok 50 - connected source bundle includes only the fixed 40 samples
+  ---
+  duration_ms: 0.358961
+  type: 'test'
+  ...
+# Subtest: release is blocked without actual external setup and content approval
+ok 51 - release is blocked without actual external setup and content approval
+  ---
+  duration_ms: 0.47746
+  type: 'test'
+  ...
+# Subtest: truthy text is not public content approval
+ok 52 - truthy text is not public content approval
+  ---
+  duration_ms: 0.207964
+  type: 'test'
+  ...
+# Subtest: secret/public key and publisher placeholder mistakes block release
+ok 53 - secret/public key and publisher placeholder mistakes block release
+  ---
+  duration_ms: 0.864144
+  type: 'test'
+  ...
+# Subtest: content approval records remain pending after build tooling
+ok 54 - content approval records remain pending after build tooling
+  ---
+  duration_ms: 0.237758
+  type: 'test'
+  ...
+# Subtest: valid completed attempt survives local normalization
+ok 55 - valid completed attempt survives local normalization
+  ---
+  duration_ms: 1.495046
+  type: 'test'
+  ...
+# Subtest: sync merges attempts from two devices without duplicates
+ok 56 - sync merges attempts from two devices without duplicates
+  ---
+  duration_ms: 6.768975
+  type: 'test'
+  ...
+# Subtest: incomplete or malformed attempts are not uploaded as completed
+ok 57 - incomplete or malformed attempts are not uploaded as completed
+  ---
+  duration_ms: 0.175515
+  type: 'test'
+  ...
+# Subtest: bookmark removal tombstones prevent resurrection on sync
+ok 58 - bookmark removal tombstones prevent resurrection on sync
+  ---
+  duration_ms: 0.137527
+  type: 'test'
+  ...
+# Subtest: bookmark removal wins a timestamp tie
+ok 59 - bookmark removal wins a timestamp tie
+  ---
+  duration_ms: 0.101153
+  type: 'test'
+  ...
+# Subtest: legacy bookmarks migrate and invalid preferences cannot replace defaults
+ok 60 - legacy bookmarks migrate and invalid preferences cannot replace defaults
+  ---
+  duration_ms: 0.166782
+  type: 'test'
+  ...
+# Subtest: normalization is isolated from the default object
+ok 61 - normalization is isolated from the default object
+  ---
+  duration_ms: 0.080662
+  type: 'test'
+  ...
+# Subtest: store build and reference database price are aligned
+ok 62 - store build and reference database price are aligned
+  ---
+  duration_ms: 0.194243
+  type: 'test'
+  ...
+# Subtest: source guard: Canadian checkout uses the actual store product and rejects a price mismatch
+ok 63 - source guard: Canadian checkout uses the actual store product and rejects a price mismatch
+  ---
+  duration_ms: 0.127953
+  type: 'test'
+  ...
+# Subtest: source guard: checkout waits for server access, not just SDK success
+ok 64 - source guard: checkout waits for server access, not just SDK success
+  ---
+  duration_ms: 0.184258
+  type: 'test'
+  ...
+# Subtest: source guard: sensitive requests pin the originating bearer session
+ok 65 - source guard: sensitive requests pin the originating bearer session
+  ---
+  duration_ms: 0.363038
+  type: 'test'
+  ...
+# Subtest: source guard: owner-scoped cache, atomic rollback and deletion
+ok 66 - source guard: owner-scoped cache, atomic rollback and deletion
+  ---
+  duration_ms: 0.116425
+  type: 'test'
+  ...
+# Subtest: source guard: keyboard, readable multiline fields and immediate duplicate-tap lock
+ok 67 - source guard: keyboard, readable multiline fields and immediate duplicate-tap lock
+  ---
+  duration_ms: 0.107462
+  type: 'test'
+  ...
+# Subtest: literal app navigation routes resolve to real screens
+ok 68 - literal app navigation routes resolve to real screens
+  ---
+  duration_ms: 2.804653
+  type: 'test'
+  ...
+# Subtest: equal-instant bookmark deletion also wins with different ISO formatting
+ok 69 - equal-instant bookmark deletion also wins with different ISO formatting
+  ---
+  duration_ms: 0.13235
+  type: 'test'
+  ...
+# Subtest: package and lockfile dependency declarations match
+ok 70 - package and lockfile dependency declarations match
+  ---
+  duration_ms: 2.242834
+  type: 'test'
+  ...
+1..70
+# tests 70
+# suites 0
+# pass 70
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 108.742205

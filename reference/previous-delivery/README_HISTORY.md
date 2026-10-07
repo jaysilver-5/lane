@@ -1,0 +1,1 @@
+Historical 0.4.0 handoff, manifests, and retired companion scripts. Not current validation. Do not run these scripts against the refreshed preview. See ../../QA_REPORT.md and ../../REFRESH_HANDOFF.md.

@@ -1,0 +1,17 @@
+{
+  "storePricingVerified": false,
+  "iosSandboxPassed": false,
+  "androidSandboxPassed": false,
+  "refundAndRestorePassed": false,
+  "accountDeletionPassed": false,
+  "backendSecurityPassed": false,
+  "nativeAccessibilityPassed": false,
+  "legalReviewed": false,
+  "contentDeliveryPassed": false,
+  "reviewer": "",
+  "reviewedAt": "",
+  "note": "Set a check to true only after the corresponding real acceptance test. Source checks alone are not store/device approval.",
+  "dependencyReviewPassed": false,
+  "refundReversalPassed": false,
+  "expoWebRegressionPassed": false
+}
