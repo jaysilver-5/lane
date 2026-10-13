@@ -9,7 +9,7 @@ export const config = {
     isProduction: stage === 'production',
     packKey: OFFER.packKey, packName: 'Ontario G1', contentVersion: '0.1.0',
     offer: { amount: OFFER.amountMinor, currency: OFFER.currency, label: OFFER.priceLabel, term: OFFER.term, autoRenew: OFFER.autoRenew },
-    supportEmail: process.env.EXPO_PUBLIC_SUPPORT_EMAIL || '',
+    supportEmail: process.env.EXPO_PUBLIC_SUPPORT_EMAIL || 'support@getfirstlane.com',
     privacyUrl: process.env.EXPO_PUBLIC_PRIVACY_URL || '',
     termsUrl: process.env.EXPO_PUBLIC_TERMS_URL || '',
     deletionUrl: process.env.EXPO_PUBLIC_ACCOUNT_DELETION_URL || '',

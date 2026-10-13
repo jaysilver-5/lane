@@ -32,7 +32,7 @@ html{scroll-behavior:smooth}body{overflow-wrap:break-word}.hero-visual{overflow:
 <section class="section" id="pricing"><div class="wrap"><div class="section-head"><div class="eyebrow">Simple access</div><h2>Free to start. One payment to go all the way.</h2><p>No trial timer, no weekly plan, and no automatic renewal.</p></div><div class="price-grid"><article class="free"><div class="plan-tag">Lane Free</div><div class="price">CA$0</div><p>Use Lane properly before deciding whether Complete is for you.</p><ul class="features"><li><span class="tick">✓</span>40 fixed Ontario sample questions</li><li><span class="tick">✓</span>Explanations and sample review</li><li><span class="tick">✓</span>Saved free progress</li><li><span class="tick">✓</span>No expiry</li></ul></article><article class="paid"><div class="plan-tag" style="color:var(--lime)">Ontario G1 Complete</div><div class="price">CA$14.99 <small>once</small></div><p>One purchase unlocks the Ontario pack in Lane. Future jurisdictions are separate packs.</p><ul class="features"><li><span class="tick">✓</span>Full Ontario practice question bank</li><li><span class="tick">✓</span>Topic practice + full mock sessions</li><li><span class="tick">✓</span>Mistake-focused revision + bookmarks</li><li><span class="tick">✓</span>Offline study + progress tracking</li><li><span class="tick">✓</span>No subscription. No access expiry.</li></ul></article></div><div class="trust"><div><strong>Pay in the app</strong><br>Apple or Google handles checkout.</div><div><strong>Your purchase restores</strong><br>Use the same account/store identity.</div><div><strong>Ontario stays yours</strong><br>No two-month countdown.</div><div><strong>More places later</strong><br>New jurisdictions live in the same Lane app.</div></div></div></section>
 <section class="final"><div class="wrap final-card"><h2>Your next practice session can start here.</h2><div class="store-row" id="bottomStores"></div></div></section>
 </main>
-<footer><div class="wrap footer-row"><div class="brand" style="font-size:20px"><span class="brand-dot" style="width:10px;height:10px"></span>lane.</div><div class="disclaimer">Lane is an independent driving-test preparation product. Practice scores are not pass guarantees. © Lane. <span id="siteOperator"></span><nav id="policyLinks" aria-label="Policies"></nav></div></div></footer>
+<footer><div class="wrap footer-row"><div class="brand" style="font-size:20px"><span class="brand-dot" style="width:10px;height:10px"></span>lane.</div><div class="disclaimer">FirstLane is an independent driving-test preparation product. Practice scores are not pass guarantees. © FirstLane.<nav id="policyLinks" aria-label="Policies"></nav></div></div></footer>
 <script src="config.js"></script>
 <script>
 const STORE_LINKS=window.LANE_SITE_CONFIG||{};
@@ -45,7 +45,7 @@ function storeButton(kind){
  element.innerHTML=icons[kind]+'<span><small>'+(ready?(apple?'Download on the':'Get it on'):'Coming to the')+'</small><strong>'+label+'</strong></span>';
  return element.outerHTML;
 }
-const operator=document.getElementById('siteOperator');operator.textContent=STORE_LINKS.operator?'Operated by '+STORE_LINKS.operator+'.':'';
+
 for(const [key,label] of [['privacy','Privacy'],['terms','Terms'],['deletion','Delete account']]){
  try{const url=new URL(STORE_LINKS[key]);if(url.protocol!=='https:')continue;const a=document.createElement('a');a.href=url.href;a.textContent=label;a.rel='noopener';document.getElementById('policyLinks').append(a);}catch{}
 }

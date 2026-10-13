@@ -5,7 +5,7 @@ window.LANE_SITE_CONFIG = {
   "privacy": "",
   "terms": "",
   "deletion": "",
-  "supportEmail": "",
+  "supportEmail": "support@getfirstlane.com",
   "operator": "",
   "released": false
 };

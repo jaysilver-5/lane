@@ -33,6 +33,6 @@ export default function Profile() {
       <MenuItem icon="book" title="Learning information" subtitle="Sources and content review" onPress={() => router.push('/content-status')}/>
     </Card></View>
     <Muted size={10} style={{ textAlign: 'center', paddingVertical: 10 }}>FirstLane · Get road ready.
-Independent preparation by Tervlon Labs Limited.</Muted>
+Independent driving-test preparation.</Muted>
   </Screen>;
 }

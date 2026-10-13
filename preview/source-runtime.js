@@ -24,7 +24,7 @@ function load(name,from='/'){if(!name.startsWith('.')){
  const bits=(from.slice(0,from.lastIndexOf('/'))+'/'+name).split('/'),clean=[];for(const b of bits)if(b==='..')clean.pop();else if(b&&b!=='.')clean.push(b);const id='/'+clean.join('/');
  if(id.endsWith('firstlane-mark.png'))return LOGO;
  if(id==='/src/state/AppState')return {useApp:()=>app(),useStats:()=>load('./src/domain/engine.mjs','/').activity(state.sessions)};
- if(id==='/src/config')return {config:{mode:'demo',isProduction:false,packKey:'CA-ON-G1',offer:{label:'CA$14.99',amount:1499,currency:'CAD'}}};
+ if(id==='/src/config')return {config:{mode:'demo',isProduction:false,packKey:'CA-ON-G1',supportEmail:'support@getfirstlane.com',offer:{label:'CA$14.99',amount:1499,currency:'CAD'}}};
  if(id==='/src/lib/supabase')return {humanError:e=>e?.message||String(e),requireSupabase:()=>{throw new Error('Visual preview only.')}};
  if(id==='/src/lib/demoAccount')return {validateCredentials:(email,password)=>{if(!email.includes('@')||password.length<8)throw new Error('Enter a valid email and at least 8 characters.');},demoRegister:async()=>{throw new Error('Design preview only. No account was created.');}};
  if(id==='/src/lib/billing')return {clearPendingPurchase:async()=>{},fetchStoreOffer:async()=>({priceString:'CA$14.99'}),pendingPurchase:async()=>false,purchasePreparation:async()=>({status:'cancelled'})};
