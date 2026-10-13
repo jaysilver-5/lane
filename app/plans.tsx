@@ -28,6 +28,7 @@ export default function Plans() {
       {access.kind === 'guest' ? <Muted size={11}>Your current guest access has 10 fixed questions.</Muted> : null}
     </Card>
     <Row style={{ justifyContent: 'center', gap: 7 }}><Icon name="shield" size={15} color={colors.success}/><Muted size={11}>No auto-renewal. No payment details for free access.</Muted></Row>
+    <Muted size={11} style={{ textAlign: 'center' }}>Independent study only. This purchase does not include a licence, government application, test booking or pass guarantee.</Muted>
     <Button kind="ghost" icon="refresh" onPress={() => router.push('/membership')}>Restore a purchase</Button>
     <Button kind="ghost" icon={null} onPress={() => router.push('/legal')}>Privacy & purchase terms</Button>
   </Screen>;

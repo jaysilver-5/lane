@@ -97,6 +97,11 @@ test('results use portable SVG transform and an uncrowded score caption',()=>{
 test('checkout never inserts its empty error string into a View',()=>{
   const text=read('app/checkout.tsx');assert.doesNotMatch(text,/\{error\s*&&/);assert.match(text,/\{!!error && <Note/);
 });
+test('legal, support and purchase screens state the independent licensing boundary',()=>{
+  const legal=read('app/legal.tsx'),support=read('app/support.tsx'),plans=read('app/plans.tsx'),checkout=read('app/checkout.tsx');
+  for(const phrase of ['does not issue','submit licence applications','book tests or government appointments','collect government fees'])assert.match(legal,new RegExp(phrase,'i'));
+  assert.match(support,/book my test or handle my licence/i);assert.match(plans,/does not include a licence/i);assert.match(checkout,/does not issue a licence/i);
+});
 test('web reminders do not evaluate native Notifications',()=>{
   assert.doesNotMatch(read('src/lib/reminders.web.ts'),/from ['"]expo-notifications/);
 });

@@ -7,6 +7,7 @@ import { Icon } from '../src/components/Icon';
 import { Button,Card,Copy,Heading,Muted,Note,Row,Screen,SectionHead } from '../src/components/UI';
 const faq=[
  ['Is this the official G1 test?','No. FirstLane is independent preparation. FirstLane contains original practice questions, not live exam questions, and is not endorsed by MTO or DriveTest.'],
+ ['Can FirstLane book my test or handle my licence?','No. FirstLane is a study product only. It does not issue, renew or replace a driver’s licence, submit an application, book a DriveTest test or government appointment, or collect government fees. Use the official Ontario and DriveTest services for those tasks.'],
  ['What is free?','Guests get 10 fixed sample questions. A verified FirstLane account gets 40 fixed samples free forever. The complete Ontario bank is a separate one-time purchase.'],
  ['Is Ontario G1 Complete a subscription?',`No. Ontario G1 Complete is ${config.offer.label} once in Canada. There is no automatic renewal and no access expiry for the Ontario pack.`],
  ['Can I practise without internet?','Offline practice is included with Ontario G1 Complete. FirstLane needs a connection at least every 30 days to refresh purchase access and connectivity for sign-in, purchase restoration and account services.'],
