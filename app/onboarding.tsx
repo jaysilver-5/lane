@@ -42,7 +42,7 @@ export default function Onboarding() {
                 <Row style={{ justifyContent: 'space-between' }}><Copy size={22} weight="700">Ontario G1</Copy><Chip selected>Selected</Chip></Row>
                 <Muted>Canada · Car learner knowledge test</Muted>
             </View>
-            <Note tone="warning">FirstLane is independent practice, not an official exam bank or a guarantee of passing.</Note>
+            <Note tone="warning">FirstLane is independent study software. It does not represent a government agency and is not affiliated with MTO or DriveTest. Practice results do not guarantee a pass.</Note>
         </View>,
         <View key="goal" style={{ gap: compact ? 12 : 18, justifyContent: 'center' }}>
             <Heading eyebrow="02 / MAKE IT YOURS" sub="Small, repeatable sessions make progress easier.">A pace that{`\n`}fits your life.</Heading>

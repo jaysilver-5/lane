@@ -56,14 +56,14 @@ with sync_playwright() as p:
         results.append({'screen':screen,'viewport':'390x844','theme':'dark','passed':True})
         if screen=='home':page.locator('#device').screenshot(path=str(OUT/'home-dark-design-preview.png'))
     show(page,'sign-up')
-    checkbox=page.get_by_role('checkbox')
+    checkbox=page.get_by_role('checkbox', name='I agree to the terms and have read the privacy notice.', exact=True)
     expect(checkbox).not_to_be_checked()
     checkbox.click();page.wait_for_timeout(80);expect(checkbox).to_be_checked()
     assert checkbox.get_attribute('aria-checked')=='true'
     checkbox.press('Space');page.wait_for_timeout(80);expect(checkbox).not_to_be_checked()
     checkbox.press('Enter');page.wait_for_timeout(80);expect(checkbox).to_be_checked()
-    assert 'solid' in page.locator('label').evaluate('(e)=>e.style.outline')
-    page.locator('label').click();page.wait_for_timeout(80);expect(checkbox).not_to_be_checked()
+    assert 'solid' in page.locator('label').filter(has_text='I agree to the terms and have read the privacy notice.').evaluate('(e)=>e.style.outline')
+    page.get_by_text('I agree to the terms and have read the privacy notice.', exact=True).click();page.wait_for_timeout(80);expect(checkbox).not_to_be_checked()
     interactions=['consent: pointer, Space, Enter, label, checked state, focus outline']
     show(page,'home')
     page.get_by_role('tab',name='Practice',exact=True).click()

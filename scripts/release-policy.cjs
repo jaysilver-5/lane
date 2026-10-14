@@ -31,6 +31,7 @@ function releaseIssues(root, env, { checkBundle = true } = {}) {
   for (const key of required) if (!env[key]?.trim()) issues.push(`Missing ${key}.`);
   for (const key of ['EXPO_PUBLIC_SUPABASE_URL','EXPO_PUBLIC_PRIVACY_URL','EXPO_PUBLIC_TERMS_URL','EXPO_PUBLIC_ACCOUNT_DELETION_URL']) if (env[key]) { try { const u = new URL(env[key]); if (u.protocol !== 'https:' || /(^|\.)(example\.(com|org)|localhost)$/.test(u.hostname)) throw new Error(); } catch { issues.push(`Invalid production HTTPS URL: ${key}.`); } }
   if (env.EXPO_PUBLIC_SUPPORT_EMAIL && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(env.EXPO_PUBLIC_SUPPORT_EMAIL)) issues.push('Support email is invalid.');
+  if (env.EXPO_PUBLIC_SUPPORT_EMAIL && !/^[^\s@]+@getfirstlane\.com$/i.test(env.EXPO_PUBLIC_SUPPORT_EMAIL)) issues.push('Support email must use the getfirstlane.com domain.');
   for (const key of ['FIRSTLANE_IOS_BUNDLE_ID','FIRSTLANE_ANDROID_PACKAGE']) if (env[key] && (!/^[a-zA-Z][\w]*(\.[a-zA-Z][\w]*){2,}$/.test(env[key]) || /yourcompany|example|\.dev$/.test(env[key]))) issues.push(`Use the publisher's registered identifier for ${key}.`);
   if (env.EAS_PROJECT_ID && !/^[\da-f]{8}(-[\da-f]{4}){3}-[\da-f]{12}$/i.test(env.EAS_PROJECT_ID)) issues.push('EAS_PROJECT_ID must be a project UUID.');
   for (const [key,prefix] of [['EXPO_PUBLIC_REVENUECAT_IOS_KEY','appl_'],['EXPO_PUBLIC_REVENUECAT_ANDROID_KEY','goog_']]) if (env[key] && !env[key].startsWith(prefix)) issues.push(`${key} must be the platform public SDK key, not a test/secret key.`);

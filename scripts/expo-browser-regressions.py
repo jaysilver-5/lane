@@ -54,7 +54,7 @@ with sync_playwright() as p:
         assert active_after['id']==active_before['id'] and len(active_after['answers'])==1
         checks.append('Free session identity and answered progress survive a premium gate')
         page.goto(base+'/auth/sign-up',wait_until='domcontentloaded')
-        checkbox=page.get_by_role('checkbox')
+        checkbox=page.get_by_role('checkbox', name='I agree to the terms and have read the privacy notice.', exact=True)
         expect(checkbox).not_to_be_checked()
         checkbox.click();expect(checkbox).to_be_checked();expect(checkbox).to_have_attribute('aria-checked','true')
         checkbox.press('Space');expect(checkbox).not_to_be_checked()

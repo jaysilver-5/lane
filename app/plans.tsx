@@ -16,10 +16,10 @@ export default function Plans() {
     </View>
     <Card style={{ backgroundColor: colors.sage, borderColor: colors.sageLine, padding: 20, gap: 16 }}>
       <Row style={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}><Eyebrow color={colors.success}>GO THE WHOLE WAY</Eyebrow><Chip selected>ONE-TIME</Chip></Row>
-      <View style={{ gap: 5 }}><Copy size={24} weight="600">Ontario G1 Complete</Copy><Row style={{ alignItems: 'baseline', gap: 7 }}><Copy size={42} weight="600" style={{ lineHeight: 53 }}>{config.offer.label}</Copy><Muted size={13}>once</Muted></Row><Muted size={13}>Your Ontario pack. No subscription. No expiry.</Muted></View>
+      <View style={{ gap: 5 }}><Copy size={24} weight="600">Ontario G1 Complete</Copy><Row style={{ alignItems: 'baseline', gap: 7 }}><Copy size={42} weight="600" style={{ lineHeight: 53 }}>{config.offer.label}</Copy><Muted size={13}>once</Muted></Row><Muted size={13}>Your Ontario pack. One payment, no automatic renewal.</Muted></View>
       {['All 500 practice questions', 'Topic practice and full rehearsals', 'Explanations, saved questions and mistake review', 'Offline practice in the installed app', 'Future corrections to the Ontario pack'].map(text => <Row key={text} style={{ alignItems: 'flex-start' }}><Icon name="check" size={17} color={colors.success}/><Copy size={13} style={{ flex: 1 }}>{text}</Copy></Row>)}
       <Button kind="dark" onPress={() => access.full ? router.push('/membership') : checkout()}>{access.full ? 'View my purchase' : 'Unlock Ontario G1 Complete'}</Button>
-      <Muted size={11} style={{ textAlign: 'center' }}>Ontario pack only. Your store shows the final local price and applicable tax.</Muted>
+      <Muted size={11} style={{ textAlign: 'center' }}>Ontario pack only. Your store shows the final local price and applicable tax. Offline study requires an internet access check at least every 30 days. Valid, non-refunded access has no scheduled expiry.</Muted>
     </Card>
     <Card style={{ padding: 20, gap: 13 }}>
       <View style={{ gap: 5 }}><Eyebrow>{freePlanLabel(access)}</Eyebrow><Row style={{ justifyContent: 'space-between' }}><Copy size={23} weight="600">FirstLane Free</Copy><Copy size={25} weight="600">CA$0</Copy></Row></View>
