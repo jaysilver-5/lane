@@ -28,7 +28,7 @@ export default function Home() {
   return <Screen tabs>
     <Row style={{ justifyContent: 'space-between', paddingTop: 5, paddingBottom: 2 }}>
       <Logo size={30}/>
-      <Row style={{ gap: 7 }}><IconButton name="sun" label="Appearance" onPress={() => router.push('/appearance')}/><IconButton name="user" label="Your account" onPress={() => router.push('/(tabs)/profile')}/></Row>
+      <Row style={{ gap: 7 }}><IconButton name="sun" label="Appearance" onPress={() => router.push('/display')}/><IconButton name="user" label="Your account" onPress={() => router.push('/(tabs)/profile')}/></Row>
     </Row>
     <View style={{ gap: 3, paddingBottom: 2 }}>
       <Row style={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: 4 }}>

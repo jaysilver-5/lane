@@ -30,7 +30,7 @@ export default function Profile() {
       {Platform.OS !== 'web' && <><Divider/><MenuItem icon="download" title="Offline packs" subtitle={state.downloaded ? 'Ontario pack downloaded' : 'Take your practice with you'} onPress={() => router.push('/downloads')}/></>}
     </Card></View>
     <View style={{ gap: 9 }}><Eyebrow>THE LITTLE DETAILS</Eyebrow><Card style={{ paddingVertical: 3 }}>
-      <MenuItem icon="sun" title="Appearance & accessibility" subtitle="Light, dark, motion and haptics" onPress={() => router.push('/appearance')}/><Divider/>
+      <MenuItem icon="sun" title="Appearance & accessibility" subtitle="Light, dark, motion and haptics" onPress={() => router.push('/display')}/><Divider/>
       <MenuItem icon="help" title="Help & support" subtitle="Guidance when you need it" onPress={() => router.push('/support')}/><Divider/>
       <MenuItem icon="shield" title="Privacy & terms" onPress={() => router.push('/legal')}/><Divider/>
       <MenuItem icon="book" title="Learning information" subtitle="Sources and content review" onPress={() => router.push('/content-status')}/>
