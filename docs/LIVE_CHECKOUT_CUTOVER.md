@@ -1,5 +1,15 @@
 # Live checkout cutover
 
+## Vercel Pro project and protected deployment setup — 24 October 2026
+
+Owner completed the Pro upgrade; verified the correct team shows Pro. Created separate `firstlane-app` project (`prj_X7IzsBQvdB1n1pqugpYYBA63CRBf`) and connected `jaysilver-5/lane`. Configured `npm run web:build`, output `dist`, Node 24.x, basic 2-vCPU/8-GB builds and queued concurrency. Vercel Authentication requires team login on All Deployments, with no bypass or public exception. No paid add-on was enabled.
+
+Saved 12 public configuration variables in each environment: Production uses production mode; Preview uses the existing connected export path. Both point to production Clerk/Supabase and the exact app origin. Preview deliberately omits the Paddle client token, preventing live checkout. No server secret is stored in Vercel. The existing live Paddle browser token still needs retrieval from an authenticated Paddle session before a public production release.
+
+Added `app.getfirstlane.com` to Preview for `codex/firstlane-production-web`. Saved the exact project-provided CNAME `app -> 18ca7189418b9b74.vercel-dns-016.com` with TTL 300 in the existing Go54 zone; authoritative DNS confirms it. The zone contains one app CNAME and all prior records remain. Provider's first save timed out after writing; a repeated save was rejected as an existing CNAME, and a fresh zone read confirmed 16 total records. No duplicate was added.
+
+The first manual deployment, although requested through Create Preview Deployment, ran with Vercel's Production environment. Build `6SgU1RxaGFyJzH41VHM2cQNv8jaq` correctly stopped on the existing content/release-acceptance gates. Those checks and approval flags remain unchanged. A Git-triggered feature-branch Preview build is the next acceptance target; no public app or checkout is claimed ready by this setup.
+
 ## Current checkpoint — 24 October 2026
 
 The following latest checkpoint supersedes the earlier preparation observations below:
