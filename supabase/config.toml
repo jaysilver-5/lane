@@ -1,10 +1,42 @@
 project_id = "firstlane"
+
+[auth]
+site_url = "http://127.0.0.1:4174"
+additional_redirect_urls = ["http://127.0.0.1:4174/auth/callback**", "http://localhost:8081/auth/callback**", "https://app.getfirstlane.com/auth/callback**", "firstlane://auth/callback**"]
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+otp_length = 6
+otp_expiry = 1800
+
+[auth.email.template.confirmation]
+subject = "Verify your FirstLane account"
+content_path = "./templates/confirmation.html"
+
+[auth.email.template.recovery]
+subject = "Reset your FirstLane password"
+content_path = "./templates/recovery.html"
 [functions.delete-account]
-# The function validates the bearer token with Supabase Auth itself.
+# Web function validates the Clerk JWT and active session itself.
 verify_jwt = false
 
 [functions.revenuecat-webhook]
 verify_jwt = false
 
 [functions.content-pack]
+verify_jwt = false
+
+[functions.paddle-checkout]
+# Verifies the captured Clerk bearer and verified primary email in the function.
+verify_jwt = false
+
+[functions.paddle-webhook]
+# Verifies Paddle-Signature against the raw request body.
+verify_jwt = false
+
+[functions.clerk-account]
+verify_jwt = false
+
+[functions.free-questions]
 verify_jwt = false

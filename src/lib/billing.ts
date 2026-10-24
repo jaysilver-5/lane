@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
 import { authenticatedClient } from './supabase';
 import { config } from '../config';
+import { paddleConfigured, webPurchase } from './paddle';
 let configured=false,configuredUser='';
 let setup:Promise<unknown>=Promise.resolve();
 const purchaseLocks=new Set<string>();
@@ -22,6 +23,11 @@ export async function storeClient(userId:string){
  });setup=task;return task;
 }
 export async function fetchStoreOffer(userId:string){
+ if(Platform.OS==='web'){
+  await authenticatedClient(userId);
+  if(!paddleConfigured())throw new Error('Checkout is temporarily unavailable. No payment has been taken.');
+  return {priceString:config.offer.label};
+ }
  const Purchases=await storeClient(userId),productId=Platform.OS==='ios'?config.billing.iosProductId:config.billing.androidProductId;
  const {PRODUCT_CATEGORY}=await import('react-native-purchases');
  const products=await Purchases.getProducts([productId],PRODUCT_CATEGORY.NON_SUBSCRIPTION),product=products.find(p=>p.identifier===productId);
@@ -40,7 +46,9 @@ export async function purchasePreparation(userId:string){
  try {
   await authenticatedClient(userId);
   if(await pendingPurchase(userId))return {status:'pending' as const};
+   if(Platform.OS==='web')return await webPurchase(userId);
   const Purchases=await storeClient(userId),product=await fetchStoreOffer(userId);
+  if(!('identifier' in product))throw new Error('The native store product is unavailable.');
   const {PURCHASES_ERROR_CODE}=await import('react-native-purchases');
   // Persist before opening the sheet so an interruption cannot invite a duplicate purchase.
   await AsyncStorage.setItem(pendingKey(userId),new Date().toISOString());

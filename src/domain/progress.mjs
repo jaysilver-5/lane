@@ -1,8 +1,10 @@
 /** Personal study history only: never use this data as proof of a purchase or a test pass. */
 export function validSession(s) {
+  const continuous = s?.continuous === true && s.mode === 'quick';
   return !!s && typeof s.id === 'string' && typeof s.title === 'string' && ['quick','topic','mistakes','saved','mock'].includes(s.mode) &&
+    (s.continuous === undefined || typeof s.continuous === 'boolean') && (!s.continuous || continuous) &&
     typeof s.startedAt === 'string' && Number.isFinite(Date.parse(s.startedAt)) &&
-    Array.isArray(s.questionIds) && s.questionIds.length > 0 && s.questionIds.length <= 100 && new Set(s.questionIds).size === s.questionIds.length && s.questionIds.every(id=>typeof id==='string') &&
+    Array.isArray(s.questionIds) && s.questionIds.length > 0 && (continuous || (s.questionIds.length <= 100 && new Set(s.questionIds).size === s.questionIds.length)) && s.questionIds.every(id=>typeof id==='string') &&
     Array.isArray(s.answers) && s.answers.length <= s.questionIds.length && s.answers.every((a,i)=>a && a.questionId===s.questionIds[i] && typeof a.correct==='boolean' && typeof a.conceptId==='string' && typeof a.optionId==='string' && typeof a.revisionId==='string' && typeof a.topic==='string' && ['road_signs','road_rules'].includes(a.section) && Number.isFinite(Date.parse(a.at))) &&
     Number.isInteger(s.index) && s.index>=0 && s.index<s.questionIds.length;
 }

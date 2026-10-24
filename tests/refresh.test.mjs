@@ -40,10 +40,10 @@ test('zero-sample topics are locked and expose no premium objectives',()=>{
   assert.ok(locked.length>0);
   for(const info of locked){assert.equal(info.availableCount,0);assert.deepEqual(info.objectives,[]);assert.match(info.label,/no guest samples/);}
 });
-test('paid access with only the sample bundle asks for the pack, not an upgrade',()=>{
+test('paid access with only samples distinguishes available questions from the full offer',()=>{
   const topic=topics.find(t=>t.title==='Basic shapes and sign families');
   const info=topicAvailability(topic,allowedQuestions(bank,free,manifest),paid,manifest);
-  assert.equal(info.locked,false); assert.equal(info.needsDownload,true); assert.equal(info.availableCount,4); assert.match(info.label,/4 loaded/);
+  assert.equal(info.locked,false); assert.equal(info.needsDownload,true); assert.equal(info.availableCount,4); assert.match(info.label,/4 available/);
 });
 test('P1 a gated rehearsal must not park or mutate a guest session',()=>{
   const current=state(freeSession);const before=structuredClone(current);

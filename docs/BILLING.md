@@ -1,6 +1,8 @@
 # Billing — FirstLane 0.4.0
 
-The V1 purchase rails are Apple In-App Purchase and Google Play Billing through RevenueCat. There is no Paddle, card form, subscription or web checkout.
+Web checkout now uses Paddle for the same CAD 14.99 one-time Ontario offer. See [WEB_APP.md](WEB_APP.md) for checkout reservation, server fulfillment, refund handling and service setup. Paddle sandbox configuration and live end-to-end acceptance are still pending. iOS and Android apps are coming soon.
+
+The native purchase rails below remain Apple In-App Purchase and Google Play Billing through RevenueCat for future installed releases. No subscription is introduced.
 
 ## Product contract
 

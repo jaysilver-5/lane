@@ -61,6 +61,7 @@ export interface StudySession {
     index: number;
     startedAt: string;
     finishedAt?: string;
+    continuous?: boolean;
 }
 export type ThemeMode = 'light' | 'dark' | 'system';
 export interface Preferences {

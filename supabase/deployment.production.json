@@ -1,0 +1,53 @@
+{
+  "projectRef": "jinbdlckkyzffnocuugn",
+  "projectName": "FirstLane Web Production",
+  "organization": "StorlioHQ",
+  "region": "ca-central-1",
+  "environment": "production",
+  "verifiedDate": "2026-10-24",
+  "url": "https://jinbdlckkyzffnocuugn.supabase.co",
+  "paddleEnvironment": "live",
+  "migrations": [
+    { "source": "202610030001_internal_beta.sql", "remoteVersion": "20261023230312" },
+    { "source": "202610030002_access_and_billing.sql", "remoteVersion": "20261023230326" },
+    { "source": "202610060001_production_content.sql", "remoteVersion": "20261023230329" },
+    { "source": "202610060002_progress_concurrency.sql", "remoteVersion": "20261023230331" },
+    { "source": "202610060003_offer_cad1499.sql", "remoteVersion": "20261023230334" },
+    { "source": "202610070001_refund_reversal.sql", "remoteVersion": "20261023230336" },
+    { "source": "202610200001_paddle_web.sql", "remoteVersion": "20261023230338" },
+    { "source": "20261021191748_clerk_web_accounts.sql", "remoteVersion": "20261023230342" },
+    { "source": "20261022174632_continuous_practice_progress.sql", "remoteVersion": "20261023230344" }
+  ],
+  "functions": {
+    "clerk-account": 2,
+    "free-questions": 2,
+    "content-pack": 2,
+    "delete-account": 2,
+    "paddle-checkout": 2,
+    "paddle-webhook": 3
+  },
+  "paddleResources": {
+    "serverKeyName": "FirstLane production backend",
+    "serverKeyPermissions": ["price.read", "transaction.read", "transaction.write"],
+    "serverKeyExpiryDateLagos": "2027-01-22",
+    "browserTokenName": "FirstLane production web",
+    "notificationDestinationId": "ntfset_01m5nhe981hhb91fdc4b6sqpec",
+    "notificationUrl": "https://jinbdlckkyzffnocuugn.supabase.co/functions/v1/paddle-webhook",
+    "notificationEvents": ["transaction.completed", "adjustment.created", "adjustment.updated"],
+    "notificationUsage": "platform",
+    "secretsStoredInBackend": true,
+    "liveCatalogRead": "passed-200-active-CAD1499-one-time-external-tax",
+    "webhookSignatureProbe": "passed-200-ignored-non-commerce-event",
+    "unsignedWebhookRejection": "passed-401"
+  },
+  "configurationStatus": "paddle-backend-connected-awaiting-production-app-auth-content-and-purchase-acceptance",
+  "publicSalesEnabled": false,
+  "acceptance": {
+    "schemaIsolationAndSessionChecks": "passed-with-rollback",
+    "syntheticLiveCommerceChecks": "passed-with-rollback",
+    "continuousPracticeChecks": "passed-with-rollback",
+    "unconfiguredEndpointRejection": "passed",
+    "approvedPublishedContent": false,
+    "realLivePurchase": false
+  }
+}

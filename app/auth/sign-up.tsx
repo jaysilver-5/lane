@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Pressable, View, useWindowDimensions } from 'react-native';
-import * as Linking from 'expo-linking';
+import { authRedirect } from '../../src/lib/authRedirect';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { requireSupabase } from '../../src/lib/supabase';
 import { config } from '../../src/config';
@@ -23,7 +23,7 @@ export default function SignUp() {
     const [accepted, setAccepted] = useState(false);
     const [eligible, setEligible] = useState(false);
     const [error, setError] = useState('');
-    const destination = ['/checkout'].includes(next || '') ? next : '/plans';
+    const destination = ['/checkout', '/(tabs)'].includes(next || '') ? next : '/plans';
 
     async function create() {
         setError('');
@@ -33,7 +33,7 @@ export default function SignUp() {
             if (!accepted) throw new Error('Accept the terms and privacy notice to continue.');
             if (config.mode === 'demo') await demoRegister(email, password, state.preferences.name);
             else {
-                const { error } = await requireSupabase().auth.signUp({ email: email.trim().toLowerCase(), password, options: { data: { display_name: state.preferences.name, terms_version: '2026-10-v4' }, emailRedirectTo: Linking.createURL('auth/callback', { queryParams: { next: destination || '/(tabs)' } }) } });
+                const { error } = await requireSupabase().auth.signUp({ email: email.trim().toLowerCase(), password, options: { data: { display_name: state.preferences.name, terms_version: '2026-10-web' }, emailRedirectTo: authRedirect(destination) } });
                 if (error) throw error;
             }
             finishOnboarding();
@@ -44,7 +44,7 @@ export default function SignUp() {
     return <Screen back footer={<View style={{ gap: 10 }}>
         <Button onPress={create}>Create my free account</Button>
         <Row style={{ justifyContent: 'center', gap: 18 }}>
-            <Pressable accessibilityRole="button" onPress={() => router.push('/auth/sign-in')}><Copy size={13} weight="600">Sign in instead</Copy></Pressable>
+            <Pressable accessibilityRole="button" onPress={() => router.push({pathname:'/auth/sign-in',params:{next:destination}})}><Copy size={13} weight="600">Sign in instead</Copy></Pressable>
             <Pressable accessibilityRole="button" onPress={() => { finishOnboarding(); router.replace('/(tabs)'); }}><Copy size={13} weight="600">Try as guest</Copy></Pressable>
         </Row>
     </View>}>

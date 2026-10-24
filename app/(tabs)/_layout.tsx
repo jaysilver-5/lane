@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tabs, useRouter, useSegments } from 'expo-router';
-import { Pressable, View } from 'react-native';
+import { Platform, Pressable, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useApp } from '../../src/state/AppState';
 import { Copy, Row } from '../../src/components/UI';
@@ -15,6 +15,8 @@ function Dock() {
   const { colors } = useApp();
   const router = useRouter(), segments = useSegments(), insets = useSafeAreaInsets();
   const current = segments[segments.length - 1];
+  const { width } = useWindowDimensions();
+  if (Platform.OS === 'web' && width >= 1000) return null;
   return <View style={{ backgroundColor: colors.background, paddingHorizontal: 16, paddingTop: 7, paddingBottom: Math.max(insets.bottom, 10) }}>
     <Row style={{ backgroundColor: colors.tab, borderRadius: 24, padding: 5, borderWidth: 1, borderColor: colors.line, gap: 2,
       maxWidth: 552, width: '100%', alignSelf: 'center', boxShadow: '0 4px 18px rgba(28,41,34,0.045)' }}>

@@ -4,6 +4,16 @@ import {selectQuestions} from '../src/domain/engine.mjs';
 const manifest=JSON.parse(fs.readFileSync(new URL('../content/sample-manifest.json',import.meta.url))),bank=JSON.parse(fs.readFileSync(new URL('../content/ontario-g1.draft.json',import.meta.url))).questions;
 const user={id:'one',confirmed:true},now=Date.parse('2026-10-04T12:00:00Z'),paid={startsAt:'2026-10-04T12:00:00Z',endsAt:null,lifetime:true};
 test('guest has exactly 10 fixed questions',()=>assert.equal(allowedQuestions(bank,resolveAccess(null),manifest).length,10));
+test('repeated guest sessions stay within the same 10 questions without a session quota',()=>{
+ const pool=allowedQuestions(bank,resolveAccess(null),manifest),seen=new Set();
+ for(let i=0;i<100;i++){
+  const session=selectQuestions(pool,{mode:'quick',count:10});
+  assert.equal(session.length,10);
+  for(const q of session){assert.ok(manifest.guestQuestionIds.includes(q.id));seen.add(q.id);}
+ }
+ assert.equal(seen.size,10);
+ assert.equal(allowedQuestions(bank,resolveAccess({id:'unconfirmed',confirmed:false}),manifest).length,10);
+});
 test('free has exactly 40 fixed questions',()=>assert.equal(allowedQuestions(bank,resolveAccess(user),manifest).length,40));
 test('free manifest includes 20 signs and 20 rules',()=>{const pool=allowedQuestions(bank,resolveAccess(user),manifest);for(const section of ['road_signs','road_rules'])assert.equal(pool.filter(q=>q.section===section).length,20);});
 test('manifest IDs exist, unique and guest is subset',()=>{assert.equal(new Set(manifest.freeQuestionIds).size,40);for(const id of manifest.freeQuestionIds)assert.ok(bank.some(q=>q.id===id));for(const id of manifest.guestQuestionIds)assert.ok(manifest.freeQuestionIds.includes(id));});
@@ -12,7 +22,7 @@ test('lifetime purchase unlocks full bank',()=>assert.equal(allowedQuestions(ban
 test('lifetime purchase has no expiry',()=>{const a=resolveAccess(user,{paid},Date.parse('2036-01-01T00:00:00Z'));assert.equal(a.kind,'paid');assert.equal(a.endsAt,null);assert.equal(a.lifetime,true);});
 test('refund revokes lifetime access',()=>assert.equal(resolveAccess(user,{paid:{...paid,revokedAt:new Date(now).toISOString()}},now).full,false));
 test('legacy dated purchase still works only while active',()=>{const legacy={startsAt:'2026-10-01T00:00:00Z',endsAt:'2026-12-01T00:00:00Z'};assert.equal(resolveAccess(user,{paid:legacy},now).full,true);assert.equal(resolveAccess(user,{paid:legacy},Date.parse('2027-01-01T00:00:00Z')).full,false);});
-test('40-question rehearsals and offline packs require Complete',()=>{for(const f of ['mock','offline','all-topics'])assert.equal(canUseFeature(f,resolveAccess(user)),false);assert.equal(canUseFeature('mock',resolveAccess(user,{paid},now)),true);});
+test('rehearsals, Keep going and offline packs require Complete',()=>{for(const f of ['mock','offline','all-topics','continuous']){assert.equal(canUseFeature(f,resolveAccess(user)),false);assert.equal(canUseFeature(f,resolveAccess(null)),false);assert.equal(canUseFeature(f,resolveAccess(user,{paid},now)),true);}});
 test('premium direct question links are not allowed on Free',()=>{const q=bank.find(q=>!manifest.freeQuestionIds.includes(q.id));assert.equal(canReadQuestion(q.id,resolveAccess(user),manifest),false);});
 test('500 free sessions never rotate in premium questions',()=>{const pool=allowedQuestions(bank,resolveAccess(user),manifest),seen=new Set();for(let i=0;i<500;i++)for(const q of selectQuestions(pool,{mode:'quick',count:20})){seen.add(q.id);assert.ok(manifest.freeQuestionIds.includes(q.id));}assert.ok(seen.size<=40);});
 test('publication restriction stays in place',()=>{const cfg=fs.readFileSync(new URL('../app.config.ts',import.meta.url),'utf8');assert.match(cfg,/EAS_BUILD_PROFILE === 'production'/);assert.match(cfg,/releaseIssues/);});

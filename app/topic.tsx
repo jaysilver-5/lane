@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linking, View } from 'react-native';
+import { Linking, Platform, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { topics, questions } from '../src/data/bank';
 import { useApp } from '../src/state/AppState';
@@ -7,6 +7,7 @@ import { Icon } from '../src/components/Icon';
 import { Button, Card, Chip, Copy, Empty, Heading, Muted, Note, Row, Screen, SectionHead } from '../src/components/UI';
 import { topicAvailability } from '../src/domain/availability.mjs';
 import sampleManifest from '../content/sample-manifest.json';
+import { QuestionBankNotice } from '../src/components/QuestionBankNotice';
 export default function Topic() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
@@ -21,7 +22,9 @@ export default function Topic() {
     </View>
     <Heading eyebrow={topic.section === 'road_signs' ? 'ROAD SIGNS' : 'ROAD RULES'} sub={topic.description}>{topic.title}</Heading>
     <Row style={{ flexWrap: 'wrap', gap: 7 }}><Chip icon={info.locked ? 'lock' : 'book'}>{info.label}</Chip><Chip icon="clock">At your pace</Chip></Row>
+    <QuestionBankNotice/>
     {info.locked ? <><Note>This topic has no {access.kind === 'guest' ? 'guest' : 'free'} samples. Ontario G1 Complete includes all {info.totalCount} questions.</Note><Button onPress={() => router.push('/plans')}>Explore Ontario Complete</Button></> :
+      info.needsDownload && Platform.OS==='web' ? <>{info.availableCount > 0 && <Button onPress={() => { if (begin('topic', topic.title)) router.push('/quiz'); }}>Practise {info.availableCount} available samples</Button>}</> :
       info.needsDownload ? <><Note>Your full topic is included. Download the Ontario pack to load all {info.totalCount} questions.</Note><Button icon="download" onPress={() => router.push('/downloads')}>Load my Ontario pack</Button></> :
       <Button onPress={() => { if (begin('topic', topic.title)) router.push('/quiz'); }}>{access.full ? 'Practise this topic' : `Practise ${info.availableCount} ${info.availableCount === 1 ? 'sample' : 'samples'}`}</Button>}
     {info.objectives.length > 0 ? <Card><SectionHead title={access.full ? 'What you’ll explore' : 'In your available samples'}/>

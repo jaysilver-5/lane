@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useApp } from '../../src/state/AppState';
 import { config } from '../../src/config';
@@ -8,10 +8,13 @@ import { Button, Card, Copy, Divider, Eyebrow, Heading, MenuItem, Muted, Row, Sc
 export default function Profile() {
   const router = useRouter();
   const { state, colors, identity, access } = useApp();
+  const name = identity?.name.trim() || state.preferences.name.trim() || '';
+  const words = name.split(/\s+/).filter(Boolean);
+  const initials = [words[0]?.[0], words.length > 1 ? words[words.length - 1]?.[0] : ''].filter(Boolean).join('').toUpperCase();
   return <Screen tabs>
     <View style={{ paddingTop: 10 }}><Heading eyebrow="MADE FOR YOUR JOURNEY" sub="Your details, your preferences, your pace.">A little space for you.</Heading></View>
-    <Row style={{ paddingVertical: 7, gap: 13 }}><View style={{ width: 54, height: 54, borderRadius: 19, backgroundColor: colors.sage, alignItems: 'center', justifyContent: 'center' }}><Copy size={20} weight="600">{state.preferences.name ? state.preferences.name.slice(0, 2).toUpperCase() : 'FL'}</Copy></View>
-      <View style={{ flex: 1, gap: 3 }}><Copy size={20} weight="600">{state.preferences.name || 'Your FirstLane'}</Copy><Muted size={12}>{identity?.email ?? 'Guest · saved on this device'}</Muted></View>
+    <Row style={{ paddingVertical: 7, gap: 13 }}><View accessibilityLabel={initials ? 'Profile initials' : 'Profile avatar'} style={{ width: 54, height: 54, borderRadius: 19, backgroundColor: colors.sage, alignItems: 'center', justifyContent: 'center' }}>{initials ? <Copy size={20} weight="600">{initials}</Copy> : <Icon name="user" size={26} color={colors.success}/>}</View>
+      <View style={{ flex: 1, gap: 3 }}><Copy size={20} weight="600">{words[0] ? `Welcome, ${words[0]}.` : 'Welcome to FirstLane.'}</Copy><Muted size={12}>{identity?.email ?? 'Guest · saved on this device'}</Muted></View>
     </Row>
     <Card style={{ backgroundColor: colors.sage, borderColor: colors.sageLine, gap: 12 }}>
       <Row style={{ justifyContent: 'space-between' }}><Eyebrow color={colors.success}>{access.full ? 'ONTARIO G1 COMPLETE' : access.kind === 'free' ? 'YOUR FREE ACCOUNT' : 'A GOOD PLACE TO START'}</Eyebrow><Icon name="spark" size={19} color={colors.success}/></Row>
@@ -23,8 +26,8 @@ export default function Profile() {
       <MenuItem icon="spark" title="Plan & billing" subtitle="Purchase, receipts and restore" onPress={() => router.push('/membership')}/><Divider/>
       <MenuItem icon="user" title="Your account" subtitle={identity ? 'Account and data controls' : 'Create an account or sign in'} onPress={() => router.push('/account')}/><Divider/>
       <MenuItem icon="map" title="Test location" subtitle="Ontario G1 · Canada" onPress={() => router.push('/jurisdiction')}/><Divider/>
-      <MenuItem icon="target" title="Study plan" subtitle={`${state.preferences.goal} questions a day`} onPress={() => router.push('/study-plan')}/><Divider/>
-      <MenuItem icon="download" title="Offline packs" subtitle={state.downloaded ? 'Ontario pack downloaded' : 'Take your practice with you'} onPress={() => router.push('/downloads')}/>
+      <MenuItem icon="target" title="Study plan" subtitle={`${state.preferences.goal} questions a day`} onPress={() => router.push('/study-plan')}/>
+      {Platform.OS !== 'web' && <><Divider/><MenuItem icon="download" title="Offline packs" subtitle={state.downloaded ? 'Ontario pack downloaded' : 'Take your practice with you'} onPress={() => router.push('/downloads')}/></>}
     </Card></View>
     <View style={{ gap: 9 }}><Eyebrow>THE LITTLE DETAILS</Eyebrow><Card style={{ paddingVertical: 3 }}>
       <MenuItem icon="sun" title="Appearance & accessibility" subtitle="Light, dark, motion and haptics" onPress={() => router.push('/appearance')}/><Divider/>

@@ -15,7 +15,7 @@ for(const folder of ['app','src/components','src/domain','src/theme','src/data']
  }} }walk(path.join(root,folder));
 }
 modules['/content/sample-manifest.json']='module.exports='+fs.readFileSync(path.join(root,'content/sample-manifest.json'),'utf8');
-const logo='data:image/png;base64,'+fs.readFileSync(path.join(root,'assets/firstlane-mark.png')).toString('base64');
+const logo='data:image/png;base64,'+fs.readFileSync(path.join(root,'assets/icon.png')).toString('base64');
 const template=fs.readFileSync(path.join(root,'preview/source-template.html'),'utf8');
 const runtime=fs.readFileSync(path.join(root,'preview/source-runtime.js'),'utf8');
 const html=template.replace('/*__MODULES__*/','const MODULES='+JSON.stringify(modules).replaceAll('</','<\\/')+';const LOGO='+JSON.stringify(logo)+';').replace('/*__RUNTIME__*/',runtime);

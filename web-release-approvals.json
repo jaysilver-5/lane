@@ -1,0 +1,17 @@
+{
+  "newSupabaseProjectVerified": true,
+  "authEmailAndRecoveryPassed": false,
+  "webProgressSyncPassed": false,
+  "backendSecurityPassed": false,
+  "paddleSandboxPassed": false,
+  "paddleLiveConfigured": false,
+  "refundAndReplayPassed": false,
+  "accountDeletionPassed": false,
+  "contentDeliveryPassed": false,
+  "webAccessibilityPassed": false,
+  "legalReviewed": false,
+  "reviewer": "",
+  "reviewedAt": "",
+  "clerkSocialSignInPassed": false,
+  "clerkSupabaseIntegrationPassed": false
+}

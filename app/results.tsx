@@ -9,7 +9,7 @@ import { Button, Card, Copy, Empty, Eyebrow, Heading, Muted, Note, ProgressBar, 
 export default function Results() {
     const router = useRouter(), { id } = useLocalSearchParams<{
         id: string;
-    }>(), { state, colors } = useApp();
+    }>(), { state, colors, access } = useApp();
     const session = id ? state.sessions.find(s => s.id === id) : state.sessions[state.sessions.length - 1];
     if (!session)
         return <Screen back><Empty title="Your first result starts here" body="Complete a practice session to see your results." action="Back to Home" onPress={() => router.replace('/(tabs)')}/></Screen>;
@@ -22,5 +22,5 @@ export default function Results() {
             section: string;
             correct: number;
             total: number;
-        }) => <View key={s.section} style={{ gap: 8 }}><Row style={{ justifyContent: 'space-between' }}><Copy size={13}>{s.section === 'road_signs' ? 'Road signs' : 'Road rules'}</Copy><Copy size={13} weight="600">{s.correct}/{s.total}</Copy></Row><ProgressBar value={s.correct / s.total * 100}/></View>)}</Card><Button onPress={() => router.push({ pathname: '/session-review', params: { id: session.id } })}>Review this session</Button><Button kind="secondary" icon={null} onPress={() => router.replace('/(tabs)')}>Back to Home</Button><Note>This measures this practice session only, not your chance of passing the official test.</Note></Screen>;
+        }) => <View key={s.section} style={{ gap: 8 }}><Row style={{ justifyContent: 'space-between' }}><Copy size={13}>{s.section === 'road_signs' ? 'Road signs' : 'Road rules'}</Copy><Copy size={13} weight="600">{s.correct}/{s.total}</Copy></Row><ProgressBar value={s.correct / s.total * 100}/></View>)}</Card>{access.kind === 'guest' && <Card><Copy size={19} weight="700">Ready for 40 free questions?</Copy><Muted>You can repeat the same 10 guest questions anytime. Create an account and confirm your email to unlock 40 fixed questions for free. No card or payment needed.</Muted><Button onPress={() => router.push('/auth/sign-up')}>Create my free account</Button></Card>}<Button onPress={() => router.push({ pathname: '/session-review', params: { id: session.id } })}>Review this session</Button><Button kind="secondary" icon={null} onPress={() => router.replace('/(tabs)')}>Back to Home</Button><Note>This measures this practice session only, not your chance of passing the official test.</Note></Screen>;
 }

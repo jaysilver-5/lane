@@ -1,16 +1,19 @@
 import React from 'react';
-import { Linking, View } from 'react-native';
+import { Linking, Platform, View } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { questionMap } from '../src/data/bank';
 import { useApp } from '../src/state/AppState';
 import { Icon } from '../src/components/Icon';
 import { Button, Card, Chip, Copy, Empty, Eyebrow, IconButton, Muted, Note, Row, Screen, SectionHead } from '../src/components/UI';
+import { QuestionBankNotice } from '../src/components/QuestionBankNotice';
 export default function Question() {
     const { id, chosen } = useLocalSearchParams<{
         id: string;
         chosen?: string;
-    }>(), router = useRouter(), { colors, state, toggleBookmark, canRead } = useApp();
+    }>(), router = useRouter(), { colors, state, toggleBookmark, canRead, bankLoading, bankError, bankAvailability } = useApp();
     const q = questionMap.get(id);
+    if (!q && Platform.OS==='web' && (bankLoading || bankError || bankAvailability==='awaiting-review'))
+        return <Screen back title="Understand the answer"><QuestionBankNotice/><Muted>Your saved question reference is unchanged. Its explanation will appear when the questions are available.</Muted></Screen>;
     if (!q)
         return <Screen back><Empty title="Question not found" body="This content may have been removed or revised."/></Screen>;
     if (!canRead(q.id))

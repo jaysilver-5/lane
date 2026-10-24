@@ -1,0 +1,72 @@
+# Live checkout cutover
+
+## Current checkpoint — 24 October 2026
+
+- Production app deployment preparation: isolated source checkout at `../.release-worktrees/firstlane-production-web`, branch `codex/firstlane-production-web`, based on app commit `0f2bb56`. Copied current application/service implementation without local environment files, QA captures or private review exports. Server-credential pattern scan passed. The deployment copy passes 28 focused payment/host/release tests, TypeScript and all 7 Edge syntax checks; production builds still refuse unapproved content and incomplete acceptance.
+- The working Storlio Chrome profile is signed into production Supabase but Clerk and Vercel open their sign-in screens. The other Chrome profile's existing Clerk tab could not be controlled. Owner sign-in was requested in the opened pages. No production Clerk instance/key, hosting project/deployment, DNS record or paid subscription was created in this preparation step. App DNS remains NXDOMAIN. Verify the actual hosting plan after sign-in; Vercel's current Hobby terms remain non-commercial and Pro starts at US$20/month plus applicable taxes/usage, requiring the owner's cost decision if applicable.
+- Paddle live account verification is complete. Its approved website list shows `getfirstlane.com` and `tervlon.com`, each with Checkout and Apple Pay approved. `app.getfirstlane.com` is not listed; the live default payment link is blank. Do not set a payment link to a page that does not load Paddle.js.
+- Payoneer is selected in Paddle payout settings at the $100 threshold. The owner is completing Payoneer's ID/selfie step; approval and a saved payout connection have not been confirmed. No payout details or biometric consent were submitted by the agent.
+- Separate production Supabase project: `jinbdlckkyzffnocuugn` (FirstLane Web Production, StorlioHQ, `ca-central-1`). The quoted project cost was $0/month. All nine existing schema migrations were applied in source order; production versions are recorded in `supabase/deployment.production.json`. Sandbox `nbvstjglclolzxchjlzp` remains separate and unchanged.
+- Six web Edge Functions are deployed with their existing in-function identity/signature checks and `verify_jwt=false` (webhook v2; others v1). Payment code requires an explicit environment; missing/invalid settings cannot silently use sandbox. Clerk production and its same-instance third-party integration remain unconfigured.
+- Database-only acceptance passed for Clerk identity/session/RLS/deletion isolation, the live-environment purchase/refund/replay contract, and 10 continuous-practice checks. Fixtures were rolled back; production still has 0 accounts, sessions, grants, purchases, events and content releases. These checks do not establish an actual Clerk login or real Paddle transaction.
+- Security advisors report private-table RLS with no client policies (intentional deny-by-default) and six authenticated `SECURITY DEFINER` RPC warnings. Those existing RPCs intentionally wrap private data with canonical-account/session checks; the isolation checks passed. No public/anonymous commerce execution was granted.
+- Unauthenticated HTTP probes: Clerk account/free questions/delete account/checkout reject with 403, content pack with 401, and the unconfigured webhook with 503. No request produced a transaction or access grant. Actual signed live event delivery remains pending.
+- `app.getfirstlane.com` still returns NXDOMAIN. Authoritative nameservers are `nsa.whogohost.com` and `nsb.whogohost.com`; use the real app deployment's DNS target when available. Production hosting, Clerk credentials, content approval/publication and final device/payment acceptance remain launch blockers.
+- Owner explicitly authorized creation of the prepared live credentials and connection of payment/refund notifications. Created `FirstLane production backend` with Prices Read and Transactions Read/Write, rotatable, expiring 22 January 2027 in Africa/Lagos. Created the active browser token `FirstLane production web`. Values were captured privately in browser-session memory, not written to source/configuration files or screenshots. Keep the one-time API key dialog open until secure storage succeeds; never create a duplicate merely because an action timed out.
+- Created active platform notification destination `ntfset_01m5nhe981hhb91fdc4b6sqpec` at `https://jinbdlckkyzffnocuugn.supabase.co/functions/v1/paddle-webhook`, with exactly `transaction.completed`, `adjustment.created` and `adjustment.updated`. Signing secret is captured privately. Evidence: `qa/paddle-live-webhook-created.png`. Destination existence does not establish successful delivery or fulfillment.
+- Owner signed into the Storlio browser profile; the dashboard confirmed StorlioHQ / FirstLane Web Production / main PRODUCTION before saving. Stored `PADDLE_API_KEY`, `PADDLE_WEBHOOK_SECRET`, `PADDLE_ENVIRONMENT=live`, the live `PADDLE_PRICE_ID`, and the exact app origin/Clerk authorized-party allowlist in production Edge secrets. No live secrets were copied to sandbox, source files or screenshots. The dashboard lists all six encrypted custom secrets and cleared the entry form. Evidence: `qa/paddle-production-secrets-saved.png`.
+- Actual production-runtime catalog lookup returned HTTP 200 from Paddle: the configured price is active CAD1499, non-recurring, with external tax. A temporary server-authorized, read-only diagnostic performed this lookup and was removed afterward; the six application functions remain. Saving secrets incremented their deployment versions (webhook v3; other functions v2), without changing their source hashes or authentication configuration.
+- After configuration, unsigned and invalid-signature webhook POSTs return 401; GET returns 405. A locally signed, non-commerce configuration probe returned HTTP 200 with `ignored=true`, verifying that the stored destination secret matches without creating a transaction or fulfilling access. This is not a Paddle-originated delivery or real purchase. Evidence: `qa/paddle-production-signature-verified.png`. Final account/transaction/checkout/event/grant/release counts remain zero. The browser token is created and retrievable in Paddle, but deployment to the production app is still pending its hosting and Clerk configuration.
+- Webhook v2 acknowledges verified Paddle transactions containing only other products without touching FirstLane access; purchases containing the FirstLane price still undergo strict offer/owner validation, including rejecting mixed baskets. This supports the owner's shared Paddle account for FirstLane and Tervlon.
+
+Validation: all 25 focused Paddle/environment/release tests pass, including rejection before account binding, unrelated-product acknowledgment and mixed-basket rejection. TypeScript passed before the webhook-only follow-up; all 7 Edge syntax checks pass after it. No secret values appear in the deployment manifest or screenshots. Authentication callback URLs can contain credentials; suppress full browser URL output during future sign-in checks.
+
+## Historical preparation — 22 October 2026
+
+The following snapshot predates the completed account verification and the production backend above; its old public-policy and verification statuses are superseded by the current checkpoint.
+
+The owner requested launch preparation and real checkout. Sandbox purchase, automatic fulfillment, decline, refund/revocation and replay results are retained in WEB_IMPLEMENTATION_QA.md. This record distinguishes prepared live resources from an enabled customer checkout.
+
+## Verified today
+
+| Resource | Observed state |
+| --- | --- |
+| Paddle live business | Tervlon Labs Limited; account setup still opens “Get verified” |
+| Live product | Ontario G1 Complete: `pro_01m5jdkk4t1gnf7vz63bxw9z3z`, created today |
+| Live price | `pri_01m5jdrg9tgs9f2gxr4yeqndnf`, created today, active CAD 1499 |
+| Saved price settings | One-time; Excludes tax; quantity 1–1; no trial or country overrides; reopened and verified |
+| Tax category | Paddle's existing Standard digital goods default retained; no account-wide tax/currency setting changed |
+| Paddle website approval | No submitted/approved domains in the live list |
+| Marketing hosting | Vercel `joshs-projects-e9dac4f7/getfirstlane`, GitHub `jaysilver-5/getfirstlane`, production `main` at `2bf856e8af46c145926973a5bec632a52356cf47` from 14 October |
+| Public destination | `www.getfirstlane.com` still describes native store checkout and “No web checkout”; local web-first updates have not been deployed |
+| App DNS | `app.getfirstlane.com` returns NXDOMAIN from this machine's DNS resolver |
+| Backend | Connected tool lists only FirstLane Web Sandbox, `nbvstjglclolzxchjlzp`; no production project verified |
+| Paid bank | Hosted approved/published release count 0; private owner review UI shows 0/500 approved in both reviews |
+| Hosting plan | Existing Vercel team shows Hobby; commercial launch needs an appropriate hosting plan |
+
+Evidence: `qa/paddle-live-price-verified.png`, live dashboard, public browser destination, DNS lookup and read-only content-release query. Product/price creation does not enable checkout or prove account verification. No real charge was made.
+
+## Cutover sequence
+
+1. Finish the exact bank review and resolve recorded sign-image/coverage/exam-format gaps. Prepare the approved release and derive its reviewed 10 guest / 40 account samples; publish to private production storage through the existing release process. Verify paid delivery before accepting customers' money. Do not copy sandbox grants, users or test ledgers.
+2. Complete operator address/country, policies, retention and support-delivery facts. Prepare the updated marketing deployment from `Lane_Landing_Production`, with actual browser availability and Paddle purchase/refund wording. Do not submit the stale mobile-only destination as the finished web product.
+3. Provision a separate Supabase production project. Apply the nine source migrations listed in `supabase/deployment.json` in order, including Clerk identity binding and continuous practice. Do not copy the sandbox's remote migration timestamps into production. Keep `firstlane_private` private and retain canonical identity/RLS checks.
+4. Configure Clerk production for `app.getfirstlane.com`, verified email and recovery, the same-instance Supabase third-party integration, production email/domain DNS and the exact app callback routes. Finish credentials for social providers actually offered, or resolve that shipping scope explicitly. Never reuse development shared credentials as production acceptance.
+5. Create a separate Vercel Expo app project from `jaysilver-5/lane` using the reviewed current source. Output `dist`, build `npm run web:build`, Node 22.13+; the production context invokes `web:release` and blocks missing live configuration/content/acceptance. Preview keeps the connected export path. Keep SPA deep-link rewrites and noindex on the account app. Configure the public values from `.env.production.example` in Production only. Deploy on a commercial-appropriate plan; add `app.getfirstlane.com`, apply Vercel's actual project-specific DNS target and verify HTTPS. Do not guess a CNAME value.
+6. Owner completes Paddle live account setup directly: https://vendors.paddle.com/onboarding/account-setup?step=intro. The form requires actual identity and business information; no such details have been entered by the agent. Submit the real marketing/app domains for approval once the destinations are usable. `app.getfirstlane.com` needs its own checkout-domain approval.
+7. In production Supabase, deploy `clerk-account`, `free-questions`, `content-pack`, `delete-account`, `paddle-checkout`, `paddle-webhook` from the current source/config. Each validates its own Clerk identity or Paddle signature; preserve the tracked `verify_jwt=false` configuration. Set the private values in `supabase/live-secrets.example` directly in the production dashboard. The price ID above is live; sandbox IDs remain sandbox-only.
+8. Create a live Paddle notification destination at `https://<PRODUCTION_PROJECT_REF>.supabase.co/functions/v1/paddle-webhook`, with `transaction.completed`, `adjustment.created` and `adjustment.updated`. Store that destination's own signing secret in production. The API key needs Prices Read and Transactions Read/Write for catalog validation, creation, lookup and stale-quote cancellation. Set the default payment link to `https://app.getfirstlane.com/checkout` after Paddle approves that exact host. Configure the matching live client token in the app and rebuild; never copy server secrets there.
+9. Reconcile production acceptance flags only with recorded evidence. Verify signup/recovery/deletion, exact 10/40 boundaries, paid 500-question delivery, Keep going, reloads/progress and a second browser/device. Once ready, the owner can complete a controlled real purchase at CA$14.99 plus Paddle-calculated tax. Verify automatic signed fulfillment, restore and refund/revocation against production; no manual grant or replay to manufacture success. Prepare the exact charge before requesting user completion.
+10. Update the public marketing deployment, verify final links/contact/legal pages and the actual available offer. Run both release checks. Then prepare/approve advertising settings and a spending limit; no campaign has been activated by this work.
+
+## Validation of the build change
+
+Six focused host/release tests pass. The actual production host command fails before export with the current missing approvals, while the actual connected host command successfully exports the Expo web app. No acceptance flags were changed. The existing successful sandbox commerce flows were not repeated.
+
+## Official references
+
+- Paddle live configuration, account verification and controlled testing: https://developer.paddle.com/build/go-live-checklist/
+- Each live checkout host needs approval: https://developer.paddle.com/api-reference/checkout-domains/
+- Vercel Hobby is for personal, non-commercial use: https://vercel.com/docs/plans/hobby
+
+Live configuration remains incomplete. The next owner step is merchant verification and completing/exporting the content review, while production service provisioning and final deployment preparation continue. Never request secrets or identity documents in chat.

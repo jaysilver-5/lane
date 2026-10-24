@@ -21,7 +21,7 @@ export function allowedIds(access,manifest) { return access.full ? null : new Se
 export function canReadQuestion(id,access,manifest) {const ids=allowedIds(access,manifest);return ids===null||ids.has(id);}
 export function allowedQuestions(bank,access,manifest) {const ids=allowedIds(access,manifest);return bank.filter(q=>q.pack_key===PLAN.packKey && (ids===null||ids.has(q.id)));}
 export function canUseFeature(feature,access) {
- if(['mock','offline','all-topics'].includes(feature))return access.full;
+ if(['mock','offline','all-topics','continuous'].includes(feature))return access.full;
  return true;
 }
 export function accessDescription(access) {
