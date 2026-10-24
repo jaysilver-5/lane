@@ -26,10 +26,14 @@ After an actual production checkout page is ready, set Paddle's default payment 
 
 This migration is prepared in source and preview; it is **not a completed public launch**. No live CORS/Clerk settings, Paddle payment link, DNS record, deployment protection or release approval is changed by these files. The existing app project remains behind Vercel team authentication. Do not merge the marketing proxy while the upstream still requires that authentication; an external rewrite does not make a protected app publicly usable.
 
-1. Validate the protected app build and `/app` routes, assets, auth callback and payment return.
+1. Validate the protected app build and `/app` routes, assets, auth callback and payment return. The migration branch's verified protected preview is `https://firstlane-app-git-codex-firstlan-2b8308-joshs-projects-e9dac4f7.vercel.app/app`.
 2. Complete approved content publication and the remaining production acceptance checks. Moving the URL does not satisfy these checks.
 3. Deploy the gated production app, update the canonical-host backend/Clerk settings above, and validate the production flows.
 4. Point the marketing `/app` rewrite at the validated production deployment (the prepared rewrite currently identifies the existing protected branch), deploy it, and only then mark `webAppAvailable` true. Keep marketing policies accessible throughout.
 5. Configure the functional default payment link and validate the approved-host checkout before opening sales. Keep the old subdomain until the new route has passed; retire or redirect it separately after cutover.
 
 References: https://developer.paddle.com/build/go-live-checklist/ ; https://docs.expo.dev/more/expo-cli/#hosting-with-sub-paths ; https://vercel.com/docs/routing/rewrites
+
+## Verification
+
+The migration commit passed all 215 app tests in GitHub CI, TypeScript, source/Edge/content checks and a full Expo export. Both Vercel preview projects built successfully. On the hosted protected app, `/app/auth/sign-in` renders the actual email/password form without console errors; no account or payment was submitted. Local combined-host checks passed root, all policy/pricing routes, auth callback and checkout-return deep links. Browser onboarding, guest home, a five-question practice session and reloading `/app/quiz` stayed under the mount without console errors. These checks do not establish live production signup, recovery, checkout, content publication or deletion acceptance.
