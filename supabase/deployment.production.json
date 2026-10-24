@@ -73,7 +73,17 @@
     "secretsStoredInBackend": true,
     "liveCatalogRead": "passed-200-active-CAD1499-one-time-external-tax",
     "webhookSignatureProbe": "passed-200-ignored-non-commerce-event",
-    "unsignedWebhookRejection": "passed-401"
+    "unsignedWebhookRejection": "passed-401",
+    "browserTokenId": "ctkn_01m5nh7b2wngmdzm9yeej718ra",
+    "browserTokenStorage": "Vercel Production EXPO_PUBLIC_PADDLE_CLIENT_TOKEN",
+    "browserTokenSavedAndVerified": true,
+    "previewBrowserTokenAbsent": true,
+    "checkoutDomain": "app.getfirstlane.com",
+    "checkoutDomainId": "chedom_01m5psjn2q2sh4bftmv8pbv4h4",
+    "checkoutDomainStatus": "changes-needed",
+    "checkoutDomainReason": null,
+    "defaultPaymentLink": null,
+    "plannedDefaultPaymentLink": "https://app.getfirstlane.com/checkout"
   },
   "clerk": {
     "applicationId": "app_3L1ENrJ6R5Z2BKMPH7Ulpy8K7KP",
@@ -119,7 +129,7 @@
     "domainDnsVerified": true,
     "previewEnvironmentConfigured": true,
     "productionEnvironmentConfigured": true,
-    "productionBrowserPaymentTokenConfigured": false,
+    "productionBrowserPaymentTokenConfigured": true,
     "previewLivePaymentsEnabled": false,
     "productionBuild": "blocked-by-existing-content-and-acceptance-checks",
     "previewDeployment": "ready",
@@ -132,7 +142,7 @@
     "hostedGuestPractice": "passed-start-and-reload-same-question",
     "hostedSignInRendering": "passed-no-login-submitted"
   },
-  "configurationStatus": "protected-preview-deployed-clerk-connected-public-release-gated-content-acceptance-and-Paddle-browser-settings-pending",
+  "configurationStatus": "protected-preview-deployed-production-browser-token-configured-Paddle-app-domain-changes-needed-public-release-gated",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",

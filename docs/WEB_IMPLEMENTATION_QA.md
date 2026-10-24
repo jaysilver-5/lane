@@ -1,5 +1,13 @@
 # Web implementation verification — 20 October 2026
 
+## Production browser token and app-domain review — 24 October 2026
+
+Verified the existing signed-in live Tervlon Labs Limited Paddle account in Joshua's Chrome profile. Retrieved the existing active `FirstLane production web` client token (`ctkn_01m5nh7b2wngmdzm9yeej718ra`); did not create or rotate any credentials. Saved it as `EXPO_PUBLIC_PADDLE_CLIENT_TOKEN` in Vercel **Production only** and verified the saved variable is listed. Vercel requires its Config visibility because it has a public framework prefix; this is Paddle's intended browser-public token, never a server API key. Verified Preview still has no payment token. No token value was written to source, chat or screenshots. Production must rebuild after release checks pass to incorporate the setting; the protected preview remains unable to open live checkout.
+
+Submitted the exact app subdomain for website approval (`chedom_01m5psjn2q2sh4bftmv8pbv4h4`). It first showed In review, then changed to **Changes needed**. Root domains `getfirstlane.com` and `tervlon.com` remain Checkout/Apple Pay approved. The dashboard exposes no specific reason; the connected Gmail search found no matching review notice. The owner was asked to provide the requested changes if an email arrives. The app is still behind Vercel team login; reviewer access may be relevant, but the dashboard has not confirmed that as the reason. Do not resubmit unchanged or remove deployment protection to guess at approval.
+
+Reopened live Checkout configuration: default payment link remains blank, and Paddle requires an approved domain. Intended future URL remains `https://app.getfirstlane.com/checkout`, after domain approval and a functioning production Paddle.js page. No default link, payment method, tax, currency, approval flag, real transaction or entitlement was changed. Public sales still require approved content and final production acceptance. Evidence: `qa/paddle-app-domain-changes-needed.png`; earlier `qa/paddle-app-domain-in-review.png` is historical.
+
 ## Protected preview acceptance — 24 October 2026
 
 Git-triggered Preview `7VCuSQmDEkg3crELgbzt3Lcru6rF` is Ready (48-second build) at https://firstlane-oq92ab693-joshs-projects-e9dac4f7.vercel.app, from `58f6bd22bc097fd93c93e56a53192dbc3f94aa83`. Vercel lists `app.getfirstlane.com` on that preview. Both GitHub validate jobs and the Vercel check pass. The deployment is protected by Vercel team authentication; no bypass/share token was created.
