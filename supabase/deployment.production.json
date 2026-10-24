@@ -81,7 +81,7 @@
     "checkoutDomain": "app.getfirstlane.com",
     "checkoutDomainId": "chedom_01m5psjn2q2sh4bftmv8pbv4h4",
     "checkoutDomainStatus": "changes-needed",
-    "checkoutDomainReason": "Returned to Changes needed after resubmission; owner email lists reachability/under-construction/HTTPS/login restrictions. Root anonymously returns HTTPS 200. Exact remaining condition is unconfirmed.",
+    "checkoutDomainReason": "Changes needed; authoritative CNAME and valid TLS confirmed, but public recursive DNS still returns stale NXDOMAIN. Public cache refresh queued; exact Paddle internal review condition remains unconfirmed.",
     "defaultPaymentLink": null,
     "plannedDefaultPaymentLink": "https://app.getfirstlane.com/checkout",
     "checkoutDomainResubmittedDate": "2026-10-24"
@@ -142,12 +142,12 @@
     "previewLivePaymentsEnabled": false,
     "productionBuild": "blocked-by-existing-content-and-acceptance-checks",
     "previewDeployment": "ready",
-    "verifiedPreviewDeploymentId": "7VCuSQmDEkg3crELgbzt3Lcru6rF",
-    "verifiedPreviewCommit": "58f6bd22bc097fd93c93e56a53192dbc3f94aa83",
-    "verifiedPreviewUrl": "https://firstlane-oq92ab693-joshs-projects-e9dac4f7.vercel.app",
+    "verifiedPreviewDeploymentId": "6MxnANHmC3AtQomauSELLQ9EGznz",
+    "verifiedPreviewCommit": "12ead17e963f50a23efb4aa57898d51a50cb72f7",
+    "verifiedPreviewUrl": "https://firstlane-app-git-codex-firstlan-d306dd-joshs-projects-e9dac4f7.vercel.app/",
     "domainTlsVerified": true,
-    "unauthenticatedDomainResponse": "200-public-prelaunch-product-page-over-valid-TLS",
-    "localResolverStatus": "resolved-public-browser-access-passed",
+    "unauthenticatedDomainResponse": "200-valid-TLS-via-authoritative-target;recursive-DNS-inconsistent",
+    "localResolverStatus": "stale-negative-recursive-cache-persists",
     "hostedGuestPractice": "passed-start-and-reload-same-question",
     "hostedSignInRendering": "passed-no-login-submitted",
     "domainAssignedToProject": "firstlane-review",
@@ -160,14 +160,28 @@
       "productionBranch": "codex/firstlane-production-web",
       "outsideRootIncluded": false,
       "environmentVariablesAdded": false,
-      "verifiedDeploymentId": "4ifg6K7cqa4E1rSCkwceiE3Ce6ba",
-      "verifiedSourceCommit": "ea368c98cca0877504b3c5a04b4cd76a7fd79c9b",
+      "verifiedDeploymentId": "CTgUV5izhw28LBNuA7N2jJuMyqjx",
+      "verifiedSourceCommit": "12ead17e963f50a23efb4aa57898d51a50cb72f7",
       "domain": "app.getfirstlane.com",
-      "anonymousHttps": "passed-200-with-assets-and-policy-routes",
+      "anonymousHttps": "passed-valid-TLS-direct-authoritative-target-root-and-seven-informational-routes;public-DNS-still-inconsistent",
       "checkoutEnabled": false
+    },
+    "hostedEmailPasswordRendering": "passed-sign-in-sign-up-recovery-entry-consent-controls-no-account-submitted",
+    "dnsPropagation": {
+      "authoritativeNameservers": [
+        "nsa.whogohost.com",
+        "nsb.whogohost.com"
+      ],
+      "authoritativeSerial": "2026102405",
+      "staleNegativeSerial": "2026102404",
+      "authoritativeCnamePresentOnBoth": true,
+      "publicRecursiveResolutionConsistent": false,
+      "cloudflarePurge": "CNAME-A-AAAA-queued-not-confirmed-complete",
+      "googleFlush": "not-confirmed-reCAPTCHA-service-unreachable",
+      "recordsChangedInThisPass": false
     }
   },
-  "configurationStatus": "email-password-web-scope-production-backend-connected-preview-protected-Paddle-domain-changes-needed-content-and-final-acceptance-pending",
+  "configurationStatus": "email-password-web-preview-verified-backend-connected-DNS-negative-cache-and-Paddle-domain-changes-needed-content-and-final-acceptance-pending",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",
@@ -193,6 +207,8 @@
     "realProductionLoginPassed": false,
     "realLivePurchasePassed": false,
     "nativeLaunchInScope": false,
-    "details": "docs/LAUNCH_READINESS.md"
+    "details": "docs/LAUNCH_READINESS.md",
+    "hostedEmailPasswordRendering": "passed-protected-web-preview",
+    "reliablePublicDnsPassed": false
   }
 }

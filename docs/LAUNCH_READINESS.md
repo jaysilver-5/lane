@@ -1,5 +1,17 @@
 # Web launch readiness — 24 October 2026
 
+## Deployed email/password and DNS follow-up — 24 October 2026
+
+Verified the actual protected web deployment at the branch URL: email/password sign-in, recovery entry, signup fields and explicit unchecked consent controls render; Google/Apple buttons and the redundant social separator are absent. No account, password, consent or payment was submitted. Both GitHub validate checks and both Vercel projects pass for 12ead17. Screenshot: `qa/web-email-password-launch.png`; production provider configuration: `qa/clerk-production-email-only.png`.
+
+Corrected the informational site's Vercel rewrites to `/`, as required when cleanUrls is true. On deployed review build CTgUV5izhw28LBNuA7N2jJuMyqjx, root, /onboarding, /plans, /auth/sign-in, /checkout, /practice and /quiz all return 200 over normal validated TLS when routed to the authoritative CNAME target. Those routes show the same truthful product preview, not functioning account/practice/payment screens. Reference: https://vercel.com/docs/project-configuration/vercel-json#rewrites.
+
+Found a separate DNS propagation problem: both nsa.whogohost.com and nsb.whogohost.com return the correct CNAME, TTL 300, zone serial 2026102405; public recursive responses still include NXDOMAIN from the older serial 2026102404. Google CNAME lookup is positive while its A lookup is negative; Cloudflare A/CNAME lookups remain negative. Negative-cache responses advertise up to 86400 seconds (Google A showed 1800). Therefore a valid certificate and successful direct-target HTTPS do not establish reliable global reachability. This is evidence consistent with Paddle's reachability email, not proof of its internal review result.
+
+Submitted Cloudflare public cache purges for the exact app host's CNAME, A and AAAA records; the visible result is request queued, not completed global propagation. The owner clicked Google Flush Cache; that page reports it could not connect to the reCAPTCHA service, so Google's purge is not confirmed. One reload was attempted, with no verified successful flush. No DNS record, nameserver, browser protection or certificate validation was changed. Do not repeatedly resubmit Paddle while DNS remains inconsistent. The existing app-domain status remains Changes needed. References: https://developers.cloudflare.com/dns/troubleshooting/dns-issues/ and https://developers.google.com/speed/public-dns/faq#flush.
+
+Marketing PR jaysilver-5/getfirstlane#3 is merged as ab33ad90c745981c6d5d66691017c141ccb62097 and its production Vercel status is success. It changes web-only release validation, not public purchase availability. Content remains 0/500 reviewed and zero approved published releases; real production customer/payment acceptance remains pending. There is no firm checkout launch date until those requirements and domain approval are complete.
+
 The owner confirmed a **web-only launch using email and password**. `app.getfirstlane.com` is the browser product origin, not a mobile-store launch. Browser purchases route to Paddle; iOS/Android purchases use the separate RevenueCat/native-store code path and are out of scope. `web-launch-scope.json` now records the selected platform, authentication methods and payment provider. Social acceptance is required by the release gate only if a social method is actually selected; email/recovery, backend, content, payment and other web acceptance remain required.
 
 ## Completed in this pass
