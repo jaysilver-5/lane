@@ -1,0 +1,4184 @@
+{
+  "schema_version": 1,
+  "reviewer_type": "ai",
+  "reviewed_on": "2026-10-24",
+  "previous_bank_sha256": "3077e13fd32d442d9b0c1b19f902e0bde1c2d7582fce264d01684133696b9b3f",
+  "current_bank_sha256": "9f5b1f4ae44e9f1f3977e6013f782e47ccc42a2ff92530315c4a4d1bcd24ce1d",
+  "changed_question_count": 44,
+  "changes": [
+    {
+      "code": "ON-G1-0001",
+      "reasons": [
+        "Explain the complete stopping-position sequence, including an unmarked crosswalk."
+      ],
+      "before": {
+        "id": "e4983f70-884f-5a4e-9d23-cfef53d99f93",
+        "code": "ON-G1-0001",
+        "revision_id": "e5aeef84-77d1-5bee-b238-1012b9d74dd6",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-signs-stop-sign",
+        "variant": "knowledge",
+        "section": "road_signs",
+        "topic": "Basic shapes and sign families",
+        "learning_objective": "Stop sign",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "You approach a red, eight-sided sign marked STOP. What does it mean?",
+        "options": [
+          {
+            "id": "ec55e2bd-23f1-5390-8745-895245301633",
+            "text": "Only slowing is required."
+          },
+          {
+            "id": "588b1a27-6be1-570d-8565-3c648f754954",
+            "text": "Stopping is required only if another car is visible."
+          },
+          {
+            "id": "086f7b11-ec5f-5c4a-88af-19b4172a72d3",
+            "text": "A full stop is required."
+          },
+          {
+            "id": "9a1bb4cd-6e2c-5ed8-a6b2-5dd6c15e0416",
+            "text": "The road becomes one-way."
+          }
+        ],
+        "correct_option_id": "086f7b11-ec5f-5c4a-88af-19b4172a72d3",
+        "explanation": "An octagonal STOP sign requires a complete stop at the marked stopping position; enter only after checking that it is safe.",
+        "evidence": [
+          {
+            "source_id": "ON-SIGNS",
+            "locator": "Basic shapes and sign families — Stop sign",
+            "support_note": "An octagonal STOP sign requires a complete stop at the marked stopping position; enter only after checking that it is safe.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/signs"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text_description",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "text_only_sign_item"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "09e86cf1-be3c-4e8c-880f-883fab848f77",
+      "after_sha256": "ca7745e1a9ac506cf32763cc853c7031fbc9160cfa2b0726c5c6ff82e7641721"
+    },
+    {
+      "code": "ON-G1-0002",
+      "reasons": [
+        "Explain the complete stopping-position sequence, including an unmarked crosswalk."
+      ],
+      "before": {
+        "id": "e4b8e2b5-4fda-51f8-90d0-b930e0704776",
+        "code": "ON-G1-0002",
+        "revision_id": "d7a06056-2309-5d32-8a2b-ffff051083a2",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-signs-stop-sign",
+        "variant": "application",
+        "section": "road_signs",
+        "topic": "Basic shapes and sign families",
+        "learning_objective": "Stop sign",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "At a STOP sign with a painted stop line, where should the front of your vehicle stop?",
+        "options": [
+          {
+            "id": "e5c89949-1f0e-50b4-91dd-cb91e4e3bc70",
+            "text": "In the middle of the crosswalk."
+          },
+          {
+            "id": "f889ac1b-5098-5604-89d3-f6490408e01a",
+            "text": "Before the stop line."
+          },
+          {
+            "id": "327a5db7-97a6-5813-b689-01d4e092d420",
+            "text": "Past the line so you can see better."
+          },
+          {
+            "id": "f3af285c-f716-5602-92ab-368249b57d4d",
+            "text": "At the far side of the junction."
+          }
+        ],
+        "correct_option_id": "f889ac1b-5098-5604-89d3-f6490408e01a",
+        "explanation": "An octagonal STOP sign requires a complete stop at the marked stopping position; enter only after checking that it is safe.",
+        "evidence": [
+          {
+            "source_id": "ON-SIGNS",
+            "locator": "Basic shapes and sign families — Stop sign",
+            "support_note": "An octagonal STOP sign requires a complete stop at the marked stopping position; enter only after checking that it is safe.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/signs"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text_description",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "text_only_sign_item"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "06a23768-96f7-4628-9f65-7f0173f1fb69",
+      "after_sha256": "665f8433993c93a61e72bd4ffab31dd42439d26755772d09ecc634c56ed1520d"
+    },
+    {
+      "code": "ON-G1-0045",
+      "reasons": [
+        "Clarify that displaying a permit alone does not authorize use without the eligible person."
+      ],
+      "before": {
+        "id": "7037d6ec-afad-5b3c-8fd2-2de20ac481ac",
+        "code": "ON-G1-0045",
+        "revision_id": "032e7e8a-9b3e-557b-bd02-12572ae320c9",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-signs-accessible-parking-space",
+        "variant": "knowledge",
+        "section": "road_signs",
+        "topic": "Regulatory signs",
+        "learning_objective": "Accessible parking space",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "A parking sign reserves a space for valid accessible-parking-permit users. What does it mean?",
+        "options": [
+          {
+            "id": "85599eb9-034e-50c1-b885-1bd0ca23d9cb",
+            "text": "Anyone may use it for a short shopping trip."
+          },
+          {
+            "id": "c8770027-bd6c-58ed-b452-a0d7edd102ec",
+            "text": "The required valid permit must be displayed for use of the space."
+          },
+          {
+            "id": "54afc313-c218-55bd-9700-7e5b192fdd9e",
+            "text": "A disability in any relative is sufficient."
+          },
+          {
+            "id": "ae8192e6-33c1-5137-bc6b-a7fa8fcc7060",
+            "text": "Hazard lights replace the permit."
+          }
+        ],
+        "correct_option_id": "c8770027-bd6c-58ed-b452-a0d7edd102ec",
+        "explanation": "Accessible parking spaces are reserved for valid permit use; convenience or a short stay is not a substitute.",
+        "evidence": [
+          {
+            "source_id": "ON-SIGNS",
+            "locator": "Regulatory signs — Accessible parking space",
+            "support_note": "Accessible parking spaces are reserved for valid permit use; convenience or a short stay is not a substitute.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/signs"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text_description",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "text_only_sign_item"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "3e8cbca4-fe93-4556-a4dc-9d1e76353378",
+      "after_sha256": "d25a546a527f22609bec59ca2754c2cb8301f7774287f40357ffcb4f8c8aebe0"
+    },
+    {
+      "code": "ON-G1-0046",
+      "reasons": [
+        "Clarify that displaying a permit alone does not authorize use without the eligible person."
+      ],
+      "before": {
+        "id": "7fd02bd2-7082-5bc2-bc38-d25670bbb841",
+        "code": "ON-G1-0046",
+        "revision_id": "a0b48bf3-68e7-53c9-be69-bff401a865d7",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-signs-accessible-parking-space",
+        "variant": "application",
+        "section": "road_signs",
+        "topic": "Regulatory signs",
+        "learning_objective": "Accessible parking space",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "You have no qualifying permit use but expect to be away for only one minute. May you park in the reserved space?",
+        "options": [
+          {
+            "id": "28e245b3-84f5-5ce9-8ba8-487f86f31b41",
+            "text": "Yes, if you remain visible from the shop."
+          },
+          {
+            "id": "998ef693-259b-5018-b4f0-b8b72a52e26f",
+            "text": "Yes, if your passenger stays inside."
+          },
+          {
+            "id": "e210fc3a-2e01-5055-b7d2-2f534af3af95",
+            "text": "Yes, when at least one other accessible space is empty."
+          },
+          {
+            "id": "158b3568-f118-58b8-9315-352fecb7f0ff",
+            "text": "No; the short duration does not remove the permit requirement."
+          }
+        ],
+        "correct_option_id": "158b3568-f118-58b8-9315-352fecb7f0ff",
+        "explanation": "Accessible parking spaces are reserved for valid permit use; convenience or a short stay is not a substitute.",
+        "evidence": [
+          {
+            "source_id": "ON-SIGNS",
+            "locator": "Regulatory signs — Accessible parking space",
+            "support_note": "Accessible parking spaces are reserved for valid permit use; convenience or a short stay is not a substitute.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/signs"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text_description",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "text_only_sign_item"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "02e6ed90-3173-4572-8b70-e07fa7844317",
+      "after_sha256": "c8a8e0b33c4aa1a0ee62a27fcd3f39a3154e0c7737ff59250c3c4d87d3494c5e"
+    },
+    {
+      "code": "ON-G1-0241",
+      "reasons": [
+        "Include the official safety instruction to pull off the road for an emergency call."
+      ],
+      "before": {
+        "id": "d5db257e-f1d4-5dfa-98a2-10f9473d7ea5",
+        "code": "ON-G1-0241",
+        "revision_id": "282fa64b-0097-52e0-873c-d54119a37494",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-emergency-phone-exception",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Distraction and impairment",
+        "learning_objective": "Emergency phone exception",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "Which call is identified as an exception to Ontario's handheld-device prohibition?",
+        "options": [
+          {
+            "id": "f1ffa26b-9527-59c3-8f8d-a03e5f7f680b",
+            "text": "A social call lasting under one minute."
+          },
+          {
+            "id": "a69a9c02-761e-56bc-8108-3bc80467f225",
+            "text": "A call to explain being late."
+          },
+          {
+            "id": "b8849490-9054-5794-9702-5856d0f54290",
+            "text": "A call to order food."
+          },
+          {
+            "id": "ae4dfe99-47d5-596c-a434-eba03d33d533",
+            "text": "A necessary emergency call to 911."
+          }
+        ],
+        "correct_option_id": "ae4dfe99-47d5-596c-a434-eba03d33d533",
+        "explanation": "Ontario identifies calling 911 in an emergency as an exception; it is not a general permission for routine handheld conversations.",
+        "evidence": [
+          {
+            "source_id": "ON-DISTRACTION",
+            "locator": "Exceptions to distracted driving rules",
+            "support_note": "Ontario identifies calling 911 in an emergency as an exception; it is not a general permission for routine handheld conversations.",
+            "source_url": "https://www.ontario.ca/page/distracted-driving"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "contains_numeric_or_licence_class_reference",
+            "condition_or_exception_requires_attention"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "8ee8076f-0b96-4225-aac2-5d7c544a4e94",
+      "after_sha256": "08aa5cce879b53881f8dc24c4a322160f5d1ca5ef49fb4808796dbacfc0c81f1"
+    },
+    {
+      "code": "ON-G1-0242",
+      "reasons": [
+        "Include the official safety instruction to pull off the road for an emergency call."
+      ],
+      "before": {
+        "id": "9607fd7d-48e3-5f6f-9c7c-eee26bb9755e",
+        "code": "ON-G1-0242",
+        "revision_id": "f7105254-7eef-5120-9303-6e2b07a96cee",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-emergency-phone-exception",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Distraction and impairment",
+        "learning_objective": "Emergency phone exception",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "A driver witnesses an immediate emergency requiring 911. Which statement best fits the rule?",
+        "options": [
+          {
+            "id": "7268941c-b66b-58b8-bf62-f91b1627019e",
+            "text": "Emergency calls are prohibited in every circumstance."
+          },
+          {
+            "id": "47eb3779-14b6-5090-8a85-3f1650689fae",
+            "text": "Every ordinary call receives the same exception."
+          },
+          {
+            "id": "5b366109-8401-507f-8b86-86f0ba1dd522",
+            "text": "The driver must first send a text to friends."
+          },
+          {
+            "id": "bc557dd2-bf8b-50fc-860e-69e820836c24",
+            "text": "The emergency-call exception exists; make the call as safely as possible."
+          }
+        ],
+        "correct_option_id": "bc557dd2-bf8b-50fc-860e-69e820836c24",
+        "explanation": "Ontario identifies calling 911 in an emergency as an exception; it is not a general permission for routine handheld conversations.",
+        "evidence": [
+          {
+            "source_id": "ON-DISTRACTION",
+            "locator": "Exceptions to distracted driving rules",
+            "support_note": "Ontario identifies calling 911 in an emergency as an exception; it is not a general permission for routine handheld conversations.",
+            "source_url": "https://www.ontario.ca/page/distracted-driving"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "contains_numeric_or_licence_class_reference",
+            "condition_or_exception_requires_attention"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "b1ead475-f72a-4c45-bfc6-51180b49c11c",
+      "after_sha256": "794a348c1cdc978e0ae952640d1c2ab15601e128b4feb465a42eda4fd04c9e05"
+    },
+    {
+      "code": "ON-G1-0277",
+      "reasons": [
+        "Make the all-way-stop control explicit; simultaneous stopping alone does not establish this priority."
+      ],
+      "before": {
+        "id": "98d14262-08bb-5642-9e3f-3ea21a07c70e",
+        "code": "ON-G1-0277",
+        "revision_id": "7254fb2c-7808-5e27-bea0-01a74aa873ae",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-simultaneous-all-way-arrival",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Intersections and right-of-way",
+        "learning_objective": "Simultaneous all-way arrival",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "Two vehicles stop at the same time on intersecting approaches. Which driver normally yields?",
+        "options": [
+          {
+            "id": "7db3261a-e2d8-599e-92e1-d83ac16108cb",
+            "text": "The driver on the wider approach regardless of controls."
+          },
+          {
+            "id": "3b82e6a5-d6d5-5ffe-951f-a406a85c1028",
+            "text": "The driver with the newer car."
+          },
+          {
+            "id": "81135b71-08f2-52c9-910c-fbf47f4e1ae9",
+            "text": "The driver travelling north."
+          },
+          {
+            "id": "2d4e7eaf-811c-5bdf-a2c0-8cd5da13a3fe",
+            "text": "The driver with the other vehicle on their right."
+          }
+        ],
+        "correct_option_id": "2d4e7eaf-811c-5bdf-a2c0-8cd5da13a3fe",
+        "explanation": "When arrival is simultaneous, the driver on the left yields to the vehicle on the right, subject to safe movement and other applicable conflicts.",
+        "evidence": [
+          {
+            "source_id": "ON-INTERSECTIONS",
+            "locator": "Right-of-way; all-way stops",
+            "support_note": "When arrival is simultaneous, the driver on the left yields to the vehicle on the right, subject to safe movement and other applicable conflicts.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/driving-through-intersections"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "fdce3cbe-745c-4067-b0a5-e9dda4cf5b2f",
+      "after_sha256": "b9934dbb6d7a2965704f909862c1a17025feb6ac7f74bbf725af68d26eadf54b"
+    },
+    {
+      "code": "ON-G1-0295",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "f25c9ed8-0de0-54d0-8841-04341097c098",
+        "code": "ON-G1-0295",
+        "revision_id": "44a44c81-4f0c-5ba3-b221-9d281caa7ce6",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-amber-phase",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus amber phase",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "What do flashing overhead amber lights on a school bus tell approaching drivers on an undivided road to do?",
+        "options": [
+          {
+            "id": "6c75dbe4-74f9-57ff-ac89-a7ac6eeb98bd",
+            "text": "Stop only after physically passing the bus."
+          },
+          {
+            "id": "4da2ed2e-5757-527c-941a-18b5f66e72c4",
+            "text": "Slow down and prepare to stop."
+          },
+          {
+            "id": "a1081ffb-718a-5ebb-91cf-6a832d0ea400",
+            "text": "Accelerate before the red lights appear."
+          },
+          {
+            "id": "2cb377d4-f8d0-5aa1-b2cf-daef38481b3d",
+            "text": "Ignore the bus until a child is in your lane."
+          }
+        ],
+        "correct_option_id": "4da2ed2e-5757-527c-941a-18b5f66e72c4",
+        "explanation": "The amber phase warns that a school bus is preparing to stop; it is not an invitation to hurry past it.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses",
+            "support_note": "The amber phase warns that a school bus is preparing to stop; it is not an invitation to hurry past it.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "8d6abb08-43dd-4848-88ee-f87515ef00c0",
+      "after_sha256": "2bf50bf569645650eed5f47438c01fdd86b30e5dde10b9d20babbf49699c84ed"
+    },
+    {
+      "code": "ON-G1-0296",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "65c293d1-a350-5420-9820-a0067b3bc5bd",
+        "code": "ON-G1-0296",
+        "revision_id": "92926684-bcd8-5bb5-824d-c78b0f26f195",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-amber-phase",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus amber phase",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "A bus ahead begins flashing amber lights while slowing. What is the right response?",
+        "options": [
+          {
+            "id": "6cbf179f-768e-5cc1-8acb-a5329d08ad36",
+            "text": "Follow closer so no car enters the gap."
+          },
+          {
+            "id": "fb833ac1-f2c3-563f-9ab0-7cc907e3c635",
+            "text": "Overtake immediately to avoid waiting."
+          },
+          {
+            "id": "3a6bf259-87d7-5297-8677-fb6396e66d34",
+            "text": "Reduce speed and prepare for its passenger stop."
+          },
+          {
+            "id": "86155534-e6d8-5fdc-86a0-4a4dfcf5992b",
+            "text": "Assume amber means the bus will never stop."
+          }
+        ],
+        "correct_option_id": "3a6bf259-87d7-5297-8677-fb6396e66d34",
+        "explanation": "The amber phase warns that a school bus is preparing to stop; it is not an invitation to hurry past it.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses",
+            "support_note": "The amber phase warns that a school bus is preparing to stop; it is not an invitation to hurry past it.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "f6be003a-3bb2-47b1-a59d-f2e2b100accd",
+      "after_sha256": "bcd86b2de48abcd9e770d7ad2caddc0c510e357dcbd0a3346dbbaadc8a9cfd47"
+    },
+    {
+      "code": "ON-G1-0297",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "0092e8f8-c128-5577-bda0-2ef9ad610231",
+        "code": "ON-G1-0297",
+        "revision_id": "0c93f6be-3995-524f-b4b3-4d37b48c4544",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-red-both-directions",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus red both directions",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "A school bus is stopped with overhead red lights flashing on a road without a median. Who must stop?",
+        "options": [
+          {
+            "id": "a289d976-11ca-53ce-ba41-b9682d1cf8b1",
+            "text": "Approaching traffic in both directions."
+          },
+          {
+            "id": "1345fb4c-32e0-566b-9186-adb06d4768b2",
+            "text": "Only traffic directly behind the bus."
+          },
+          {
+            "id": "7238de91-a58b-568e-b439-b88c54e030e5",
+            "text": "Only vehicles whose drivers see a child."
+          },
+          {
+            "id": "0cf0326f-815f-5a5e-8ba3-f04a28783f19",
+            "text": "Only vehicles in the bus's lane."
+          }
+        ],
+        "correct_option_id": "a289d976-11ca-53ce-ba41-b9682d1cf8b1",
+        "explanation": "Without a physical median, the school-bus stopping requirement applies in both directions; extra lanes do not create a median exemption.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses; roads without a median",
+            "support_note": "Without a physical median, the school-bus stopping requirement applies in both directions; extra lanes do not create a median exemption.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "e71caff0-7a1c-43d8-9a10-cbb829ae1cb8",
+      "after_sha256": "2ba342486fb8c1ef5b7c27903142f7df9e92af126da36bc0e75b6c5575fc833f"
+    },
+    {
+      "code": "ON-G1-0298",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "b2f215d0-47ab-5440-8aa1-c25f64187f7b",
+        "code": "ON-G1-0298",
+        "revision_id": "9147df33-21d2-51f0-8a9c-eff698af4a4c",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-red-both-directions",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus red both directions",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "You are approaching the front of a stopped red-flashing school bus on an undivided four-lane road. What is required?",
+        "options": [
+          {
+            "id": "234daf75-9d0f-5cf6-b924-d0551695217d",
+            "text": "Stop only if the bus driver points at you."
+          },
+          {
+            "id": "eac616ea-b6d1-58dd-b817-72b71d3c3ed7",
+            "text": "Stop at a safe distance for children to board, leave or cross."
+          },
+          {
+            "id": "597063fc-f967-5dbe-8321-7e913cdb357e",
+            "text": "Continue because the road has four lanes."
+          },
+          {
+            "id": "aa91ceb7-0f7a-5138-9bae-da785e587e39",
+            "text": "Continue because you are not behind it."
+          }
+        ],
+        "correct_option_id": "eac616ea-b6d1-58dd-b817-72b71d3c3ed7",
+        "explanation": "Without a physical median, the school-bus stopping requirement applies in both directions; extra lanes do not create a median exemption.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses; roads without a median",
+            "support_note": "Without a physical median, the school-bus stopping requirement applies in both directions; extra lanes do not create a median exemption.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "f342aa46-1fc1-4418-8d90-d836ff9ec30e",
+      "after_sha256": "b2feee490b1f69e786c5510d9d78f17142188f835149f6fe8168197faa2c72b2"
+    },
+    {
+      "code": "ON-G1-0299",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "c0dfca2c-d690-5699-b77b-aa2fbf3811c9",
+        "code": "ON-G1-0299",
+        "revision_id": "b097f7cf-343d-5344-b47b-f5adc6dc9960",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-rear-distance",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus rear distance",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "How far behind a stopped school bus with overhead red lights or its stop arm activated must you stop at minimum?",
+        "options": [
+          {
+            "id": "3b33b4c7-1c07-57c1-a41c-567762ecbdb6",
+            "text": "20 metres."
+          },
+          {
+            "id": "bf86386a-c746-5dbd-9a5c-e161cff2c11f",
+            "text": "One vehicle length."
+          },
+          {
+            "id": "a81965b4-5560-5eb6-a78a-b05530ed9709",
+            "text": "Two metres."
+          },
+          {
+            "id": "c1b88090-6114-5d1a-89b0-14f5f0f78cb2",
+            "text": "Five metres."
+          }
+        ],
+        "correct_option_id": "3b33b4c7-1c07-57c1-a41c-567762ecbdb6",
+        "explanation": "The specified minimum applies to vehicles approaching from behind: stop at least 20 metres away.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses; stopping behind",
+            "support_note": "The specified minimum applies to vehicles approaching from behind: stop at least 20 metres away.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "contains_numeric_or_licence_class_reference"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "c52c8357-ef18-4185-86f4-b60a37820547",
+      "after_sha256": "ee25eda2988a1fe19837e9564d737d7254547059caefbc9fba2a2e050d02cc0e"
+    },
+    {
+      "code": "ON-G1-0300",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "07740538-71c6-5257-a251-cb0d55015b86",
+        "code": "ON-G1-0300",
+        "revision_id": "6a30f182-2ab9-5785-bb03-e786e7e488eb",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-rear-distance",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus rear distance",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "A driver stops five metres behind a bus whose red lights are flashing. What does Ontario's stated minimum require instead?",
+        "options": [
+          {
+            "id": "7c2e36ad-4cde-5f1a-8453-ef7f72b524be",
+            "text": "No minimum if no child has emerged yet."
+          },
+          {
+            "id": "0d4bbbe1-8d65-5bdc-9b2f-a89149ba0663",
+            "text": "At least 20 metres of separation behind the bus."
+          },
+          {
+            "id": "f4035681-373d-5383-9468-338666ff076a",
+            "text": "Exactly five metres is sufficient."
+          },
+          {
+            "id": "9c489a09-12bf-5752-b633-ec011e8c3316",
+            "text": "Only enough room to see the bumper."
+          }
+        ],
+        "correct_option_id": "0d4bbbe1-8d65-5bdc-9b2f-a89149ba0663",
+        "explanation": "The specified minimum applies to vehicles approaching from behind: stop at least 20 metres away.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses; stopping behind",
+            "support_note": "The specified minimum applies to vehicles approaching from behind: stop at least 20 metres away.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "contains_numeric_or_licence_class_reference"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "e3ae5e84-df43-47d9-baa5-db49a8f9708b",
+      "after_sha256": "233bae890af09f3aa6c200724fac4a46c8fef027083fcfd5d9099b79af31aef5"
+    },
+    {
+      "code": "ON-G1-0301",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "e858fb46-ee6a-522d-b5f9-e02ba455e267",
+        "code": "ON-G1-0301",
+        "revision_id": "6972935d-43a2-54e5-aac6-eec9f34fdfaa",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-median-exception",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus median exception",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "A physical median separates you from a stopped school bus facing the opposite direction. What is the school-bus stopping rule for your side?",
+        "options": [
+          {
+            "id": "3b70d711-dc65-5432-8e07-8fbf4ee00442",
+            "text": "Every vehicle must cross the median and stop."
+          },
+          {
+            "id": "670de497-ba2e-5d7a-8d8f-a554e4788064",
+            "text": "A painted centre line creates the same exception everywhere."
+          },
+          {
+            "id": "4ad84ed9-dca5-525c-b2a5-46853723e58a",
+            "text": "Only motorcycles must stop."
+          },
+          {
+            "id": "5a6d3195-887f-5152-9a80-395555b7faaf",
+            "text": "Opposing traffic on the other side of that median is not required to stop for the bus."
+          }
+        ],
+        "correct_option_id": "5a6d3195-887f-5152-9a80-395555b7faaf",
+        "explanation": "The physical-median exception is for traffic on the opposite side travelling the other way, not vehicles behind the bus.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses; roads with a median",
+            "support_note": "The physical-median exception is for traffic on the opposite side travelling the other way, not vehicles behind the bus.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "condition_or_exception_requires_attention"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "b4629de9-570f-4e88-9e57-042b2f61d2c6",
+      "after_sha256": "f6c7073e10359cc79531ba64059c80df63d3876a2e70dd6a5e3442a5250ddc33"
+    },
+    {
+      "code": "ON-G1-0302",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "fac6cfe4-42f1-5ba5-9683-f6bc0a6ecb8c",
+        "code": "ON-G1-0302",
+        "revision_id": "9ce8b381-7f4b-5d28-b497-7881c11e1a5f",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-median-exception",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus median exception",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "You are on the same carriageway behind the bus, with a median separating opposing traffic. Does the median exempt you?",
+        "options": [
+          {
+            "id": "065159fe-105f-5729-9baa-da5911e10678",
+            "text": "Yes, if you use the left lane."
+          },
+          {
+            "id": "e4b57930-b7b1-5f0f-bac2-9c9c90c9c24b",
+            "text": "Yes; any median removes all stopping duties."
+          },
+          {
+            "id": "4a7f3a67-a439-5d1f-9e7c-f6c37dc93503",
+            "text": "No; traffic travelling in the bus's direction must still stop."
+          },
+          {
+            "id": "82ee24ec-f964-5f4e-a09d-8e8e8b5c6ac8",
+            "text": "Yes, if you cannot see children."
+          }
+        ],
+        "correct_option_id": "4a7f3a67-a439-5d1f-9e7c-f6c37dc93503",
+        "explanation": "The physical-median exception is for traffic on the opposite side travelling the other way, not vehicles behind the bus.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses; roads with a median",
+            "support_note": "The physical-median exception is for traffic on the opposite side travelling the other way, not vehicles behind the bus.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "condition_or_exception_requires_attention"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "09be1614-4b9a-4758-9c01-ff9c2c5e858b",
+      "after_sha256": "d0eacc53080a5e140b4527b805e73057feb8e94a28dbe748b139fa9c5233b212"
+    },
+    {
+      "code": "ON-G1-0303",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "7764f042-2579-5a14-a7a2-fb601a4c04bb",
+        "code": "ON-G1-0303",
+        "revision_id": "b0ff34ca-d882-5c32-b4e2-1bd680b0e68c",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-stop-arm-alone",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus stop arm alone",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "A school bus is stopped and its stop arm is activated. May you ignore it because you did not notice the overhead red lights?",
+        "options": [
+          {
+            "id": "1610139d-35ec-5148-9935-6169b95e53b0",
+            "text": "Yes; both indications must be independently observed before stopping."
+          },
+          {
+            "id": "e4470406-4bc2-505a-a302-9ce119e4c645",
+            "text": "No; the activated stop arm is also a stopping signal."
+          },
+          {
+            "id": "a3efd68a-3f9a-56ea-ad61-569eb668da53",
+            "text": "Yes; the arm is decorative."
+          },
+          {
+            "id": "6da1aa27-edae-50fb-8c97-e0c249814635",
+            "text": "Yes, unless it is morning."
+          }
+        ],
+        "correct_option_id": "e4470406-4bc2-505a-a302-9ce119e4c645",
+        "explanation": "The current guidance requires stopping for a stopped school bus showing red overhead lights or an activated stop arm; the duty is not confined to a school-run hour.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses",
+            "support_note": "The current guidance requires stopping for a stopped school bus showing red overhead lights or an activated stop arm; the duty is not confined to a school-run hour.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "condition_or_exception_requires_attention"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "f9b3606b-c2d4-477d-93f1-cb48066907b4",
+      "after_sha256": "661af84b416b695fa2f1fb039f82a69d06f9556c24fdc2d2a19618bd8943691b"
+    },
+    {
+      "code": "ON-G1-0304",
+      "reasons": [
+        "Add the current official infocard as specific support for amber/red/stop-arm, median and 20-metre rules."
+      ],
+      "before": {
+        "id": "f2e3b8b2-cb35-5279-8529-24476740ec8a",
+        "code": "ON-G1-0304",
+        "revision_id": "d9092e62-4cac-501d-a8bd-af7cacd52843",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-school-bus-stop-arm-alone",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "School buses, pedestrians and railway crossings",
+        "learning_objective": "School bus stop arm alone",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "A stopped school bus extends its stop arm on an undivided road during a midday trip. What should approaching drivers do?",
+        "options": [
+          {
+            "id": "5882c5f3-298d-5738-85c5-d0cc6c3c9291",
+            "text": "Stop only behind the bus, never in front."
+          },
+          {
+            "id": "85d62819-b3e4-582d-9fbc-f61be460ed15",
+            "text": "Pass because it is not the morning school run."
+          },
+          {
+            "id": "e2028367-c3e5-501c-b222-17443032787a",
+            "text": "Stop as required rather than rely on the time of day."
+          },
+          {
+            "id": "820d44db-df92-5788-9292-41cfd3b566b0",
+            "text": "Pass if the red lights are difficult to see."
+          }
+        ],
+        "correct_option_id": "e2028367-c3e5-501c-b222-17443032787a",
+        "explanation": "The current guidance requires stopping for a stopped school bus showing red overhead lights or an activated stop arm; the duty is not confined to a school-run hour.",
+        "evidence": [
+          {
+            "source_id": "ON-BUS",
+            "locator": "Driving near school buses",
+            "support_note": "The current guidance requires stopping for a stopped school bus showing red overhead lights or an activated stop arm; the duty is not confined to a school-run hour.",
+            "source_url": "https://www.ontario.ca/page/school-bus-safety"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "079bc45e-0be3-4f09-bd1b-6b88bc96095d",
+      "after_sha256": "f037629a2b452f043efef940c9408e212947c2b139152968f5aafec22afed91a"
+    },
+    {
+      "code": "ON-G1-0319",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "425828f8-6ee7-558d-9dfe-6121072133dd",
+        "code": "ON-G1-0319",
+        "revision_id": "2a6da70c-ef10-5284-99aa-5a464587d42b",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-approaching-emergency-vehicle",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Approaching emergency vehicle",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "What should you generally do when an emergency vehicle approaches with emergency lights or siren operating?",
+        "options": [
+          {
+            "id": "60efb53c-773d-5906-a20a-a5e47d212b71",
+            "text": "Follow closely behind it."
+          },
+          {
+            "id": "83baf012-8c5d-5b75-bc60-876927db8f72",
+            "text": "Signal, move toward the right when safe and stop clear of intersections."
+          },
+          {
+            "id": "4194dd9f-dd62-5932-a331-0be476b1f50c",
+            "text": "Accelerate to remain in front."
+          },
+          {
+            "id": "573006e3-d270-59fe-a77b-e6d7ae352223",
+            "text": "Stop abruptly wherever you happen to be."
+          }
+        ],
+        "correct_option_id": "83baf012-8c5d-5b75-bc60-876927db8f72",
+        "explanation": "Yield promptly but predictably: observe surrounding traffic, signal, move right when safe and stop without blocking an intersection.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "When an emergency vehicle approaches",
+            "support_note": "Yield promptly but predictably: observe surrounding traffic, signal, move right when safe and stop without blocking an intersection.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "condition_or_exception_requires_attention"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "7805cce2-194e-4a53-b90c-4103ae37e673",
+      "after_sha256": "1a004d40ece19b3622d98007bd50c54d2ea8dcf3340d66e49d2445f966ffda5e"
+    },
+    {
+      "code": "ON-G1-0320",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "839dcc9e-2ae0-55e0-b0cf-a135f059a4f3",
+        "code": "ON-G1-0320",
+        "revision_id": "085769fe-9219-5156-b607-68959087cde4",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-approaching-emergency-vehicle",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Approaching emergency vehicle",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "You hear a siren behind you on a two-way road. What is the appropriate first approach?",
+        "options": [
+          {
+            "id": "ec4d66a2-ad8d-50d8-a5a4-c73a655f5783",
+            "text": "Continue until the emergency vehicle touches your bumper."
+          },
+          {
+            "id": "e982c8aa-7fe4-5140-915a-115382ad590b",
+            "text": "Move into the opposing lane."
+          },
+          {
+            "id": "8fc28247-dcc5-58e1-a86b-b1b6c4729ca3",
+            "text": "Brake hard without looking."
+          },
+          {
+            "id": "041a73a5-04fd-57b3-aa28-dcc511f3a257",
+            "text": "Check around, signal and move right calmly to make a clear path."
+          }
+        ],
+        "correct_option_id": "041a73a5-04fd-57b3-aa28-dcc511f3a257",
+        "explanation": "Yield promptly but predictably: observe surrounding traffic, signal, move right when safe and stop without blocking an intersection.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "When an emergency vehicle approaches",
+            "support_note": "Yield promptly but predictably: observe surrounding traffic, signal, move right when safe and stop without blocking an intersection.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "27290d43-90bb-4f38-a422-741ea55e8f99",
+      "after_sha256": "c137076a3069f65f7628945429d4669dc5cacbcc54e66c0bd19814a207babd0c"
+    },
+    {
+      "code": "ON-G1-0321",
+      "reasons": [
+        "Avoid suggesting a left turn across an approaching emergency vehicle when clearing an intersection.",
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "74219ce5-3a7b-581c-8ab7-f6f970bafb16",
+        "code": "ON-G1-0321",
+        "revision_id": "752c33bd-0366-580f-bf22-1e8b6f192e23",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-emergency-while-in-intersection",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Emergency while in intersection",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "An emergency vehicle approaches while your vehicle is already in an intersection. What should you generally do?",
+        "options": [
+          {
+            "id": "facc8cad-1387-591f-9fad-469662abed76",
+            "text": "Make a sudden left across its path."
+          },
+          {
+            "id": "6c4c5c12-3a93-5c4a-a683-73cd25f2af2b",
+            "text": "Clear the intersection before pulling right and stopping safely."
+          },
+          {
+            "id": "7def66c7-1b47-5a5a-b7ae-aef8a0d3f0bf",
+            "text": "Reverse into the crossing."
+          },
+          {
+            "id": "dfa1f9b1-ffc9-52e5-bc99-3a2784498044",
+            "text": "Stop in the centre of the junction."
+          }
+        ],
+        "correct_option_id": "6c4c5c12-3a93-5c4a-a683-73cd25f2af2b",
+        "explanation": "If already in the intersection, clear it first instead of creating a new obstruction; then yield safely beyond it.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "At an intersection",
+            "support_note": "If already in the intersection, clear it first instead of creating a new obstruction; then yield safely beyond it.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "condition_or_exception_requires_attention"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "ab473eca-ceb7-4d8d-90af-617af6a1d7fc",
+      "after_sha256": "fd4d1b965be0a26c3d3a8e436cc5bbce41c923f440a2b8f832843b32bd48423c"
+    },
+    {
+      "code": "ON-G1-0322",
+      "reasons": [
+        "Avoid suggesting a left turn across an approaching emergency vehicle when clearing an intersection.",
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "ea18b19b-79ba-52b1-b1ad-0ff03a754e3d",
+        "code": "ON-G1-0322",
+        "revision_id": "9bfc00ed-2d89-5f26-abff-65925466172f",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-emergency-while-in-intersection",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Emergency while in intersection",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "Why is stopping in the middle of the intersection a poor response to an approaching emergency vehicle?",
+        "options": [
+          {
+            "id": "41d5a5ae-28c9-55ff-9073-b22a233180c5",
+            "text": "It can block the emergency vehicle's route and other clearing traffic."
+          },
+          {
+            "id": "730d2ab1-705c-5372-a45c-98e9b4300e61",
+            "text": "The intersection is the required parking place."
+          },
+          {
+            "id": "9051b94c-01ae-58a4-a373-dbfb7e88f7a3",
+            "text": "It always gives responders more room."
+          },
+          {
+            "id": "1c2e17cf-dc2d-5c16-9d2b-b3398694de07",
+            "text": "An emergency signal cancels vehicle dimensions."
+          }
+        ],
+        "correct_option_id": "41d5a5ae-28c9-55ff-9073-b22a233180c5",
+        "explanation": "If already in the intersection, clear it first instead of creating a new obstruction; then yield safely beyond it.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "At an intersection",
+            "support_note": "If already in the intersection, clear it first instead of creating a new obstruction; then yield safely beyond it.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "5c4b7c21-91cd-4f96-a2ce-c879b9b96ff8",
+      "after_sha256": "7d43661b121db9a2ab55adaa75d9557fbddf89b081ac93023e14585afb7efe28"
+    },
+    {
+      "code": "ON-G1-0323",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "0a31abf6-e14e-5942-8ebd-6a8dec48f016",
+        "code": "ON-G1-0323",
+        "revision_id": "58f90177-9908-53b5-b824-992f0a1b2277",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-emergency-on-one-way-road",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Emergency on one-way road",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "On a one-way road, what can you do if an approaching emergency vehicle needs to pass and moving right is not possible?",
+        "options": [
+          {
+            "id": "43b3f58b-a2e6-5f83-b5b8-8ade921c666c",
+            "text": "Stop diagonally across all lanes."
+          },
+          {
+            "id": "cf76682d-e3f3-58f4-9b8f-525f82741309",
+            "text": "Turn against the one-way direction."
+          },
+          {
+            "id": "f3daf5e8-d1ff-50ab-86d1-d1ad7b201727",
+            "text": "Drive faster directly in front of it."
+          },
+          {
+            "id": "82482d22-99f0-5515-b41a-6c2d5fd0947d",
+            "text": "Move to the left edge when safe and stop."
+          }
+        ],
+        "correct_option_id": "82482d22-99f0-5515-b41a-6c2d5fd0947d",
+        "explanation": "On a one-way road, a safe move left can be used when pulling right is not possible; the purpose is to create a clear emergency path.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "One-way roads",
+            "support_note": "On a one-way road, a safe move left can be used when pulling right is not possible; the purpose is to create a clear emergency path.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "50596669-4b81-4f5e-a77c-5da87707d1e1",
+      "after_sha256": "aa5fc0b5a2ce59afa6ba632cc8be1fa076a85579bddf318354915fc367559482"
+    },
+    {
+      "code": "ON-G1-0324",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "2b6a76e9-d130-52ad-a856-a60eddc2e34e",
+        "code": "ON-G1-0324",
+        "revision_id": "7272ea72-38f2-5c8c-aa6c-866c1370c30b",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-emergency-on-one-way-road",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Emergency on one-way road",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "The right side of a one-way street is blocked, but the left edge provides a safe way to clear the lane. What should you do?",
+        "options": [
+          {
+            "id": "c696033a-fc17-5f88-9cc6-af29cba98a72",
+            "text": "Ignore the emergency vehicle."
+          },
+          {
+            "id": "c70c2262-b426-59fe-a381-ec7a8fb0043f",
+            "text": "Move into the centre and stay there."
+          },
+          {
+            "id": "56014a09-e9ef-5e8b-8c44-30447929a038",
+            "text": "Use that left-side space safely and stop for the emergency vehicle."
+          },
+          {
+            "id": "5d1ccfaa-679c-5775-a9b7-90a63f9ca409",
+            "text": "Insist on moving right through the obstruction."
+          }
+        ],
+        "correct_option_id": "56014a09-e9ef-5e8b-8c44-30447929a038",
+        "explanation": "On a one-way road, a safe move left can be used when pulling right is not possible; the purpose is to create a clear emergency path.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "One-way roads",
+            "support_note": "On a one-way road, a safe move left can be used when pulling right is not possible; the purpose is to create a clear emergency path.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "389a14d0-9842-4e38-a9b5-4cbe39cfc245",
+      "after_sha256": "b10126c64f1e95c4e6588c4e5eee8466b38d7e94705b43bf4680d18700dd3e15"
+    },
+    {
+      "code": "ON-G1-0325",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "e5bae9c2-744c-515e-8772-b3fe1f24f9cf",
+        "code": "ON-G1-0325",
+        "revision_id": "eb4dcc64-705d-56e9-98d8-d23d76870029",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-watch-for-more-emergency-vehicles",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Watch for more emergency vehicles",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "Before rejoining traffic after yielding to an emergency vehicle, what should you check?",
+        "options": [
+          {
+            "id": "38ab564d-0a2e-5575-9207-2f0946d9db39",
+            "text": "Whether more responding vehicles are approaching and whether re-entry is clear."
+          },
+          {
+            "id": "72447bd0-fd7b-52ae-9d72-d0f40b45b6f0",
+            "text": "Only whether the first vehicle has a readable plate."
+          },
+          {
+            "id": "50d163be-1d07-562c-bfff-849d8c8313d0",
+            "text": "Only the colour of your dashboard."
+          },
+          {
+            "id": "29d4f55e-3669-5942-aebb-139bcaa62833",
+            "text": "Nothing once the first siren is quieter."
+          }
+        ],
+        "correct_option_id": "38ab564d-0a2e-5575-9207-2f0946d9db39",
+        "explanation": "Several emergency vehicles can respond to one incident. Check for additional responders and signal a safe re-entry rather than following the first one.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "After an emergency vehicle passes",
+            "support_note": "Several emergency vehicles can respond to one incident. Check for additional responders and signal a safe re-entry rather than following the first one.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "8de8a95d-bfc6-4347-9832-e14d76ee1644",
+      "after_sha256": "d1f4d5812caf4c963a2e91063e3558caa56fe18b1f4c9020a95bebe6673b3611"
+    },
+    {
+      "code": "ON-G1-0326",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "c837035e-cb78-5f88-bf4a-99e2f506b24f",
+        "code": "ON-G1-0326",
+        "revision_id": "01639885-a3d6-52e8-852b-8c2e843514a7",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-watch-for-more-emergency-vehicles",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Watch for more emergency vehicles",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "One fire truck passes, but another siren is approaching. What should you do?",
+        "options": [
+          {
+            "id": "805e45e2-5c45-59f4-92cf-d69e0dac37f6",
+            "text": "Continue yielding and reassess before moving back into traffic."
+          },
+          {
+            "id": "3c4b5f4c-ac74-5f97-b657-f6103c96af02",
+            "text": "Race the second vehicle to the next intersection."
+          },
+          {
+            "id": "ec6ed90e-63ef-5e3a-a104-69db5207c001",
+            "text": "Treat all following emergency vehicles as ordinary traffic."
+          },
+          {
+            "id": "0484435e-bd2d-5d94-95e9-da4ca5d4ce59",
+            "text": "Pull out immediately behind the first truck."
+          }
+        ],
+        "correct_option_id": "805e45e2-5c45-59f4-92cf-d69e0dac37f6",
+        "explanation": "Several emergency vehicles can respond to one incident. Check for additional responders and signal a safe re-entry rather than following the first one.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "After an emergency vehicle passes",
+            "support_note": "Several emergency vehicles can respond to one incident. Check for additional responders and signal a safe re-entry rather than following the first one.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "condition_or_exception_requires_attention"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "9825ba28-1be2-4a56-ab99-3cc47ef7dc48",
+      "after_sha256": "f1be1032fa918b45b929c1bc82761105a494d71103bec1d06d7b9d5c39e60903"
+    },
+    {
+      "code": "ON-G1-0327",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "9c3186d2-a05c-5012-8a7c-1e194b5d2fee",
+        "code": "ON-G1-0327",
+        "revision_id": "992a8789-2c56-5189-9376-980307d90999",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-stopped-emergency-vehicle-move-over",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Stopped emergency vehicle move over",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "You approach a stopped emergency vehicle with emergency lights operating beside a road with multiple lanes in your direction. What is required when safe?",
+        "options": [
+          {
+            "id": "403bdac4-51a4-5302-9f33-bc407ebcce4b",
+            "text": "Cross into opposing traffic regardless of risk."
+          },
+          {
+            "id": "98478203-dbfc-518f-ae1e-25fcbd5d478c",
+            "text": "Slow down and move into another lane away from it."
+          },
+          {
+            "id": "528ff3b2-8e1a-53e4-a114-78f584f74254",
+            "text": "Stop in the passing lane to watch."
+          },
+          {
+            "id": "bd026771-5c81-56fb-ae2f-598d0e859f5d",
+            "text": "Maintain speed and stay immediately beside it."
+          }
+        ],
+        "correct_option_id": "98478203-dbfc-518f-ae1e-25fcbd5d478c",
+        "explanation": "The move-over duty combines slowing with a lane change away when it can be done safely; safety does not permit forcing into occupied space.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "Approaching a stopped emergency vehicle",
+            "support_note": "The move-over duty combines slowing with a lane change away when it can be done safely; safety does not permit forcing into occupied space.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "1ea58f29-16b3-4ed6-b149-83a15c22919b",
+      "after_sha256": "3a7adef4e3d9882bf2826d52f1688424c39c66673c91ed2517129113e9116987"
+    },
+    {
+      "code": "ON-G1-0328",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "40faded8-2ccc-54d2-952b-9cc136b4ace5",
+        "code": "ON-G1-0328",
+        "revision_id": "ab2c6e94-f1f7-5ed6-a448-6512983503f1",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-stopped-emergency-vehicle-move-over",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Stopped emergency vehicle move over",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "Traffic prevents a safe lane change away from the stopped responder. What should you do?",
+        "options": [
+          {
+            "id": "8f7beab1-2ddd-50da-bc05-3ebed0b76069",
+            "text": "Accelerate to reduce the time beside it."
+          },
+          {
+            "id": "31095e74-423b-5e15-a0ba-d4e52ee0a8fd",
+            "text": "Slow down and pass with caution rather than force an unsafe lane change."
+          },
+          {
+            "id": "ef0e6071-63cd-5822-a44b-b14595f1e1c9",
+            "text": "Assume the inability to change lanes removes the need to slow."
+          },
+          {
+            "id": "a71d56dc-5d8c-5cc6-b597-1dba6953faf3",
+            "text": "Swerve into the occupied lane anyway."
+          }
+        ],
+        "correct_option_id": "31095e74-423b-5e15-a0ba-d4e52ee0a8fd",
+        "explanation": "The move-over duty combines slowing with a lane change away when it can be done safely; safety does not permit forcing into occupied space.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "Approaching a stopped emergency vehicle",
+            "support_note": "The move-over duty combines slowing with a lane change away when it can be done safely; safety does not permit forcing into occupied space.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "4b1b81a4-da9e-4b3b-a787-764a50b8c577",
+      "after_sha256": "f582fd3bd01a450931be85e93b697a2c48807e62bfd37489f36cd6fcbefa1aab"
+    },
+    {
+      "code": "ON-G1-0329",
+      "reasons": [
+        "Replace the broad legacy book-export reference with the directly relevant official page."
+      ],
+      "before": {
+        "id": "a6feac9c-e347-512e-ba2c-f303a9270274",
+        "code": "ON-G1-0329",
+        "revision_id": "8be60664-199e-5ca5-8e2b-fe5c7630d156",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-stopped-tow-truck-amber",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Stopped tow truck amber",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "Does the slow-down and safe move-over guidance include a stopped tow truck with flashing amber lights?",
+        "options": [
+          {
+            "id": "38d634c3-1b81-51e7-b87b-a1e68ff8d329",
+            "text": "Only if the tow truck has a passenger."
+          },
+          {
+            "id": "1e7dea21-db9a-54d5-97e5-7d9a878b6303",
+            "text": "No; amber always means there is no roadside risk."
+          },
+          {
+            "id": "19cc6506-9d12-5724-a95d-76e9a1ac8d2d",
+            "text": "Yes."
+          },
+          {
+            "id": "b182f1fc-4156-52a6-b5d4-abd8e44bad49",
+            "text": "Only on a private parking lot."
+          }
+        ],
+        "correct_option_id": "19cc6506-9d12-5724-a95d-76e9a1ac8d2d",
+        "explanation": "Stopped tow operators need roadside space too; slow down and move over when the neighbouring same-direction lane can be used safely.",
+        "evidence": [
+          {
+            "source_id": "ON-SAFE-EXPORT",
+            "locator": "Reacting to a stopped emergency vehicle or tow truck",
+            "support_note": "Stopped tow operators need roadside space too; slow down and move over when the neighbouring same-direction lane can be used safely.",
+            "source_url": "https://www.ontario.ca/book/export/html/80365"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "8002c390-8fa8-413e-9ae2-aa07886b1acd",
+      "after_sha256": "75e2b34672e8afa19a403a01d4fef929e193d694e28b85130d93b54c95ff6208"
+    },
+    {
+      "code": "ON-G1-0330",
+      "reasons": [
+        "Replace the broad legacy book-export reference with the directly relevant official page."
+      ],
+      "before": {
+        "id": "77aca991-0741-5204-9b27-b1c78f317050",
+        "code": "ON-G1-0330",
+        "revision_id": "29ce2d25-d411-58e6-8cf4-93cc96fa5a78",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-stopped-tow-truck-amber",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Emergency vehicles and roadside responders",
+        "learning_objective": "Stopped tow truck amber",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "A tow truck works beside your lane with amber lights flashing, and the next same-direction lane is clear. What should you do?",
+        "options": [
+          {
+            "id": "7e99fe85-e243-5111-9ee1-160b2466bc81",
+            "text": "Slow and change into the clear lane safely to give room."
+          },
+          {
+            "id": "6784da76-31b2-563e-96f9-383ea5c8d44f",
+            "text": "Drive through the tow truck's work area."
+          },
+          {
+            "id": "59d1c7ab-d3e2-5a78-a273-5630f6d27c68",
+            "text": "Pass at unchanged speed close to the truck."
+          },
+          {
+            "id": "329fff8e-27d8-5bb6-91a6-2a506b1098e6",
+            "text": "Stop beside the operator to ask questions."
+          }
+        ],
+        "correct_option_id": "7e99fe85-e243-5111-9ee1-160b2466bc81",
+        "explanation": "Stopped tow operators need roadside space too; slow down and move over when the neighbouring same-direction lane can be used safely.",
+        "evidence": [
+          {
+            "source_id": "ON-SAFE-EXPORT",
+            "locator": "Reacting to a stopped emergency vehicle or tow truck",
+            "support_note": "Stopped tow operators need roadside space too; slow down and move over when the neighbouring same-direction lane can be used safely.",
+            "source_url": "https://www.ontario.ca/book/export/html/80365"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "24deabdb-8bab-4dea-a560-0fcb1220ee6f",
+      "after_sha256": "827ea1542ffc0ce174a536e1a67768f1d59cdc74b11c732b4c9c49c6ba8f846b"
+    },
+    {
+      "code": "ON-G1-0375",
+      "reasons": [
+        "Limit continuing around after a missed exit to a suitable inside lane and its actual markings."
+      ],
+      "before": {
+        "id": "867eb3f5-cc8c-5195-ba26-b6ac7b39d89f",
+        "code": "ON-G1-0375",
+        "revision_id": "82485fc6-709f-5899-8622-cc3aa1c19a94",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-missed-roundabout-exit",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Turning, roundabouts and reversing",
+        "learning_objective": "Missed roundabout exit",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "If you miss your roundabout exit, what is the handbook's general advice?",
+        "options": [
+          {
+            "id": "f0d1b273-9bac-5ff2-ac75-de7bf0286484",
+            "text": "Stop beside the centre island."
+          },
+          {
+            "id": "1ebb9115-47a8-5ec1-a0f4-332f8fd402f7",
+            "text": "Continue around rather than make a sudden cut across traffic."
+          },
+          {
+            "id": "28dcec02-7a9f-563c-b998-3eb53eadd029",
+            "text": "Turn across another occupied lane immediately."
+          },
+          {
+            "id": "d932b3e1-b925-53fd-afa8-fca281368332",
+            "text": "Reverse to the missed exit."
+          }
+        ],
+        "correct_option_id": "1ebb9115-47a8-5ec1-a0f4-332f8fd402f7",
+        "explanation": "A missed exit is not a reason to reverse, stop in circulation or cut across another vehicle; continue safely according to the lane layout.",
+        "evidence": [
+          {
+            "source_id": "ON-TURNS",
+            "locator": "Roundabouts; exiting",
+            "support_note": "A missed exit is not a reason to reverse, stop in circulation or cut across another vehicle; continue safely according to the lane layout.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/changing-directions"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "f4342e4e-e5b1-411e-bc20-5204923a43fd",
+      "after_sha256": "e7144d4f00eeccf179280dfffba45fe659c8450a0148e6d9aa7e96a91ce7de18"
+    },
+    {
+      "code": "ON-G1-0376",
+      "reasons": [
+        "Limit continuing around after a missed exit to a suitable inside lane and its actual markings."
+      ],
+      "before": {
+        "id": "355a9b79-ac3b-5cda-905d-fd2e2d55384d",
+        "code": "ON-G1-0376",
+        "revision_id": "cc06fb7c-5708-5a58-ac4e-9c8ee3b455e5",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-missed-roundabout-exit",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Turning, roundabouts and reversing",
+        "learning_objective": "Missed roundabout exit",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "You pass your intended exit while circulating. Which response avoids an abrupt conflict?",
+        "options": [
+          {
+            "id": "03f80167-a2c0-586f-92af-39b656435024",
+            "text": "Drive over the central island."
+          },
+          {
+            "id": "dd1c1df8-8999-5632-aa99-6cfc99e0ee34",
+            "text": "Reverse against circulating traffic."
+          },
+          {
+            "id": "fb7676a2-8236-535f-8568-cc408a289c5f",
+            "text": "Continue along the lawful circulating path and take the appropriate exit when safely possible."
+          },
+          {
+            "id": "444ff8a9-88f2-5e41-9929-f1887cc01a84",
+            "text": "Brake to a stop at the exit nose."
+          }
+        ],
+        "correct_option_id": "fb7676a2-8236-535f-8568-cc408a289c5f",
+        "explanation": "A missed exit is not a reason to reverse, stop in circulation or cut across another vehicle; continue safely according to the lane layout.",
+        "evidence": [
+          {
+            "source_id": "ON-TURNS",
+            "locator": "Roundabouts; exiting",
+            "support_note": "A missed exit is not a reason to reverse, stop in circulation or cut across another vehicle; continue safely according to the lane layout.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/changing-directions"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "0c9c0092-a8ba-408b-a80f-3864f57ebaf8",
+      "after_sha256": "61c407a5696946020a7cb4f991cadab8e95cded374aa8afd5667984a894391e5"
+    },
+    {
+      "code": "ON-G1-0377",
+      "reasons": [
+        "Specify the intended exit and clearance beyond the traffic island before pulling over."
+      ],
+      "before": {
+        "id": "dca50e58-7db7-5206-b5ea-93f648c6ddf5",
+        "code": "ON-G1-0377",
+        "revision_id": "c050231d-0506-532f-a1a6-a5c4da5aeba3",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-emergency-vehicle-in-roundabout",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Turning, roundabouts and reversing",
+        "learning_objective": "Emergency vehicle in roundabout",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "If an emergency vehicle approaches while you are already inside a roundabout, where should you generally yield?",
+        "options": [
+          {
+            "id": "6c81b51e-a0e6-5c60-bc12-d245d673fe2d",
+            "text": "Drive the wrong way to clear it."
+          },
+          {
+            "id": "3488b43e-d1a6-5554-9a5e-b04a4ed966a3",
+            "text": "Block the next exit with your vehicle."
+          },
+          {
+            "id": "736e60f2-be19-523d-8b84-cf96a631e74a",
+            "text": "Stop inside beside the central island."
+          },
+          {
+            "id": "566e2615-7c9e-5360-8d4a-3f158fd6f822",
+            "text": "Exit the roundabout, then pull over safely."
+          }
+        ],
+        "correct_option_id": "566e2615-7c9e-5360-8d4a-3f158fd6f822",
+        "explanation": "Yielding within the confined circulating roadway can obstruct responders; leave the roundabout before pulling over safely.",
+        "evidence": [
+          {
+            "source_id": "ON-TURNS",
+            "locator": "Roundabouts; emergency vehicles",
+            "support_note": "Yielding within the confined circulating roadway can obstruct responders; leave the roundabout before pulling over safely.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/changing-directions"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "condition_or_exception_requires_attention"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "48741bca-285b-4e93-8a46-98da1c31b4f3",
+      "after_sha256": "f7eb29070e10a504c412e8c94da2b2ff2c36e912ed346f2800e560d8c6415b9d"
+    },
+    {
+      "code": "ON-G1-0378",
+      "reasons": [
+        "Specify the intended exit and clearance beyond the traffic island before pulling over."
+      ],
+      "before": {
+        "id": "7f94d7b9-6e83-5784-9761-974801a7f841",
+        "code": "ON-G1-0378",
+        "revision_id": "922a4e9c-f11a-5b36-a08a-98478c5c530d",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-emergency-vehicle-in-roundabout",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Turning, roundabouts and reversing",
+        "learning_objective": "Emergency vehicle in roundabout",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "You hear a siren while circulating. What should you avoid?",
+        "options": [
+          {
+            "id": "e6e84af4-620c-52e8-9969-bda19c43a280",
+            "text": "Stopping inside the roundabout and obstructing its path."
+          },
+          {
+            "id": "23aab50b-19b7-5980-b1ed-78cc7606db78",
+            "text": "Continuing safely to an exit."
+          },
+          {
+            "id": "72795a30-ff93-52ed-b7ba-eef38c435ff7",
+            "text": "Pulling over after leaving when safe."
+          },
+          {
+            "id": "f87ab5e0-726d-5218-8a51-b6bdfee01cc1",
+            "text": "Checking for other traffic."
+          }
+        ],
+        "correct_option_id": "e6e84af4-620c-52e8-9969-bda19c43a280",
+        "explanation": "Yielding within the confined circulating roadway can obstruct responders; leave the roundabout before pulling over safely.",
+        "evidence": [
+          {
+            "source_id": "ON-TURNS",
+            "locator": "Roundabouts; emergency vehicles",
+            "support_note": "Yielding within the confined circulating roadway can obstruct responders; leave the roundabout before pulling over safely.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/changing-directions"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "a8bb22c3-4f88-4126-8641-53bed805ea02",
+      "after_sha256": "8b7eea10f1158a7d096b4ef2cf6d53adea03c387104146c69a23291f9096f77e"
+    },
+    {
+      "code": "ON-G1-0471",
+      "reasons": [
+        "Replace unsupported blanket handbook wording with the documented warning against passing between staggered working plows."
+      ],
+      "before": {
+        "id": "95eb8205-f1c9-507d-8cf9-ff0568b4fc13",
+        "code": "ON-G1-0471",
+        "revision_id": "e4cc1239-aa16-5d14-9d39-193934b375ea",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-do-not-pass-working-snowplows",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Night driving, weather and traction",
+        "learning_objective": "Do not pass working snowplows",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "What is the handbook's safety guidance about overtaking moving snowplows?",
+        "options": [
+          {
+            "id": "c4c5c2ef-58ea-5cf4-b766-243d92e57d12",
+            "text": "Pass whenever the cleared strip looks narrow."
+          },
+          {
+            "id": "2b95aaea-e97c-5a17-95fb-7c22f190e7a1",
+            "text": "Do not pass them."
+          },
+          {
+            "id": "cc6cb8be-7353-5bcb-9a3f-8f3f7170b7d4",
+            "text": "Pass on the unplowed shoulder."
+          },
+          {
+            "id": "31ad4f5f-7040-58de-be0c-25325b6c9924",
+            "text": "Pass between plows working side by side."
+          }
+        ],
+        "correct_option_id": "2b95aaea-e97c-5a17-95fb-7c22f190e7a1",
+        "explanation": "The handbook advises not passing moving snowplows; manoeuvring among their blades and snow clouds is particularly hazardous.",
+        "evidence": [
+          {
+            "source_id": "ON-PASSING",
+            "locator": "Passing; snowplows",
+            "support_note": "The handbook advises not passing moving snowplows; manoeuvring among their blades and snow clouds is particularly hazardous.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/changing-positions"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "2e0d8034-dc13-44c0-9e57-4ca643a7ccde",
+      "after_sha256": "a6744187bad4eed180e669174ff8d85e66fab2e571759f40d414abd16e3008d8"
+    },
+    {
+      "code": "ON-G1-0472",
+      "reasons": [
+        "Replace unsupported blanket handbook wording with the documented warning against passing between staggered working plows."
+      ],
+      "before": {
+        "id": "5cceb91b-cbb4-5016-9ddf-f9324dcafec7",
+        "code": "ON-G1-0472",
+        "revision_id": "50c6502a-f9ed-5398-9476-ff558064777b",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-do-not-pass-working-snowplows",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Night driving, weather and traction",
+        "learning_objective": "Do not pass working snowplows",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "Two snowplows are clearing adjacent lanes in a staggered formation. What should you avoid?",
+        "options": [
+          {
+            "id": "7598c09d-5c35-5af0-bca0-253a8d1cea79",
+            "text": "Remaining well back."
+          },
+          {
+            "id": "557931af-c21f-5668-ac00-c65ce909f15b",
+            "text": "Trying to squeeze between or overtake the working plows."
+          },
+          {
+            "id": "143e2803-57b7-5467-b1c7-0b99b885b0aa",
+            "text": "Following the cleared route at a safe distance."
+          },
+          {
+            "id": "07dd334e-0991-52e8-8366-fb0cb5ef8063",
+            "text": "Allowing extra travel time."
+          }
+        ],
+        "correct_option_id": "557931af-c21f-5668-ac00-c65ce909f15b",
+        "explanation": "The handbook advises not passing moving snowplows; manoeuvring among their blades and snow clouds is particularly hazardous.",
+        "evidence": [
+          {
+            "source_id": "ON-PASSING",
+            "locator": "Passing; snowplows",
+            "support_note": "The handbook advises not passing moving snowplows; manoeuvring among their blades and snow clouds is particularly hazardous.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/changing-positions"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "2de8d468-a039-4c42-ac99-064de6f23d6a",
+      "after_sha256": "050e332019f0e9e5ec739bb19a22f47f69a284b81cf73900dcb4dae1c0c6c542"
+    },
+    {
+      "code": "ON-G1-0486",
+      "reasons": [
+        "State that a stop is required; an unmarked crosswalk alone does not require every driver to stop."
+      ],
+      "before": {
+        "id": "0d3e0fb4-d175-538d-8653-ee38ed0c8846",
+        "code": "ON-G1-0486",
+        "revision_id": "05f9389d-c803-58ea-8a39-89ac97c9aff5",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-unmarked-intersection-crosswalk",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Pavement markings",
+        "learning_objective": "Unmarked intersection crosswalk",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "There is no stop line, but an unmarked intersection crosswalk is present. Where does the handbook place your stop?",
+        "options": [
+          {
+            "id": "f0699525-c66e-5289-8130-d7845ccd8184",
+            "text": "Before the crosswalk."
+          },
+          {
+            "id": "75e2c84a-f3ef-5074-b4fa-ff7681187648",
+            "text": "Only after a pedestrian touches the car."
+          },
+          {
+            "id": "72fd0103-c5ec-5419-a2f3-8d1707b02306",
+            "text": "At the far side of the junction."
+          },
+          {
+            "id": "810e0ff7-cc96-5edc-a3c5-ecf9d533a1af",
+            "text": "In the pedestrian path because no paint exists."
+          }
+        ],
+        "correct_option_id": "f0699525-c66e-5289-8130-d7845ccd8184",
+        "explanation": "An intersection crosswalk can exist without paint, and the stopping-position sequence still recognizes it.",
+        "evidence": [
+          {
+            "source_id": "ON-MARKINGS",
+            "locator": "Crosswalks and stopping positions",
+            "support_note": "An intersection crosswalk can exist without paint, and the stopping-position sequence still recognizes it.",
+            "source_url": "https://www.ontario.ca/document/official-mto-drivers-handbook/pavement-markings"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "a5a46c10-60ab-4049-9aa1-1b547a43fafe",
+      "after_sha256": "685a82d9205ca7093e022dc2cef7ad92228f483ed80f5f11521e240af21629b4"
+    },
+    {
+      "code": "ON-G1-0489",
+      "reasons": [
+        "Replace the broad legacy book-export reference with the directly relevant official page."
+      ],
+      "before": {
+        "id": "b5cf8eba-eca6-5a66-8135-340c45c9a3ef",
+        "code": "ON-G1-0489",
+        "revision_id": "b71d9903-a15c-57b6-8498-6560bf951182",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-fatigue-and-judgment",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Driver readiness and special precautions",
+        "learning_objective": "Fatigue and judgment",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "Why should a driver avoid driving while very tired?",
+        "options": [
+          {
+            "id": "cb717bd1-faeb-5e51-b967-cec7ba2d4056",
+            "text": "Fatigue can slow thought, observation and reactions, even without falling asleep."
+          },
+          {
+            "id": "3c8a746f-a67d-5273-a608-3d9a367e95ea",
+            "text": "Fatigue improves judgment on familiar roads."
+          },
+          {
+            "id": "fe66d987-c84a-5bdb-a919-7f15cd9185ba",
+            "text": "Being tired guarantees a lower collision risk."
+          },
+          {
+            "id": "c504844c-3e78-5671-a025-0600f37a5176",
+            "text": "Only passengers are affected by lack of sleep."
+          }
+        ],
+        "correct_option_id": "cb717bd1-faeb-5e51-b967-cec7ba2d4056",
+        "explanation": "A driver can be unsafe from fatigue before actually falling asleep; being mentally and physically alert is part of readiness to drive.",
+        "evidence": [
+          {
+            "source_id": "ON-SAFE-EXPORT",
+            "locator": "Be physically and mentally alert",
+            "support_note": "A driver can be unsafe from fatigue before actually falling asleep; being mentally and physically alert is part of readiness to drive.",
+            "source_url": "https://www.ontario.ca/book/export/html/80365"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "091060f0-3792-4298-90a8-cd9d17d41e04",
+      "after_sha256": "47c57f6d09d81abd628bd6937caad767f0491963d12a5309c77e5c278a24ffbc"
+    },
+    {
+      "code": "ON-G1-0490",
+      "reasons": [
+        "Replace the broad legacy book-export reference with the directly relevant official page."
+      ],
+      "before": {
+        "id": "52124970-c6db-5146-8bf7-bda52652e18d",
+        "code": "ON-G1-0490",
+        "revision_id": "7caa19dc-4598-56b6-80b4-02f99a3e041d",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-fatigue-and-judgment",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Driver readiness and special precautions",
+        "learning_objective": "Fatigue and judgment",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "You are struggling to stay alert before starting a trip. What is the appropriate decision?",
+        "options": [
+          {
+            "id": "53236b87-8a9b-5eb0-bcb5-5db324f44531",
+            "text": "Drive faster so the tired period is shorter."
+          },
+          {
+            "id": "be05f400-1008-5b95-b304-e3646842d1be",
+            "text": "Rest or arrange another safe travel option rather than drive tired."
+          },
+          {
+            "id": "e91e55ec-99df-5614-85e1-4ff9999a4dae",
+            "text": "Open the window and assume the risk is removed."
+          },
+          {
+            "id": "d93927d5-4baf-5168-b385-1e1b4025695b",
+            "text": "Use a louder radio as a guaranteed remedy."
+          }
+        ],
+        "correct_option_id": "be05f400-1008-5b95-b304-e3646842d1be",
+        "explanation": "A driver can be unsafe from fatigue before actually falling asleep; being mentally and physically alert is part of readiness to drive.",
+        "evidence": [
+          {
+            "source_id": "ON-SAFE-EXPORT",
+            "locator": "Be physically and mentally alert",
+            "support_note": "A driver can be unsafe from fatigue before actually falling asleep; being mentally and physically alert is part of readiness to drive.",
+            "source_url": "https://www.ontario.ca/book/export/html/80365"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "0bfc6a65-576f-4805-b170-fd445ffbf19f",
+      "after_sha256": "a18da3d0d4b1c6323806bc7176360614a8e689e50741f961d5bf45cdaee97999"
+    },
+    {
+      "code": "ON-G1-0491",
+      "reasons": [
+        "Replace the broad legacy book-export reference with the directly relevant official page."
+      ],
+      "before": {
+        "id": "88f4e6cb-5e38-5def-8da5-22255492205d",
+        "code": "ON-G1-0491",
+        "revision_id": "306abde5-ad73-5545-90f2-f8509ade601d",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-strong-emotions-and-driving",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Driver readiness and special precautions",
+        "learning_objective": "Strong emotions and driving",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "How can intense anger or distress affect driving?",
+        "options": [
+          {
+            "id": "50cd93e7-4558-5171-b610-71fcb5a634a1",
+            "text": "It automatically makes attention sharper."
+          },
+          {
+            "id": "53c29a5f-3c7b-531e-80b6-f7e1c449fe50",
+            "text": "It can reduce clear thinking and timely reactions."
+          },
+          {
+            "id": "0853a8ee-9552-5509-ad80-72cd6a5a6764",
+            "text": "It removes the need to observe speed limits."
+          },
+          {
+            "id": "10906966-279c-5586-9536-f879904b1bfc",
+            "text": "It affects only manual-transmission cars."
+          }
+        ],
+        "correct_option_id": "53c29a5f-3c7b-531e-80b6-f7e1c449fe50",
+        "explanation": "Strong emotions can interfere with decisions and attention; do not begin or continue driving when they prevent safe concentration.",
+        "evidence": [
+          {
+            "source_id": "ON-SAFE-EXPORT",
+            "locator": "Be physically and mentally alert",
+            "support_note": "Strong emotions can interfere with decisions and attention; do not begin or continue driving when they prevent safe concentration.",
+            "source_url": "https://www.ontario.ca/book/export/html/80365"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "92fe0c52-3121-439e-8cf4-0a705e5c7f63",
+      "after_sha256": "7bc019f1416d0818b1a0c372c42a7d7735bf7c5ae5b61bc9aeae121cadcfc179"
+    },
+    {
+      "code": "ON-G1-0492",
+      "reasons": [
+        "Replace the broad legacy book-export reference with the directly relevant official page."
+      ],
+      "before": {
+        "id": "a0073321-9eee-5053-8952-efb4a6dd0cdb",
+        "code": "ON-G1-0492",
+        "revision_id": "8deef97c-6498-5c1a-a87d-e078683d38a5",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-strong-emotions-and-driving",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Driver readiness and special precautions",
+        "learning_objective": "Strong emotions and driving",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "After an upsetting argument, you feel unable to concentrate. What should you do before driving?",
+        "options": [
+          {
+            "id": "b8ce03b2-652b-5c4f-9bfe-785e192146ec",
+            "text": "Begin driving aggressively to release the anger."
+          },
+          {
+            "id": "e25de05f-8911-5068-be07-da44af43e9d5",
+            "text": "Follow another car so it can make decisions for you."
+          },
+          {
+            "id": "2109b681-64dd-52b6-82f5-1d0c96b31dde",
+            "text": "Ignore the feeling if the car has airbags."
+          },
+          {
+            "id": "bf240f8f-ac1d-5bcc-b9e4-e534f09b8b63",
+            "text": "Take time to regain composure or choose another transport option."
+          }
+        ],
+        "correct_option_id": "bf240f8f-ac1d-5bcc-b9e4-e534f09b8b63",
+        "explanation": "Strong emotions can interfere with decisions and attention; do not begin or continue driving when they prevent safe concentration.",
+        "evidence": [
+          {
+            "source_id": "ON-SAFE-EXPORT",
+            "locator": "Be physically and mentally alert",
+            "support_note": "Strong emotions can interfere with decisions and attention; do not begin or continue driving when they prevent safe concentration.",
+            "source_url": "https://www.ontario.ca/book/export/html/80365"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "ea1f4c2a-cebd-46b0-92d7-4f77e53da7b2",
+      "after_sha256": "2a6bb3a57052b5540b469dbdea0c6bb793af976c8cb7ea0270049b6ab269a892"
+    },
+    {
+      "code": "ON-G1-0493",
+      "reasons": [
+        "Replace the broad legacy book-export reference with the directly relevant official page."
+      ],
+      "before": {
+        "id": "b8d66e9f-9523-520e-a386-cd8838d184fe",
+        "code": "ON-G1-0493",
+        "revision_id": "160fa70f-46d2-5c9a-8811-f34a09f13299",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-know-unfamiliar-controls",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Driver readiness and special precautions",
+        "learning_objective": "Know unfamiliar controls",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "Before driving an unfamiliar vehicle, what should you do?",
+        "options": [
+          {
+            "id": "84975a40-49cd-5d95-bad5-920e8b0c6cea",
+            "text": "Experiment with every control while entering traffic."
+          },
+          {
+            "id": "39447330-d31b-5081-aee2-baaee615ba08",
+            "text": "Learn its important controls and operating features."
+          },
+          {
+            "id": "ec04e6ca-c812-58c7-8966-be5b4d3a2808",
+            "text": "Read the manual only after a warning light appears."
+          },
+          {
+            "id": "75fe14ae-c3c9-5e90-a06a-1a79fc027872",
+            "text": "Assume all vehicles operate identically."
+          }
+        ],
+        "correct_option_id": "39447330-d31b-5081-aee2-baaee615ba08",
+        "explanation": "Different vehicles have different controls and features; become familiar with those needed for safe operation before driving.",
+        "evidence": [
+          {
+            "source_id": "ON-SAFE-EXPORT",
+            "locator": "Know your vehicle",
+            "support_note": "Different vehicles have different controls and features; become familiar with those needed for safe operation before driving.",
+            "source_url": "https://www.ontario.ca/book/export/html/80365"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "f4ae1cc3-a137-4118-86c0-3e3de6818df4",
+      "after_sha256": "d479c2c75887819db689697d288e4f5d1af7c98cb2fd6bef11f0dc9b92f4a2ef"
+    },
+    {
+      "code": "ON-G1-0494",
+      "reasons": [
+        "Replace the broad legacy book-export reference with the directly relevant official page."
+      ],
+      "before": {
+        "id": "c988cfe5-e76e-5471-90d5-927558befcee",
+        "code": "ON-G1-0494",
+        "revision_id": "847604e6-b873-55d7-b134-1b18620aeb22",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-know-unfamiliar-controls",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Driver readiness and special precautions",
+        "learning_objective": "Know unfamiliar controls",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "You rent a car with unfamiliar light and wiper controls. What is sensible before setting off?",
+        "options": [
+          {
+            "id": "c2bacb7f-03fd-5a52-a603-68abe41d70cb",
+            "text": "Ask a following driver to operate them."
+          },
+          {
+            "id": "1a7e9172-3642-519d-8884-3cdec759ee66",
+            "text": "Locate and understand them while safely stationary."
+          },
+          {
+            "id": "d8bde657-9fef-5ed3-8c0d-e9f6cef314a9",
+            "text": "Use no lights or wipers for the first trip."
+          },
+          {
+            "id": "e63b8e60-2ecf-5551-bcd1-de786a35212f",
+            "text": "Wait until a rainstorm begins on the freeway."
+          }
+        ],
+        "correct_option_id": "1a7e9172-3642-519d-8884-3cdec759ee66",
+        "explanation": "Different vehicles have different controls and features; become familiar with those needed for safe operation before driving.",
+        "evidence": [
+          {
+            "source_id": "ON-SAFE-EXPORT",
+            "locator": "Know your vehicle",
+            "support_note": "Different vehicles have different controls and features; become familiar with those needed for safe operation before driving.",
+            "source_url": "https://www.ontario.ca/book/export/html/80365"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "49adbd7a-8233-455e-b275-36f2a946c75b",
+      "after_sha256": "90ea625df1309ee0c498ba5528045c40dd7787d8b898656abad9e88f7a2d00e3"
+    },
+    {
+      "code": "ON-G1-0497",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "bc11c20a-c6ad-5d75-b921-f491cafee507",
+        "code": "ON-G1-0497",
+        "revision_id": "a8a5d41b-3a8c-597e-b21a-602cf069feb4",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-following-responding-fire-vehicle",
+        "variant": "knowledge",
+        "section": "road_rules",
+        "topic": "Driver readiness and special precautions",
+        "learning_objective": "Following responding fire vehicle",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "foundation",
+          "empirically_calibrated": false
+        },
+        "prompt": "What minimum distance does Ontario's guidance specify behind a fire vehicle or ambulance responding to an emergency?",
+        "options": [
+          {
+            "id": "0de750f6-ec57-57b8-95b4-42ecf131a98e",
+            "text": "Five metres."
+          },
+          {
+            "id": "6de19803-e0b0-510d-84dd-ffb087a12e2a",
+            "text": "Only one vehicle length."
+          },
+          {
+            "id": "eaecbc1a-167a-51b4-ae90-4b127788873c",
+            "text": "Ten metres."
+          },
+          {
+            "id": "9038a9d4-e9b2-5625-bc4e-b31a6f755151",
+            "text": "150 metres."
+          }
+        ],
+        "correct_option_id": "9038a9d4-e9b2-5625-bc4e-b31a6f755151",
+        "explanation": "Do not use a responder's cleared path as a shortcut; the guidance specifies at least 150 metres behind a responding fire vehicle or ambulance.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "Do not follow too closely",
+            "support_note": "Do not use a responder's cleared path as a shortcut; the guidance specifies at least 150 metres behind a responding fire vehicle or ambulance.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "contains_numeric_or_licence_class_reference"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "cc67562e-543d-41e6-abbb-00610da3f675",
+      "after_sha256": "e910c47d86a00413deb64e14263db3aff13470869f1fe3fbb6536e128cb699e1"
+    },
+    {
+      "code": "ON-G1-0498",
+      "reasons": [
+        "Use the current canonical emergency-vehicle guidance and note its future work-vehicle effective date."
+      ],
+      "before": {
+        "id": "5a89e07b-ed0a-5d86-9ddf-0a490b7535ef",
+        "code": "ON-G1-0498",
+        "revision_id": "d79b2899-a359-582c-91e6-c576840ad9e9",
+        "revision": 1,
+        "pack_key": "CA-ON-G1",
+        "jurisdiction_code": "CA-ON",
+        "locale": "en-CA",
+        "concept_id": "CA-ON-G1:road-rules-following-responding-fire-vehicle",
+        "variant": "application",
+        "section": "road_rules",
+        "topic": "Driver readiness and special precautions",
+        "learning_objective": "Following responding fire vehicle",
+        "type": "single_choice",
+        "difficulty": {
+          "editorial_estimate": "application",
+          "empirically_calibrated": false
+        },
+        "prompt": "A responding fire truck clears a path through traffic. May you follow 20 metres behind to use that gap?",
+        "options": [
+          {
+            "id": "59d7573a-e6ff-523b-8522-3e91c3061276",
+            "text": "Yes, if you use hazard lights."
+          },
+          {
+            "id": "c2abeb8a-7a9e-544d-8963-7baf05ba92b6",
+            "text": "Yes, if the truck has no trailer."
+          },
+          {
+            "id": "63d9acf1-f903-5739-9b57-c23902966561",
+            "text": "Yes, if your destination is nearby."
+          },
+          {
+            "id": "a6b45764-79f8-5028-90d3-755c87c9491c",
+            "text": "No; keep at least the stated 150 metres back and do not exploit its emergency passage."
+          }
+        ],
+        "correct_option_id": "a6b45764-79f8-5028-90d3-755c87c9491c",
+        "explanation": "Do not use a responder's cleared path as a shortcut; the guidance specifies at least 150 metres behind a responding fire vehicle or ambulance.",
+        "evidence": [
+          {
+            "source_id": "ON-EMERGENCY",
+            "locator": "Do not follow too closely",
+            "support_note": "Do not use a responder's cleared path as a shortcut; the guidance specifies at least 150 metres behind a responding fire vehicle or ambulance.",
+            "source_url": "https://www.ontario.ca/page/driving-near-emergency-vehicles"
+          }
+        ],
+        "media": {
+          "required": false,
+          "asset_id": null,
+          "presentation": "text",
+          "visual_recognition_assessed": false
+        },
+        "review": {
+          "source_check": {
+            "status": "checked_against_retrieved_official_guidance",
+            "checked_on": "2026-10-03",
+            "checker_type": "ai_assisted_author",
+            "scope": "Factual support in retrieved source text; not independent instruction, legal or visual verification.",
+            "retrieval_methods": [
+              "search_index_text"
+            ]
+          },
+          "independent_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "rights_review": {
+            "status": "pending",
+            "reviewer_id": null,
+            "reviewed_on": null
+          },
+          "publication_status": "draft",
+          "publishable": false,
+          "priority_flags": [
+            "contains_numeric_or_licence_class_reference"
+          ],
+          "next_source_review_due": "2026-11-03"
+        },
+        "selection": {
+          "shuffle_options": true,
+          "max_per_concept_per_session": 1,
+          "mock_exam_eligible": false,
+          "reason": "Awaiting independent content approval, rights review and approved exam template."
+        },
+        "author_id": "ai-assisted-draft-2026-10-03"
+      },
+      "after_revision_id": "fdd3bf09-04de-46e5-98dd-779a1ad9c224",
+      "after_sha256": "27541c8533063932c34de7f7c526912fb37abd145ce4c69c6e013dc73860d77e"
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 # Authoring inputs are not public release content
 
+## 24 October editorial pass
+
+All 500 prompts received an AI editorial/source review; 44 revisions were corrected (16 wording/explanation, 28 citation-only). The bank is version 0.1.1 with immutable prior-revision history. [The report](review/EDITORIAL_REVIEW_2026-10-24.md) and [exact AI ledger](review/ai-editorial-2026-10-24.json) distinguish this completed work from the still-pending independent and rights approvals. The corrected private workbench is served from the app worktree at port 4176. Run `npm run content:prepare` to refresh it; `FIRSTLANE_CONTENT_REVIEW_PORT` selects an alternate loopback port.
+
 The included `ontario-g1.draft.json` remains unapproved. Do not publish it, promote its approval flags without actual review, or deploy the repository root as a website.
 
 A genuinely reviewed release belongs at `content/release/ontario-g1.approved.json`; it is not present in this delivery. `scripts/bundle-content.mjs` checks exact revision approvals, fixed sample IDs and required metadata. Connected apps import only `src/data/generated-bank.json` (40 fixed samples), not this complete authoring bank. Explicit internal demo builds can generate all draft questions for testing.

@@ -13,6 +13,7 @@ Target: `https://getfirstlane.com/app`, served on the existing canonical `https:
 - Sandbox database tests passed for duplicate/out-of-order payment events, reservation/receipt ownership and pending/approved refunds, with all fixtures rolled back. This is separate from an actual Paddle checkout/refund test.
 - Prepared `/app` exports, browser authentication/payment return paths, deep-link reloads and isolated marketing routing. Increased the small section-action and desktop account-link click targets. The release validator now rejects the old app hostname or a mismatched export mount.
 - Added `npm run content:review:check -- <export.json>` to reconcile saved reviewer decisions against the exact bank hash and question revision hashes. It rejects self-review, stale records, future timestamps and conflicting exports. It never creates an approved release.
+- Completed an AI editorial review of all 500 questions and corrected 44 revisions (16 wording/explanation, 28 citation-only). All current revision hashes are recorded; 226 local tests and content-integrity checks pass. See [the editorial report](../content/review/EDITORIAL_REVIEW_2026-10-24.md). This does not count as independent human/rights approval.
 
 `backendSecurityPassed` now records these technical checks, with [evidence](../qa/production-technical-evidence.json). Other release flags remain pending because those end-to-end outcomes have not occurred.
 
@@ -20,7 +21,7 @@ Target: `https://getfirstlane.com/app`, served on the existing canonical `https:
 
 | Area | Exact remaining work |
 |---|---|
-| Questions | The current browser workbench and saved export both show **0/500** approved. Review each keyed answer, distractor, explanation, exceptions and source, and record a rights basis for the original content. There are 250 paired concepts, including 200 text-description sign questions. These are not sign-recognition images. Coverage and feature claims must match that scope. |
+| Questions | **500/500 AI editorial checks are complete; 0/500 independent factual/rights decisions are recorded.** The corrected 0.1.1 bank has 44 new revisions. Independent exact-revision sign-off and a rights basis remain required by the current release policy. There are 250 paired concepts and 200 text-description sign prompts, with no sign-recognition images. |
 | Rehearsals | The proposed 40-question, 20/20, 16-per-section template still lacks recorded authority confirmation. DriveTest confirms multiple choice, no timer, sections and an 80% total requirement, but its current page does not substantiate those exact counts/per-section settings. Keep the official-format claim unapproved until resolved. |
 | Approved delivery | Assemble a release from the actually approved revisions, upload it to private versioned storage, record checksum/bytes/version/named approval, publish approved free samples, then verify real guest/free/paid/refunded access boundaries and automatic 500-question delivery. There is currently no release to deliver. |
 | Account/customer flows | Complete real production email signup, verification, sign-in, recovery, second-browser progress sync and a disposable-account deletion. Database/synthetic-provider tests do not substitute for those external flows. Physical mobile-browser and screen-reader checks also remain. |
@@ -32,7 +33,7 @@ The production backend now allows `https://www.getfirstlane.com`; all nine rejec
 
 ## Owner actions that unblock further acceptance
 
-1. Use the private workbench at `http://127.0.0.1:4175/`, review and export decisions. No decisions were entered on the owner's behalf. Check the export with `npm run content:review:check -- --out content/review/status-launch.json <export.json>`.
+1. Use the corrected-bank private workbench at `http://127.0.0.1:4176/`, review and export independent factual/rights decisions. The older workbench/export refers to the prior bank. AI editorial decisions are recorded separately; no human decisions were entered on the owner's behalf. Check the new export with `npm run content:review:check -- --out content/review/status-launch.json <export.json>`.
 2. Create the two Zoho mailboxes above. The current public MX points to `getfirstlane.com`, which is the website host; it is not a Zoho mail setup. Use the exact records supplied by the chosen Zoho account/region. Existing Clerk/email DNS should be preserved unless its provider explicitly requires a change.
 3. The owner has deferred the real public correspondence address and Zoho setup until later. They remain incomplete; actual retention/operating decisions are also required. Existing policy drafts cannot be marked reviewed merely because pages load.
 4. Once the approved bank and canonical-host deployment are ready, complete the prepared real account/password and payment steps. Account creation, password recovery, physical devices and real payment acceptance remain explicitly unverified.
@@ -40,6 +41,7 @@ The production backend now allows `https://www.getfirstlane.com`; all nine rejec
 ## Evidence and sources
 
 - [Production technical evidence](../qa/production-technical-evidence.json), [service rejection probes](../qa/production-service-checks.json), and [exact content-review status](../content/review/status-launch.json).
+- [AI editorial review and corrections](../content/review/EDITORIAL_REVIEW_2026-10-24.md) and [the diagnosed production build failure](PRODUCTION_BUILD_STATUS.md).
 - [DriveTest knowledge tests](https://drivetest.ca/tests/knowledge-tests/): current test/study guidance; the online handbook is partial.
 - [Ontario copyright information](https://www.ontario.ca/page/copyright-information): commercial reproduction of government materials has specific conditions. Original factual questions still need their documented rights review; access to a source page is not itself a reproduction licence.
 - Advisor references: [private RLS tables without policies](https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy) and [authenticated SECURITY DEFINER interfaces](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable).

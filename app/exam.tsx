@@ -13,7 +13,7 @@ export default function Exam() {
     function start() { if (begin('mock')) router.push('/quiz'); }
     return <Screen back title="Practice rehearsal" footer={<Button disabled={Platform.OS==='web'&&access.full&&(bankLoading||bankAvailability!=='complete')} onPress={start}>Start the rehearsal</Button>}>
         <View style={{ backgroundColor: colors.sage, borderRadius: 24, overflow: 'hidden' }}><Art name="road" height={115}/></View>
-        <Heading eyebrow="A LITTLE CLOSER TO THE REAL THING" sub="Step out of topic practice and see what you remember across a longer session.">Your quiet{`\n`}dress rehearsal.</Heading>
+        <Heading eyebrow="A LONGER PRACTICE SESSION" sub="Step out of topic practice and see what you remember across a longer session.">Your quiet{`\n`}dress rehearsal.</Heading>
         <QuestionBankNotice/>
         <Card>{[
             { icon: 'book', title: '40 questions', body: '20 road-sign and 20 road-rule questions.' },

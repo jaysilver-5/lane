@@ -1,0 +1,4 @@
+# Review hashes identify exact authoring bytes across Windows and Linux.
+content/ontario-g1.draft.json text eol=lf
+content/internal-review-manifest.json text eol=lf
+content/review/*.json text eol=lf
