@@ -10,6 +10,7 @@ const require = createRequire(import.meta.url);
 const { contentIssues, releasePath } = require('./release-policy.cjs');
 loadEnvironment(root);
 const mode = process.env.EXPO_PUBLIC_APP_MODE || 'connected';
+const web = process.argv.includes('--web');
 const exists = fs.existsSync(path.join(root, releasePath));
 const source = path.join(root, exists && mode !== 'demo' ? releasePath : 'content/ontario-g1.draft.json');
 const raw = fs.readFileSync(source), bank = JSON.parse(raw);
@@ -17,8 +18,11 @@ const approved = exists && mode !== 'demo';
 if (approved) { const errors = contentIssues(bank, root); if (errors.length) throw new Error(errors.join('\n')); }
 if (mode === 'production' && !approved) throw new Error('No approved release exists. Do not ship the authoring draft.');
 const manifest = JSON.parse(fs.readFileSync(path.join(root,'content/sample-manifest.json')));
-const selected = mode === 'demo' ? bank.questions : bank.questions.filter(q => manifest.freeQuestionIds.includes(q.id));
-if (mode !== 'demo' && selected.length !== 40) throw new Error('All 40 fixed sample IDs must exist in the release.');
+const free = bank.questions.filter(q => manifest.freeQuestionIds.includes(q.id));
+if (mode !== 'demo' && free.length !== 40) throw new Error('All 40 fixed sample IDs must exist in the release.');
+const selected = mode === 'demo' ? bank.questions : web ? free.filter(q => manifest.guestQuestionIds.includes(q.id)) : free;
+if (mode !== 'demo' && web && selected.length !== 10) throw new Error('All 10 guest IDs must exist in the release.');
+if (web && mode !== 'demo') fs.writeFileSync(path.join(root,'supabase/functions/_shared/free-questions.json'), JSON.stringify({packKey:'CA-ON-G1',version:bank.version || '0.1.0',approved,questions:free}));
 const payload = { packKey: 'CA-ON-G1', version: bank.version || '0.1.0', approved, sourceSha256: createHash('sha256').update(raw).digest('hex'), questions: selected, sources: bank.sources,
  topics: [...new Set(bank.questions.map(q=>q.topic))].map((title,i)=>({ id:String(i),title,count:bank.questions.filter(q=>q.topic===title).length,section:bank.questions.find(q=>q.topic===title).section })) };
 const errors = validateQuestionPayload(payload, { approved }); if (errors.length) throw new Error(errors.join('\n'));

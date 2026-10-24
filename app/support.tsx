@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Linking,Pressable,View } from 'react-native';
+import { Linking,Platform,Pressable,View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { config } from '../src/config';
 import { useApp } from '../src/state/AppState';
@@ -10,8 +10,8 @@ const faq=[
  ['Can FirstLane book my test or handle my licence?','No. FirstLane is a study product only. It does not issue, renew or replace a driver’s licence, submit an application, book a DriveTest test or government appointment, or collect government fees. Use the official Ontario and DriveTest services for those tasks.'],
  ['What is free?','Guests get 10 fixed sample questions. A verified FirstLane account gets 40 fixed samples free forever. The complete Ontario bank is a separate one-time purchase.'],
  ['Is Ontario G1 Complete a subscription?',`No. Ontario G1 Complete is ${config.offer.label} once in Canada. There is no automatic renewal and no access expiry for the Ontario pack.`],
- ['Can I practise without internet?','Offline practice is included with Ontario G1 Complete. FirstLane needs a connection at least every 30 days to refresh purchase access and connectivity for sign-in, purchase restoration and account services.'],
- ['Who charges me?','On iPhone, Apple presents and processes the purchase. On Android, Google Play does. RevenueCat coordinates purchase status and access; FirstLane does not collect your card details.'],
+ ['Can I practise without internet?',Platform.OS==='web'?'The web app requires an internet connection. Browser offline study is not currently promised. iOS and Android apps are coming soon.':'Offline practice is included with Ontario G1 Complete. FirstLane needs a connection at least every 30 days to refresh purchase access and connectivity for sign-in, purchase restoration and account services.'],
+ ['Who charges me?',Platform.OS==='web'?'Paddle securely processes your one-time web payment. Checkout shows CA$14.99 and any applicable tax before you confirm. FirstLane does not collect your card details. For payment help or refunds, contact support with your Paddle transaction reference.':'On iPhone, Apple presents and processes the purchase. On Android, Google Play does. RevenueCat coordinates purchase status and access; FirstLane does not collect your card details.'],
  ['How do I report a question?','Open the question and choose Report an issue. Include what seems incorrect and a supporting source when possible. Do not include sensitive personal information.'],
  ['Can I use FirstLane for a US test?','Not yet. State-specific US packs are planned inside this same app. Ontario questions should not be used for another jurisdiction.'],
  ['Does my score predict a pass?','No. Practice accuracy is a record of answers in FirstLane, not a prediction, certificate or guarantee of an official result.']

@@ -1,5 +1,13 @@
 # FirstLane 0.5.0 — Light-first app refresh
 
+**Live checkout preparation, 22 October:** The live CAD14.99 one-time Paddle catalog is prepared; production checkout is still incomplete. Follow [the verified cutover record](docs/LIVE_CHECKOUT_CUTOVER.md). Vercel builds use `npm run web:build` so production runs the web release checks, with connected exports retained for previews.
+
+**Current web authentication:** Clerk custom screens are implemented. Follow [docs/CLERK_WEB.md](docs/CLERK_WEB.md) for the public environment variable, Supabase secrets, dashboard connection and remaining acceptance tests. No former users are migrated.
+
+FirstLane is now being prepared as a web app. Start with **[docs/WEB_APP.md](docs/WEB_APP.md)** for the new Supabase project, browser authentication, automatic progress sync, Paddle sandbox checkout, and web deployment. The real browser app runs with `npm run web` or `npm run web:export` followed by `npm run web:preview`. iOS and Android apps are coming soon.
+
+Web checkout uses Paddle; native store billing code is retained for future native releases. CA$14.99 remains a one-time Ontario purchase. Service setup and end-to-end payment/auth acceptance are still required; this source update is not a production launch. The older native handoff below remains useful for that release path.
+
 **Ontario G1 Complete: CA$14.99 once. No subscription. No expiry.**
 
 A lighter version of the existing Expo / React Native app, inspired by the supplied FirstLane landing page. Warm paper backgrounds, fresh sage cards, forest-green accents, lime highlights, a calmer dock, and Home / Practice / Progress / Account navigation. The landing reference was not changed.
@@ -77,7 +85,7 @@ That runtime regression harness is included but was **not executed in this deliv
 
 ## Backend / launch
 
-Apply all **six** Supabase migrations in filename order to a disposable/staging project first. The newest migration adds refund-reversal handling. Run both `supabase/tests/commerce_acceptance.sql` and `supabase/tests/refund_reversal_acceptance.sql` there. Those database scripts were not executed here.
+All **seven** Supabase migrations are applied to the new FirstLane Web Sandbox project. All three scripts in `supabase/tests/`, including `paddle_acceptance.sql`, passed locally and on that hosted sandbox. See `docs/WEB_APP.md` for the deployment and remaining email/payment setup. Native store end-to-end acceptance remains separate.
 
 Production still requires independently approved content, configured real services, dependency review, Expo/native validation, sandbox billing, backend acceptance, accessibility, legal review and named sign-off. These remain blocked in `release-approvals.json`.
 

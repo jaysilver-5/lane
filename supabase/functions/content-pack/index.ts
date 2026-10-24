@@ -1,4 +1,5 @@
-import { createClient } from 'npm:@supabase/supabase-js@2';
+import { createClient } from 'npm:@supabase/supabase-js@2.117.2';
+import { AccountError, bindClerkAccount, verifyClerkRequest } from '../_shared/clerk.mjs';
 const headers = {'Content-Type':'application/json','Cache-Control':'no-store','Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'authorization, x-client-info, apikey, content-type','Access-Control-Allow-Methods':'POST, OPTIONS'};
 const json=(body:unknown,status=200)=>new Response(JSON.stringify(body),{status,headers});
 Deno.serve(async req => {
@@ -9,8 +10,8 @@ Deno.serve(async req => {
  if(!url||!key)return json({error:'Content service is unavailable'},503);
  if(!token)return json({error:'Sign in to download your pack'},401);
  const admin=createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}});
- const {data:{user},error:authError}=await admin.auth.getUser(token);
- if(authError||!user?.email_confirmed_at)return json({error:'A verified account is required'},401);
+ try { await bindClerkAccount(admin, await verifyClerkRequest(req, name => Deno.env.get(name))); }
+ catch(error){return json({error:error instanceof AccountError?error.message:'Account verification is unavailable'},error instanceof AccountError?error.status:503);}
  try {
    const raw=await req.text();if(raw.length>1024)return json({error:'Request too large'},413);
    const input=JSON.parse(raw);if(input.packKey!=='CA-ON-G1')return json({error:'Unknown pack'},400);
@@ -18,7 +19,7 @@ Deno.serve(async req => {
    const caller=createClient(url,key,{global:{headers:{Authorization:`Bearer ${token}`}},auth:{persistSession:false,autoRefreshToken:false}});
    const {data:release,error}=await caller.rpc('firstlane_content_release',{p_pack_key:input.packKey});
    if(error)return json({error:'Ontario G1 Complete access is required'},403);
-   if(!release)return json({error:'The approved study pack is not available yet'},503);
+   if(!release)return json({code:'content_not_published',error:'The approved question bank has not been published yet'},409);
    const {data:signed,error:storageError}=await admin.storage.from('content-releases').createSignedUrl(release.storage_path,120);
    if(storageError||!signed)return json({error:'The download could not be prepared'},503);
    return json({url:signed.signedUrl,version:release.version,sha256:release.sha256,bytes:release.bytes,questionCount:release.question_count});

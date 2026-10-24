@@ -1,5 +1,7 @@
 # Supabase — FirstLane 0.4.0
 
+For the current web implementation and deployed new sandbox project, start with [WEB_APP.md](WEB_APP.md) and `supabase/deployment.json`. All seven migrations and all three SQL acceptance scripts have now passed on FirstLane Web Sandbox. The native reference below predates Paddle; browser commerce uses the additional `202610200001_paddle_web.sql` migration.
+
 Supabase owns FirstLane identity, synced practice history, account-scoped access queries and the server-side commerce mirror. RevenueCat/store events feed that mirror. The client waits for the mirror before granting paid access and downloading protected content.
 
 ## Setup order

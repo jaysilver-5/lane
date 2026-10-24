@@ -1,0 +1,54 @@
+{
+  "projectRef": "nbvstjglclolzxchjlzp",
+  "projectName": "FirstLane Web Sandbox",
+  "organization": "StorlioHQ",
+  "region": "ca-central-1",
+  "environment": "sandbox",
+  "verifiedDate": "2026-10-22",
+  "migrations": [
+    {
+      "source": "202610030001_internal_beta.sql",
+      "remoteVersion": "20261020170052"
+    },
+    {
+      "source": "202610030002_access_and_billing.sql",
+      "remoteVersion": "20261020170103"
+    },
+    {
+      "source": "202610060001_production_content.sql",
+      "remoteVersion": "20261020170113"
+    },
+    {
+      "source": "202610060002_progress_concurrency.sql",
+      "remoteVersion": "20261020170126"
+    },
+    {
+      "source": "202610060003_offer_cad1499.sql",
+      "remoteVersion": "20261020170136"
+    },
+    {
+      "source": "202610070001_refund_reversal.sql",
+      "remoteVersion": "20261020170145"
+    },
+    {
+      "source": "202610200001_paddle_web.sql",
+      "remoteVersion": "20261020170155"
+    },
+    {
+      "source": "20261021191748_clerk_web_accounts.sql",
+      "remoteVersion": "20261021193619"
+    },
+    {
+      "source": "20261022174632_continuous_practice_progress.sql",
+      "remoteVersion": "20261022174857"
+    }
+  ],
+  "functions": {
+    "delete-account": 11,
+    "content-pack": 12,
+    "paddle-checkout": 16,
+    "paddle-webhook": 11,
+    "clerk-account": 6,
+    "free-questions": 6
+  }
+}

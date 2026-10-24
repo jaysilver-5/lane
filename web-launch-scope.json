@@ -1,0 +1,5 @@
+{
+  "platforms": ["web"],
+  "authenticationMethods": ["email_password"],
+  "paymentProvider": "paddle"
+}

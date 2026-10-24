@@ -1,0 +1,41 @@
+{
+  "domain": "getfirstlane.com",
+  "productionInstanceId": "ins_3L7cxxieAWLKyxHkbJs45atlkfd",
+  "verified": true,
+  "records": [
+    {
+      "type": "CNAME",
+      "name": "clerk",
+      "value": "frontend-api.clerk.services",
+      "ttl": 300
+    },
+    {
+      "type": "CNAME",
+      "name": "accounts",
+      "value": "accounts.clerk.services",
+      "ttl": 300
+    },
+    {
+      "type": "CNAME",
+      "name": "clkmail",
+      "value": "mail.1esatymdcyus.clerk.services",
+      "ttl": 300
+    },
+    {
+      "type": "CNAME",
+      "name": "clk._domainkey",
+      "value": "dkim1.1esatymdcyus.clerk.services",
+      "ttl": 300
+    },
+    {
+      "type": "CNAME",
+      "name": "clk2._domainkey",
+      "value": "dkim2.1esatymdcyus.clerk.services",
+      "ttl": 300
+    }
+  ],
+  "sslCertificatesIssued": true,
+  "verifiedDate": "2026-10-24",
+  "provider": "Go54 / WhoGoHost",
+  "existingRecordsPreserved": true
+}

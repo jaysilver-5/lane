@@ -1,18 +1,20 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useApp } from '../src/state/AppState';
 import { Art } from '../src/components/Art';
 import { Icon } from '../src/components/Icon';
 import { Button, Card, Copy, Heading, Muted, Note, Row, Screen } from '../src/components/UI';
+import { QuestionBankNotice } from '../src/components/QuestionBankNotice';
 
 export default function Exam() {
     const router = useRouter();
-    const { colors, begin } = useApp();
+    const { colors, begin, bankLoading, bankAvailability, access } = useApp();
     function start() { if (begin('mock')) router.push('/quiz'); }
-    return <Screen back title="Practice rehearsal" footer={<Button onPress={start}>Start the rehearsal</Button>}>
+    return <Screen back title="Practice rehearsal" footer={<Button disabled={Platform.OS==='web'&&access.full&&(bankLoading||bankAvailability!=='complete')} onPress={start}>Start the rehearsal</Button>}>
         <View style={{ backgroundColor: colors.sage, borderRadius: 24, overflow: 'hidden' }}><Art name="road" height={115}/></View>
         <Heading eyebrow="A LITTLE CLOSER TO THE REAL THING" sub="Step out of topic practice and see what you remember across a longer session.">Your quiet{`\n`}dress rehearsal.</Heading>
+        <QuestionBankNotice/>
         <Card>{[
             { icon: 'book', title: '40 questions', body: '20 road-sign and 20 road-rule questions.' },
             { icon: 'clock', title: 'No countdown', body: 'Take the time you need to think.' },

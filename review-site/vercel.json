@@ -1,0 +1,38 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/onboarding", "destination": "/" },
+    { "source": "/plans", "destination": "/" },
+    { "source": "/auth/:path*", "destination": "/" },
+    { "source": "/checkout", "destination": "/" },
+    { "source": "/account", "destination": "/" },
+    { "source": "/practice", "destination": "/" },
+    { "source": "/quiz", "destination": "/" }
+  ],
+  "redirects": [
+    { "source": "/pricing", "destination": "/#pricing", "permanent": false },
+    { "source": "/terms", "destination": "https://www.getfirstlane.com/terms", "permanent": false },
+    { "source": "/privacy", "destination": "https://www.getfirstlane.com/privacy", "permanent": false },
+    { "source": "/refunds", "destination": "https://www.getfirstlane.com/refunds", "permanent": false },
+    { "source": "/support", "destination": "https://www.getfirstlane.com/support", "permanent": false },
+    { "source": "/delete-account", "destination": "https://www.getfirstlane.com/delete-account", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=()" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
+    }
+  ]
+}

@@ -5,12 +5,13 @@ import { topics, questions } from '../../src/data/bank';
 import { useApp } from '../../src/state/AppState';
 import { Icon } from '../../src/components/Icon';
 import { AccessBanner } from '../../src/components/AccessBanner';
+import { QuestionBankNotice } from '../../src/components/QuestionBankNotice';
 import { Card, Chip, Copy, Empty, Field, Heading, IconButton, Muted, ProgressBar, Row, Screen } from '../../src/components/UI';
 import { topicAvailability } from '../../src/domain/availability.mjs';
 import sampleManifest from '../../content/sample-manifest.json';
 export default function Study() {
   const router = useRouter();
-  const { state, colors, access, setAccessGate } = useApp();
+  const { state, colors, access, bankAvailability, setAccessGate } = useApp();
   const [filter, setFilter] = useState('All topics');
   const [query, setQuery] = useState('');
   const seen = useMemo(() => new Set(state.sessions.flatMap(s => s.answers.map(a => a.questionId))), [state.sessions]);
@@ -19,9 +20,10 @@ export default function Study() {
   return <Screen tabs>
     <Row style={{ justifyContent: 'space-between', paddingTop: 10 }}><View style={{ flex: 1 }}><Heading eyebrow="YOUR PRACTICE SPACE" sub="Find your rhythm, one topic at a time.">A clearer road ahead.</Heading></View><IconButton name="bookmark" label="Saved questions" onPress={() => router.push('/saved')}/></Row>
     <AccessBanner compact/>
+    <QuestionBankNotice/>
     <Field label="Find a topic" placeholder="Signs, parking, right-of-way…" value={query} onChangeText={setQuery}/>
     <Row style={{ gap: 6, flexWrap: 'wrap' }}>{['All topics', 'Road signs', 'Road rules'].map(f => <Chip key={f} selected={filter === f} onPress={() => setFilter(f)}>{f}</Chip>)}</Row>
-    <Row style={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: 5 }}><Copy size={15} weight="600">{filtered.length} topics to explore</Copy><Muted size={11}>{access.full ? 'Your complete library' : `${items.filter(x => !x.info.locked).length} with your samples`}</Muted></Row>
+    <Row style={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: 5 }}><Copy size={15} weight="600">{filtered.length} topics to explore</Copy><Muted size={11}>{access.full && bankAvailability==='complete' ? 'Your complete library' : `${items.filter(x => x.info.availableCount > 0).length} with your samples`}</Muted></Row>
     <View style={{ gap: 10 }}>
       {items.map(({ topic: t, info }) => {
         const done = info.available.filter((q: {id: string}) => seen.has(q.id)).length;

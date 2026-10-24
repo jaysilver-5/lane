@@ -1,0 +1,225 @@
+{
+  "projectRef": "jinbdlckkyzffnocuugn",
+  "projectName": "FirstLane Web Production",
+  "organization": "StorlioHQ",
+  "region": "ca-central-1",
+  "environment": "production",
+  "verifiedDate": "2026-10-24",
+  "url": "https://jinbdlckkyzffnocuugn.supabase.co",
+  "paddleEnvironment": "live",
+  "migrations": [
+    {
+      "source": "202610030001_internal_beta.sql",
+      "remoteVersion": "20261023230312"
+    },
+    {
+      "source": "202610030002_access_and_billing.sql",
+      "remoteVersion": "20261023230326"
+    },
+    {
+      "source": "202610060001_production_content.sql",
+      "remoteVersion": "20261023230329"
+    },
+    {
+      "source": "202610060002_progress_concurrency.sql",
+      "remoteVersion": "20261023230331"
+    },
+    {
+      "source": "202610060003_offer_cad1499.sql",
+      "remoteVersion": "20261023230334"
+    },
+    {
+      "source": "202610070001_refund_reversal.sql",
+      "remoteVersion": "20261023230336"
+    },
+    {
+      "source": "202610200001_paddle_web.sql",
+      "remoteVersion": "20261023230338"
+    },
+    {
+      "source": "20261021191748_clerk_web_accounts.sql",
+      "remoteVersion": "20261023230342"
+    },
+    {
+      "source": "20261022174632_continuous_practice_progress.sql",
+      "remoteVersion": "20261023230344"
+    }
+  ],
+  "functions": {
+    "clerk-account": 3,
+    "free-questions": 3,
+    "content-pack": 3,
+    "delete-account": 4,
+    "paddle-checkout": 3,
+    "paddle-webhook": 4
+  },
+  "paddleResources": {
+    "serverKeyName": "FirstLane production backend",
+    "serverKeyPermissions": [
+      "price.read",
+      "transaction.read",
+      "transaction.write"
+    ],
+    "serverKeyExpiryDateLagos": "2027-01-22",
+    "browserTokenName": "FirstLane production web",
+    "notificationDestinationId": "ntfset_01m5nhe981hhb91fdc4b6sqpec",
+    "notificationUrl": "https://jinbdlckkyzffnocuugn.supabase.co/functions/v1/paddle-webhook",
+    "notificationEvents": [
+      "transaction.completed",
+      "adjustment.created",
+      "adjustment.updated"
+    ],
+    "notificationUsage": "platform",
+    "secretsStoredInBackend": true,
+    "liveCatalogRead": "passed-200-active-CAD1499-one-time-external-tax",
+    "webhookSignatureProbe": "passed-200-ignored-non-commerce-event",
+    "unsignedWebhookRejection": "passed-401",
+    "browserTokenId": "ctkn_01m5nh7b2wngmdzm9yeej718ra",
+    "browserTokenStorage": "Vercel Production EXPO_PUBLIC_PADDLE_CLIENT_TOKEN",
+    "browserTokenSavedAndVerified": true,
+    "previewBrowserTokenAbsent": true,
+    "checkoutDomain": "app.getfirstlane.com",
+    "checkoutDomainId": "chedom_01m5psjn2q2sh4bftmv8pbv4h4",
+    "checkoutDomainStatus": "in-review",
+    "checkoutDomainReason": null,
+    "defaultPaymentLink": null,
+    "plannedDefaultPaymentLink": "https://app.getfirstlane.com/checkout",
+    "checkoutDomainResubmittedDate": "2026-10-24",
+    "checkoutDomainLastRequestedChange": "public-reachability-and-valid-HTTPS",
+    "checkoutDomainResolutionFix": "existing-CNAME-republished;all-four-authoritative-servers-serial-2026102406;Google-and-Cloudflare-fresh-DNS-queries-and-normal-HTTPS-passed"
+  },
+  "clerk": {
+    "applicationId": "app_3L1ENrJ6R5Z2BKMPH7Ulpy8K7KP",
+    "productionInstanceId": "ins_3L7cxxieAWLKyxHkbJs45atlkfd",
+    "applicationDomain": "app.getfirstlane.com",
+    "frontendApiHost": "clerk.getfirstlane.com",
+    "primaryApplication": true,
+    "dnsVerified": true,
+    "serverKeyStorage": "saved-in-production-supabase-edge-secrets",
+    "supabaseIntegrationConfigured": true,
+    "sslCertificatesIssued": true,
+    "emailDnsVerified": true,
+    "serverKeyReadOnlyValidation": "passed-200-production-Clerk-API",
+    "issuerUrl": "https://clerk.getfirstlane.com",
+    "jwksHttpsValidation": "passed-200-one-signing-key",
+    "clerkSupabaseIntegrationEnabled": true,
+    "signInUrl": "https://app.getfirstlane.com/auth/sign-in",
+    "signUpUrl": "https://app.getfirstlane.com/auth/sign-up",
+    "legalConsentRequired": true,
+    "productionLoginAcceptancePassed": false,
+    "launchAuthenticationMethods": [
+      "email_password"
+    ],
+    "productionSocialConnections": {
+      "google": "disabled-deferred-by-owner",
+      "apple": "disabled-deferred-by-owner"
+    },
+    "deferredAppleTeam": "L4RNXCN5V2"
+  },
+  "hosting": {
+    "teamSlug": "joshs-projects-e9dac4f7",
+    "observedPlan": "pro",
+    "productionAppDeployed": false,
+    "sourcePullRequest": "https://github.com/jaysilver-5/lane/pull/1",
+    "upgradeStatus": "owner-completed-and-verified",
+    "projectName": "firstlane-app",
+    "projectId": "prj_X7IzsBQvdB1n1pqugpYYBA63CRBf",
+    "projectUrl": "https://vercel.com/joshs-projects-e9dac4f7/firstlane-app",
+    "repository": "jaysilver-5/lane",
+    "productionBranch": "main",
+    "previewBranch": "codex/firstlane-production-web",
+    "protection": "Vercel Authentication: All Deployments",
+    "buildCommand": "npm run web:build",
+    "outputDirectory": "dist",
+    "nodeVersion": "24.x",
+    "buildMachine": "basic-2-vCPU-8GB",
+    "onDemandConcurrentBuilds": false,
+    "domain": "app.getfirstlane.com",
+    "domainEnvironment": "public-review-site-production",
+    "domainCname": "18ca7189418b9b74.vercel-dns-016.com",
+    "domainDnsVerified": true,
+    "previewEnvironmentConfigured": true,
+    "productionEnvironmentConfigured": true,
+    "productionBrowserPaymentTokenConfigured": true,
+    "previewLivePaymentsEnabled": false,
+    "productionBuild": "blocked-by-existing-content-and-acceptance-checks",
+    "previewDeployment": "ready",
+    "verifiedPreviewDeploymentId": "6MxnANHmC3AtQomauSELLQ9EGznz",
+    "verifiedPreviewCommit": "12ead17e963f50a23efb4aa57898d51a50cb72f7",
+    "verifiedPreviewUrl": "https://firstlane-app-git-codex-firstlan-d306dd-joshs-projects-e9dac4f7.vercel.app/",
+    "domainTlsVerified": true,
+    "unauthenticatedDomainResponse": "200-valid-TLS-normal-DNS-root-onboarding-pricing-and-policy-routes",
+    "localResolverStatus": "resolved-HTTPS-200-after-authoritative-zone-republish",
+    "hostedGuestPractice": "passed-start-and-reload-same-question",
+    "hostedSignInRendering": "passed-no-login-submitted",
+    "domainAssignedToProject": "firstlane-review",
+    "protectedAppBranchUrl": "https://firstlane-app-git-codex-firstlan-d306dd-joshs-projects-e9dac4f7.vercel.app/",
+    "unauthenticatedAppBranchResponse": "302-to-Vercel-SSO",
+    "publicReviewSite": {
+      "projectName": "firstlane-review",
+      "projectId": "prj_sk41zr4wcx9rBkCibNISfNTJo9Rm",
+      "rootDirectory": "review-site",
+      "productionBranch": "codex/firstlane-production-web",
+      "outsideRootIncluded": false,
+      "environmentVariablesAdded": false,
+      "verifiedDeploymentId": "CTgUV5izhw28LBNuA7N2jJuMyqjx",
+      "verifiedSourceCommit": "12ead17e963f50a23efb4aa57898d51a50cb72f7",
+      "domain": "app.getfirstlane.com",
+      "anonymousHttps": "passed-normal-DNS-and-TLS-root-onboarding-pricing-terms;all-seven-informational-routes-validated",
+      "checkoutEnabled": false
+    },
+    "hostedEmailPasswordRendering": "passed-sign-in-sign-up-recovery-entry-consent-controls-no-account-submitted",
+    "dnsPropagation": {
+      "authoritativeNameservers": [
+        "nsa.whogohost.com",
+        "nsb.whogohost.com"
+      ],
+      "authoritativeSerial": "2026102406",
+      "staleNegativeSerial": "2026102404",
+      "authoritativeCnamePresentOnBoth": true,
+      "publicRecursiveResolutionConsistent": true,
+      "cloudflarePurge": "CNAME-A-refreshed-after-zone-republish;fresh-query-passed",
+      "googleFlush": "not-confirmed-reCAPTCHA-service-unreachable;fresh-query-now-passed",
+      "authoritativeServerIps": [
+        "46.101.51.238",
+        "209.97.188.201",
+        "146.185.169.163",
+        "95.85.47.7"
+      ],
+      "allFourAuthoritativeServersSynchronized": true,
+      "previousStaleAuthoritativeIp": "95.85.47.7",
+      "zoneRepublished": true,
+      "recordValuesChanged": false
+    }
+  },
+  "configurationStatus": "email-password-web-preview-verified-DNS-synchronized-Paddle-domain-in-review-content-and-final-acceptance-pending",
+  "publicSalesEnabled": false,
+  "acceptance": {
+    "schemaIsolationAndSessionChecks": "passed-with-rollback",
+    "syntheticLiveCommerceChecks": "passed-with-rollback",
+    "continuousPracticeChecks": "passed-with-rollback",
+    "unconfiguredEndpointRejection": "passed",
+    "approvedPublishedContent": false,
+    "realLivePurchase": false
+  },
+  "launchReadiness": {
+    "platforms": [
+      "web"
+    ],
+    "authenticationMethods": [
+      "email_password"
+    ],
+    "paymentProvider": "paddle",
+    "approvedPublishedReleases": 0,
+    "privateReviewApprovedQuestions": 0,
+    "productionDeletionInputChecks": "passed-v4-400-401-403-204",
+    "databaseDeletionChecks": "passed-all-synthetic-fixtures-rolled-back",
+    "realClerkDeletionPassed": false,
+    "realProductionLoginPassed": false,
+    "realLivePurchasePassed": false,
+    "nativeLaunchInScope": false,
+    "details": "docs/LAUNCH_READINESS.md",
+    "hostedEmailPasswordRendering": "passed-protected-web-preview",
+    "reliablePublicDnsPassed": true
+  }
+}

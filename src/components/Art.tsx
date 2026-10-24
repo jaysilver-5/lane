@@ -8,7 +8,7 @@ export function Art({ name = 'journey', width = '100%', height = 260 }: {
     height?: number;
 }) {
     if (name === 'logo') {
-        return <Image source={require('../../assets/firstlane-mark.png')} accessibilityLabel="FirstLane logo" resizeMode="contain" style={{ width, height }} />;
+        return <Image source={require('../../assets/icon.png')} accessibilityLabel="FirstLane logo" resizeMode="contain" style={{ width, height, borderRadius: height * .25, backgroundColor: '#12392B' }} />;
     }
     return <SvgXml xml={artwork[name]} width={width} height={height}/>;
 }

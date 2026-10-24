@@ -4,11 +4,24 @@ import { validateQuestionPayload } from '../domain/content.mjs';
 import { config } from '../config';
 import type { Question } from '../domain/types';
 import { confirmPackDownload } from './downloadConsent';
+import sampleManifest from '../../content/sample-manifest.json';
 export interface ContentPack { packKey: string; version: string; approved: boolean; questions: Question[]; }
+export async function downloadFreeQuestions(userId:string):Promise<ContentPack>{
+    const {client}=await authenticatedClient(userId);
+    const {data,error}=await client.functions.invoke('free-questions',{body:{}});
+    if(error)throw new Error('Your free questions could not load. Reconnect your account to try again.');
+    const errors=validateQuestionPayload(data,{approved:config.isProduction,expectedCount:40});
+    if(errors.length||data.questions.some((q:Question)=>!sampleManifest.freeQuestionIds.includes(q.id)))throw new Error('The free question set could not be verified.');
+    return data;
+}
 export async function downloadContentPack(userId:string): Promise<ContentPack> {
     const { client } = await authenticatedClient(userId);
     const { data, error } = await client.functions.invoke('content-pack', { body: { packKey: config.packKey } });
-    if (error) throw new Error('Your study pack could not be requested. Check your connection and purchase access.');
+    if (error) {
+        const details = await error.context?.clone?.().json().catch(() => null);
+        if (details?.code === 'content_not_published') throw Object.assign(new Error('The question bank is awaiting publication.'), { code: 'content_not_published' });
+        throw new Error('Your questions could not be requested. Check your connection and purchase access.');
+    }
     if (!data?.url || !/^https:\/\//.test(data.url) || !/^[a-f0-9]{64}$/.test(data.sha256) || !Number.isInteger(data.bytes) || data.bytes <= 0 || data.bytes > 15_000_000 || !Number.isInteger(data.questionCount)) throw new Error('The study pack manifest is invalid.');
     if (!await confirmPackDownload(data.bytes)) throw new Error('Download cancelled. You can download your pack later from Offline packs.');
     const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 30_000);
