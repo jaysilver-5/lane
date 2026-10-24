@@ -3,8 +3,10 @@ import type { ExpoConfig } from 'expo/config';
 const production = process.env.EXPO_PUBLIC_APP_MODE === 'production' || process.env.EAS_BUILD_PROFILE === 'production';
 if (production) {
   const { releaseIssues } = require('./scripts/release-policy.cjs');
-  const { webReleaseIssues } = require('./scripts/web-release-policy.cjs');
-  const issues: string[] = process.env.EXPO_PUBLIC_RELEASE_TARGET === 'web' ? webReleaseIssues(__dirname, process.env) : releaseIssues(__dirname, process.env, { checkBundle: false });
+  const { webReleaseIssues, webConfigurationIssues } = require('./scripts/web-release-policy.cjs');
+  const webTarget = process.env.EXPO_PUBLIC_RELEASE_TARGET === 'web' && process.env.EAS_BUILD_PROFILE !== 'production' && !['ios','android'].includes(process.env.EAS_BUILD_PLATFORM || '');
+  const webCheck = process.env.FIRSTLANE_WEB_DEPLOYMENT_STAGE === 'acceptance' ? webConfigurationIssues : webReleaseIssues;
+  const issues: string[] = webTarget ? webCheck(__dirname, process.env) : releaseIssues(__dirname, process.env, { checkBundle: false });
   if (issues.length) throw new Error('FirstLane release checks failed:\n' + issues.join('\n'));
 }
 const config: ExpoConfig = {

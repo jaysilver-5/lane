@@ -9,3 +9,7 @@ Public-release acceptance still checks actual customer/payment/operating results
 Keep Vercel Authentication set to All Deployments for this candidate. This was verified in the dashboard before selecting the stage. An acceptance build is not approval to expose sales or claim completed customer tests. Before final public release, remove the acceptance stage, finish the recorded checks and run the normal public gate. Use the latest migration source, not an old failed deployment.
 
 The remaining tasks and current evidence are in [LAUNCH_STATUS.md](LAUNCH_STATUS.md).
+
+## Expo configuration gate correction
+
+The first acceptance attempt at commit 4136c23 reached approved content generation, then Expo's app.config.ts ran the full public acceptance gate again. The host script and Expo configuration now select the same explicit acceptance policy. Actual Expo config-loading tests cover the private candidate, public-release rejection, missing live services and native store builds; the acceptance stage cannot waive native store requirements.
