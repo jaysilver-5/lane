@@ -12,7 +12,7 @@ The 500-question AI review corrected 44 revisions: 16 wording/explanation and 28
 
 ## Verified technical work
 
-- All 233 JavaScript tests pass, plus TypeScript, 94-file source checks, seven Edge Function entrypoint checks and content-integrity/approval validation. Exact-answer changes, missing/duplicate approvals and misleading certification claims are rejected.
+- All 236 JavaScript tests and a further workbench-status regression pass, plus TypeScript, 94-file source checks, seven Edge Function entrypoint checks and content-integrity/approval validation. Exact-answer changes, missing/duplicate approvals and misleading certification claims are rejected.
 - Production account isolation, progress/concurrency, stale-session rejection and database deletion suites passed with rollback. Private tables/storage remain inaccessible to browser roles; intentional authenticated RPCs check current account/session ownership.
 - Content-pack v4 enforces the exact configured browser origin. Nine unauthenticated/preflight rejection probes pass against the canonical WWW origin.
 - Production Clerk/backend origin configuration and Vercel URL/base path use WWW and /app. Root policies stay on marketing routes. No DNS record is required for /app.
@@ -25,7 +25,7 @@ The 500-question AI review corrected 44 revisions: 16 wording/explanation and 28
 | Area | Remaining work |
 |---|---|
 | Private pack delivery | Upload ontario-g1-1.0.0-21bf800c.json into production content-releases, verify bytes/checksum, then insert its approved publication record. Test real free/paid/refunded access and automatic delivery. |
-| Production candidate and cutover | Build the current migration source with the explicit acceptance stage and verify /app assets/deep links. Replace marketing's protected-preview upstream with the validated production destination. The main-domain candidate must be reachable for real Clerk/Paddle acceptance before public sales. |
+| Production candidate and cutover | Production acceptance deployment F29VLxbhnVBRuZuvWLjLC7oY8SjG at commit daf6fd8 is Ready. Guest onboarding, the revised approved STOP explanation, quiz deep-link reload and local guest-progress restoration pass; the sign-in form renders without app errors. Marketing PR #4 now targets the verified production alias project-n8lqe.vercel.app and all 37 marketing tests/CI pass. The main-domain candidate must be reachable for real Clerk/Paddle acceptance before public sales. |
 | Real accounts | Email signup/verification/sign-in/recovery, second-browser progress and disposable-account deletion still need real production execution. Database tests do not claim these outcomes. Password entry belongs to the user. |
 | Payments | Set Paddle's default payment link only after the canonical /app/checkout works. Complete a controlled CA$14.99 plus tax purchase, fulfillment/restoration and refund/revocation. No live transaction has occurred. |
 | Device/accessibility | Complete physical mobile-browser and screen-reader checks. |

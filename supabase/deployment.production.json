@@ -119,7 +119,7 @@
   "hosting": {
     "teamSlug": "joshs-projects-e9dac4f7",
     "observedPlan": "pro",
-    "productionAppDeployed": false,
+    "productionAppDeployed": true,
     "sourcePullRequest": "https://github.com/jaysilver-5/lane/pull/1",
     "upgradeStatus": "owner-completed-and-verified",
     "projectName": "firstlane-app",
@@ -142,7 +142,7 @@
     "productionEnvironmentConfigured": true,
     "productionBrowserPaymentTokenConfigured": true,
     "previewLivePaymentsEnabled": false,
-    "productionBuild": "protected-acceptance-candidate-requested",
+    "productionBuild": "ready-protected-acceptance-candidate",
     "previewDeployment": "ready",
     "verifiedPreviewDeploymentId": "6MxnANHmC3AtQomauSELLQ9EGznz",
     "verifiedPreviewCommit": "12ead17e963f50a23efb4aa57898d51a50cb72f7",
@@ -191,7 +191,15 @@
       "zoneRepublished": true,
       "recordValuesChanged": false
     },
-    "acceptanceStage": "acceptance"
+    "acceptanceStage": "acceptance",
+    "verifiedProductionDeploymentId": "F29VLxbhnVBRuZuvWLjLC7oY8SjG",
+    "verifiedProductionCommit": "daf6fd84a496f927d8e8c74c299a7f6a62165f69",
+    "verifiedProductionUrl": "https://firstlane-g1ib6123g-joshs-projects-e9dac4f7.vercel.app/app",
+    "productionAlias": "https://project-n8lqe.vercel.app",
+    "productionGuestChecks": "passed-onboarding-approved-revised-question-answer-explanation-and-quiz-reload-progress-preserved",
+    "productionSignInRendering": "passed-no-credentials-entered",
+    "unauthenticatedProductionResponse": "302-to-Vercel-SSO",
+    "canonicalAppCutover": "pending-www-app-currently-404"
   },
   "configurationStatus": "owner-content-approved-free-samples-deployed-private-pack-upload-and-production-customer-acceptance-pending",
   "publicSalesEnabled": false,
