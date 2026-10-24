@@ -2,7 +2,7 @@
 
 ## Current acceptance audit
 
-See [LAUNCH_STATUS.md](LAUNCH_STATUS.md) for the current completed checks and exact remaining work. Production authorization/deletion/progress checks and sandbox event/refund database checks passed with rollback. Content-pack v4 enforces exact browser origin. `backendSecurityPassed` is recorded with evidence; all actual account/payment/content/legal acceptance remains pending. The workbench still has 0/500 approved questions, and the two support/privacy mailboxes are awaiting Zoho setup.
+See [LAUNCH_STATUS.md](LAUNCH_STATUS.md) for current checks and remaining work. The owner accepted the AI editorial review of all 500 exact revisions; the 1.0.0 content release is approved on that explicitly recorded basis. Independent human review is no longer an internal prerequisite. Production authorization/deletion/progress and sandbox event/refund database tests passed with rollback. Content-pack v4 enforces the exact browser origin; approved free samples are deployed as free-questions v6. Full private upload/publication and actual account/payment/device/operating acceptance remain pending. Older notes below are historical, including references to zero approved questions.
 
 ## Main-domain app migration prepared
 

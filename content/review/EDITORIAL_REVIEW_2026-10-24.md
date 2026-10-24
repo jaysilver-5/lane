@@ -39,7 +39,7 @@ The source review checked the bank's actual subjects and numerical answers, incl
 
 The 200 sign questions describe signs in words; no image-recognition coverage is claimed. Many distractors are intentionally basic, and this is not an empirically calibrated test. The 500 prompts represent 250 paired concepts. The owner has accepted the 40-question, 20-per-section session and 16-correct target as FirstLane editorial practice, without a verified official-format claim. The app describes it as FirstLane practice, and the promotional “closer to the real thing” eyebrow was removed.
 
-The actual independent factual/rights decisions are still **0/500**. The existing release policy requires those decisions, release-wide coverage/format approval and an approved artifact before publication. The AI ledger does not masquerade as those approvals or generate `content/release/ontario-g1.approved.json`.
+The actual independent factual/rights decisions remain **0/500**. The owner subsequently accepted this exact AI editorial review and instructed us to proceed. The separate [owner receipt](../approvals/owner-2026-10-24.json) and [release manifest](../release/ontario-g1.approved.json) approve all 500 exact revisions on that basis. Independent human review is no longer an internal publication prerequisite for this release. No human/legal/government certification is claimed.
 
 For rights, the bank uses AI-assisted original wording about facts and contains no copied media. That is an editorial observation, not a commercial reproduction licence or a legal clearance. [Ontario's copyright policy](https://www.ontario.ca/page/copyright-information) gives specific conditions for commercial reproduction; merely citing a handbook does not license its prose or artwork.
 

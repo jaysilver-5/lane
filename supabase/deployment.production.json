@@ -126,8 +126,8 @@
     "projectId": "prj_X7IzsBQvdB1n1pqugpYYBA63CRBf",
     "projectUrl": "https://vercel.com/joshs-projects-e9dac4f7/firstlane-app",
     "repository": "jaysilver-5/lane",
-    "productionBranch": "main",
-    "previewBranch": "codex/firstlane-production-web",
+    "productionBranch": "codex/firstlane-main-domain-app",
+    "previewBranch": "codex/firstlane-main-domain-app",
     "protection": "Vercel Authentication: All Deployments",
     "buildCommand": "npm run web:build",
     "outputDirectory": "dist",
@@ -142,7 +142,7 @@
     "productionEnvironmentConfigured": true,
     "productionBrowserPaymentTokenConfigured": true,
     "previewLivePaymentsEnabled": false,
-    "productionBuild": "blocked-by-existing-content-and-acceptance-checks",
+    "productionBuild": "protected-acceptance-candidate-requested",
     "previewDeployment": "ready",
     "verifiedPreviewDeploymentId": "6MxnANHmC3AtQomauSELLQ9EGznz",
     "verifiedPreviewCommit": "12ead17e963f50a23efb4aa57898d51a50cb72f7",
@@ -190,9 +190,10 @@
       "previousStaleAuthoritativeIp": "95.85.47.7",
       "zoneRepublished": true,
       "recordValuesChanged": false
-    }
+    },
+    "acceptanceStage": "acceptance"
   },
-  "configurationStatus": "email-password-web-preview-verified-DNS-synchronized-Paddle-domain-in-review-content-and-final-acceptance-pending",
+  "configurationStatus": "owner-content-approved-free-samples-deployed-private-pack-upload-and-production-customer-acceptance-pending",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",

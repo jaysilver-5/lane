@@ -12,7 +12,7 @@ The 500-question AI review corrected 44 revisions: 16 wording/explanation and 28
 
 ## Verified technical work
 
-- All 232 JavaScript tests pass, plus TypeScript, 94-file source checks, seven Edge Function entrypoint checks and content-integrity/approval validation. Exact-answer changes, missing/duplicate approvals and misleading certification claims are rejected.
+- All 233 JavaScript tests pass, plus TypeScript, 94-file source checks, seven Edge Function entrypoint checks and content-integrity/approval validation. Exact-answer changes, missing/duplicate approvals and misleading certification claims are rejected.
 - Production account isolation, progress/concurrency, stale-session rejection and database deletion suites passed with rollback. Private tables/storage remain inaccessible to browser roles; intentional authenticated RPCs check current account/session ownership.
 - Content-pack v4 enforces the exact configured browser origin. Nine unauthenticated/preflight rejection probes pass against the canonical WWW origin.
 - Production Clerk/backend origin configuration and Vercel URL/base path use WWW and /app. Root policies stay on marketing routes. No DNS record is required for /app.
