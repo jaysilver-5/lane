@@ -1,5 +1,9 @@
 # Web launch readiness — 24 October 2026
 
+## Current acceptance audit
+
+See [LAUNCH_STATUS.md](LAUNCH_STATUS.md) for the current completed checks and exact remaining work. Production authorization/deletion/progress checks and sandbox event/refund database checks passed with rollback. Content-pack v4 enforces exact browser origin. `backendSecurityPassed` is recorded with evidence; all actual account/payment/content/legal acceptance remains pending. The workbench still has 0/500 approved questions, and the two support/privacy mailboxes are awaiting Zoho setup.
+
 ## Main-domain app migration prepared
 
 The owner selected `getfirstlane.com/app` instead of depending on app-subdomain approval. The live Paddle dashboard confirms `getfirstlane.com` is approved. `/app` export, raw authentication/payment return paths and paired marketing proxy changes are prepared for review. The canonical browser host remains `www.getfirstlane.com`. Public cutover, provider origin changes and checkout are not complete; content and final acceptance still block production. See [MAIN_DOMAIN_APP.md](MAIN_DOMAIN_APP.md) for the exact sequence and configuration. Earlier subdomain notes below are historical.

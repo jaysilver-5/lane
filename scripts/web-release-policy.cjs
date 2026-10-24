@@ -14,6 +14,8 @@ function webReleaseIssues(root, env) {
   if(!env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY?.startsWith('pk_live_'))issues.push('Public launch requires a Clerk production publishable key.');
   for(const key of ['EXPO_PUBLIC_SUPABASE_URL','EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY','EXPO_PUBLIC_WEB_APP_URL','EXPO_PUBLIC_PADDLE_CLIENT_TOKEN','EXPO_PUBLIC_SUPPORT_EMAIL','EXPO_PUBLIC_OPERATOR_NAME','EXPO_PUBLIC_PRIVACY_URL','EXPO_PUBLIC_TERMS_URL','EXPO_PUBLIC_ACCOUNT_DELETION_URL']) if(!env[key]?.trim()) issues.push(`Missing ${key}.`);
   if(env.EXPO_PUBLIC_PADDLE_ENVIRONMENT!=='live'||!env.EXPO_PUBLIC_PADDLE_CLIENT_TOKEN?.startsWith('live_')) issues.push('Public launch requires Paddle live configuration. Use connected mode for sandbox staging.');
+  if(env.EXPO_PUBLIC_WEB_APP_URL && env.EXPO_PUBLIC_WEB_APP_URL!=='https://www.getfirstlane.com/app') issues.push('Use https://www.getfirstlane.com/app as the production web app URL.');
+  if((env.EXPO_PUBLIC_WEB_BASE_PATH ?? '/app')!=='/app') issues.push('The production web export must use /app as its base path.');
   for(const key of ['EXPO_PUBLIC_SUPABASE_URL','EXPO_PUBLIC_WEB_APP_URL','EXPO_PUBLIC_PRIVACY_URL','EXPO_PUBLIC_TERMS_URL','EXPO_PUBLIC_ACCOUNT_DELETION_URL']) if(env[key]) {try{const url=new URL(env[key]);if(url.protocol!=='https:'||url.username||url.password||/localhost|example\.(com|org)/.test(url.hostname))throw new Error();}catch{issues.push(`Invalid HTTPS URL: ${key}.`);}}
   const publicKey=env.EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY||'';
   if(publicKey&&!publicKey.startsWith('sb_publishable_')) {try{if(JSON.parse(Buffer.from(publicKey.split('.')[1],'base64url')).role!=='anon')throw new Error();}catch{issues.push('Use a public Supabase publishable or anon key.');}}

@@ -48,7 +48,7 @@
   "functions": {
     "clerk-account": 3,
     "free-questions": 3,
-    "content-pack": 3,
+    "content-pack": 4,
     "delete-account": 4,
     "paddle-checkout": 3,
     "paddle-webhook": 4

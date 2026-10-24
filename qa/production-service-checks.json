@@ -1,0 +1,82 @@
+{
+  "checkedAt": "2026-10-24T16:20:50.022Z",
+  "project": "jinbdlckkyzffnocuugn",
+  "origin": "https://www.getfirstlane.com",
+  "scope": "Unauthenticated rejection and CORS preflight only; no customer-flow or payment acceptance implied.",
+  "mutationsAttempted": false,
+  "passed": true,
+  "results": [
+    {
+      "name": "clerk-account",
+      "method": "OPTIONS",
+      "expected": 204,
+      "status": 204,
+      "passed": true,
+      "allowOrigin": "https://www.getfirstlane.com"
+    },
+    {
+      "name": "clerk-account",
+      "method": "POST",
+      "expected": 401,
+      "status": 401,
+      "passed": true,
+      "allowOrigin": "https://www.getfirstlane.com"
+    },
+    {
+      "name": "free-questions",
+      "method": "POST",
+      "expected": 401,
+      "status": 401,
+      "passed": true,
+      "allowOrigin": "https://www.getfirstlane.com"
+    },
+    {
+      "name": "content-pack",
+      "method": "OPTIONS",
+      "expected": 200,
+      "status": 200,
+      "passed": true,
+      "allowOrigin": "https://www.getfirstlane.com"
+    },
+    {
+      "name": "content-pack",
+      "method": "POST",
+      "expected": 401,
+      "status": 401,
+      "passed": true,
+      "allowOrigin": "https://www.getfirstlane.com"
+    },
+    {
+      "name": "paddle-checkout",
+      "method": "POST",
+      "expected": 401,
+      "status": 401,
+      "passed": true,
+      "allowOrigin": "https://www.getfirstlane.com"
+    },
+    {
+      "name": "delete-account",
+      "method": "POST",
+      "expected": 400,
+      "status": 400,
+      "passed": true,
+      "allowOrigin": "https://www.getfirstlane.com"
+    },
+    {
+      "name": "delete-account",
+      "method": "POST",
+      "expected": 401,
+      "status": 401,
+      "passed": true,
+      "allowOrigin": "https://www.getfirstlane.com"
+    },
+    {
+      "name": "paddle-webhook",
+      "method": "POST",
+      "expected": 401,
+      "status": 401,
+      "passed": true,
+      "allowOrigin": null
+    }
+  ]
+}

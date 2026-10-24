@@ -20,7 +20,7 @@ export function WebFrame({ children }: { children: React.ReactNode }) {
       <Logo size={32}/>
       <View accessibilityRole="menu" style={{ gap: 8 }}>{links.map(link => <Pressable key={link.label} accessibilityRole="link" accessibilityState={{ selected: path === link.path }} onPress={() => router.navigate(link.route as any)} style={{ padding: 14, borderRadius: 14, backgroundColor: path === link.path ? colors.sage : 'transparent' }}><Row><Icon name={link.icon} color={colors.success}/><Copy weight="600" size={14}>{link.label}</Copy></Row></Pressable>)}</View>
       <View style={{ flex: 1 }}/>
-      <View style={{ gap: 8, padding: 14, borderRadius: 16, backgroundColor: colors.sage }}><Copy weight="700" size={14}>Ontario G1</Copy><Muted size={12}>{access.label}</Muted><Pressable accessibilityRole="link" onPress={() => router.push(identity ? '/membership' : '/auth/sign-in')}><Copy size={13} weight="600" color={colors.success}>{identity ? 'Manage my access →' : 'Sign in →'}</Copy></Pressable></View>
+      <View style={{ gap: 8, padding: 14, borderRadius: 16, backgroundColor: colors.sage }}><Copy weight="700" size={14}>Ontario G1</Copy><Muted size={12}>{access.label}</Muted><Pressable accessibilityRole="link" onPress={() => router.push(identity ? '/membership' : '/auth/sign-in')} style={{ minHeight: 44, justifyContent: 'center' }}><Copy size={13} weight="600" color={colors.success}>{identity ? 'Manage my access →' : 'Sign in →'}</Copy></Pressable></View>
       <Muted size={11}>iOS and Android apps coming soon.</Muted>
     </View>
     <View style={{ flex: 1, minWidth: 0 }}>{children}</View>

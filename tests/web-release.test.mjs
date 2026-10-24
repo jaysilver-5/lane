@@ -22,6 +22,15 @@ test('web launch rejects a privileged Supabase key',()=>{
  assert.ok(webReleaseIssues(root,{EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY:'sb_secret_do_not_ship'}).some(x=>x.includes('public Supabase')));
 });
 
+test('production URL and export mount must match the main-domain migration',()=>{
+ for(const url of ['https://app.getfirstlane.com','https://www.getfirstlane.com','https://getfirstlane.com/app']) {
+  assert.ok(webReleaseIssues(root,{EXPO_PUBLIC_WEB_APP_URL:url}).some(issue=>issue.includes('production web app URL')));
+ }
+ const correct={EXPO_PUBLIC_WEB_APP_URL:'https://www.getfirstlane.com/app',EXPO_PUBLIC_WEB_BASE_PATH:'/app'};
+ assert.equal(webReleaseIssues(root,correct).some(issue=>issue.includes('production web app URL')||issue.includes('base path')),false);
+ assert.ok(webReleaseIssues(root,{...correct,EXPO_PUBLIC_WEB_BASE_PATH:''}).some(issue=>issue.includes('base path')));
+});
+
 test('email-only launch needs no social approval; exposing a social provider requires its acceptance',()=>{
  const folder=fs.mkdtempSync(path.join(os.tmpdir(),'firstlane-auth-scope-'));
  try {

@@ -24,11 +24,11 @@ After an actual production checkout page is ready, set Paddle's default payment 
 
 ## Delivery status and sequence
 
-This migration is prepared in source and preview; it is **not a completed public launch**. No live CORS/Clerk settings, Paddle payment link, DNS record, deployment protection or release approval is changed by these files. The existing app project remains behind Vercel team authentication. Do not merge the marketing proxy while the upstream still requires that authentication; an external rewrite does not make a protected app publicly usable.
+This migration is prepared in source and preview; it is **not a completed public launch**. On 24 October, production backend origin/authorized parties and Clerk home/sign-out/sign-in/sign-up paths were saved for the canonical main-domain app. The nine service rejection/preflight probes pass from the new origin. Paddle's payment link, DNS and deployment protection remain unchanged. The existing app project remains behind Vercel team authentication. Do not merge the marketing proxy while the upstream still requires that authentication; an external rewrite does not make a protected app publicly usable. See [current launch status](LAUNCH_STATUS.md).
 
 1. Validate the protected app build and `/app` routes, assets, auth callback and payment return. The migration branch's verified protected preview is `https://firstlane-app-git-codex-firstlan-2b8308-joshs-projects-e9dac4f7.vercel.app/app`.
 2. Complete approved content publication and the remaining production acceptance checks. Moving the URL does not satisfy these checks.
-3. Deploy the gated production app, update the canonical-host backend/Clerk settings above, and validate the production flows.
+3. Deploy the gated production app using the configured canonical-host settings above, and validate the production flows.
 4. Point the marketing `/app` rewrite at the validated production deployment (the prepared rewrite currently identifies the existing protected branch), deploy it, and only then mark `webAppAvailable` true. Keep marketing policies accessible throughout.
 5. Configure the functional default payment link and validate the approved-host checkout before opening sales. Keep the old subdomain until the new route has passed; retire or redirect it separately after cutover.
 
