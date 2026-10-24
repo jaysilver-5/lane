@@ -19,17 +19,18 @@ if (approved) { const errors = contentIssues(bank, root); if (errors.length) thr
 if (mode === 'production' && !approved) throw new Error('No approved release exists. Do not ship the authoring draft.');
 const manifest = JSON.parse(fs.readFileSync(path.join(root,'content/sample-manifest.json')));
 const free = bank.questions.filter(q => manifest.freeQuestionIds.includes(q.id));
+const approvalFor=questions=>bank.approval?{...bank.approval,records:bank.approval.records.filter(r=>questions.some(q=>q.id===r.questionId))}:undefined;
 if (mode !== 'demo' && free.length !== 40) throw new Error('All 40 fixed sample IDs must exist in the release.');
 const selected = mode === 'demo' ? bank.questions : web ? free.filter(q => manifest.guestQuestionIds.includes(q.id)) : free;
 if (mode !== 'demo' && web && selected.length !== 10) throw new Error('All 10 guest IDs must exist in the release.');
-if (web && mode !== 'demo') fs.writeFileSync(path.join(root,'supabase/functions/_shared/free-questions.json'), JSON.stringify({packKey:'CA-ON-G1',version:bank.version || '0.1.0',approved,questions:free}));
+if (web && mode !== 'demo') fs.writeFileSync(path.join(root,'supabase/functions/_shared/free-questions.json'), JSON.stringify({packKey:'CA-ON-G1',version:bank.version || '0.1.0',approved,questions:free,...(bank.approval?{approval:approvalFor(free)}:{})}));
 const payload = { packKey: 'CA-ON-G1', version: bank.version || '0.1.0', approved, sourceSha256: createHash('sha256').update(raw).digest('hex'), questions: selected, sources: bank.sources,
- topics: [...new Set(bank.questions.map(q=>q.topic))].map((title,i)=>({ id:String(i),title,count:bank.questions.filter(q=>q.topic===title).length,section:bank.questions.find(q=>q.topic===title).section })) };
+ topics: [...new Set(bank.questions.map(q=>q.topic))].map((title,i)=>({ id:String(i),title,count:bank.questions.filter(q=>q.topic===title).length,section:bank.questions.find(q=>q.topic===title).section })),...(bank.approval?{approval:approvalFor(selected)}:{}) };
 const errors = validateQuestionPayload(payload, { approved }); if (errors.length) throw new Error(errors.join('\n'));
 fs.writeFileSync(path.join(root,'src/data/generated-bank.json'), JSON.stringify(payload));
 console.log(`Client bank: ${selected.length} questions; ${approved ? 'approved' : 'internal testing only'}. No approval state was changed.`);
 if (approved) {
-  const full = { packKey: payload.packKey, version: payload.version, approved: true, questions: bank.questions };
+  const full = { packKey: payload.packKey, version: payload.version, approved: true, questions: bank.questions,...(bank.approval?{approval:approvalFor(bank.questions)}:{}) };
   const serialized = JSON.stringify(full), sha256 = createHash('sha256').update(serialized).digest('hex');
   fs.mkdirSync(path.join(root,'release-artifacts'), {recursive:true});
   fs.writeFileSync(path.join(root,'release-artifacts/ontario-g1.json'), serialized);

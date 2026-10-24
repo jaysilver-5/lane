@@ -1,11 +1,11 @@
-# Production build failure — 24 October 2026
+# Production build and acceptance candidate — 24 October 2026
 
-Inspected the actual failed [Vercel deployment 6YdZRwFca](https://vercel.com/joshs-projects-e9dac4f7/firstlane-app/6YdZRwFcaQDqKJbLoRVgNjmGRGD3), created at 17:29 Africa/Lagos. It was a redeploy of the old production attempt at commit `aed8a2c`, on `codex/firstlane-production-web`. It did not use the later main-domain app source.
+The earlier failed Vercel production attempt [6YdZRwFca](https://vercel.com/joshs-projects-e9dac4f7/firstlane-app/6YdZRwFcaQDqKJbLoRVgNjmGRGD3) redeployed old commit aed8a2c and stopped at the public-release checklist before Expo compilation. It was not a compiler failure in the latest main-domain source.
 
-`npm run web:build` exited 1 at `Web public launch blocked`, before Expo compilation. Its log listed missing reviewed release content and uncompleted customer/authentication, sync, security, commerce, deletion, delivery, accessibility, legal and named-reviewer acceptance. It also required social sign-in because that old commit predates the email-only scope fix.
+The owner has now accepted the 500-question AI editorial review. Exact-revision content approval and a separate original-text rights basis are recorded; independent-human or official certification is not claimed.
 
-The later main-domain commit `d7c15a0` passed both GitHub Node 22 jobs, all 222 then-current tests, Expo export and Vercel app/review Preview builds. The subsequent editorial changes add four tests and record a full AI review of the 500 questions. They do not manufacture independent/rights or customer/payment acceptance.
+Public-release acceptance still checks actual customer/payment/operating results. Those results cannot precede every production test build. The host now supports an explicit FIRSTLANE_WEB_DEPLOYMENT_STAGE=acceptance, routed to web-release.mjs --acceptance. It requires the production Clerk/Supabase/Paddle configuration, canonical WWW/app mount and exact approved content, while deferring only the external release-acceptance checklist. It never sets acceptance flags or silently selects sandbox mode. The normal npm run web:release:check command continues to require all acceptance outcomes, regardless of the host-stage variable.
 
-The current release script now explains explicitly that this checklist stops a public deployment before compilation and links the launch checklist. Production will continue to reject missing acceptance. Changing live credentials or repeatedly redeploying the old attempt cannot complete these checks.
+Keep Vercel Authentication set to All Deployments for this candidate. This was verified in the dashboard before selecting the stage. An acceptance build is not approval to expose sales or claim completed customer tests. Before final public release, remove the acceptance stage, finish the recorded checks and run the normal public gate. Use the latest migration source, not an old failed deployment.
 
-Use the latest main-domain source when the public release is actually ready. Keep Preview as the protected connected environment for technical testing; do not switch Production to demo/connected mode or set false acceptance flags merely to obtain a green build. Complete [the remaining launch work](LAUNCH_STATUS.md), assemble the approved release, and then build the validated production source. The marketing `/app` proxy must ultimately target that validated production deployment.
+The remaining tasks and current evidence are in [LAUNCH_STATUS.md](LAUNCH_STATUS.md).

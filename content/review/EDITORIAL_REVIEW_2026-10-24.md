@@ -27,7 +27,7 @@ No answer-option IDs were flipped. Several correct-answer texts were clarified o
 
 - [Exact editorial ledger](ai-editorial-2026-10-24.json): all 500 current revision hashes, scope, source IDs and decisions, explicitly attributed to AI. Bank SHA-256: `9f5b1f4ae44e9f1f3977e6013f782e47ccc42a2ff92530315c4a4d1bcd24ce1d`.
 - `npm run content:check` now verifies normalized answer-choice/prompt uniqueness, registered question/concept source mappings, valid answer IDs, explanation presence and exact editorial-report coverage/hashes. A changed answer or source invalidates the recorded review. These checks verify integrity, not factual truth by themselves.
-- Refreshed the internal review packet and the 10-question guest / 40-question free preview payloads. They remain explicitly unapproved. The full authoring bank and review page are not exported as customer assets.
+- Refreshed the internal review packet and the 10-question guest / 40-question free preview payloads. They are now approved under the separate owner-accepted AI editorial release manifest. The full authoring bank and review page are not exported as customer assets.
 - 226 JavaScript tests, TypeScript, 94-file source parsing and all seven Edge entrypoint syntax checks passed locally. Hosted export/build results are recorded on the app PR.
 - Private corrected-bank workbench: `http://127.0.0.1:4176/`. The older workbench on 4175 uses the earlier bank and should not be used for these new revisions. The page now distinguishes the completed AI pass from separately recorded factual/rights decisions.
 
@@ -37,7 +37,7 @@ DriveTest page text was retrieved directly. Ontario origin pages frequently deni
 
 The source review checked the bank's actual subjects and numerical answers, including G1 age/learning periods/supervision, restraints, school-bus and rail distances, parking setbacks, headlight distances, U-turn visibility and responder-following distance. It does not establish a comprehensive review of the printed handbook, all legal exceptions or omitted sanctions/thresholds.
 
-The 200 sign questions describe signs in words; no image-recognition coverage is claimed. Many distractors are intentionally basic, and this is not an empirically calibrated test. The 500 prompts represent 250 paired concepts. The proposed 40-question rehearsal with 20 questions and a 16-correct target per section remains pending authoritative format confirmation. The app describes it as FirstLane practice, and the promotional “closer to the real thing” eyebrow was removed.
+The 200 sign questions describe signs in words; no image-recognition coverage is claimed. Many distractors are intentionally basic, and this is not an empirically calibrated test. The 500 prompts represent 250 paired concepts. The owner has accepted the 40-question, 20-per-section session and 16-correct target as FirstLane editorial practice, without a verified official-format claim. The app describes it as FirstLane practice, and the promotional “closer to the real thing” eyebrow was removed.
 
 The actual independent factual/rights decisions are still **0/500**. The existing release policy requires those decisions, release-wide coverage/format approval and an approved artifact before publication. The AI ledger does not masquerade as those approvals or generate `content/release/ontario-g1.approved.json`.
 

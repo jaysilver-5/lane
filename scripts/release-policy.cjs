@@ -1,18 +1,29 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const {BASIS,approvalIssues}=require('../src/domain/contentApproval.cjs');
 const releasePath = 'content/release/ontario-g1.approved.json';
 function readApproved(root) { return JSON.parse(fs.readFileSync(path.join(root, releasePath), 'utf8')); }
 function contentIssues(bank, root) {
   const issues = [];
   if (bank?.usage?.public_release_allowed !== true) issues.push('The bank has no public-release approval.');
-  if (bank?.provenance?.independent_review_completed !== true || bank?.provenance?.rights_clearance_completed !== true) issues.push('Independent/rights approval is incomplete.');
+  const ownerApproved=bank?.approval?.basis===BASIS;
+  if (!ownerApproved&&(bank?.provenance?.independent_review_completed !== true || bank?.provenance?.rights_clearance_completed !== true)) issues.push('Independent/rights approval is incomplete.');
   if (bank?.exam_template?.enabled_for_public_use !== true) issues.push('The rehearsal template has not been approved for public use.');
   if (!Array.isArray(bank?.questions) || bank.questions.length !== 500) issues.push('The release must contain the promised 500 questions.');
   const rows = Array.isArray(bank?.questions) ? bank.questions.filter(q=>q&&typeof q==='object') : [];
   if (rows.length !== bank?.questions?.length) issues.push('Malformed question entry.');
   const pending = rows.filter(q => q.review?.publishable !== true || q.review?.publication_status !== 'approved' || q.review?.independent_review?.status !== 'approved' || q.review?.rights_review?.status !== 'approved' || !q.review?.independent_review?.reviewer_id || !q.review?.rights_review?.reviewer_id || !q.review?.independent_review?.reviewed_on || !q.review?.rights_review?.reviewed_on || q.review?.independent_review?.reviewer_id === q.author_id);
-  if (pending.length) issues.push(`${pending.length} question revisions lack independent and rights sign-off.`);
+  if(ownerApproved){
+    issues.push(...approvalIssues(rows,bank.approval,q=>crypto.createHash('sha256').update(JSON.stringify(q)).digest('hex')));
+    if(bank.provenance?.independent_review_completed===true||bank.exam_template?.official_format_verified!==false||bank.exam_template?.basis!=='firstlane_editorial_practice')issues.push('Owner-approved AI content must retain its truthful human-review and practice-format scope.');
+    if(root)try{
+      const receipt=JSON.parse(fs.readFileSync(path.join(root,'content/approvals/owner-2026-10-24.json'),'utf8'));
+      const draft=fs.readFileSync(path.join(root,'content/ontario-g1.draft.json'));
+      const report=fs.readFileSync(path.join(root,'content/review/ai-editorial-2026-10-24.json'));
+      if(receipt.id!==bank.approval.owner.recordId||receipt.owner.id!==bank.approval.owner.id||receipt.approvedAt!==bank.approval.owner.approvedAt||receipt.acceptedBasis!==BASIS||receipt.bankSha256!==bank.approval.editorial.bankSha256||receipt.editorialReportSha256!==bank.approval.editorial.reportSha256||crypto.createHash('sha256').update(draft).digest('hex')!==receipt.bankSha256||crypto.createHash('sha256').update(report).digest('hex')!==receipt.editorialReportSha256)issues.push('Owner receipt or reviewed source does not match this release.');
+    }catch{issues.push('The actual owner acceptance and reviewed source records are required.');}
+  }else if (pending.length) issues.push(`${pending.length} question revisions lack independent and rights sign-off.`);
   if (rows.some(q => q.media?.required || q.media?.visual_recognition_assessed)) issues.push('Required learning media needs a reviewed renderer before publication.');
   if (new Set(rows.map(q => q.id)).size !== rows.length || new Set(rows.map(q => q.revision_id)).size !== rows.length) issues.push('Duplicate question/revision IDs.');
   if (rows.some(q => q.pack_key !== 'CA-ON-G1' || !Array.isArray(q.options) || q.options.length !== 4 || new Set(q.options.map(o => o?.id)).size !== 4 || !q.options.some(o => o?.id === q.correct_option_id) || !q.evidence?.length)) issues.push('Invalid question structure.');

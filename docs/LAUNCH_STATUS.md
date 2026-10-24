@@ -1,47 +1,34 @@
 # Launch status — 24 October 2026
 
-Target: `https://getfirstlane.com/app`, served on the existing canonical `https://www.getfirstlane.com/app`. Paddle already approves the main domain. The app and marketing changes remain in draft PRs [lane #2](https://github.com/jaysilver-5/lane/pull/2) and [getfirstlane #4](https://github.com/jaysilver-5/getfirstlane/pull/4).
+Target: https://getfirstlane.com/app, served at the existing canonical https://www.getfirstlane.com/app. The app and marketing migration are in [lane #2](https://github.com/jaysilver-5/lane/pull/2) and [getfirstlane #4](https://github.com/jaysilver-5/getfirstlane/pull/4).
 
-## Completed technical work
+## Content approved by the owner
 
-- Production account isolation, progress/concurrency, stale-session rejection and database deletion suites passed. Every fixture was rolled back; production still has zero accounts, sessions, purchases, grants and published content releases.
-- All 16 private tables are inaccessible to browser roles. Public tables have RLS. The content bucket is private and has no anonymous read policy. Identity/commerce mutation functions remain server-only.
-- Reviewed the six intentionally authenticated SECURITY DEFINER functions: fixed empty search paths and current account/session checks. Their advisor notices are documented in the evidence file; they do not grant arbitrary access.
-- Deployed `content-pack` v4 to production. It now enforces the configured browser origin before private content services. Nine unauthenticated/preflight probes pass. Signed identity, paid ownership and approved-publication checks remain required.
-- Production backend origin and Clerk authorized parties now use `https://www.getfirstlane.com`. Clerk home/sign-out and sign-in/sign-up paths are saved under `/app`. The old app subdomain and foreign origins are rejected by content delivery.
-- Vercel Production now has `EXPO_PUBLIC_WEB_APP_URL=https://www.getfirstlane.com/app` and `EXPO_PUBLIC_WEB_BASE_PATH=/app`; these apply to the next deployment. All 222 app tests, TypeScript and seven Edge Function syntax checks passed locally.
-- Sandbox database tests passed for duplicate/out-of-order payment events, reservation/receipt ownership and pending/approved refunds, with all fixtures rolled back. This is separate from an actual Paddle checkout/refund test.
-- Prepared `/app` exports, browser authentication/payment return paths, deep-link reloads and isolated marketing routing. Increased the small section-action and desktop account-link click targets. The release validator now rejects the old app hostname or a mismatched export mount.
-- Added `npm run content:review:check -- <export.json>` to reconcile saved reviewer decisions against the exact bank hash and question revision hashes. It rejects self-review, stale records, future timestamps and conflicting exports. It never creates an approved release.
-- Completed an AI editorial review of all 500 questions and corrected 44 revisions (16 wording/explanation, 28 citation-only). All current revision hashes are recorded; 226 local tests and content-integrity checks pass. See [the editorial report](../content/review/EDITORIAL_REVIEW_2026-10-24.md). This does not count as independent human/rights approval.
+The owner explicitly accepted the completed AI editorial review and instructed us to proceed. Independent human review is no longer an internal launch prerequisite for this release. [The acceptance receipt](../content/approvals/owner-2026-10-24.json) binds that instruction to the reviewed bank and AI report hashes. The [approved 1.0.0 release](../content/release/ontario-g1.approved.json) covers all 500 exact question revisions and preserves their immutable payloads.
 
-`backendSecurityPassed` now records these technical checks, with [evidence](../qa/production-technical-evidence.json). Other release flags remain pending because those end-to-end outcomes have not occurred.
+This is owner acceptance on an AI editorial basis, with no independent human, legal or government certification claimed. The originality basis is original factual text with no copied sign artwork or other third-party media; no government prose/artwork licence is assumed. The 200 sign prompts describe signs in words. There are 250 paired concepts, no empirically calibrated exam or comprehensive printed-handbook claim. The 40-question session is an approved FirstLane editorial practice format, without an asserted official-format certification.
 
-## Still required for the planned paid launch
+The 500-question AI review corrected 44 revisions: 16 wording/explanation and 28 citation-only changes. The exact ledger and change history are linked in [the editorial report](../content/review/EDITORIAL_REVIEW_2026-10-24.md). Independent human decisions remain 0/500 as historical provenance; that count is not a new request for another reviewer.
 
-| Area | Exact remaining work |
+## Verified technical work
+
+- All 232 JavaScript tests pass, plus TypeScript, 94-file source checks, seven Edge Function entrypoint checks and content-integrity/approval validation. Exact-answer changes, missing/duplicate approvals and misleading certification claims are rejected.
+- Production account isolation, progress/concurrency, stale-session rejection and database deletion suites passed with rollback. Private tables/storage remain inaccessible to browser roles; intentional authenticated RPCs check current account/session ownership.
+- Content-pack v4 enforces the exact configured browser origin. Nine unauthenticated/preflight rejection probes pass against the canonical WWW origin.
+- Production Clerk/backend origin configuration and Vercel URL/base path use WWW and /app. Root policies stay on marketing routes. No DNS record is required for /app.
+- The approved 40-question free sample has been deployed as free-questions v6. It still requires a verified live Clerk account; anonymous requests return 401.
+- The full private artifact is prepared: version 1.0.0, 500 questions, 1,333,762 bytes, SHA-256 21bf800ca3444d2a0a730eb164f9413b74a9f102b6400a956f92cd3b96fd9261. Chrome file access blocked automated upload. The owner has the exact file and private bucket upload instructions; no publication row is inserted before verifying the file.
+- Vercel Authentication is enabled for All Deployments, with no active share links or bypass secrets. A separate explicit production acceptance build stage allows compilation with live services and approved content before external customer checks are complete. The normal public-release command retains the full acceptance gate. Protection must remain enabled for an acceptance candidate.
+
+## Remaining execution
+
+| Area | Remaining work |
 |---|---|
-| Questions | **500/500 AI editorial checks are complete; 0/500 independent factual/rights decisions are recorded.** The corrected 0.1.1 bank has 44 new revisions. Independent exact-revision sign-off and a rights basis remain required by the current release policy. There are 250 paired concepts and 200 text-description sign prompts, with no sign-recognition images. |
-| Rehearsals | The proposed 40-question, 20/20, 16-per-section template still lacks recorded authority confirmation. DriveTest confirms multiple choice, no timer, sections and an 80% total requirement, but its current page does not substantiate those exact counts/per-section settings. Keep the official-format claim unapproved until resolved. |
-| Approved delivery | Assemble a release from the actually approved revisions, upload it to private versioned storage, record checksum/bytes/version/named approval, publish approved free samples, then verify real guest/free/paid/refunded access boundaries and automatic 500-question delivery. There is currently no release to deliver. |
-| Account/customer flows | Complete real production email signup, verification, sign-in, recovery, second-browser progress sync and a disposable-account deletion. Database/synthetic-provider tests do not substitute for those external flows. Physical mobile-browser and screen-reader checks also remain. |
-| Payment | Configure the functioning approved-host `/app/checkout` default payment link; verify a controlled CA$14.99 plus tax live purchase, signed automatic fulfillment, restoration and refund/revocation. No live charge or refund was made. |
-| Operations and policies | Create and monitor `support@getfirstlane.com` and `privacy@getfirstlane.com`; configure Zoho's actual verification/MX/SPF/DKIM values and test delivery. Supply the public business correspondence address and confirm implemented retention, backup/log expiry, transaction-retention purpose and legal wording. These values cannot be invented. |
-| Cutover | Rebuild with the configured Vercel public app URL/base path. Replace the marketing rewrite's protected preview upstream with a validated production deployment. Only expose app/purchase actions once the corresponding checks pass. |
+| Private pack delivery | Upload ontario-g1-1.0.0-21bf800c.json into production content-releases, verify bytes/checksum, then insert its approved publication record. Test real free/paid/refunded access and automatic delivery. |
+| Production candidate and cutover | Build the current migration source with the explicit acceptance stage and verify /app assets/deep links. Replace marketing's protected-preview upstream with the validated production destination. The main-domain candidate must be reachable for real Clerk/Paddle acceptance before public sales. |
+| Real accounts | Email signup/verification/sign-in/recovery, second-browser progress and disposable-account deletion still need real production execution. Database tests do not claim these outcomes. Password entry belongs to the user. |
+| Payments | Set Paddle's default payment link only after the canonical /app/checkout works. Complete a controlled CA$14.99 plus tax purchase, fulfillment/restoration and refund/revocation. No live transaction has occurred. |
+| Device/accessibility | Complete physical mobile-browser and screen-reader checks. |
+| Deferred operations | The owner deferred Zoho mailboxes and the real correspondence address. support@getfirstlane.com and privacy@getfirstlane.com are configured in copy but are not verified working mailboxes. Actual Zoho DNS values and operating/retention decisions remain outstanding; legal acceptance is not fabricated. |
 
-The production backend now allows `https://www.getfirstlane.com`; all nine rejection/preflight probes passed against that origin. Backend origins contain no `/app`. Public app routing is still pending the production deployment and acceptance checks. See [the cutover sequence](MAIN_DOMAIN_APP.md).
-
-## Owner actions that unblock further acceptance
-
-1. Use the corrected-bank private workbench at `http://127.0.0.1:4176/`, review and export independent factual/rights decisions. The older workbench/export refers to the prior bank. AI editorial decisions are recorded separately; no human decisions were entered on the owner's behalf. Check the new export with `npm run content:review:check -- --out content/review/status-launch.json <export.json>`.
-2. Create the two Zoho mailboxes above. The current public MX points to `getfirstlane.com`, which is the website host; it is not a Zoho mail setup. Use the exact records supplied by the chosen Zoho account/region. Existing Clerk/email DNS should be preserved unless its provider explicitly requires a change.
-3. The owner has deferred the real public correspondence address and Zoho setup until later. They remain incomplete; actual retention/operating decisions are also required. Existing policy drafts cannot be marked reviewed merely because pages load.
-4. Once the approved bank and canonical-host deployment are ready, complete the prepared real account/password and payment steps. Account creation, password recovery, physical devices and real payment acceptance remain explicitly unverified.
-
-## Evidence and sources
-
-- [Production technical evidence](../qa/production-technical-evidence.json), [service rejection probes](../qa/production-service-checks.json), and [exact content-review status](../content/review/status-launch.json).
-- [AI editorial review and corrections](../content/review/EDITORIAL_REVIEW_2026-10-24.md) and [the diagnosed production build failure](PRODUCTION_BUILD_STATUS.md).
-- [DriveTest knowledge tests](https://drivetest.ca/tests/knowledge-tests/): current test/study guidance; the online handbook is partial.
-- [Ontario copyright information](https://www.ontario.ca/page/copyright-information): commercial reproduction of government materials has specific conditions. Original factual questions still need their documented rights review; access to a source page is not itself a reproduction licence.
-- Advisor references: [private RLS tables without policies](https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy) and [authenticated SECURITY DEFINER interfaces](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable).
+Content approval is complete. Remaining customer/payment/operating flags represent outcomes that have not yet happened. No public sales or successful public cutover is claimed.

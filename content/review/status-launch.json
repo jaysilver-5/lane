@@ -2529,5 +2529,14 @@
     }
   ],
   "readyForReleaseAssembly": false,
-  "note": "Exact-revision decision reconciliation only. Factual correctness, rights, coverage and release-wide acceptance require actual review; no release file or approval is generated."
+  "note": "Exact-revision decision reconciliation only. Factual correctness, rights, coverage and release-wide acceptance require actual review; no release file or approval is generated.",
+  "statusScope": "Independent human decisions only; separate owner-accepted AI approval supersedes the former publication prerequisite.",
+  "ownerAcceptedEditorialRelease": {
+    "version": "1.0.0",
+    "questionCount": 500,
+    "basis": "owner_accepted_ai_editorial_review",
+    "receipt": "content/approvals/owner-2026-10-24.json",
+    "manifest": "content/release/ontario-g1.approved.json",
+    "independentHumanReview": false
+  }
 }

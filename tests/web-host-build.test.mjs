@@ -16,6 +16,10 @@ test('preview exports the real web bundle without requiring native store credent
   assert.equal(steps[1][0], 'node_modules/expo/bin/cli');
   assert.ok(steps[1].includes('web'));
 });
+test('only an explicitly selected acceptance stage defers public acceptance',()=>{
+ assert.deepEqual(webHostBuildSteps({VERCEL_ENV:'production',FIRSTLANE_WEB_DEPLOYMENT_STAGE:'acceptance'}),[['scripts/web-release.mjs','--acceptance']]);
+ assert.deepEqual(webHostBuildSteps({VERCEL_ENV:'production',FIRSTLANE_WEB_DEPLOYMENT_STAGE:'misspelled'}),[['scripts/web-release.mjs']]);
+});
 
 test('actual production host command refuses the current unapproved release before export', () => {
   const result = spawnSync(process.execPath, ['scripts/web-host-build.mjs'], {
@@ -25,6 +29,6 @@ test('actual production host command refuses the current unapproved release befo
   });
   assert.equal(result.status, 1);
   assert.match(result.stderr, /Web public launch blocked/);
-  assert.match(result.stderr, /Reviewed Ontario release content/);
+  assert.match(result.stderr, /authEmailAndRecoveryPassed/);
   assert.doesNotMatch(result.stdout, /Exported|Bundled/);
 });

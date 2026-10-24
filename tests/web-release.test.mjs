@@ -5,14 +5,20 @@ import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-const {webReleaseIssues,webAuthenticationIssues}=createRequire(import.meta.url)('../scripts/web-release-policy.cjs');
+const {webReleaseIssues,webConfigurationIssues,webAuthenticationIssues}=createRequire(import.meta.url)('../scripts/web-release-policy.cjs');
 const root=fileURLToPath(new URL('..',import.meta.url));
-test('web launch blocks missing services, sandbox payments and unreviewed content',()=>{
+test('owner-approved content clears content gating while missing services and acceptance still block launch',()=>{
  const issues=webReleaseIssues(root,{});
  assert.ok(issues.some(x=>x.includes('SUPABASE_URL')));
  assert.ok(issues.some(x=>x.includes('Paddle live')));
- assert.ok(issues.some(x=>x.includes('release content')));
+ assert.equal(issues.some(x=>x.includes('release content')),false);
  assert.ok(issues.some(x=>x.includes('authEmailAndRecoveryPassed')));
+});
+test('acceptance candidate retains configuration/content checks while customer checks remain in public gate',()=>{
+ const issues=webConfigurationIssues(root,{}).join('\n');
+ assert.match(issues,/SUPABASE_URL/);assert.match(issues,/Paddle live/);
+ assert.doesNotMatch(issues,/authEmailAndRecoveryPassed/);
+ assert.match(webReleaseIssues(root,{}).join('\n'),/authEmailAndRecoveryPassed/);
 });
 test('web launch does not require unfinished native store setup',()=>{
  const issues=webReleaseIssues(root,{}).join('\n');

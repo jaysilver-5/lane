@@ -1,3 +1,4 @@
+import approvalPolicy from './contentApproval.cjs';
 /** Validate downloads before any in-memory replacement or persistent install. */
 /** @param {any} payload @param {{approved?:boolean, expectedCount?:number, expectedVersion?:string}} options */
 export function validateQuestionPayload(payload, { approved = true, expectedCount, expectedVersion } = {}) {
@@ -8,6 +9,8 @@ export function validateQuestionPayload(payload, { approved = true, expectedCoun
   if (approved && payload.approved !== true) errors.push('Content has not been approved.');
   if (!Array.isArray(payload.questions) || !payload.questions.length || payload.questions.length > 5000) return [...errors, 'Invalid question list.'];
   if (expectedCount !== undefined && payload.questions.length !== expectedCount) errors.push('Question count mismatch.');
+  const ownerApproved=approved&&payload.approval!==undefined;
+  if(ownerApproved)errors.push(...approvalPolicy.approvalIssues(payload.questions,payload.approval));
   const ids = new Set(), revisions = new Set();
   for (const q of payload.questions) {
     if (!q || typeof q !== 'object') { errors.push('Invalid question.'); continue; }
@@ -18,7 +21,7 @@ export function validateQuestionPayload(payload, { approved = true, expectedCoun
     if (q.pack_key !== 'CA-ON-G1' || !['road_signs','road_rules'].includes(q.section)) errors.push('Wrong jurisdiction or section.');
     if (!Array.isArray(q.options) || q.options.length !== 4 || new Set(q.options.map(o => o?.id)).size !== 4 || q.options.some(o => !o || typeof o.id !== 'string' || typeof o.text !== 'string' || !o.text.trim()) || !q.options.some(o => o.id === q.correct_option_id)) errors.push('Invalid answer options.');
     if (!Array.isArray(q.evidence) || !q.evidence.length || q.evidence.some(e => !e || typeof e.source_url !== 'string' || !/^https:\/\//.test(e.source_url))) errors.push('Missing safe reference.');
-    if (approved && (q.review?.publishable !== true || q.review?.publication_status !== 'approved' || q.review?.independent_review?.status !== 'approved' || q.review?.rights_review?.status !== 'approved')) errors.push('Unapproved question revision.');
+    if (approved && !ownerApproved && (q.review?.publishable !== true || q.review?.publication_status !== 'approved' || q.review?.independent_review?.status !== 'approved' || q.review?.rights_review?.status !== 'approved')) errors.push('Unapproved question revision.');
     // The current renderer is text-only. Never silently omit required learning media.
     if (q.media?.required || q.media?.visual_recognition_assessed) errors.push('Required learning media is not supported by this release renderer.');
   }
