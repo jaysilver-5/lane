@@ -122,9 +122,17 @@
     "productionBrowserPaymentTokenConfigured": false,
     "previewLivePaymentsEnabled": false,
     "productionBuild": "blocked-by-existing-content-and-acceptance-checks",
-    "previewDeployment": "awaiting-Git-push-build"
+    "previewDeployment": "ready",
+    "verifiedPreviewDeploymentId": "7VCuSQmDEkg3crELgbzt3Lcru6rF",
+    "verifiedPreviewCommit": "58f6bd22bc097fd93c93e56a53192dbc3f94aa83",
+    "verifiedPreviewUrl": "https://firstlane-oq92ab693-joshs-projects-e9dac4f7.vercel.app",
+    "domainTlsVerified": true,
+    "unauthenticatedDomainResponse": "302-to-Vercel-SSO-over-valid-TLS",
+    "localResolverStatus": "cached-NXDOMAIN-after-authoritative-CNAME-update",
+    "hostedGuestPractice": "passed-start-and-reload-same-question",
+    "hostedSignInRendering": "passed-no-login-submitted"
   },
-  "configurationStatus": "paddle-and-clerk-backends-connected-hosting-configured-protected-preview-pending-public-release-gated",
+  "configurationStatus": "protected-preview-deployed-clerk-connected-public-release-gated-content-acceptance-and-Paddle-browser-settings-pending",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",

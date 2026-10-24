@@ -1,5 +1,15 @@
 # Web implementation verification — 20 October 2026
 
+## Protected preview acceptance — 24 October 2026
+
+Git-triggered Preview `7VCuSQmDEkg3crELgbzt3Lcru6rF` is Ready (48-second build) at https://firstlane-oq92ab693-joshs-projects-e9dac4f7.vercel.app, from `58f6bd22bc097fd93c93e56a53192dbc3f94aa83`. Vercel lists `app.getfirstlane.com` on that preview. Both GitHub validate jobs and the Vercel check pass. The deployment is protected by Vercel team authentication; no bypass/share token was created.
+
+Browser acceptance on the deployment URL: guest onboarding entry; compact homepage with 40-free-question disclosure and locked/default Keep going; selection and start of a 10-question guest session; direct `/quiz` reload preserves question ON-G1-0231 and position 1/10; custom `/auth/sign-in` renders with email/password/recovery controls. Returning home shows Continue practice. No answer, production account, password, provider credential, transaction or grant was submitted. Google/Apple and actual production email/recovery acceptance remain pending.
+
+Authoritative DNS returns the exact app CNAME. A connection to the actual Vercel DNS target using the app hostname and normal certificate validation completes HTTPS and returns the expected 302 to Vercel SSO. The local recursive resolver still returns cached NXDOMAIN; both local browser surfaces cannot yet open the custom app hostname, so custom-origin signed-in acceptance awaits propagation. No certificate warning or access protection was bypassed.
+
+Evidence: `qa/vercel-protected-preview-ready.png`, `qa/firstlane-hosted-preview-home.png`, `qa/hosted-sign-in.png`. Public production deployment is still blocked by the approved-bank and acceptance policy. Production Paddle browser-token deployment/app-host approval/default payment link remain pending; the Paddle session is signed out and the owner has been asked to sign in directly. Preview has no browser payment token and cannot open live checkout.
+
 ## Vercel Pro project and protected deployment setup — 24 October 2026
 
 Owner completed the Pro upgrade; verified the correct team shows Pro. Created separate `firstlane-app` project (`prj_X7IzsBQvdB1n1pqugpYYBA63CRBf`) and connected `jaysilver-5/lane`. Configured `npm run web:build`, output `dist`, Node 24.x, basic 2-vCPU/8-GB builds and queued concurrency. Vercel Authentication requires team login on All Deployments, with no bypass or public exception. No paid add-on was enabled.
