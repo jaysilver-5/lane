@@ -40,7 +40,23 @@
     "webhookSignatureProbe": "passed-200-ignored-non-commerce-event",
     "unsignedWebhookRejection": "passed-401"
   },
-  "configurationStatus": "paddle-backend-connected-awaiting-production-app-auth-content-and-purchase-acceptance",
+  "clerk": {
+    "applicationId": "app_3L1ENrJ6R5Z2BKMPH7Ulpy8K7KP",
+    "productionInstanceId": "ins_3L7cxxieAWLKyxHkbJs45atlkfd",
+    "applicationDomain": "app.getfirstlane.com",
+    "frontendApiHost": "clerk.getfirstlane.com",
+    "primaryApplication": true,
+    "dnsVerified": false,
+    "serverKeyStorage": "awaiting-owner-email-reverification",
+    "supabaseIntegrationConfigured": false
+  },
+  "hosting": {
+    "teamSlug": "joshs-projects-e9dac4f7",
+    "observedPlan": "hobby",
+    "productionAppDeployed": false,
+    "sourcePullRequest": "https://github.com/jaysilver-5/lane/pull/1"
+  },
+  "configurationStatus": "paddle-connected-clerk-production-created-awaiting-email-reverification-dns-hosting-and-acceptance",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",
