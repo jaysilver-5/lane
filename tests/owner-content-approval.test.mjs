@@ -21,6 +21,11 @@ test('answer changes invalidate exact-revision approval',()=>{
  const changed=structuredClone(bank);changed.questions[0].correct_option_id=changed.questions[0].options.find(o=>o.id!==changed.questions[0].correct_option_id).id;
  assert.match(contentIssues(changed,root).join('\n'),/stale exact-revision/);
 });
+test('re-hashing an altered answer cannot reuse the owner receipt for the original review',()=>{
+ const changed=structuredClone(bank);changed.questions[0].explanation+=' Changed after acceptance.';
+ changed.approval.records[0].sha256=hash(changed.questions[0]);
+ assert.match(contentIssues(changed,root).join('\n'),/exact editorial decisions/);
+});
 test('fake independent endorsement and missing or duplicate records are rejected',()=>{
  for(const modify of [a=>a.independentHumanReview=true,a=>a.officialEndorsement=true,a=>a.records.pop(),a=>a.records[1]=a.records[0],a=>a.records[0]=null]){
   const approval=structuredClone(bank.approval);modify(approval);

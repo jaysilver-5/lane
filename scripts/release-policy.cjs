@@ -22,6 +22,8 @@ function contentIssues(bank, root) {
       const draft=fs.readFileSync(path.join(root,'content/ontario-g1.draft.json'));
       const report=fs.readFileSync(path.join(root,'content/review/ai-editorial-2026-10-24.json'));
       if(receipt.id!==bank.approval.owner.recordId||receipt.owner.id!==bank.approval.owner.id||receipt.approvedAt!==bank.approval.owner.approvedAt||receipt.acceptedBasis!==BASIS||receipt.bankSha256!==bank.approval.editorial.bankSha256||receipt.editorialReportSha256!==bank.approval.editorial.reportSha256||crypto.createHash('sha256').update(draft).digest('hex')!==receipt.bankSha256||crypto.createHash('sha256').update(report).digest('hex')!==receipt.editorialReportSha256)issues.push('Owner receipt or reviewed source does not match this release.');
+      const reviewed=JSON.parse(report),records=new Map(reviewed.questions.map(q=>[q.question_id,q]));
+      if(bank.approval.editorial.reviewerId!==reviewed.reviewer_id||bank.approval.records.some(r=>!r||records.get(r.questionId)?.revision_id!==r.revisionId||records.get(r.questionId)?.sha256!==r.sha256))issues.push('Release approvals do not match the exact editorial decisions accepted by the owner.');
     }catch{issues.push('The actual owner acceptance and reviewed source records are required.');}
   }else if (pending.length) issues.push(`${pending.length} question revisions lack independent and rights sign-off.`);
   if (rows.some(q => q.media?.required || q.media?.visual_recognition_assessed)) issues.push('Required learning media needs a reviewed renderer before publication.');
