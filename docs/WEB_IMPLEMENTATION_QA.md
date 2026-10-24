@@ -1,5 +1,13 @@
 # Web implementation verification — 20 October 2026
 
+## Clerk production connection and DNS — 24 October 2026
+
+Saved the owner-authorized production Clerk server key and exact issuer in production encrypted Edge secrets. Backend-only read validation returned HTTP 200, production issuer and zero users; the temporary diagnostic was then deleted and the connector confirmed exactly six application functions remain (v3; Paddle webhook v4). No key values were persisted in files, screenshots or frontend configuration.
+
+Configured Clerk's Supabase session integration, production application paths and express legal consent. Added the five instance-specific CNAMEs in the existing Go54/WhoGoHost DNS zone with TTL 300, preserving prior records. Clerk now verifies frontend API, account portal and email 3/3, with both SSL certificates issued. Independent HTTPS JWKS read returned 200 with one signing key. Supabase's production Third-Party Auth dashboard shows Clerk ENABLED for `https://clerk.getfirstlane.com`. Evidence: `qa/clerk-production-dns-verified.png`, `qa/clerk-supabase-production-connected.png`, `qa/clerk-production-api-verified.png`.
+
+Unauthenticated account/free-question/checkout POSTs with the app Origin now return 401 Sign in required. Actual production signup, email delivery, recovery, progress and payment acceptance are still pending. Vercel remains Hobby while the owner completes Pro. No app deployment, public content release, real charge, purchase grant or release-approval flag was created by these configuration checks.
+
 ## Production backend and explicit Paddle environments — 24 October 2026
 
 Credential follow-up: owner approved the live server key, browser token and signed notification connection. Both credentials are created; the server key is rotatable with Prices Read and Transactions Read/Write only and expires 22 January 2027 Africa/Lagos. Active platform destination `ntfset_01m5nhe981hhb91fdc4b6sqpec` targets the production webhook with exactly three purchase/refund events. After owner sign-in, verified StorlioHQ / FirstLane Web Production and saved the server key, signing secret, live environment/price and exact app origin/authorized-party allowlist in encrypted production Edge secrets. No secret values were written to source files or screenshots, and sandbox is unchanged. Evidence: `qa/paddle-production-secrets-saved.png`.
