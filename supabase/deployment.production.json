@@ -80,11 +80,13 @@
     "previewBrowserTokenAbsent": true,
     "checkoutDomain": "app.getfirstlane.com",
     "checkoutDomainId": "chedom_01m5psjn2q2sh4bftmv8pbv4h4",
-    "checkoutDomainStatus": "changes-needed",
-    "checkoutDomainReason": "Changes needed; authoritative CNAME and valid TLS confirmed, but public recursive DNS still returns stale NXDOMAIN. Public cache refresh queued; exact Paddle internal review condition remains unconfirmed.",
+    "checkoutDomainStatus": "in-review",
+    "checkoutDomainReason": null,
     "defaultPaymentLink": null,
     "plannedDefaultPaymentLink": "https://app.getfirstlane.com/checkout",
-    "checkoutDomainResubmittedDate": "2026-10-24"
+    "checkoutDomainResubmittedDate": "2026-10-24",
+    "checkoutDomainLastRequestedChange": "public-reachability-and-valid-HTTPS",
+    "checkoutDomainResolutionFix": "existing-CNAME-republished;all-four-authoritative-servers-serial-2026102406;Google-and-Cloudflare-fresh-DNS-queries-and-normal-HTTPS-passed"
   },
   "clerk": {
     "applicationId": "app_3L1ENrJ6R5Z2BKMPH7Ulpy8K7KP",
@@ -146,8 +148,8 @@
     "verifiedPreviewCommit": "12ead17e963f50a23efb4aa57898d51a50cb72f7",
     "verifiedPreviewUrl": "https://firstlane-app-git-codex-firstlan-d306dd-joshs-projects-e9dac4f7.vercel.app/",
     "domainTlsVerified": true,
-    "unauthenticatedDomainResponse": "200-valid-TLS-via-authoritative-target;recursive-DNS-inconsistent",
-    "localResolverStatus": "stale-negative-recursive-cache-persists",
+    "unauthenticatedDomainResponse": "200-valid-TLS-normal-DNS-root-onboarding-pricing-and-policy-routes",
+    "localResolverStatus": "resolved-HTTPS-200-after-authoritative-zone-republish",
     "hostedGuestPractice": "passed-start-and-reload-same-question",
     "hostedSignInRendering": "passed-no-login-submitted",
     "domainAssignedToProject": "firstlane-review",
@@ -163,7 +165,7 @@
       "verifiedDeploymentId": "CTgUV5izhw28LBNuA7N2jJuMyqjx",
       "verifiedSourceCommit": "12ead17e963f50a23efb4aa57898d51a50cb72f7",
       "domain": "app.getfirstlane.com",
-      "anonymousHttps": "passed-valid-TLS-direct-authoritative-target-root-and-seven-informational-routes;public-DNS-still-inconsistent",
+      "anonymousHttps": "passed-normal-DNS-and-TLS-root-onboarding-pricing-terms;all-seven-informational-routes-validated",
       "checkoutEnabled": false
     },
     "hostedEmailPasswordRendering": "passed-sign-in-sign-up-recovery-entry-consent-controls-no-account-submitted",
@@ -172,16 +174,25 @@
         "nsa.whogohost.com",
         "nsb.whogohost.com"
       ],
-      "authoritativeSerial": "2026102405",
+      "authoritativeSerial": "2026102406",
       "staleNegativeSerial": "2026102404",
       "authoritativeCnamePresentOnBoth": true,
-      "publicRecursiveResolutionConsistent": false,
-      "cloudflarePurge": "CNAME-A-AAAA-queued-not-confirmed-complete",
-      "googleFlush": "not-confirmed-reCAPTCHA-service-unreachable",
-      "recordsChangedInThisPass": false
+      "publicRecursiveResolutionConsistent": true,
+      "cloudflarePurge": "CNAME-A-refreshed-after-zone-republish;fresh-query-passed",
+      "googleFlush": "not-confirmed-reCAPTCHA-service-unreachable;fresh-query-now-passed",
+      "authoritativeServerIps": [
+        "46.101.51.238",
+        "209.97.188.201",
+        "146.185.169.163",
+        "95.85.47.7"
+      ],
+      "allFourAuthoritativeServersSynchronized": true,
+      "previousStaleAuthoritativeIp": "95.85.47.7",
+      "zoneRepublished": true,
+      "recordValuesChanged": false
     }
   },
-  "configurationStatus": "email-password-web-preview-verified-backend-connected-DNS-negative-cache-and-Paddle-domain-changes-needed-content-and-final-acceptance-pending",
+  "configurationStatus": "email-password-web-preview-verified-DNS-synchronized-Paddle-domain-in-review-content-and-final-acceptance-pending",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",
@@ -209,6 +220,6 @@
     "nativeLaunchInScope": false,
     "details": "docs/LAUNCH_READINESS.md",
     "hostedEmailPasswordRendering": "passed-protected-web-preview",
-    "reliablePublicDnsPassed": false
+    "reliablePublicDnsPassed": true
   }
 }

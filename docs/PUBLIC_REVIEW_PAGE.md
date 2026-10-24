@@ -1,5 +1,15 @@
 # Public product page for Paddle review
 
+## DNS synchronized and Paddle resubmitted — 24 October 2026
+
+Further per-IP checks identified the underlying failure: nsa/nsb.whogohost.com resolve to four authoritative server IPs. Three served zone serial 2026102405 with the app CNAME; 95.85.47.7 still served serial 2026102404 and authoritatively returned NXDOMAIN. A non-recursive wire query confirmed its authoritative flag and NXDOMAIN response. This supersedes the earlier cache-only diagnosis.
+
+Republished the existing app CNAME through Go54's Edit → Update Record, preserving host app, target 18ca7189418b9b74.vercel-dns-016.com and TTL 300. The zone still contains 16 records. All four authoritative IPs (46.101.51.238, 209.97.188.201, 146.185.169.163, 95.85.47.7) now serve serial 2026102406 and the same correct CNAME. Other record values were preserved. Requested Cloudflare CNAME/A refresh again after synchronization. Fresh DNS-over-HTTPS POST queries to both Cloudflare and Google now return RCODE 0 and three answer records. Normal hostname HTTPS returns 200 for root, /onboarding and /pricing, and follows /terms to the published policy with 200. All seven informational routes also passed normal certificate validation through the authoritative target. The failed Google CAPTCHA/flush is not a remaining DNS blocker; no successful Google flush is claimed.
+
+Resubmitted the existing Paddle app-domain entry only after these verified changes. Its latest dashboard status is **In review**, not approved. Screenshots: `qa/go54-app-dns-republished.png`, `qa/paddle-dns-fixed-resubmitted.png`, `qa/web-email-password-launch.png`. The public page still truthfully identifies its prelaunch status and has no Paddle.js or enabled payment action. Default payment link stays blank; the actual browser product stays protected.
+
+The web-only email/password implementation, production deletion-input fix, 43 focused tests, TypeScript, Edge syntax checks, hosted signup/sign-in rendering and both CI/Vercel checks are recorded below. Marketing PR #3 is merged and deployed. Content review is still 0/500 with zero published approved releases; final production customer, content delivery, payment and operating acceptance remain pending. No approval flag or public-sales setting changed. Checkout has no confirmed launch date until those remaining requirements are complete.
+
 ## Deployed email/password and DNS follow-up — 24 October 2026
 
 Verified the actual protected web deployment at the branch URL: email/password sign-in, recovery entry, signup fields and explicit unchecked consent controls render; Google/Apple buttons and the redundant social separator are absent. No account, password, consent or payment was submitted. Both GitHub validate checks and both Vercel projects pass for 12ead17. Screenshot: `qa/web-email-password-launch.png`; production provider configuration: `qa/clerk-production-email-only.png`.
