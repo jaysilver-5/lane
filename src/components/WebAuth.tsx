@@ -9,6 +9,7 @@ import { useApp } from '../state/AppState';
 import { clerkConfigured, useWebAccount } from '../lib/webAccount.web';
 import { authDestination } from '../domain/authFlow.mjs';
 import { clerkSignupStep } from '../domain/clerkSignup.mjs';
+import { appWebPath } from '../lib/webLocation';
 import launchScope from '../../web-launch-scope.json';
 
 const socialStrategies = (['oauth_google', 'oauth_apple'] as const).filter(strategy => launchScope.authenticationMethods.includes(strategy));
@@ -50,7 +51,7 @@ function AuthFlow({ mode }: { mode: Mode }) {
   const navigate = (path: string) => router.replace(path as never);
   const navigateSession = ({ session: active, decorateUrl }: { session: { currentTask?: unknown } | null; decorateUrl: (url: string) => string }) => {
     if (active?.currentTask) { setError('Your account needs another security step. Complete it from the account sign-in page.'); return; }
-    window.location.assign(decorateUrl(callback));
+    window.location.assign(decorateUrl(appWebPath(callback)));
   };
   async function run(action: () => Promise<void>) { setError(''); try { await action(); } catch (failure) { setError(message(failure)); } }
   function consent() {
@@ -83,7 +84,7 @@ function AuthFlow({ mode }: { mode: Mode }) {
     if (!socialStrategies.includes(strategy)) throw new Error('Use email and password to continue.');
     if (connectingSocial) return;
     if (mode === 'sign-up' && (!accepted || !eligible)) { setError(''); setPendingSocial(strategy); return; }
-    const args = { strategy, redirectCallbackUrl: `/auth/sso?next=${encodeURIComponent(next)}`, redirectUrl: callback };
+    const args = { strategy, redirectCallbackUrl: appWebPath(`/auth/sso?next=${encodeURIComponent(next)}`), redirectUrl: appWebPath(callback) };
     setConnectingSocial(strategy);
     try {
       if (mode === 'sign-up') { consent(); await checked(signUp.sso({ ...args, legalAccepted: true })); }

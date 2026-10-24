@@ -14,7 +14,7 @@ const config: ExpoConfig = {
   android: { softwareKeyboardLayoutMode: 'resize', package: process.env.FIRSTLANE_ANDROID_PACKAGE || 'com.getfirstlane.app.dev', adaptiveIcon: { foregroundImage:'./assets/adaptive-icon.png', backgroundColor:'#12392B' } },
   web: { bundler:'metro', output:'single', favicon:'./assets/favicon.png', name:'FirstLane — Get road ready.' },
   plugins: ['./plugins/withBillingLaunchMode','expo-router','expo-sqlite','expo-secure-store',['expo-splash-screen',{image:'./assets/splash.png',imageWidth:160,resizeMode:'contain',backgroundColor:'#F6F5EF',dark:{backgroundColor:'#131D17'}}],['expo-notifications',{color:'#D9F778'}]],
-  experiments: { typedRoutes: false },
+  experiments: { typedRoutes: false, baseUrl: ['ios', 'android'].includes(process.env.EAS_BUILD_PLATFORM || '') ? '' : process.env.EXPO_PUBLIC_WEB_BASE_PATH ?? '/app' },
   extra: { brand:'FirstLane', website:'https://getfirstlane.com', tagline:'Get road ready.', stage: production ? 'production' : 'development', eas:{projectId:process.env.EAS_PROJECT_ID || 'a471737e-1390-419d-9336-2f94b601fb26'} },
 };
 export default config;

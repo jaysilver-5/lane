@@ -3,7 +3,14 @@
   "framework": null,
   "buildCommand": "npm run web:build",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/((?!_expo/|assets/|favicon.ico).*)", "destination": "/index.html" }],
+  "redirects": [{ "source": "/", "destination": "/app", "permanent": false }],
+  "rewrites": [
+    { "source": "/app/_expo/:path*", "destination": "/_expo/:path*" },
+    { "source": "/app/assets/:path*", "destination": "/assets/:path*" },
+    { "source": "/app/favicon.ico", "destination": "/favicon.ico" },
+    { "source": "/app", "destination": "/index.html" },
+    { "source": "/app/:path*", "destination": "/index.html" }
+  ],
   "headers": [{ "source": "/(.*)", "headers": [
     { "key": "X-Content-Type-Options", "value": "nosniff" },
     { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },

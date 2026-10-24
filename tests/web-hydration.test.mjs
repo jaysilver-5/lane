@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
+import { withWebBasePath } from '../src/domain/webLocation.mjs';
 
 const element = (type, props) => ({ type, props: props || {} });
 function load(path, imports, globals = {}) {
@@ -10,6 +11,7 @@ function load(path, imports, globals = {}) {
   const js = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX } }).outputText;
   const context = { exports: {}, require: name => {
     if (name === 'react/jsx-runtime') return { jsx: element, jsxs: element, Fragment: 'Fragment' };
+    if (name === './webLocation') return { appWebPath: withWebBasePath };
     assert.ok(name in imports, `Unexpected import ${name}`); return imports[name];
   }, ...globals };
   vm.runInNewContext(js, context); return context.exports;

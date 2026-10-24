@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
 import { authDestination } from '../src/domain/authFlow.mjs';
+import { withWebBasePath } from '../src/domain/webLocation.mjs';
 
 // Actual form, immutable hook snapshots, synthetic inputs, no live credentials.
 function recovery({mode='forgot-password', next='/membership', codeError=null, passwordError=null, outcome='complete', task=null, initialStatus=null}={}) {
@@ -28,6 +29,7 @@ function recovery({mode='forgot-password', next='/membership', codeError=null, p
   };
   const ui=Object.fromEntries(['Button','Copy','Divider','Field','Heading','Logo','Muted','Note','Screen'].map(name=>[name,name]));
   const imports={
+    '../lib/webLocation':{appWebPath:withWebBasePath},
     react,'react/jsx-runtime':{jsx:element,jsxs:element,Fragment:'Fragment'},
     'react-native':{ActivityIndicator:'ActivityIndicator',Pressable:'Pressable',View:'View'},
     '@clerk/react':{HandleSSOCallback:'HandleSSOCallback',useClerk:()=>({loaded:true}),useSession:()=>({session:null,isLoaded:true}),useSignIn:()=>({signIn,fetchStatus:'idle'}),useSignUp:()=>({signUp:{missingFields:[]},fetchStatus:'idle'})},
@@ -62,7 +64,7 @@ test('recovery sends once, limits resend, and finalizes the replacement resource
   const app=recovery();await app.send();await app.press('Resend recovery code');
   assert.equal(app.calls.filter(([name])=>name==='send').length,1);assert.match(app.text(),/Wait a minute/);
   await app.reset();assert.deepEqual(app.calls.slice(-3),[['verify','123456'],['password',true,'needs_new_password'],['finalize','complete']]);
-  assert.deepEqual(app.urls,['/auth/callback?next=%2Fmembership']);
+  assert.deepEqual(app.urls,['/app/auth/callback?next=%2Fmembership']);
 });
 test('wrong recovery code cannot submit a password or finalize',async()=>{
   const app=recovery({codeError:{message:'Incorrect or expired code.'}});await app.send();await app.reset();
@@ -79,7 +81,7 @@ test('provider password rejection does not finalize or navigate',async()=>{
 });
 test('a verified recovery attempt resumes without reusing its code and requests other-session revocation',async()=>{
   const app=recovery({mode:'reset-password',initialStatus:'needs_new_password'});await app.reset();
-  assert.equal(app.calls.some(([name])=>name==='verify'),false);assert.deepEqual(app.calls[0],['password',true,'needs_new_password']);assert.deepEqual(app.urls,['/auth/callback?next=%2Fmembership']);
+  assert.equal(app.calls.some(([name])=>name==='verify'),false);assert.deepEqual(app.calls[0],['password',true,'needs_new_password']);assert.deepEqual(app.urls,['/app/auth/callback?next=%2Fmembership']);
 });
 test('recovery requiring a second factor stays in verification rather than granting a session',async()=>{
   const app=recovery({outcome:'needs_second_factor'});await app.send();await app.reset();
@@ -91,5 +93,5 @@ test('pending session security task cannot reach the app',async()=>{
 });
 test('an external recovery return URL is replaced by the safe app destination',async()=>{
   const app=recovery({next:'https://evil.example/'});await app.send();await app.reset();
-  assert.deepEqual(app.urls,['/auth/callback?next=%2F(tabs)']);
+  assert.deepEqual(app.urls,['/app/auth/callback?next=%2F(tabs)']);
 });

@@ -1,4 +1,5 @@
 import { authenticatedClient } from './supabase';
+import { appWebPath } from './webLocation';
 
 type PaddleEvent = { name: string; data?: { transaction_id?: string } };
 type Paddle = {
@@ -59,7 +60,7 @@ export async function webPurchase(userId: string) {
   if (!/^txn_[a-z0-9]{26}$/.test(data?.transactionId) || data.environment !== environment) throw new Error('Checkout configuration does not match. Contact support.');
   paddle.Checkout.open({ transactionId: data.transactionId, settings: {
     displayMode: 'overlay', allowLogout: false, showAddDiscounts: false,
-    successUrl: new URL('/checkout?payment=returned', window.location.origin).href,
+    successUrl: new URL(appWebPath('/checkout?payment=returned'), window.location.origin).href,
   } });
   return { status: 'submitted' as const };
 }

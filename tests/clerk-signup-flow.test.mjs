@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
 import { clerkSignupStep } from '../src/domain/clerkSignup.mjs';
+import { withWebBasePath } from '../src/domain/webLocation.mjs';
 
 // Exercise the actual form with immutable Clerk hook snapshots. No credentials,
 // live account creation, timers, or backend requests are involved.
@@ -42,6 +43,7 @@ function form({ outcome = 'complete', failure = null, mode = 'verify-email', ini
   const router = { replace: url => urls.push(url), push: url => urls.push(url) };
   const ui = Object.fromEntries(['Button', 'Copy', 'Divider', 'Field', 'Heading', 'Logo', 'Muted', 'Note', 'Screen'].map(name => [name, name]));
   const imports = {
+    '../lib/webLocation': { appWebPath: withWebBasePath },
     react, 'react/jsx-runtime': { jsx: element, jsxs: element, Fragment: 'Fragment' },
     'react-native': { ActivityIndicator: 'ActivityIndicator', Pressable: 'Pressable', View: 'View' },
     '@clerk/react': { HandleSSOCallback: 'HandleSSOCallback', useClerk: () => ({ loaded: true }), useSession: () => ({ session: currentSession, isLoaded: true }), useSignIn: () => ({ signIn: {} }), useSignUp: () => ({ signUp: signup, fetchStatus: 'idle' }) },
@@ -86,7 +88,7 @@ test('web signup and sign-in offer email/password without unfinished social meth
 test('accepted code finalizes the replacement Clerk resource without a stale missing-details warning', async () => {
   const app = form(); await app.verify();
   assert.deepEqual(app.finalized, ['complete']);
-  assert.deepEqual(app.urls, ['/auth/callback?next=%2Fplans']);
+  assert.deepEqual(app.urls, ['/app/auth/callback?next=%2Fplans']);
   assert.doesNotMatch(app.text(), /still needs required details|Return to signup/);
 });
 test('real remaining signup details are collected in the same attempt before finalization', async () => {
@@ -110,7 +112,7 @@ test('an arriving active session connects once while a pending security task doe
 test('reopening an already completed signup resumes finalization without resubmitting a used code', async () => {
   const app = form({ initialComplete: true }); await app.flush();
   assert.deepEqual(app.finalized, ['complete']);
-  assert.deepEqual(app.urls, ['/auth/callback?next=%2Fplans']);
+  assert.deepEqual(app.urls, ['/app/auth/callback?next=%2Fplans']);
 });
 test('the reported missing-password case resumes the verified attempt and finalizes without another email code', async () => {
   const app = form({ outcome: 'password' }); await app.verify();

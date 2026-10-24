@@ -5,6 +5,7 @@ import type { Identity } from './demoAccount';
 import type { WebAccountState } from './webAccount';
 import { bindClerkAccount, currentClerkSession, setClerkSession } from './clerkSession';
 import { bootstrapClerkAccount, humanError } from './supabase';
+import { appWebPath } from './webLocation';
 export const clerkPublishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY || '';
 export const clerkConfigured = /^pk_(test|live)_/.test(clerkPublishableKey);
 const empty: WebAccountState = { enabled: true, ready: true, identity: null, error: '', refresh: async () => {}, signOut: async () => {} };
@@ -51,5 +52,5 @@ function AccountBridge({ children }: { children: React.ReactNode }) {
 }
 export function WebAccountProvider({ children }: { children: React.ReactNode }) {
   if (config.mode === 'demo' || !clerkConfigured) return <Context.Provider value={empty}>{children}</Context.Provider>;
-  return <ClerkProvider publishableKey={clerkPublishableKey} signInUrl="/auth/sign-in" signUpUrl="/auth/sign-up" signInFallbackRedirectUrl="/auth/callback" signUpFallbackRedirectUrl="/auth/callback"><AccountBridge>{children}</AccountBridge></ClerkProvider>;
+  return <ClerkProvider publishableKey={clerkPublishableKey} signInUrl={appWebPath('/auth/sign-in')} signUpUrl={appWebPath('/auth/sign-up')} signInFallbackRedirectUrl={appWebPath('/auth/callback')} signUpFallbackRedirectUrl={appWebPath('/auth/callback')}><AccountBridge>{children}</AccountBridge></ClerkProvider>;
 }
