@@ -51,6 +51,7 @@ function form({ outcome = 'complete', failure = null, mode = 'verify-email', ini
     '../lib/webAccount.web': { clerkConfigured: true, useWebAccount: () => ({ identity: null, error: '' }) },
     '../domain/authFlow.mjs': { authDestination: value => value || '/plans' },
     '../domain/clerkSignup.mjs': { clerkSignupStep },
+    '../../web-launch-scope.json': JSON.parse(fs.readFileSync(new URL('../web-launch-scope.json', import.meta.url), 'utf8')),
   };
   const source = fs.readFileSync(new URL('../src/components/WebAuth.tsx', import.meta.url), 'utf8');
   const js = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX } }).outputText;
@@ -69,6 +70,18 @@ function form({ outcome = 'complete', failure = null, mode = 'verify-email', ini
     async setSession(session) { currentSession = session; changed = true; await flush(); },
   };
 }
+
+test('web signup and sign-in offer email/password without unfinished social methods', () => {
+  for (const mode of ['sign-up', 'sign-in']) {
+    const app = form({ mode });
+    app.find('Field', props => props.label === 'Email address');
+    app.find('Field', props => props.label === 'Password');
+    assert.doesNotMatch(app.text(), /SocialAuthButton|or continue with email/);
+  }
+  const legacy = form({ mode: 'sso' });
+  assert.match(legacy.text(), /Continue with email/);
+  assert.doesNotMatch(legacy.text(), /HandleSSOCallback/);
+});
 
 test('accepted code finalizes the replacement Clerk resource without a stale missing-details warning', async () => {
   const app = form(); await app.verify();

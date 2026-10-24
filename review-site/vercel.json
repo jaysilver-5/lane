@@ -5,6 +5,8 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "rewrites": [
+    { "source": "/onboarding", "destination": "/index.html" },
+    { "source": "/plans", "destination": "/index.html" },
     { "source": "/auth/:path*", "destination": "/index.html" },
     { "source": "/checkout", "destination": "/index.html" },
     { "source": "/account", "destination": "/index.html" },

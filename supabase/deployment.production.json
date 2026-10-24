@@ -49,7 +49,7 @@
     "clerk-account": 3,
     "free-questions": 3,
     "content-pack": 3,
-    "delete-account": 3,
+    "delete-account": 4,
     "paddle-checkout": 3,
     "paddle-webhook": 4
   },
@@ -80,8 +80,8 @@
     "previewBrowserTokenAbsent": true,
     "checkoutDomain": "app.getfirstlane.com",
     "checkoutDomainId": "chedom_01m5psjn2q2sh4bftmv8pbv4h4",
-    "checkoutDomainStatus": "in-review",
-    "checkoutDomainReason": "Owner reports Paddle requested app.getfirstlane.com be available for review; public HTTPS page deployed and existing entry resubmitted.",
+    "checkoutDomainStatus": "changes-needed",
+    "checkoutDomainReason": "Returned to Changes needed after resubmission; owner email lists reachability/under-construction/HTTPS/login restrictions. Root anonymously returns HTTPS 200. Exact remaining condition is unconfirmed.",
     "defaultPaymentLink": null,
     "plannedDefaultPaymentLink": "https://app.getfirstlane.com/checkout",
     "checkoutDomainResubmittedDate": "2026-10-24"
@@ -104,7 +104,15 @@
     "signInUrl": "https://app.getfirstlane.com/auth/sign-in",
     "signUpUrl": "https://app.getfirstlane.com/auth/sign-up",
     "legalConsentRequired": true,
-    "productionLoginAcceptancePassed": false
+    "productionLoginAcceptancePassed": false,
+    "launchAuthenticationMethods": [
+      "email_password"
+    ],
+    "productionSocialConnections": {
+      "google": "disabled-deferred-by-owner",
+      "apple": "disabled-deferred-by-owner"
+    },
+    "deferredAppleTeam": "L4RNXCN5V2"
   },
   "hosting": {
     "teamSlug": "joshs-projects-e9dac4f7",
@@ -159,7 +167,7 @@
       "checkoutEnabled": false
     }
   },
-  "configurationStatus": "public-product-review-page-deployed-Paddle-app-domain-resubmitted-in-review-actual-app-protected-public-sales-gated",
+  "configurationStatus": "email-password-web-scope-production-backend-connected-preview-protected-Paddle-domain-changes-needed-content-and-final-acceptance-pending",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",
@@ -168,5 +176,23 @@
     "unconfiguredEndpointRejection": "passed",
     "approvedPublishedContent": false,
     "realLivePurchase": false
+  },
+  "launchReadiness": {
+    "platforms": [
+      "web"
+    ],
+    "authenticationMethods": [
+      "email_password"
+    ],
+    "paymentProvider": "paddle",
+    "approvedPublishedReleases": 0,
+    "privateReviewApprovedQuestions": 0,
+    "productionDeletionInputChecks": "passed-v4-400-401-403-204",
+    "databaseDeletionChecks": "passed-all-synthetic-fixtures-rolled-back",
+    "realClerkDeletionPassed": false,
+    "realProductionLoginPassed": false,
+    "realLivePurchasePassed": false,
+    "nativeLaunchInScope": false,
+    "details": "docs/LAUNCH_READINESS.md"
   }
 }

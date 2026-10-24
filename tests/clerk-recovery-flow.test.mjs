@@ -36,6 +36,7 @@ function recovery({mode='forgot-password', next='/membership', codeError=null, p
     '../state/AppState':{useApp:()=>({finishOnboarding(){},colors:{success:'#123'}})},
     '../lib/webAccount.web':{clerkConfigured:true,useWebAccount:()=>({identity:null,error:''})},
     '../domain/authFlow.mjs':{authDestination},'../domain/clerkSignup.mjs':{clerkSignupStep:()=> 'pending'},
+    '../../web-launch-scope.json':JSON.parse(fs.readFileSync(new URL('../web-launch-scope.json',import.meta.url),'utf8')),
   };
   const source=fs.readFileSync(new URL('../src/components/WebAuth.tsx',import.meta.url),'utf8');
   const js=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText;

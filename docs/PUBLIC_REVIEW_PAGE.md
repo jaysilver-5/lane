@@ -1,5 +1,15 @@
 # Public product page for Paddle review
 
+## Web-only launch acceptance follow-up — 24 October 2026
+
+Owner confirmed web only, Paddle browser payments and email/password sign-in for the initial release. `web-launch-scope.json` drives the visible authentication methods and conditional social acceptance requirement. Production Clerk Google and Apple connections were enabled but both showed Setup required with missing custom credentials; both are now disabled for the selected email/password launch. No Google Cloud project, provider key or mobile release is required for this selected scope. Browser billing uses Paddle; native billing remains a separate RevenueCat/store path. No native billing setting changed.
+
+Fixed malformed/null deletion input returning a service error; production delete-account v4 returns 400 without mutation, valid unauthenticated confirmation 401, foreign origin 403 and preflight 204. Seven handler tests cover real RSA verification with fixture provider responses, recent-auth requirements, ownership and failure sequencing. The new hosted rollback-only deletion suite verifies erased study/session/access data, detached retained financial records, another account unchanged, stale-session rejection, idempotent retry and no reopening. Post-rollback counts: zero accounts, transactions, grants or fixtures. This does not substitute for a real disposable Clerk-account deletion through the browser. TypeScript and 43 selected auth/deletion/Paddle/release tests pass; all seven Edge entrypoints passed syntax checks.
+
+Production still contains zero approved published content releases. Reopened the private review tool at http://127.0.0.1:4175/ and confirmed 0/500 approved, 500 needing review; the saved Downloads export also contains zero decisions. Content publication and actual paid-bank delivery remain blocked. No approval flag was changed.
+
+Paddle returned the previously resubmitted app domain to Changes needed. Anonymous root HTTP redirects to valid HTTPS and returns 200; the exact remaining review condition is not identified. Found /onboarding returning 404 and added truthful informational rewrites for /onboarding and /plans. No further domain resubmission or default payment link was made. Final production email/recovery/deletion/cross-browser/device/content/payment acceptance and operating disclosures remain outstanding. See [LAUNCH_READINESS.md](LAUNCH_READINESS.md).
+
 The owner reports Paddle requested that app.getfirstlane.com be available for review. The actual Expo preview requires Vercel team authentication, and its question bank and production acceptance are not approved for a public release.
 
 The independent static site in review-site/ provides a truthful public product page without publishing the unfinished app. It identifies the prelaunch status, operator, planned free/Complete offer and price, shows a real dashboard screenshot, and links to the existing published terms, privacy, refunds, support and account-deletion pages. It has no account forms, payment SDK, question content, analytics or credentials.

@@ -7,7 +7,11 @@ export async function deleteClerkAccount(req: Request) {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers });
     if (req.method !== 'POST') return Response.json({ error: 'Method not allowed.' }, { status: 405, headers });
     const raw = await req.text();
-    if (raw.length > 1024 || JSON.parse(raw).confirmation !== 'DELETE') throw new AccountError('Type DELETE to confirm account deletion.', 400);
+    let confirmation: unknown;
+    if (raw.length <= 1024) {
+      try { confirmation = JSON.parse(raw)?.confirmation; } catch { /* Invalid JSON is a client error. */ }
+    }
+    if (confirmation !== 'DELETE') throw new AccountError('Type DELETE to confirm account deletion.', 400);
     const identity = await verifyClerkRequest(req, key => Deno.env.get(key), { requireVerified: false });
     const ages = identity.claims.fva;
     if (!Array.isArray(ages) || typeof ages[0] !== 'number' || ages[0] < 0 || ages[0] > 10) throw new AccountError('Sign in again before deleting your account.', 403);

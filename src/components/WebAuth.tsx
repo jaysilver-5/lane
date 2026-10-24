@@ -9,6 +9,9 @@ import { useApp } from '../state/AppState';
 import { clerkConfigured, useWebAccount } from '../lib/webAccount.web';
 import { authDestination } from '../domain/authFlow.mjs';
 import { clerkSignupStep } from '../domain/clerkSignup.mjs';
+import launchScope from '../../web-launch-scope.json';
+
+const socialStrategies = (['oauth_google', 'oauth_apple'] as const).filter(strategy => launchScope.authenticationMethods.includes(strategy));
 
 type Mode = 'sign-in' | 'sign-up' | 'verify-email' | 'forgot-password' | 'reset-password' | 'callback' | 'sso';
 function message(error: unknown): string {
@@ -77,6 +80,7 @@ function AuthFlow({ mode }: { mode: Mode }) {
     }
   }
   async function social(strategy: SocialStrategy) {
+    if (!socialStrategies.includes(strategy)) throw new Error('Use email and password to continue.');
     if (connectingSocial) return;
     if (mode === 'sign-up' && (!accepted || !eligible)) { setError(''); setPendingSocial(strategy); return; }
     const args = { strategy, redirectCallbackUrl: `/auth/sso?next=${encodeURIComponent(next)}`, redirectUrl: callback };
@@ -197,6 +201,7 @@ function AuthFlow({ mode }: { mode: Mode }) {
   </Screen>;
   // A new person can arrive through the sign-in button. Collect signup consent
   // before Clerk's callback component automatically transfers that attempt.
+  if (mode === 'sso' && !socialStrategies.length) return <Screen back title="Sign in"><Logo/><Heading sub="Use your email address and password to continue.">Welcome back.</Heading><Button onPress={() => navigate(`/auth/sign-in?next=${encodeURIComponent(next)}`)}>Continue with email</Button></Screen>;
   if (mode === 'sso' && (signIn.isTransferable || completingSocialSignup)) return <Screen title="Create your free account">
     <Logo size={32}/><Heading sub="Your provider is connected. Confirm these details to create your FirstLane account.">Welcome to FirstLane.</Heading>
     {consentFields}
@@ -226,10 +231,9 @@ function AuthFlow({ mode }: { mode: Mode }) {
     <Logo size={32}/>
     <Heading eyebrow={verify ? 'ONE LAST STEP' : recovery ? 'BACK ON TRACK' : signUpMode ? 'FREE ACCOUNT · NO CARD NEEDED' : 'WELCOME BACK'} sub={verify ? `Enter the six-digit code sent to ${signUp.emailAddress || email || 'your email'}.` : recovery ? 'We’ll send a code to your email so you can choose a new password.' : signUpMode ? '40 fixed questions, including the guest 10. Yours to repeat, free.' : 'Sign in to save your progress and pick up where you left off.'}>{title}</Heading>
     {session && !verify && !recovery ? <><Note>You’re already signed in. Continue to connect your account, or sign out to use another account.</Note><Button onPress={() => navigate(callback)}>Continue</Button><Button kind="secondary" onPress={() => run(account.signOut)}>Use another account</Button></> : <>
-    {!verify && !recovery && <>
+    {!verify && !recovery && socialStrategies.length > 0 && <>
       <View style={{ gap: 12 }}>
-        <SocialAuthButton strategy="oauth_google" busy={connectingSocial === 'oauth_google'} disabled={!!connectingSocial} onPress={() => run(() => social('oauth_google'))}/>
-        <SocialAuthButton strategy="oauth_apple" busy={connectingSocial === 'oauth_apple'} disabled={!!connectingSocial} onPress={() => run(() => social('oauth_apple'))}/>
+        {socialStrategies.map(strategy => <SocialAuthButton key={strategy} strategy={strategy} busy={connectingSocial === strategy} disabled={!!connectingSocial} onPress={() => run(() => social(strategy))}/>)}
       </View>
       <Muted size={12} style={{ textAlign: 'center' }}>or continue with email</Muted><Divider/>
     </>}
