@@ -48,7 +48,7 @@
   "functions": {
     "clerk-account": 3,
     "free-questions": 6,
-    "content-pack": 4,
+    "content-pack": 8,
     "delete-account": 4,
     "paddle-checkout": 3,
     "paddle-webhook": 4
@@ -201,14 +201,14 @@
     "unauthenticatedProductionResponse": "302-to-Vercel-SSO",
     "canonicalAppCutover": "pending-www-app-currently-404"
   },
-  "configurationStatus": "owner-content-approved-free-samples-deployed-private-pack-upload-and-production-customer-acceptance-pending",
+  "configurationStatus": "approved-500-question-release-published-canonical-account-payment-and-operating-acceptance-pending",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",
     "syntheticLiveCommerceChecks": "passed-with-rollback",
     "continuousPracticeChecks": "passed-with-rollback",
     "unconfiguredEndpointRejection": "passed",
-    "approvedPublishedContent": false,
+    "approvedPublishedContent": true,
     "realLivePurchase": false
   },
   "launchReadiness": {
@@ -219,7 +219,7 @@
       "email_password"
     ],
     "paymentProvider": "paddle",
-    "approvedPublishedReleases": 0,
+    "approvedPublishedReleases": 1,
     "privateReviewApprovedQuestions": 0,
     "productionDeletionInputChecks": "passed-v4-400-401-403-204",
     "databaseDeletionChecks": "passed-all-synthetic-fixtures-rolled-back",
@@ -229,7 +229,8 @@
     "nativeLaunchInScope": false,
     "details": "docs/LAUNCH_READINESS.md",
     "hostedEmailPasswordRendering": "passed-protected-web-preview",
-    "reliablePublicDnsPassed": true
+    "reliablePublicDnsPassed": true,
+    "ownerAcceptedEditorialQuestions": 500
   },
   "contentApproval": {
     "version": "1.0.0",
@@ -238,6 +239,8 @@
     "independentHumanReview": false,
     "artifactSha256": "21bf800ca3444d2a0a730eb164f9413b74a9f102b6400a956f92cd3b96fd9261",
     "bytes": 1333762,
-    "publication": "awaiting-private-upload-verification"
+    "publication": "published-private-versioned-storage-and-approved-registry",
+    "publishedAt": "2026-10-24T17:42:48.594971Z",
+    "storagePath": "ontario-g1-1.0.0-21bf800c.json"
   }
 }

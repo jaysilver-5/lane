@@ -1,22 +1,34 @@
 {
-  "checkedAt": "2026-10-24T17:36:14.577Z",
+  "checkedAt": "2026-10-24T17:46:34.930Z",
   "project": "jinbdlckkyzffnocuugn",
   "upload": {
     "ownerReportedUploaded": true,
-    "productionObjectCount": 0,
+    "productionObjectCount": 1,
     "sandboxOntarioObjectCount": 0,
-    "status": "not-present-at-verification",
+    "status": "uploaded-and-read-back-sha256-verified",
     "privateBucket": true,
     "browserStoragePolicies": 0,
     "expectedPath": "ontario-g1-1.0.0-21bf800c.json",
     "expectedSha256": "21bf800ca3444d2a0a730eb164f9413b74a9f102b6400a956f92cd3b96fd9261",
     "expectedBytes": 1333762,
-    "ownerCheckingUploadResult": true
+    "ownerCheckingUploadResult": false,
+    "initialProductionObjectCount": 0,
+    "method": "one-off trusted server deployment using existing private Storage service credentials; no credentials extracted",
+    "temporaryBootstrapFunctionVersion": 7,
+    "restoredOriginalFunctionVersion": 8,
+    "restoredOriginalFilesExactly": true,
+    "signedInAndPaidChecksUnchanged": true,
+    "anonymousObjectReadDenied": true
   },
   "publication": {
-    "executed": false,
-    "reason": "No uploaded object to download and hash",
-    "preparedSql": "supabase/releases/ontario-g1-1.0.0.sql"
+    "executed": true,
+    "reason": null,
+    "preparedSql": "supabase/releases/ontario-g1-1.0.0.sql",
+    "publishedAt": "2026-10-24T17:42:48.594971Z",
+    "approved": true,
+    "version": "1.0.0",
+    "questions": 500,
+    "approvalBasis": "owner_accepted_ai_editorial_review"
   },
   "databaseAccessChecks": {
     "passed": true,
@@ -37,9 +49,10 @@
       "accounts": 0,
       "sessions": 0,
       "grants": 0,
-      "contentReleases": 0,
+      "contentReleases": 1,
       "fixtureReleases": 0
-    }
+    },
+    "recheckedAgainstPublishedRelease": true
   },
   "productionServiceProbes": {
     "passed": true,

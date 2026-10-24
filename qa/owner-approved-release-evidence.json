@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-24T17:26:10.403Z",
+  "checkedAt": "2026-10-24T17:46:34.945Z",
   "contentApproval": {
     "version": "1.0.0",
     "questions": 500,
@@ -8,8 +8,10 @@
     "independentHumanReview": false,
     "artifactSha256": "21bf800ca3444d2a0a730eb164f9413b74a9f102b6400a956f92cd3b96fd9261",
     "bytes": 1333762,
-    "privateUpload": "pending-owner-upload-file-access-blocked",
-    "published": false
+    "privateUpload": "verified-stored-bytes-sha256-via-private-server-read-back",
+    "published": true,
+    "publishedAt": "2026-10-24T17:42:48.594971Z",
+    "storagePath": "ontario-g1-1.0.0-21bf800c.json"
   },
   "freeQuestions": {
     "functionVersion": 6,
