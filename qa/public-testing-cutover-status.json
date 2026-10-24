@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-10-24T18:41:06.722Z",
+  "authorization": {
+    "response": "Approve public /app testing",
+    "scope": [
+      "Set firstlane-app Vercel Authentication to Standard Protection",
+      "Deploy prepared marketing /app routing"
+    ],
+    "repeatConfirmationRequired": false
+  },
+  "production": {
+    "commit": "91a4f9a",
+    "deploymentId": "5L2hisrt4othUZajCzW21a2XueGA",
+    "ready": true
+  },
+  "protectionChange": {
+    "saved": true,
+    "method": "Owner saved Standard Protection",
+    "verifiedAnonymousProductionStatus": 200,
+    "verifiedPreviewStatus": 302
+  },
+  "marketing": {
+    "pullRequest": "https://github.com/jaysilver-5/getfirstlane/pull/4",
+    "commit": "f28f41fe9521adeac602faeac85d41c352900328",
+    "allChecksPass": true,
+    "merged": true,
+    "mergeCommit": "3a42d736351ebf856e63a47c237fca2bc9c333d7",
+    "deploymentId": "EdtGxQQxRyXFXJWdb4D4FJWq7xSz",
+    "productionReady": true
+  },
+  "anonymousChecks": {
+    "productionAlias": 200,
+    "preview": 302,
+    "canonicalApp": 200,
+    "apexApp": 308,
+    "marketing": 200,
+    "privacy": 200,
+    "terms": 200,
+    "refunds": 200,
+    "support": 200,
+    "deleteAccount": 200,
+    "appDeepLinks": 200,
+    "appJavaScript": 200
+  },
+  "publicSalesApproved": false,
+  "browserChecks": {
+    "guestOnboarding": true,
+    "guestPractice": true,
+    "quizReloadPreservesAnswer": true,
+    "signupForm": true,
+    "appConsoleErrors": 0
+  },
+  "paddle": {
+    "defaultPaymentLink": "https://www.getfirstlane.com/app/checkout",
+    "saved": true,
+    "dashboardApproved": true,
+    "realPaymentCompleted": false,
+    "liveOverlayOpened": true,
+    "displayedSubtotalCad": 14.99,
+    "displayedTaxCad": 1.12,
+    "displayedTotalCad": 16.11
+  },
+  "appearanceFix": {
+    "reported": "Opening Appearance shows the small detour 404",
+    "rootCause": "Expo Router strips the /app prefix from internal /appearance without a path segment boundary",
+    "commit": "91a4f9a",
+    "newDestination": "/display",
+    "legacyBrokenUrlRedirect": "/earance",
+    "productionVerificationPending": false,
+    "homeButtonPassed": true,
+    "accountButtonPassed": true,
+    "legacyBrokenUrlRedirectPassed": true,
+    "daylightPalettePassed": true,
+    "darkPalettePassed": true,
+    "darkReloadRetentionPassed": true,
+    "testsPassed": 238
+  }
+}

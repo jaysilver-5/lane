@@ -21,14 +21,14 @@ test('only an explicitly selected acceptance stage defers public acceptance',()=
  assert.deepEqual(webHostBuildSteps({VERCEL_ENV:'production',FIRSTLANE_WEB_DEPLOYMENT_STAGE:'misspelled'}),[['scripts/web-release.mjs']]);
 });
 
-test('actual production host command refuses the current unapproved release before export', () => {
+test('actual production host command refuses non-live services before export regardless of recorded acceptance', () => {
   const result = spawnSync(process.execPath, ['scripts/web-host-build.mjs'], {
     cwd: fileURLToPath(new URL('..', import.meta.url)),
-    env: { ...process.env, VERCEL_ENV: 'production', EXPO_PUBLIC_APP_MODE: 'connected' },
+    env: { ...process.env, VERCEL_ENV: 'production', EXPO_PUBLIC_APP_MODE: 'connected', FIRSTLANE_WEB_DEPLOYMENT_STAGE: '', EXPO_PUBLIC_PADDLE_ENVIRONMENT: 'sandbox', EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY: 'pk_test_fixture' },
     encoding: 'utf8', timeout: 15000,
   });
   assert.equal(result.status, 1);
   assert.match(result.stderr, /Web public launch blocked/);
-  assert.match(result.stderr, /authEmailAndRecoveryPassed/);
+  assert.match(result.stderr, /Paddle live configuration/);
   assert.doesNotMatch(result.stdout, /Exported|Bundled/);
 });

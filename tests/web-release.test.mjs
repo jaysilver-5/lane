@@ -7,18 +7,32 @@ import os from 'node:os';
 import path from 'node:path';
 const {webReleaseIssues,webConfigurationIssues,webAuthenticationIssues}=createRequire(import.meta.url)('../scripts/web-release-policy.cjs');
 const root=fileURLToPath(new URL('..',import.meta.url));
-test('owner-approved content clears content gating while missing services and acceptance still block launch',()=>{
- const issues=webReleaseIssues(root,{});
+function pendingAcceptanceRoot(t){
+ const folder=fs.mkdtempSync(path.join(os.tmpdir(),'firstlane-web-acceptance-'));
+ for(const file of ['content/release/ontario-g1.approved.json','content/ontario-g1.draft.json','content/approvals/owner-2026-10-24.json','content/review/ai-editorial-2026-10-24.json','content/sample-manifest.json','web-launch-scope.json']){
+  const target=path.join(folder,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(root,file),target);
+ }
+ fs.writeFileSync(path.join(folder,'web-release-approvals.json'),JSON.stringify({authEmailAndRecoveryPassed:false}));
+ t.after(()=>{
+  assert.equal(path.dirname(path.resolve(folder)),path.resolve(os.tmpdir()));
+  assert.ok(path.basename(folder).startsWith('firstlane-web-acceptance-'));
+  fs.rmSync(folder,{recursive:true,force:true});
+ });
+ return folder;
+}
+test('owner-approved content clears content gating while missing services and acceptance still block launch',t=>{
+ const issues=webReleaseIssues(pendingAcceptanceRoot(t),{});
  assert.ok(issues.some(x=>x.includes('SUPABASE_URL')));
  assert.ok(issues.some(x=>x.includes('Paddle live')));
  assert.equal(issues.some(x=>x.includes('release content')),false);
  assert.ok(issues.some(x=>x.includes('authEmailAndRecoveryPassed')));
 });
-test('acceptance candidate retains configuration/content checks while customer checks remain in public gate',()=>{
- const issues=webConfigurationIssues(root,{}).join('\n');
+test('acceptance candidate retains configuration/content checks while customer checks remain in public gate',t=>{
+ const fixture=pendingAcceptanceRoot(t);
+ const issues=webConfigurationIssues(fixture,{}).join('\n');
  assert.match(issues,/SUPABASE_URL/);assert.match(issues,/Paddle live/);
  assert.doesNotMatch(issues,/authEmailAndRecoveryPassed/);
- assert.match(webReleaseIssues(root,{}).join('\n'),/authEmailAndRecoveryPassed/);
+ assert.match(webReleaseIssues(fixture,{}).join('\n'),/authEmailAndRecoveryPassed/);
 });
 test('web launch does not require unfinished native store setup',()=>{
  const issues=webReleaseIssues(root,{}).join('\n');

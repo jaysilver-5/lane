@@ -8,7 +8,7 @@ The owner selected the main-domain layout to stop depending on separate Paddle a
 - `https://getfirstlane.com/app` therefore opens `https://www.getfirstlane.com/app`.
 - `/pricing`, `/terms`, `/privacy`, `/refunds`, `/support` and `/delete-account` remain marketing routes.
 - `/app/**` belongs to this Expo application. Expo Router and bundled resources use `/app`; raw Clerk/browser/Paddle links use the same prefix explicitly. Router destinations such as `/plans` remain unprefixed in source because Expo Router adds the base path.
-- The marketing Vercel project proxies only `/app` and `/app/**` to this project's branch deployment, preserving the public hostname. This project maps prefixed asset requests to its exported static assets and app deep links to `index.html`.
+- The marketing Vercel project proxies only `/app` and `/app/**` to the verified production alias `https://project-n8lqe.vercel.app`, preserving the public hostname. This project maps prefixed asset requests to its exported static assets and app deep links to `index.html`.
 
 No DNS record is needed for a URL path. No app-domain approval is claimed. Paddle's approved root-domain checkout also accepts its `www` variant (see its go-live checklist).
 
@@ -22,18 +22,18 @@ In Clerk production, change the app home/sign-out URL to `https://www.getfirstla
 
 After an actual production checkout page is ready, set Paddle's default payment link to `https://www.getfirstlane.com/app/checkout`. It must load Paddle.js and use the live configuration. Do not set this link to a preview page, a Vercel login screen or a nonfunctional route.
 
-## Delivery status and sequence
+## Delivery status
 
-This migration is prepared in source and preview; it is **not a completed public launch**. On 24 October, production backend origin/authorized parties and Clerk home/sign-out/sign-in/sign-up paths were saved for the canonical main-domain app. The nine service rejection/preflight probes pass from the new origin. Paddle's payment link, DNS and deployment protection remain unchanged. The existing app project remains behind Vercel team authentication. Do not merge the marketing proxy while the upstream still requires that authentication; an external rewrite does not make a protected app publicly usable. See [current launch status](LAUNCH_STATUS.md).
+Public /app testing is deployed. The owner explicitly approved public testing and saved Standard Protection. The production app alias returns 200 anonymously; preview/deployment URLs retain Vercel authentication. Marketing PR #4 merged as 3a42d73 and deploys /app rewrites to the stable production alias above. Marketing sales availability stays false until the remaining acceptance outcomes are recorded.
 
-1. Validate the protected app build and `/app` routes, assets, auth callback and payment return. The migration branch's verified protected preview is `https://firstlane-app-git-codex-firstlan-2b8308-joshs-projects-e9dac4f7.vercel.app/app`.
-2. Complete approved content publication and the remaining production acceptance checks. Moving the URL does not satisfy these checks.
-3. Deploy the gated production app using the configured canonical-host settings above, and validate the production flows.
-4. Point the marketing `/app` rewrite at the validated production deployment (the prepared rewrite currently identifies the existing protected branch), deploy it, and only then mark `webAppAvailable` true. Keep marketing policies accessible throughout.
-5. Configure the functional default payment link and validate the approved-host checkout before opening sales. Keep the old subdomain until the new route has passed; retire or redirect it separately after cutover.
+The approved 1.0.0 question release is published in private production Storage. Paddle saved and approved the canonical default payment link; the authenticated live SDK opens the actual checkout. Owner-created production signup/verification, Clerk/Supabase binding, 40 free questions and a completed practice result saved to cloud storage pass. Production recovery/returning sign-in and cross-browser progress restoration subsequently pass. Actual paid sandbox delivery of all 500 questions, refund revocation and replacement payment fulfillment also pass using the exact production delivery source. No real charge, production paid customer download, account deletion or physical-device acceptance is claimed. See [current launch status](LAUNCH_STATUS.md).
 
-References: https://developer.paddle.com/build/go-live-checklist/ ; https://docs.expo.dev/more/expo-cli/#hosting-with-sub-paths ; https://vercel.com/docs/routing/rewrites
+## Appearance route compatibility
+
+The installed Expo base-path parser strips /app from an internal /appearance destination without a segment boundary, producing /earance. Both Appearance controls use /display, which resolves correctly through the actual parser; /earance redirects to /display to recover old failed URLs. Existing direct /app/appearance bookmarks still work. No framework dependency or preference-storage change is required.
 
 ## Verification
 
-The migration commit passed all 215 app tests in GitHub CI, TypeScript, source/Edge/content checks and a full Expo export. Both Vercel preview projects built successfully. On the hosted protected app, `/app/auth/sign-in` renders the actual email/password form without console errors; no account or payment was submitted. Local combined-host checks passed root, all policy/pricing routes, auth callback and checkout-return deep links. Browser onboarding, guest home, a five-question practice session and reloading `/app/quiz` stayed under the mount without console errors. These checks do not establish live production signup, recovery, checkout, content publication or deletion acceptance.
+All 238 app tests, TypeScript, 96 source-file checks, seven Edge entrypoints, content integrity and full Expo export pass in CI. Both Vercel app/review builds pass. Actual production checks pass Home/Account Appearance navigation, Daylight/Night drive palettes, reload retention and recovery from /app/earance. App/auth/checkout/quiz deep links, JavaScript and all root policy/support pages return 200. Guest onboarding/practice/reload pass without browser errors. Nine backend rejection/preflight probes pass after cutover; anonymous full-pack Storage reads remain denied.
+
+References: https://developer.paddle.com/build/go-live-checklist/ ; https://docs.expo.dev/more/expo-cli/#hosting-with-sub-paths ; https://vercel.com/docs/routing/rewrites

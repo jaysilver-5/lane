@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-24T18:50:26.726Z",
+  "project": "jinbdlckkyzffnocuugn",
+  "ownerReportedAccountVerified": true,
+  "verifiedAccounts": 1,
+  "mappedSessions": 2,
+  "profiles": 1,
+  "cloudProgressRows": 1,
+  "completedCloudSessions": 1,
+  "lastProgressWrite": "2026-10-24T18:30:47.44844Z",
+  "clerkSupabaseIntegrationPassed": true,
+  "verifiedFreeBank40QuestionsOpened": true,
+  "freeQuestionChecked": "ON-G1-0353",
+  "testSession": {
+    "answers": 1,
+    "correct": 1,
+    "finishedEarly": true
+  },
+  "crossBrowserRestorePassed": true,
+  "emailRecoveryPassed": true,
+  "paidContentDeliveryPassed": false,
+  "accountDeletionPassed": false,
+  "note": "Actual owner-created verified production account. One short QA practice result was saved through the normal UI and confirmed in production cloud storage; no password, code or session token was extracted.",
+  "ownerReportedRecoveredAndSignedIn": true,
+  "returningSignInPassed": true,
+  "canonicalAccountPreserved": true,
+  "cloudSessionsAfterRecovery": 1,
+  "restoredQuestionCount": 1,
+  "restoredAccuracyPercent": 100,
+  "progressFingerprint": "2eeafb7fdd5168bb041b67613555397b",
+  "browsers": [
+    "In-app browser",
+    "Chrome"
+  ],
+  "proof": "qa/production-recovery-cross-browser-progress.png",
+  "appConsoleErrors": 0,
+  "extensionOnlyErrorsExcluded": true
+}
