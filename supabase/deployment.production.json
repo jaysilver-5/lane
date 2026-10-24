@@ -80,10 +80,11 @@
     "previewBrowserTokenAbsent": true,
     "checkoutDomain": "app.getfirstlane.com",
     "checkoutDomainId": "chedom_01m5psjn2q2sh4bftmv8pbv4h4",
-    "checkoutDomainStatus": "changes-needed",
-    "checkoutDomainReason": null,
+    "checkoutDomainStatus": "in-review",
+    "checkoutDomainReason": "Owner reports Paddle requested app.getfirstlane.com be available for review; public HTTPS page deployed and existing entry resubmitted.",
     "defaultPaymentLink": null,
-    "plannedDefaultPaymentLink": "https://app.getfirstlane.com/checkout"
+    "plannedDefaultPaymentLink": "https://app.getfirstlane.com/checkout",
+    "checkoutDomainResubmittedDate": "2026-10-24"
   },
   "clerk": {
     "applicationId": "app_3L1ENrJ6R5Z2BKMPH7Ulpy8K7KP",
@@ -124,7 +125,7 @@
     "buildMachine": "basic-2-vCPU-8GB",
     "onDemandConcurrentBuilds": false,
     "domain": "app.getfirstlane.com",
-    "domainEnvironment": "preview",
+    "domainEnvironment": "public-review-site-production",
     "domainCname": "18ca7189418b9b74.vercel-dns-016.com",
     "domainDnsVerified": true,
     "previewEnvironmentConfigured": true,
@@ -137,12 +138,28 @@
     "verifiedPreviewCommit": "58f6bd22bc097fd93c93e56a53192dbc3f94aa83",
     "verifiedPreviewUrl": "https://firstlane-oq92ab693-joshs-projects-e9dac4f7.vercel.app",
     "domainTlsVerified": true,
-    "unauthenticatedDomainResponse": "302-to-Vercel-SSO-over-valid-TLS",
-    "localResolverStatus": "cached-NXDOMAIN-after-authoritative-CNAME-update",
+    "unauthenticatedDomainResponse": "200-public-prelaunch-product-page-over-valid-TLS",
+    "localResolverStatus": "resolved-public-browser-access-passed",
     "hostedGuestPractice": "passed-start-and-reload-same-question",
-    "hostedSignInRendering": "passed-no-login-submitted"
+    "hostedSignInRendering": "passed-no-login-submitted",
+    "domainAssignedToProject": "firstlane-review",
+    "protectedAppBranchUrl": "https://firstlane-app-git-codex-firstlan-d306dd-joshs-projects-e9dac4f7.vercel.app/",
+    "unauthenticatedAppBranchResponse": "302-to-Vercel-SSO",
+    "publicReviewSite": {
+      "projectName": "firstlane-review",
+      "projectId": "prj_sk41zr4wcx9rBkCibNISfNTJo9Rm",
+      "rootDirectory": "review-site",
+      "productionBranch": "codex/firstlane-production-web",
+      "outsideRootIncluded": false,
+      "environmentVariablesAdded": false,
+      "verifiedDeploymentId": "4ifg6K7cqa4E1rSCkwceiE3Ce6ba",
+      "verifiedSourceCommit": "ea368c98cca0877504b3c5a04b4cd76a7fd79c9b",
+      "domain": "app.getfirstlane.com",
+      "anonymousHttps": "passed-200-with-assets-and-policy-routes",
+      "checkoutEnabled": false
+    }
   },
-  "configurationStatus": "protected-preview-deployed-production-browser-token-configured-Paddle-app-domain-changes-needed-public-release-gated",
+  "configurationStatus": "public-product-review-page-deployed-Paddle-app-domain-resubmitted-in-review-actual-app-protected-public-sales-gated",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",
