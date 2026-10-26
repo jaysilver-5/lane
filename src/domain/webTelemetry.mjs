@@ -3,7 +3,8 @@
 const screens = new Set([
   '/', '/study', '/progress', '/profile', '/plans', '/onboarding', '/quiz',
   '/results', '/session-review', '/question', '/topic', '/saved', '/mistakes',
-  '/display', '/membership', '/account', '/legal', '/support', '/checkout',
+  '/display', '/membership', '/account', '/legal', '/support', '/history',
+  '/review', '/report', '/study-plan', '/jurisdiction', '/exam', '/downloads', '/content-status',
   '/auth/sign-in', '/auth/sign-up', '/auth/forgot-password',
   '/auth/reset-password', '/auth/verify-email',
 ]);

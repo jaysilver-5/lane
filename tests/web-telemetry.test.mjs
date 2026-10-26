@@ -11,15 +11,15 @@ test('screen reporting respects the app mount and strips query/fragment data', (
 });
 
 test('auth callbacks, payment returns and unknown paths are excluded', () => {
-  for (const path of ['/app/auth/callback?code=secret', '/app/auth/sso', '/app/checkout/return?transaction=private', '/app/learner/private-id', '/application', '/privacy']) {
+  for (const path of ['/app/auth/callback?code=secret', '/app/auth/sso', '/app/checkout', '/app/checkout?payment=returned&transaction=private', '/app/payment-success', '/app/checkout/return?transaction=private', '/app/learner/private-id', '/application', '/privacy']) {
     assert.equal(telemetryRoute(path), null, path);
     assert.equal(sanitizeTelemetryEvent({ type: 'vital', url: 'https://www.getfirstlane.com' + path }), null, path);
   }
 });
 
 test('performance reports contain only a known screen URL and route', () => {
-  assert.deepEqual(sanitizeTelemetryEvent({ type: 'vital', url: 'https://www.getfirstlane.com/app/checkout?transaction=private', route: '/app/checkout?transaction=private' }), {
-    type: 'vital', url: 'https://www.getfirstlane.com/app/checkout', route: '/app/checkout',
+  assert.deepEqual(sanitizeTelemetryEvent({ type: 'vital', url: 'https://www.getfirstlane.com/app/quiz?question=private', route: '/app/quiz?question=private' }), {
+    type: 'vital', url: 'https://www.getfirstlane.com/app/quiz', route: '/app/quiz',
   });
   for (const url of ['javascript:alert(1)', 'data:text/plain,private', 'https://user:secret@www.getfirstlane.com/app']) {
     assert.equal(sanitizeTelemetryEvent({ type: 'pageview', url }), null);
