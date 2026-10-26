@@ -5,8 +5,8 @@
   "outputDirectory": "dist",
   "redirects": [{ "source": "/", "destination": "/app", "permanent": false }],
   "rewrites": [
-    { "source": "/app/_vercel/insights/:path*", "destination": "/_vercel/insights/:path*" },
-    { "source": "/app/_vercel/speed-insights/:path*", "destination": "/_vercel/speed-insights/:path*" },
+    { "source": "/app/_vercel/insights/:path*", "destination": "https://project-n8lqe.vercel.app/_vercel/insights/:path*" },
+    { "source": "/app/_vercel/speed-insights/:path*", "destination": "https://project-n8lqe.vercel.app/_vercel/speed-insights/:path*" },
     { "source": "/app/_expo/:path*", "destination": "/_expo/:path*" },
     { "source": "/app/assets/:path*", "destination": "/assets/:path*" },
     { "source": "/app/favicon.ico", "destination": "/favicon.ico" },

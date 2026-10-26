@@ -1,6 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { telemetryRoute, sanitizeTelemetryEvent } from '../src/domain/webTelemetry.mjs';
+
+test('telemetry proxies reach native handlers before the app fallback', () => {
+  const host = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+  assert.deepEqual(host.rewrites.slice(0, 2), ['insights', 'speed-insights'].map(service => ({
+    source: `/app/_vercel/${service}/:path*`,
+    destination: `https://project-n8lqe.vercel.app/_vercel/${service}/:path*`,
+  })));
+});
 
 test('screen reporting respects the app mount and strips query/fragment data', () => {
   for (const path of ['/', '/app', '/app/']) assert.equal(telemetryRoute(path), '/app');
