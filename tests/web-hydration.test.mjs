@@ -150,6 +150,7 @@ test('root navigator survives hydration while its selected screen and account fr
     '../src/domain/availability.mjs': { sessionRequiresUpgrade: () => false }, '../content/sample-manifest.json': {},
     '../src/components/UI': Object.fromEntries(['Toast', 'Sheet', 'Muted', 'Button', 'Note'].map(name => [name, name])),
     '../src/components/WebFrame': { WebFrame: 'WebFrame' },
+    '../src/components/WebTelemetry': { WebTelemetry: 'WebTelemetry' },
     '../src/lib/webAccount': { WebAccountProvider: 'WebAccountProvider', useWebAccount: () => ({ error: '' }) },
   });
   const navigation = nodes(root.default()).find(node => node.type?.name === 'Navigation');

@@ -5,6 +5,8 @@
   "outputDirectory": "dist",
   "redirects": [{ "source": "/", "destination": "/app", "permanent": false }],
   "rewrites": [
+    { "source": "/app/_vercel/insights/:path*", "destination": "/_vercel/insights/:path*" },
+    { "source": "/app/_vercel/speed-insights/:path*", "destination": "/_vercel/speed-insights/:path*" },
     { "source": "/app/_expo/:path*", "destination": "/_expo/:path*" },
     { "source": "/app/assets/:path*", "destination": "/assets/:path*" },
     { "source": "/app/favicon.ico", "destination": "/favicon.ico" },
@@ -13,7 +15,7 @@
   ],
   "headers": [{ "source": "/(.*)", "headers": [
     { "key": "X-Content-Type-Options", "value": "nosniff" },
-    { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+    { "key": "Referrer-Policy", "value": "strict-origin" },
     { "key": "X-Frame-Options", "value": "DENY" },
     { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
     { "key": "Cache-Control", "value": "no-cache" },
