@@ -110,8 +110,8 @@ export function WebEmailAuth() {
   return <Screen back title="Continue with email">
     <Logo size={32}/>
     <Heading eyebrow={phase === 'email' ? 'YOUR FIRSTLANE ACCOUNT' : phase === 'code' ? 'CHECK YOUR INBOX' : 'YOUR FREE ACCOUNT'}
-      sub={phase === 'email' ? 'New here or coming back? We’ll email you a code. No password needed.' : phase === 'code' ? `Enter the six-digit code sent to ${email.trim()}. Check spam if you don’t see it.` : 'Your email is verified. Confirm these details to finish creating your account.'}>
-      {phase === 'email' ? 'Your next step starts here.' : phase === 'code' ? 'A code, and you’re in.' : 'Make it your journey.'}
+      sub={phase === 'email' ? 'New here or coming back? Enter your email. No password to remember.' : phase === 'code' ? `Enter the six-digit code sent to ${email.trim()}. Check spam if you don’t see it.` : 'Your email is verified. Confirm these details to finish creating your account.'}>
+      {phase === 'email' ? 'Continue with a one-time code.' : phase === 'code' ? 'A code, and you’re in.' : 'Make it your journey.'}
     </Heading>
     {error && <Note tone="warning">{error}</Note>}
     {session ? <>
@@ -120,7 +120,7 @@ export function WebEmailAuth() {
     </> : phase === 'email' ? <>
       <Field label="Email address" value={email} onChangeText={setEmail} editable={!busy} autoCapitalize="none" keyboardType="email-address" autoComplete="email" placeholder="you@example.com" onSubmitEditing={() => { if (!busy) void run(send); }}/>
       <Button disabled={busy} loading={busy} onPress={() => run(send)}>Continue with email</Button>
-      <Muted size={12}>We’ll remember you in this browser while your session is active.</Muted>
+      <Muted size={12}>You won’t need a code every visit. We’ll keep you signed in on this browser while your session is active.</Muted>
       <Button kind="ghost" icon={null} disabled={busy} onPress={() => router.replace(passwordPath as never)}>Use my password instead</Button>
       <div id="clerk-captcha"/>
     </> : phase === 'code' ? <>
