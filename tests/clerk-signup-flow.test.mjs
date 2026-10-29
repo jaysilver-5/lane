@@ -8,8 +8,8 @@ import { withWebBasePath } from '../src/domain/webLocation.mjs';
 
 // Exercise the actual form with immutable Clerk hook snapshots. No credentials,
 // live account creation, timers, or backend requests are involved.
-function form({ outcome = 'complete', failure = null, mode = 'verify-email', initialComplete = false } = {}) {
-  const slots = [], effects = [], urls = [], finalized = [], updates = [], passwords = [], codeRequests = [];
+function form({ outcome = 'complete', failure = null, mode = 'verify-email', initialComplete = false, authenticationMethods, socialFailure = null } = {}) {
+  const slots = [], effects = [], urls = [], finalized = [], updates = [], passwords = [], codeRequests = [], socialRequests = [];
   let index = 0, changed = true, tree, currentSession = null;
   const element = (type, props) => ({ type, props: props || {} });
   const react = {
@@ -26,6 +26,7 @@ function form({ outcome = 'complete', failure = null, mode = 'verify-email', ini
   };
   let signup;
   const methods = {
+    async sso(details) { socialRequests.push({ flow: 'sign-up', ...details }); return { error: socialFailure }; },
     async finalize(options) { finalized.push(signup.status); options.navigate({ session: { status: 'active' }, decorateUrl: url => url }); return { error: null }; },
     async update(details) { updates.push(details); signup = { ...signup, status: 'complete', missingFields: [], unverifiedFields: [] }; changed = true; return { error: null }; },
     async password(details) { passwords.push({ ...details, attempt: signup.id, emailVerification: signup.verifications.emailAddress.status }); signup = { ...signup, status: 'complete', hasPassword: true, missingFields: [], unverifiedFields: [] }; changed = true; return { error: null }; },
@@ -46,14 +47,14 @@ function form({ outcome = 'complete', failure = null, mode = 'verify-email', ini
     '../lib/webLocation': { appWebPath: withWebBasePath },
     react, 'react/jsx-runtime': { jsx: element, jsxs: element, Fragment: 'Fragment' },
     'react-native': { ActivityIndicator: 'ActivityIndicator', Pressable: 'Pressable', View: 'View' },
-    '@clerk/react': { HandleSSOCallback: 'HandleSSOCallback', useClerk: () => ({ loaded: true }), useSession: () => ({ session: currentSession, isLoaded: true }), useSignIn: () => ({ signIn: {} }), useSignUp: () => ({ signUp: signup, fetchStatus: 'idle' }) },
+    '@clerk/react': { HandleSSOCallback: 'HandleSSOCallback', useClerk: () => ({ loaded: true }), useSession: () => ({ session: currentSession, isLoaded: true }), useSignIn: () => ({ signIn: { async sso(details) { socialRequests.push({ flow: 'sign-in', ...details }); return { error: socialFailure }; } } }), useSignUp: () => ({ signUp: signup, fetchStatus: 'idle' }) },
     'expo-router': { useRouter: () => router, useLocalSearchParams: () => ({ next: '/plans' }) },
     './UI': ui, './Checkbox': { Checkbox: 'Checkbox' }, './SocialAuthButton': { SocialAuthButton: 'SocialAuthButton' },
     '../state/AppState': { useApp: () => ({ finishOnboarding() {}, colors: { success: '#123' } }) },
     '../lib/webAccount.web': { clerkConfigured: true, useWebAccount: () => ({ identity: null, error: '' }) },
     '../domain/authFlow.mjs': { authDestination: value => value || '/plans' },
     '../domain/clerkSignup.mjs': { clerkSignupStep },
-    '../../web-launch-scope.json': JSON.parse(fs.readFileSync(new URL('../web-launch-scope.json', import.meta.url), 'utf8')),
+    '../../web-launch-scope.json': authenticationMethods ? { authenticationMethods } : JSON.parse(fs.readFileSync(new URL('../web-launch-scope.json', import.meta.url), 'utf8')),
   };
   const source = fs.readFileSync(new URL('../src/components/WebAuth.tsx', import.meta.url), 'utf8');
   const js = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX } }).outputText;
@@ -66,23 +67,61 @@ function form({ outcome = 'complete', failure = null, mode = 'verify-email', ini
   async function flush() { for (let pass = 0; pass < 20; pass++) { if (changed) render(); await Promise.resolve(); } }
   render();
   return {
-    finalized, urls, updates, passwords, codeRequests, flush, find,
+    finalized, urls, updates, passwords, codeRequests, socialRequests, flush, find,
     text: () => JSON.stringify(tree),
     async verify() { find('Field', props => props.label === 'Verification code').onChangeText('123456'); await flush(); await find('Button', props => props.children === 'Verify & continue').onPress(); await flush(); },
     async setSession(session) { currentSession = session; changed = true; await flush(); },
   };
 }
 
-test('web signup and sign-in offer email/password without unfinished social methods', () => {
+test('email-only scope retains email/password and the legacy SSO fallback', () => {
   for (const mode of ['sign-up', 'sign-in']) {
-    const app = form({ mode });
+    const app = form({ mode, authenticationMethods: ['email_password'] });
     app.find('Field', props => props.label === 'Email address');
     app.find('Field', props => props.label === 'Password');
     assert.doesNotMatch(app.text(), /SocialAuthButton|or continue with email/);
   }
-  const legacy = form({ mode: 'sso' });
+  const legacy = form({ mode: 'sso', authenticationMethods: ['email_password'] });
   assert.match(legacy.text(), /Continue with email/);
   assert.doesNotMatch(legacy.text(), /HandleSSOCallback/);
+});
+
+test('social sign-in uses the mounted callback and preserves the destination for both providers', async () => {
+  for (const strategy of ['oauth_google', 'oauth_apple']) {
+    const app = form({ mode: 'sign-in' });
+    await app.find('SocialAuthButton', props => props.strategy === strategy).onPress(); await app.flush();
+    assert.equal(app.socialRequests.length, 1);
+    assert.equal(app.socialRequests[0].flow, 'sign-in');
+    assert.equal(app.socialRequests[0].strategy, strategy);
+    assert.equal(app.socialRequests[0].redirectCallbackUrl, '/app/auth/sso?next=%2Fplans');
+    assert.equal(app.socialRequests[0].redirectUrl, '/app/auth/callback?next=%2Fplans');
+    assert.equal('legalAccepted' in app.socialRequests[0], false);
+  }
+});
+
+test('social signup waits for explicit terms and age consent before contacting the provider', async () => {
+  for (const strategy of ['oauth_google', 'oauth_apple']) {
+    const app = form({ mode: 'sign-up' });
+    await app.find('SocialAuthButton', props => props.strategy === strategy).onPress(); await app.flush();
+    assert.equal(app.socialRequests.length, 0);
+    const label = `Agree & continue to ${strategy === 'oauth_google' ? 'Google' : 'Apple'}`;
+    assert.equal(app.find('Button', props => [props.children].flat().join('') === label).disabled, true);
+    app.find('Checkbox', props => props.label.startsWith('I agree')).onChange(true);
+    app.find('Checkbox', props => props.label.startsWith('I am 16')).onChange(true); await app.flush();
+    assert.equal(app.find('Button', props => [props.children].flat().join('') === label).disabled, false);
+    await app.find('Button', props => [props.children].flat().join('') === label).onPress(); await app.flush();
+    assert.equal(app.socialRequests.length, 1);
+    assert.equal(app.socialRequests[0].flow, 'sign-up');
+    assert.equal(app.socialRequests[0].legalAccepted, true);
+  }
+});
+
+test('a rejected social connection reports the failure without finalizing a session', async () => {
+  const app = form({ mode: 'sign-in', socialFailure: { message: 'The provider connection was cancelled.' } });
+  await app.find('SocialAuthButton', props => props.strategy === 'oauth_google').onPress(); await app.flush();
+  assert.match(app.text(), /The provider connection was cancelled/);
+  assert.deepEqual(app.finalized, []); assert.deepEqual(app.urls, []);
+  assert.equal(app.find('SocialAuthButton', props => props.strategy === 'oauth_google').busy, false);
 });
 
 test('accepted code finalizes the replacement Clerk resource without a stale missing-details warning', async () => {

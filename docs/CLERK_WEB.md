@@ -1,5 +1,16 @@
 # Clerk web setup — 21 October 2026
 
+## Production social sign-in preparation — 29 October 2026
+
+The owner requested Google and Apple sign-in on the existing production custom domain. The prepared scope enables the existing custom buttons and OAuth callback flow. Keep this change in draft until provider configuration and real browser acceptance are complete; the live application still offers email/password. `clerkSocialSignInPassed` remains false.
+
+Production Clerk currently has both connections disabled and empty custom credential fields. Both providers use the exact callback `https://clerk.getfirstlane.com/v1/oauth_callback`; the app continuation stays under `https://www.getfirstlane.com/app/auth/sso` and `/app/auth/callback`.
+
+- Google: identify the owner's FirstLane Cloud project (or create a dedicated one), configure the OAuth consent screen and a Web application client with the main-domain origins and the Clerk callback, then securely save the client ID/secret in Clerk. No FirstLane project matched the search in the currently signed-in Google account. Do not reuse an unrelated application's OAuth client.
+- Apple: confirm the intended Apple Developer team, then configure its Sign in with Apple App ID, Services ID, Team ID, Key ID, private key, return URL and private email relay source. The currently signed-in team is blocked by an Access Unavailable notice until its Account Holder accepts the latest Program License Agreement. The owner must resolve that agreement directly; no agreement was accepted or credential created.
+
+After configuring each connection, test first-time signup, existing-account sign-in, cancellation, reload/session restoration, account linking and server-confirmed free-question access. Record actual results before setting social acceptance true or promoting the scope change. If only Google is ready, remove `oauth_apple` from the scope for a Google-only rollout.
+
 ## Web-only launch acceptance follow-up — 24 October 2026
 
 Owner confirmed web only, Paddle browser payments and email/password sign-in for the initial release. `web-launch-scope.json` drives the visible authentication methods and conditional social acceptance requirement. Production Clerk Google and Apple connections were enabled but both showed Setup required with missing custom credentials; both are now disabled for the selected email/password launch. No Google Cloud project, provider key or mobile release is required for this selected scope. Browser billing uses Paddle; native billing remains a separate RevenueCat/store path. No native billing setting changed.
