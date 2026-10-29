@@ -1,6 +1,7 @@
 {
   "newSupabaseProjectVerified": true,
   "authEmailAndRecoveryPassed": true,
+  "authEmailCodePassed": false,
   "webProgressSyncPassed": true,
   "backendSecurityPassed": true,
   "paddleSandboxPassed": true,

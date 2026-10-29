@@ -56,6 +56,8 @@ test('email-only launch needs no social approval; exposing a social provider req
  try {
   const save=methods=>fs.writeFileSync(path.join(folder,'web-launch-scope.json'),JSON.stringify({authenticationMethods:methods}));
   save(['email_password']);assert.deepEqual(webAuthenticationIssues(folder,{clerkSocialSignInPassed:false}),[]);
+  save(['email_code','email_password']);assert.match(webAuthenticationIssues(folder,{}).join('\n'),/authEmailCodePassed/);
+  assert.deepEqual(webAuthenticationIssues(folder,{authEmailCodePassed:true}),[]);
   for(const provider of ['oauth_google','oauth_apple']){
    save(['email_password',provider]);assert.match(webAuthenticationIssues(folder,{}).join('\n'),/clerkSocialSignInPassed/);
    assert.deepEqual(webAuthenticationIssues(folder,{clerkSocialSignInPassed:true}),[]);
