@@ -1,17 +1,18 @@
 {
   "newSupabaseProjectVerified": true,
-  "authEmailAndRecoveryPassed": false,
-  "webProgressSyncPassed": false,
-  "backendSecurityPassed": false,
-  "paddleSandboxPassed": false,
-  "paddleLiveConfigured": false,
-  "refundAndReplayPassed": false,
+  "authEmailAndRecoveryPassed": true,
+  "authEmailCodePassed": true,
+  "webProgressSyncPassed": true,
+  "backendSecurityPassed": true,
+  "paddleSandboxPassed": true,
+  "paddleLiveConfigured": true,
+  "refundAndReplayPassed": true,
   "accountDeletionPassed": false,
-  "contentDeliveryPassed": false,
+  "contentDeliveryPassed": true,
   "webAccessibilityPassed": false,
   "legalReviewed": false,
   "reviewer": "",
   "reviewedAt": "",
   "clerkSocialSignInPassed": false,
-  "clerkSupabaseIntegrationPassed": false
+  "clerkSupabaseIntegrationPassed": true
 }

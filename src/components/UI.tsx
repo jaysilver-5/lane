@@ -120,7 +120,7 @@ export function SectionHead({ title, action, onPress }: {
     title: string;
     action?: string;
     onPress?: () => void;
-}) { const { colors } = useApp(); return <Row style={{ justifyContent: 'space-between' }}><Copy size={19} weight="700" style={{ flexShrink: 1 }}>{title}</Copy>{action ? <Pressable onPress={onPress} accessibilityRole="button" hitSlop={12}><Copy size={12} color={colors.muted} weight="600">{action} →</Copy></Pressable> : null}</Row>; }
+}) { const { colors } = useApp(); return <Row style={{ justifyContent: 'space-between' }}><Copy size={19} weight="700" style={{ flexShrink: 1 }}>{title}</Copy>{action ? <Pressable onPress={onPress} accessibilityRole="button" hitSlop={12} style={{ minHeight: 44, minWidth: 44, paddingLeft: 8, justifyContent: 'center' }}><Copy size={12} color={colors.muted} weight="600">{action} →</Copy></Pressable> : null}</Row>; }
 export function Field({ label, error, accessory, style, onFocus, onBlur, ...props }: TextInputProps & {
     label: string;
     error?: string;

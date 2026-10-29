@@ -47,8 +47,8 @@
   ],
   "functions": {
     "clerk-account": 3,
-    "free-questions": 3,
-    "content-pack": 3,
+    "free-questions": 6,
+    "content-pack": 8,
     "delete-account": 4,
     "paddle-checkout": 3,
     "paddle-webhook": 4
@@ -83,7 +83,7 @@
     "checkoutDomainStatus": "in-review",
     "checkoutDomainReason": null,
     "defaultPaymentLink": null,
-    "plannedDefaultPaymentLink": "https://app.getfirstlane.com/checkout",
+    "plannedDefaultPaymentLink": "https://www.getfirstlane.com/app/checkout",
     "checkoutDomainResubmittedDate": "2026-10-24",
     "checkoutDomainLastRequestedChange": "public-reachability-and-valid-HTTPS",
     "checkoutDomainResolutionFix": "existing-CNAME-republished;all-four-authoritative-servers-serial-2026102406;Google-and-Cloudflare-fresh-DNS-queries-and-normal-HTTPS-passed"
@@ -91,7 +91,7 @@
   "clerk": {
     "applicationId": "app_3L1ENrJ6R5Z2BKMPH7Ulpy8K7KP",
     "productionInstanceId": "ins_3L7cxxieAWLKyxHkbJs45atlkfd",
-    "applicationDomain": "app.getfirstlane.com",
+    "applicationDomain": "www.getfirstlane.com",
     "frontendApiHost": "clerk.getfirstlane.com",
     "primaryApplication": true,
     "dnsVerified": true,
@@ -103,8 +103,8 @@
     "issuerUrl": "https://clerk.getfirstlane.com",
     "jwksHttpsValidation": "passed-200-one-signing-key",
     "clerkSupabaseIntegrationEnabled": true,
-    "signInUrl": "https://app.getfirstlane.com/auth/sign-in",
-    "signUpUrl": "https://app.getfirstlane.com/auth/sign-up",
+    "signInUrl": "https://www.getfirstlane.com/app/auth/sign-in",
+    "signUpUrl": "https://www.getfirstlane.com/app/auth/sign-up",
     "legalConsentRequired": true,
     "productionLoginAcceptancePassed": false,
     "launchAuthenticationMethods": [
@@ -119,15 +119,15 @@
   "hosting": {
     "teamSlug": "joshs-projects-e9dac4f7",
     "observedPlan": "pro",
-    "productionAppDeployed": false,
+    "productionAppDeployed": true,
     "sourcePullRequest": "https://github.com/jaysilver-5/lane/pull/1",
     "upgradeStatus": "owner-completed-and-verified",
     "projectName": "firstlane-app",
     "projectId": "prj_X7IzsBQvdB1n1pqugpYYBA63CRBf",
     "projectUrl": "https://vercel.com/joshs-projects-e9dac4f7/firstlane-app",
     "repository": "jaysilver-5/lane",
-    "productionBranch": "main",
-    "previewBranch": "codex/firstlane-production-web",
+    "productionBranch": "codex/firstlane-main-domain-app",
+    "previewBranch": "codex/firstlane-main-domain-app",
     "protection": "Vercel Authentication: All Deployments",
     "buildCommand": "npm run web:build",
     "outputDirectory": "dist",
@@ -142,7 +142,7 @@
     "productionEnvironmentConfigured": true,
     "productionBrowserPaymentTokenConfigured": true,
     "previewLivePaymentsEnabled": false,
-    "productionBuild": "blocked-by-existing-content-and-acceptance-checks",
+    "productionBuild": "ready-protected-acceptance-candidate",
     "previewDeployment": "ready",
     "verifiedPreviewDeploymentId": "6MxnANHmC3AtQomauSELLQ9EGznz",
     "verifiedPreviewCommit": "12ead17e963f50a23efb4aa57898d51a50cb72f7",
@@ -190,16 +190,25 @@
       "previousStaleAuthoritativeIp": "95.85.47.7",
       "zoneRepublished": true,
       "recordValuesChanged": false
-    }
+    },
+    "acceptanceStage": "acceptance",
+    "verifiedProductionDeploymentId": "F29VLxbhnVBRuZuvWLjLC7oY8SjG",
+    "verifiedProductionCommit": "daf6fd84a496f927d8e8c74c299a7f6a62165f69",
+    "verifiedProductionUrl": "https://firstlane-g1ib6123g-joshs-projects-e9dac4f7.vercel.app/app",
+    "productionAlias": "https://project-n8lqe.vercel.app",
+    "productionGuestChecks": "passed-onboarding-approved-revised-question-answer-explanation-and-quiz-reload-progress-preserved",
+    "productionSignInRendering": "passed-no-credentials-entered",
+    "unauthenticatedProductionResponse": "302-to-Vercel-SSO",
+    "canonicalAppCutover": "pending-www-app-currently-404"
   },
-  "configurationStatus": "email-password-web-preview-verified-DNS-synchronized-Paddle-domain-in-review-content-and-final-acceptance-pending",
+  "configurationStatus": "approved-500-question-release-published-canonical-account-payment-and-operating-acceptance-pending",
   "publicSalesEnabled": false,
   "acceptance": {
     "schemaIsolationAndSessionChecks": "passed-with-rollback",
     "syntheticLiveCommerceChecks": "passed-with-rollback",
     "continuousPracticeChecks": "passed-with-rollback",
     "unconfiguredEndpointRejection": "passed",
-    "approvedPublishedContent": false,
+    "approvedPublishedContent": true,
     "realLivePurchase": false
   },
   "launchReadiness": {
@@ -210,7 +219,7 @@
       "email_password"
     ],
     "paymentProvider": "paddle",
-    "approvedPublishedReleases": 0,
+    "approvedPublishedReleases": 1,
     "privateReviewApprovedQuestions": 0,
     "productionDeletionInputChecks": "passed-v4-400-401-403-204",
     "databaseDeletionChecks": "passed-all-synthetic-fixtures-rolled-back",
@@ -220,6 +229,18 @@
     "nativeLaunchInScope": false,
     "details": "docs/LAUNCH_READINESS.md",
     "hostedEmailPasswordRendering": "passed-protected-web-preview",
-    "reliablePublicDnsPassed": true
+    "reliablePublicDnsPassed": true,
+    "ownerAcceptedEditorialQuestions": 500
+  },
+  "contentApproval": {
+    "version": "1.0.0",
+    "questions": 500,
+    "basis": "owner_accepted_ai_editorial_review",
+    "independentHumanReview": false,
+    "artifactSha256": "21bf800ca3444d2a0a730eb164f9413b74a9f102b6400a956f92cd3b96fd9261",
+    "bytes": 1333762,
+    "publication": "published-private-versioned-storage-and-approved-registry",
+    "publishedAt": "2026-10-24T17:42:48.594971Z",
+    "storagePath": "ontario-g1-1.0.0-21bf800c.json"
   }
 }

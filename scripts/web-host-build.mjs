@@ -6,7 +6,7 @@ import { resolve } from 'node:path';
 export function webHostBuildSteps(env) {
   // Vercel's production context must not silently export a sandbox app.
   if (env.VERCEL_ENV === 'production' || env.EXPO_PUBLIC_APP_MODE === 'production') {
-    return [['scripts/web-release.mjs']];
+    return [['scripts/web-release.mjs', ...(env.FIRSTLANE_WEB_DEPLOYMENT_STAGE==='acceptance'?['--acceptance']:[])]];
   }
   return [
     ['scripts/bundle-content.mjs', '--web'],

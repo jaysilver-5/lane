@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {renderReviewWorkbench} from '../scripts/content-review-template.mjs';
-function workbench(){
+function workbench(ownerApproval=null){
  const questions=Array.from({length:500},(_,i)=>({id:`q${i}`,code:`ON-G1-${String(i+1).padStart(4,'0')}`,revision_id:`r${i}`,topic:'Topic',prompt:i===0?'Synthetic </script> prompt':'Synthetic prompt',options:[{id:'a',text:'A'},{id:'b',text:'B'}],correct_option_id:'a',explanation:'Synthetic explanation',evidence:[]}));
  const revisions=questions.map(q=>({sha256:'a'.repeat(64),tier:'paid'})),bank={version:'test',questions,sources:[],coverage:{known_gaps:['Synthetic review gap']}};
- const html=renderReviewWorkbench(bank,'b'.repeat(64),revisions),elements=new Map(),storage=new Map();let exported;
+ const html=renderReviewWorkbench(bank,'b'.repeat(64),revisions,ownerApproval),elements=new Map(),storage=new Map();let exported;
  const el=()=>({value:'',textContent:'',children:[],append(...nodes){this.children.push(...nodes);},replaceChildren(...nodes){this.children=nodes;},focus(){},click(){}});
  const get=id=>{if(!elements.has(id))elements.set(id,el());return elements.get(id);};get('data').textContent=html.match(/id="data">([\s\S]*?)<\/script>/)[1];get('filter').value='all';
  const source=html.match(/<script>([\s\S]*)<\/script>/)[1];
@@ -14,6 +14,12 @@ function workbench(){
 }
 test('review workbench starts with 500 unapproved exact revisions and safely embeds answer-key text',()=>{
  const f=workbench();assert.match(f.get('progress').textContent,/0 \/ 500/);assert.equal(f.get('prompt').textContent,'Synthetic </script> prompt');assert.equal(f.storage.size,0);assert.equal(f.get('export').disabled,true);
+});
+test('accepted editorial release is shown without fabricating separate human decisions',()=>{
+ const f=workbench({version:'1.0.0',questionCount:500});
+ assert.match(f.get('approval').textContent,/CONTENT APPROVED: 500 \/ 500/);
+ assert.match(f.get('progress').textContent,/Optional independent decisions: 0 \/ 500/);
+ assert.equal(f.storage.size,0);
 });
 test('anonymous decisions and correction flags without a reason are not saved',()=>{
  const f=workbench();f.get('save').onclick();assert.equal(f.storage.size,0);assert.match(f.get('status').textContent,/name or ID/);

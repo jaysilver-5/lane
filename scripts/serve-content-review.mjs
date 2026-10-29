@@ -1,7 +1,8 @@
 import {createServer} from 'node:http';
 import {readFile} from 'node:fs/promises';
 const file=new URL('../content/review/ontario-g1.review-workbench.html',import.meta.url);
-const port=4175;
+const port=Number(process.env.FIRSTLANE_CONTENT_REVIEW_PORT||4175);
+if(!Number.isInteger(port)||port<1024||port>65535)throw Error('Choose a review port between 1024 and 65535.');
 createServer(async(req,res)=>{
  if(req.headers.host!==`127.0.0.1:${port}`||!['GET','HEAD'].includes(req.method)||req.url!=='/') {res.writeHead(404);res.end();return;}
  try{

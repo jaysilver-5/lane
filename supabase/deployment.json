@@ -4,7 +4,7 @@
   "organization": "StorlioHQ",
   "region": "ca-central-1",
   "environment": "sandbox",
-  "verifiedDate": "2026-10-22",
+  "verifiedDate": "2026-10-24",
   "migrations": [
     {
       "source": "202610030001_internal_beta.sql",
@@ -45,10 +45,16 @@
   ],
   "functions": {
     "delete-account": 11,
-    "content-pack": 12,
+    "content-pack": 14,
     "paddle-checkout": 16,
     "paddle-webhook": 11,
     "clerk-account": 6,
     "free-questions": 6
+  },
+  "publishedContentRelease": {
+    "version": "1.0.0",
+    "questions": 500,
+    "sha256": "21bf800ca3444d2a0a730eb164f9413b74a9f102b6400a956f92cd3b96fd9261",
+    "publishedAt": "2026-10-24T18:59:24.34773Z"
   }
 }

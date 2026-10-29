@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-24T17:46:34.945Z",
+  "contentApproval": {
+    "version": "1.0.0",
+    "questions": 500,
+    "basis": "owner_accepted_ai_editorial_review",
+    "receipt": "content/approvals/owner-2026-10-24.json",
+    "independentHumanReview": false,
+    "artifactSha256": "21bf800ca3444d2a0a730eb164f9413b74a9f102b6400a956f92cd3b96fd9261",
+    "bytes": 1333762,
+    "privateUpload": "verified-stored-bytes-sha256-via-private-server-read-back",
+    "published": true,
+    "publishedAt": "2026-10-24T17:42:48.594971Z",
+    "storagePath": "ontario-g1-1.0.0-21bf800c.json"
+  },
+  "freeQuestions": {
+    "functionVersion": 6,
+    "version": "1.0.0",
+    "questions": 40,
+    "approved": true,
+    "remotePayloadMatchesLocal": true,
+    "unauthenticatedRejection": 401
+  },
+  "productionCandidate": {
+    "deploymentId": "F29VLxbhnVBRuZuvWLjLC7oY8SjG",
+    "commit": "daf6fd84a496f927d8e8c74c299a7f6a62165f69",
+    "url": "https://firstlane-g1ib6123g-joshs-projects-e9dac4f7.vercel.app/app",
+    "environment": "production",
+    "stage": "acceptance",
+    "vercelAuthentication": "all-deployments",
+    "status": "Ready",
+    "ciTests": 236,
+    "expoExportPassed": true,
+    "guestOnboardingPassed": true,
+    "correctedExplanationPassed": true,
+    "quizReloadAndProgressPassed": true,
+    "signInRenderingPassed": true,
+    "noCredentialsEntered": true,
+    "unauthenticatedRequestStatus": 302,
+    "publicCanonicalAppStatus": 404
+  },
+  "marketing": {
+    "pullRequest": "https://github.com/jaysilver-5/getfirstlane/pull/4",
+    "productionUpstream": "https://project-n8lqe.vercel.app",
+    "testsPassed": 37,
+    "deployedToPublic": false
+  },
+  "realLivePurchase": false,
+  "realProductionAccountAcceptance": false,
+  "publicSalesEnabled": false
+}

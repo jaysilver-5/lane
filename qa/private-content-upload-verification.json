@@ -1,0 +1,7 @@
+{
+  "checkedAt": "2026-10-24T17:42:33.273Z",
+  "status": 200,
+  "sha256": "21bf800ca3444d2a0a730eb164f9413b74a9f102b6400a956f92cd3b96fd9261",
+  "bytes": 1333762,
+  "verification": "server uploaded immutable approved artifact and downloaded stored bytes to recheck SHA-256"
+}

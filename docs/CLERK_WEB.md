@@ -1,5 +1,23 @@
 # Clerk web setup — 21 October 2026
 
+## Email-code entry point — 29 October 2026
+
+The owner authorized email codes as the main entry point, with password sign-in retained for existing users. Both `/app/auth/sign-in` and `/app/auth/sign-up` use the same email-first screen. The explicit `method=password` query selects the existing password/recovery flow; legacy verification links remain supported.
+
+`WebEmailAuth` starts a Clerk `signUpIfMissing` attempt and sends a code without revealing whether the email has an account. Existing verified users finalize their original Clerk identity; no signup request or data migration occurs. For new emails, the verified transfer waits for explicit terms and age confirmations before `signUp.create({ transfer: true, legalAccepted: true })`. Continuations use the latest immutable Clerk hook snapshot and retain the validated `next` route under `/app`. Incorrect codes, security tasks and missing requirements never grant local access. Resends have a 60-second cooldown.
+
+Production Clerk already allows email-code sign-in and requires email verification. The signup-password requirement is now optional, while passwords remain enabled for existing accounts and users who add one. Device Trust and existing session lifetime are unchanged. No account was deleted or recreated. Google and Apple stay disabled.
+
+The `authEmailCodePassed` public-release check requires a real code sign-in and saved-account restoration. Component regressions cover existing/new users, consent, invalid/expired codes, provider failure, resend throttling, safe return destinations, password fallback and pending security tasks. Browser/deployment acceptance is recorded separately; automated fixtures do not establish email delivery or acceptance of terms for a real user.
+
+### Production acceptance — 30 October 2026
+
+Merged [lane #6](https://github.com/jaysilver-5/lane/pull/6) as `bf3b8c226cf67ca2bb9e5fa9518ab0555b858313`; production deployment `8HKBj3ws3G4T2NcAfUUr3CpgqoFF` is Ready. Both CI jobs and both Vercel checks pass. All 254 local tests, TypeScript, 99-file source parsing, seven Edge entrypoints and approved-content checks pass. The built preview renders the email-first screen, validates malformed email and switches to the existing password/recovery form while preserving the email and return destination.
+
+On the canonical production origin, the existing signed-in account survived the deployment. After normal sign-out, a real email-code request reached the verification screen; its FirstLane message arrived in the owner's Gmail Inbox. Code verification returned to the requested Progress route and restored the same existing account's Ontario Complete access, one explored concept, one saved practice session and 100% accuracy. A subsequent reload retained the signed-in session and the same progress/access. No password was entered or changed, no replacement account was created, and no practice answer or purchase was submitted during this check. The actual code is not recorded in evidence.
+
+This verifies production email delivery, existing-account OTP sign-in, return-route preservation, access/progress restoration and session persistence. `authEmailCodePassed` is now true for those observed outcomes. New-account consent and transfer completion have component-test coverage; no real signup terms were accepted on a user's behalf. Remaining unrelated release flags are unchanged. Evidence: `qa/clerk-email-code-password-optional.png`, `qa/email-code-preview-entry.png`, `qa/email-code-production-verification.png`, `qa/email-code-progress-before.png`, `qa/email-code-progress-restored.png`, and `qa/email-code-session-reload.png`.
+
 ## Web-only launch acceptance follow-up — 24 October 2026
 
 Owner confirmed web only, Paddle browser payments and email/password sign-in for the initial release. `web-launch-scope.json` drives the visible authentication methods and conditional social acceptance requirement. Production Clerk Google and Apple connections were enabled but both showed Setup required with missing custom credentials; both are now disabled for the selected email/password launch. No Google Cloud project, provider key or mobile release is required for this selected scope. Browser billing uses Paddle; native billing remains a separate RevenueCat/store path. No native billing setting changed.

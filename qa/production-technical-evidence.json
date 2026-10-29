@@ -1,0 +1,41 @@
+{
+  "reviewedOn": "2026-10-24",
+  "reviewer": "Codex technical verification",
+  "project": "jinbdlckkyzffnocuugn",
+  "scope": "Backend authentication, authorization, isolation and rejection checks; not a real customer, payment or legal acceptance.",
+  "backendSecurityPassed": true,
+  "productionRollbackSuites": [
+    "supabase/tests/clerk_acceptance.sql",
+    "supabase/tests/clerk_deletion_acceptance.sql",
+    "supabase/tests/continuous_practice_acceptance.sql"
+  ],
+  "postRollbackCounts": {"accounts": 0, "sessions": 0, "transactions": 0, "grants": 0, "content_releases": 0},
+  "privateTables": 16,
+  "privateTablesReadableByAnonOrAuthenticated": 0,
+  "publicTablesWithoutRls": 0,
+  "contentBucketPrivate": true,
+  "anonymousStorageReadPolicies": 0,
+  "identityAndCommerceMutationRpcsServerOnly": true,
+  "authenticatedDefinerRpcCount": 6,
+  "authenticatedDefinerRpcsReviewed": "Intentional account/access/progress/receipt/release interfaces; fixed empty search paths and current verified account/session ownership checks. Cross-account and stale-session rejection passed.",
+  "advisoryDisposition": {
+    "rls_enabled_no_policy": "16 INFO notices for inaccessible private tables; intentional default-deny.",
+    "authenticated_security_definer_function_executable": "6 WARN notices for the intentional authenticated RPC interfaces reviewed above; no permissions broadened."
+  },
+  "contentPackProductionVersion": 4,
+  "contentPackOriginRestriction": "Deployed and verified: configured origin preflight 200, unauthenticated request 401, foreign and missing origins rejected before privileged services.",
+  "currentProductionBrowserOrigin": "https://www.getfirstlane.com",
+  "targetProductionBrowserOrigin": "https://www.getfirstlane.com",
+  "targetOriginCutoverComplete": true,
+  "retiredAndForeignOriginCheck": "2026-10-24: content-pack OPTIONS rejected https://app.getfirstlane.com and https://foreign.example with 403 and no allow-origin header.",
+  "clerkProductionPaths": "Home/sign-out https://www.getfirstlane.com/app; sign-in /app/auth/sign-in; sign-up /app/auth/sign-up. Saved and verified after reload.",
+  "publicAppCutoverComplete": false,
+  "vercelProductionConfig": "EXPO_PUBLIC_WEB_APP_URL=https://www.getfirstlane.com/app and EXPO_PUBLIC_WEB_BASE_PATH=/app saved; a new deployment is required. Deployment protection retained.",
+  "appTests": {"node": "24.21.0 local", "passed": 222, "failed": 0, "typeScriptPassed": true, "edgeEntrypointsPassed": 7},
+  "httpRejectionProbes": "qa/production-service-checks.json: all 9 passed against the current configured origin.",
+  "sandboxCommerceDatabaseSuite": "supabase/tests/clerk_paddle_acceptance.sql passed on nbvstjglclolzxchjlzp; all fixtures rolled back. Covers reservation ownership, duplicate events, approved/pending refunds, out-of-order delivery and receipt isolation.",
+  "realLivePaymentTested": false,
+  "realClerkCustomerFlowTested": false,
+  "approvedPublishedReleases": 0,
+  "releaseApprovalChanged": "Only backendSecurityPassed records the technical checks above. All customer-flow, payment, content and legal flags remain pending."
+}

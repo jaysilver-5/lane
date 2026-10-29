@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
+import { createRequire } from 'node:module';
 import * as access from '../src/domain/access.mjs';
 import * as progress from '../src/domain/progress.mjs';
 import * as availability from '../src/domain/availability.mjs';
@@ -212,4 +213,31 @@ test('Home selects Keep going by default and identifies the locked option withou
     assert.equal(option.props.accessibilityState.selected,true);for(const count of [5,10,20,40,60])assert.ok(all.some(n=>n.props.accessibilityLabel?.startsWith(count+' questions')));
     const start=all.find(n=>n.props.children===(full?'Start practising':'Unlock Keep going'));assert.ok(start);start.props.onPress();assert.equal(calls[0][2],'continuous');
   }
+});
+
+test('both appearance controls resolve through the installed Expo router under the /app mount',()=>{
+  const {stripBaseUrl}=createRequire(import.meta.url)('expo-router/build/fork/getStateFromPath-forks');
+  const nodes=tree=>!tree||typeof tree!=='object'?[]:Array.isArray(tree)?tree.flatMap(nodes):[tree,...nodes(tree.props?.children)];
+  const calls=[];
+  const imports={
+    react:{useState:initial=>[initial,()=>{}]},
+    'react-native':{Platform:{OS:'web'},Pressable:'Pressable',Text:'Text',View:'View',useWindowDimensions:()=>({width:320,fontScale:1})},
+    'expo-router':{useRouter:()=>({push:path=>calls.push(path)})},
+    '../../src/state/AppState':{useApp:()=>({state:{preferences:{goal:10,name:''},active:null,sessions:[]},colors:{},identity:null,access:{kind:'guest',full:false}}),useStats:()=>({streak:0,today:0,total:0,concepts:0})},
+    '../../src/config':{config:{offer:{label:'CA$14.99'}}},
+    '../../src/components/Icon':{Icon:'Icon'},'../../src/components/RoadSketch':{RoadSketch:'RoadSketch'},'../../src/components/QuestionBankNotice':{QuestionBankNotice:'QuestionBankNotice'},'../../src/components/UI':ui,'../../src/domain/engine.mjs':{latestMistakes:()=>[]},
+  };
+  const home=load('../app/(tabs)/index.tsx',imports).default();
+  nodes(home).find(node=>node.props.label==='Appearance').props.onPress();
+  const profile=load('../app/(tabs)/profile.tsx',imports).default();
+  nodes(profile).find(node=>node.props.title==='Appearance & accessibility').props.onPress();
+  for(const destination of calls){
+    // The old /appearance destination becomes "earance" in Expo's base parser.
+    assert.equal(stripBaseUrl(destination,'/app'),destination);
+    assert.equal(stripBaseUrl('/app'+destination,'/app'),destination);
+    assert.ok(fs.existsSync(new URL('../app'+destination+'.tsx',import.meta.url)));
+  }
+  assert.equal(calls.length,2);
+  const recovered=load('../app/earance.tsx',{react:{},'expo-router':{Redirect:'Redirect'}}).default();
+  assert.equal(recovered.props.href,calls[0]);
 });

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "firstlane-content-owner-2026-10-24",
+  "owner": {
+    "id": "firstlane-owner",
+    "name": "Joshua, FirstLane owner",
+    "business": "Tervlon Labs Limited"
+  },
+  "approvedAt": "2026-10-24T16:54:58Z",
+  "acceptedBasis": "owner_accepted_ai_editorial_review",
+  "bankSha256": "9f5b1f4ae44e9f1f3977e6013f782e47ccc42a2ff92530315c4a4d1bcd24ce1d",
+  "editorialReportSha256": "46838788e39143b949870338ece1698ed60b6ca0588dca973df2a4acb1030f77",
+  "instruction": "Can we use your review as the content approval and finish the remaining launch checks? Honestly, I think we should proceed. I have to say trust in what was done, so we should proceed.",
+  "scope": "Owner accepts the completed AI editorial review of these 500 text-based original prompts for release. FirstLane rehearsal settings are editorial practice choices, not a verified official exam template. No human, legal or government certification is claimed.",
+  "rightsBasis": "Original factual question wording and explanations, with no third-party images or assumed licence to government prose; acceptance is an internal editorial decision.",
+  "publicApplicationReleaseAcceptance": "Separate technical, account, payment and operating checks remain required."
+}

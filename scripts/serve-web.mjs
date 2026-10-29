@@ -7,7 +7,10 @@ const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=u
 createServer(async(req,res)=>{
  try{
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}
-  const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+  const requested=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+  const mount=process.env.EXPO_PUBLIC_WEB_BASE_PATH ?? '/app';
+  if(mount && requested!==mount && !requested.startsWith(mount+'/')){res.writeHead(404);res.end('Open '+mount);return;}
+  const pathname=(mount?requested.slice(mount.length):requested)||'/';
   let file=resolve(root,'.'+pathname);
   if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return;}
   try{if(!(await stat(file)).isFile())throw new Error();}catch{
@@ -18,4 +21,4 @@ createServer(async(req,res)=>{
   res.writeHead(200,{'Content-Type':mime[extname(file)]||'application/octet-stream','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow'});
   res.end(req.method==='HEAD'?undefined:body);
  }catch{res.writeHead(500);res.end('Build the web app with npm run web:export first.');}
-}).listen(port,'127.0.0.1',()=>console.log(`FirstLane web app: http://127.0.0.1:${port}`));
+}).listen(port,'127.0.0.1',()=>console.log(`FirstLane web app: http://127.0.0.1:${port}${process.env.EXPO_PUBLIC_WEB_BASE_PATH ?? '/app'}`));

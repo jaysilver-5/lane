@@ -1,8 +1,10 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.117.2';
-import { AccountError, bindClerkAccount, verifyClerkRequest } from '../_shared/clerk.mjs';
-const headers = {'Content-Type':'application/json','Cache-Control':'no-store','Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'authorization, x-client-info, apikey, content-type','Access-Control-Allow-Methods':'POST, OPTIONS'};
-const json=(body:unknown,status=200)=>new Response(JSON.stringify(body),{status,headers});
+import { AccountError, accountCors, bindClerkAccount, verifyClerkRequest } from '../_shared/clerk.mjs';
 Deno.serve(async req => {
+ let headers: Record<string,string> = {'Content-Type':'application/json','Cache-Control':'no-store'};
+ const json=(body:unknown,status=200)=>new Response(JSON.stringify(body),{status,headers});
+ try { headers={...headers,...accountCors(req,name=>Deno.env.get(name))}; }
+ catch(error){return json({error:error instanceof AccountError?error.message:'Origin not allowed.'},error instanceof AccountError?error.status:403);}
  if(req.method==='OPTIONS')return new Response('ok',{headers});
  if(req.method!=='POST')return json({error:'Method not allowed'},405);
  const token=req.headers.get('authorization')?.replace(/^Bearer\s+/i,'');

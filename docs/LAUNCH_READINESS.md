@@ -1,5 +1,13 @@
 # Web launch readiness — 24 October 2026
 
+## Current acceptance audit
+
+See [LAUNCH_STATUS.md](LAUNCH_STATUS.md) for current checks and remaining work. The owner accepted the AI editorial review of all 500 exact revisions; the 1.0.0 content release is approved on that explicitly recorded basis. Independent human review is no longer an internal prerequisite. Production authorization/deletion/progress and sandbox event/refund database tests passed with rollback. Content-pack v4 enforces the exact browser origin; approved free samples are deployed as free-questions v6. Full private upload/publication and actual account/payment/device/operating acceptance remain pending. Older notes below are historical, including references to zero approved questions.
+
+## Main-domain app migration prepared
+
+The owner selected `getfirstlane.com/app` instead of depending on app-subdomain approval. The live Paddle dashboard confirms `getfirstlane.com` is approved. `/app` export, raw authentication/payment return paths and paired marketing proxy changes are prepared for review. The canonical browser host remains `www.getfirstlane.com`. Public cutover, provider origin changes and checkout are not complete; content and final acceptance still block production. See [MAIN_DOMAIN_APP.md](MAIN_DOMAIN_APP.md) for the exact sequence and configuration. Earlier subdomain notes below are historical.
+
 ## DNS synchronized and Paddle resubmitted — 24 October 2026
 
 Further per-IP checks identified the underlying failure: nsa/nsb.whogohost.com resolve to four authoritative server IPs. Three served zone serial 2026102405 with the app CNAME; 95.85.47.7 still served serial 2026102404 and authoritatively returned NXDOMAIN. A non-recursive wire query confirmed its authoritative flag and NXDOMAIN response. This supersedes the earlier cache-only diagnosis.

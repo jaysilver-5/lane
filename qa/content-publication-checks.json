@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-10-24T17:46:34.930Z",
+  "project": "jinbdlckkyzffnocuugn",
+  "upload": {
+    "ownerReportedUploaded": true,
+    "productionObjectCount": 1,
+    "sandboxOntarioObjectCount": 0,
+    "status": "uploaded-and-read-back-sha256-verified",
+    "privateBucket": true,
+    "browserStoragePolicies": 0,
+    "expectedPath": "ontario-g1-1.0.0-21bf800c.json",
+    "expectedSha256": "21bf800ca3444d2a0a730eb164f9413b74a9f102b6400a956f92cd3b96fd9261",
+    "expectedBytes": 1333762,
+    "ownerCheckingUploadResult": false,
+    "initialProductionObjectCount": 0,
+    "method": "one-off trusted server deployment using existing private Storage service credentials; no credentials extracted",
+    "temporaryBootstrapFunctionVersion": 7,
+    "restoredOriginalFunctionVersion": 8,
+    "restoredOriginalFilesExactly": true,
+    "signedInAndPaidChecksUnchanged": true,
+    "anonymousObjectReadDenied": true
+  },
+  "publication": {
+    "executed": true,
+    "reason": null,
+    "preparedSql": "supabase/releases/ontario-g1-1.0.0.sql",
+    "publishedAt": "2026-10-24T17:42:48.594971Z",
+    "approved": true,
+    "version": "1.0.0",
+    "questions": 500,
+    "approvalBasis": "owner_accepted_ai_editorial_review"
+  },
+  "databaseAccessChecks": {
+    "passed": true,
+    "script": "supabase/tests/content_release_access_acceptance.sql",
+    "scope": "Synthetic identity/grant/publication fixtures; transaction rolled back. Not real Clerk/Paddle/storage-download acceptance.",
+    "checks": [
+      "free denied",
+      "paid owner receives approved metadata",
+      "future publication excluded",
+      "unapproved release excluded",
+      "revoked grant denied",
+      "expired grant denied",
+      "wrong session denied",
+      "anonymous RPC denied",
+      "private registry not readable"
+    ],
+    "postRollbackCounts": {
+      "accounts": 0,
+      "sessions": 0,
+      "grants": 0,
+      "contentReleases": 1,
+      "fixtureReleases": 0
+    },
+    "recheckedAgainstPublishedRelease": true
+  },
+  "productionServiceProbes": {
+    "passed": true,
+    "count": 9,
+    "report": "qa/production-service-checks.json"
+  },
+  "securityAdvisor": {
+    "newTypesFound": false,
+    "privateRlsNoPolicyInfoCount": 16,
+    "intentionalAuthenticatedDefinerWarningCount": 6,
+    "disposition": "Same reviewed default-deny private tables and ownership/session-checked authenticated interfaces. No privileges broadened.",
+    "references": [
+      "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy",
+      "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"
+    ]
+  }
+}
