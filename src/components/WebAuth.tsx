@@ -11,6 +11,7 @@ import { authDestination } from '../domain/authFlow.mjs';
 import { clerkSignupStep } from '../domain/clerkSignup.mjs';
 import { appWebPath } from '../lib/webLocation';
 import launchScope from '../../web-launch-scope.json';
+import { WebEmailAuth } from './WebEmailAuth';
 
 const socialStrategies = (['oauth_google', 'oauth_apple'] as const).filter(strategy => launchScope.authenticationMethods.includes(strategy));
 
@@ -25,7 +26,9 @@ function destination(value: unknown) { return authDestination(typeof value === '
 
 export function WebAuth({ mode }: { mode: Mode }) {
   const router = useRouter();
+  const params = useLocalSearchParams<{ method?: string }>();
   if (!clerkConfigured) return <Screen back title="Your FirstLane account"><Logo/><Heading sub="You can practise the same 10 guest questions as often as you like.">Keep moving forward.</Heading><Note>Account sign-in is being prepared. Guest practice is available now.</Note><Button onPress={() => router.replace('/(tabs)')}>Try the guest questions</Button></Screen>;
+  if (['sign-in', 'sign-up'].includes(mode) && params.method !== 'password') return <WebEmailAuth/>;
   return <AuthFlow mode={mode}/>;
 }
 
@@ -256,8 +259,9 @@ function AuthFlow({ mode }: { mode: Mode }) {
       {sent && <><Note>If an eligible account exists, a recovery code has been requested. Check your inbox and spam folder.</Note><Button kind="secondary" onPress={() => run(sendRecovery)}>Resend recovery code</Button></>}
     </> : <>
       <div id="clerk-captcha"/>
-      <Button disabled={signUpMode && (!accepted || !eligible)} onPress={() => run(emailSubmit)}>{signUpMode ? 'Create my free account' : 'Sign in with email'}</Button>
+      <Button disabled={signUpMode && (!accepted || !eligible)} onPress={() => run(emailSubmit)}>{signUpMode ? 'Create my free account' : 'Sign in with password'}</Button>
       {!signUpMode && <Button kind="ghost" icon={null} onPress={() => navigate(`/auth/forgot-password?next=${encodeURIComponent(next)}`)}>Forgot your password?</Button>}
+      {!signUpMode && <Button kind="secondary" icon={null} onPress={() => navigate(`/auth/sign-in?next=${encodeURIComponent(next)}&email=${encodeURIComponent(email.trim())}`)}>Email me a sign-in code</Button>}
       <Button kind="secondary" icon={null} onPress={() => navigate(`/auth/${signUpMode ? 'sign-in' : 'sign-up'}?next=${encodeURIComponent(next)}`)}>{signUpMode ? 'Sign in instead' : 'Create a free account'}</Button>
     </>}
     </>}

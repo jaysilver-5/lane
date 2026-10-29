@@ -1,5 +1,5 @@
 {
   "platforms": ["web"],
-  "authenticationMethods": ["email_password"],
+  "authenticationMethods": ["email_code", "email_password"],
   "paymentProvider": "paddle"
 }

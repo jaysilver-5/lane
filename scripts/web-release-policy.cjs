@@ -5,8 +5,11 @@ function webAuthenticationIssues(root, qa) {
   try {
     const scope=JSON.parse(fs.readFileSync(path.join(root,'web-launch-scope.json'),'utf8'));
     const methods=scope.authenticationMethods;
-    if(!Array.isArray(methods)||!methods.includes('email_password')||methods.some(method=>!['email_password','oauth_google','oauth_apple'].includes(method))) return ['Select supported web authentication methods in web-launch-scope.json.'];
-    return methods.some(method=>method.startsWith('oauth_'))&&qa.clerkSocialSignInPassed!==true ? ['Web acceptance needed: clerkSocialSignInPassed.'] : [];
+    if(!Array.isArray(methods)||!methods.includes('email_password')||methods.some(method=>!['email_code','email_password','oauth_google','oauth_apple'].includes(method))) return ['Select supported web authentication methods in web-launch-scope.json.'];
+    const issues=[];
+    if(methods.includes('email_code')&&qa.authEmailCodePassed!==true)issues.push('Web acceptance needed: authEmailCodePassed.');
+    if(methods.some(method=>method.startsWith('oauth_'))&&qa.clerkSocialSignInPassed!==true)issues.push('Web acceptance needed: clerkSocialSignInPassed.');
+    return issues;
   } catch { return ['Web authentication launch scope is missing or invalid.']; }
 }
 function webConfigurationIssues(root, env) {

@@ -1,5 +1,15 @@
 # Clerk web setup — 21 October 2026
 
+## Email-code entry point — 29 October 2026
+
+The owner authorized email codes as the main entry point, with password sign-in retained for existing users. Both `/app/auth/sign-in` and `/app/auth/sign-up` use the same email-first screen. The explicit `method=password` query selects the existing password/recovery flow; legacy verification links remain supported.
+
+`WebEmailAuth` starts a Clerk `signUpIfMissing` attempt and sends a code without revealing whether the email has an account. Existing verified users finalize their original Clerk identity; no signup request or data migration occurs. For new emails, the verified transfer waits for explicit terms and age confirmations before `signUp.create({ transfer: true, legalAccepted: true })`. Continuations use the latest immutable Clerk hook snapshot and retain the validated `next` route under `/app`. Incorrect codes, security tasks and missing requirements never grant local access. Resends have a 60-second cooldown.
+
+Production Clerk already allows email-code sign-in and requires email verification. The signup-password requirement is now optional, while passwords remain enabled for existing accounts and users who add one. Device Trust and existing session lifetime are unchanged. No account was deleted or recreated. Google and Apple stay disabled.
+
+The new `authEmailCodePassed` public-release check remains false until a real code sign-in and saved-account restoration are verified. Component regressions cover existing/new users, consent, invalid/expired codes, provider failure, resend throttling, safe return destinations, password fallback and pending security tasks. Browser/deployment acceptance is recorded separately; automated fixtures do not establish email delivery or acceptance of terms for a real user.
+
 ## Web-only launch acceptance follow-up — 24 October 2026
 
 Owner confirmed web only, Paddle browser payments and email/password sign-in for the initial release. `web-launch-scope.json` drives the visible authentication methods and conditional social acceptance requirement. Production Clerk Google and Apple connections were enabled but both showed Setup required with missing custom credentials; both are now disabled for the selected email/password launch. No Google Cloud project, provider key or mobile release is required for this selected scope. Browser billing uses Paddle; native billing remains a separate RevenueCat/store path. No native billing setting changed.
